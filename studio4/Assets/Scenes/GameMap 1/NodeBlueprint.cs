@@ -7,7 +7,9 @@ using UnityEngine;
     public enum NodeType
     {
         Battle,
-        PlayerBattle
+        PlayerBattle,
+        Mystery,
+        Shop
     }
 
     [CreateAssetMenu]

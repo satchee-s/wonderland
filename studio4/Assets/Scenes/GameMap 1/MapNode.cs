@@ -88,7 +88,7 @@ namespace GameMap
             if(Time.time - mouseDownTime < MaxClickDuration)
             {
                 // player clicked on this node
-                MapPlayerTracker.Instance.SelectNode(this);
+                PlayerTracker.Instance.SelectNode(this);
             }
         }
 

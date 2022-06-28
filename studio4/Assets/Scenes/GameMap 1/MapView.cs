@@ -258,10 +258,66 @@ namespace GameMap
 
         }
 
-
         private void SetOrientation()
         {
 
+        }
+
+
+        private void DrawLines()
+        {
+            foreach(MapNode node in mapNodes)
+            {
+                foreach (Point connection in node.node.outgoing) AddLineConnection(node, GetNode(connection));
+            }
+        }
+
+        public void AddLineConnection(MapNode from, MapNode to)
+        {
+            GameObject lineObj = Instantiate(linePrefab, mapParent.transform);
+            LineRenderer lineRenderer = lineObj.GetComponent<LineRenderer>();
+            Vector3 fromPoint = from.transform.position + (to.transform.position - from.transform.position).normalized * offsetFromNodes;
+            Vector3 toPoint = to.transform.position + (from.transform.position - to.transform.position).normalized * offsetFromNodes;
+
+            // drawing lines in local space
+            lineObj.transform.position = fromPoint;
+            lineRenderer.useWorldSpace = false;
+
+            // line renderer with 2 points
+            lineRenderer.positionCount = linePointCount;
+
+            for(int i = 0; i < linePointCount; i++)
+            {
+                lineRenderer.SetPosition(i,Vector3.Lerp(Vector3.zero, toPoint - fromPoint, linePointCount - 1));
+            }
+
+            DottedLineRenderer dottedLine = lineObj.GetComponent<DottedLineRenderer>();
+            if(dottedLine != null) dottedLine.ScaleMaterial();
+
+            lineConnections.Add(new LineConnection(lineRenderer, from, to));
+        }
+
+
+        private MapNode GetNode(Point p)
+        {
+            return mapNodes.FirstOrDefault(n => n.node.point.Equals(p));
+        }
+
+        private MapConfig GetConfig(string configName)
+        {
+            return allMapConfigs.FirstOrDefault(c => c.name == configName);
+        }
+
+        public NodeBlueprint GetBlueprint(NodeType type)
+        {
+            MapConfig config = GetConfig(mapManager.CurrentMap.configName);
+            return config.nodeBlueprints.FirstOrDefault(n => n.nodetype == type);
+        }
+
+        public NodeBlueprint GetBlueprint(string blueprintName)
+        {
+          MapConfig config = GetConfig(mapManager.CurrentMap.configName);
+            return config.nodeBlueprints.FirstOrDefault(n => n.name == blueprintName);
         }
 
 
