@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] int health;
+    public int health;
     [SerializeField] Slider healthSlider;
 
-    private void Start() //hello
+    private void Start()
     {
         healthSlider.maxValue = health;
     }
@@ -20,14 +20,7 @@ public class HealthSystem : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log(gameObject.name + " died");
-        }
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            DealDamage(2);
+            gameObject.SetActive(false);
         }
     }
 }
