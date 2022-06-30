@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Text;
+using TMPro;
 
 public class DisplayCard : MonoBehaviour
 {
@@ -14,11 +17,10 @@ public class DisplayCard : MonoBehaviour
     public int health;
     public string cardDescription;
 
-    public Text nameText;
-    public Text idText;
-    public Text attackText;
-    public Text healthText;
-    public Text descriptionText;
+    public TextMeshPro nameText;
+    public TextMeshPro attackText;
+    public TextMeshPro healthText;
+    public TextMeshPro descriptionText;
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +35,11 @@ public class DisplayCard : MonoBehaviour
         cardName = displayCard[0].cardName;
         attack = displayCard[0].attack;
         health = displayCard[0].health;
-        cardDescription = displayCard[0].cardDescription;
-
-        nameText.text = "" + cardName;
-        attackText.text = "" + attack;
-        healthText.text = "" + health;
-        descriptionText.text = "" + cardDescription;
+        
+        nameText.text = " " + cardName;
+        attackText.text = " " + attack;
+        healthText.text = " " + health;
+        descriptionText.text = " " + cardDescription;
 
     }
 }
