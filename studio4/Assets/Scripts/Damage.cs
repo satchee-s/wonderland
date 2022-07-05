@@ -9,6 +9,7 @@ public class Damage : MonoBehaviour
     public HealthSystem healthSystem;
     public Card opponentCard;
     [SerializeField] Slider opponentCardSlider;
+    [SerializeField] Text status;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class Damage : MonoBehaviour
         opponentCard.health -= card.attack;
         if (opponentCard.health <= 0)
         {
+            status.text = "Card Deactivated";
             Debug.Log("Card deactivated");
             opponentCard.gameObject.SetActive(false);
         }

@@ -7,6 +7,7 @@ public class HealthSystem : MonoBehaviour
 {
     public int health;
     [SerializeField] Slider healthSlider;
+    [SerializeField] Text healthText;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class HealthSystem : MonoBehaviour
         healthSlider.value = health;
         if (health <= 0)
         {
+            healthText.text = "Player died";
             Debug.Log(gameObject.name + " died");
             gameObject.SetActive(false);
         }
