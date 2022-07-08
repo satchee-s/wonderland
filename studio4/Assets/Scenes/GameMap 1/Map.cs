@@ -40,9 +40,9 @@ namespace GameMap
             return nodes.FirstOrDefault(n => n.point.Equals(point));
         }
 
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
+        //public string ToJson()
+        //{
+        //    return JsonConvert.SerializeObject(this, Formatting.Indented);
+        //}
     }
 }

@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameMap
 {
     [System.Serializable]
-    public class floatMainMax
+    public class FloatMainMax
     {
         public float min;
         public float max;

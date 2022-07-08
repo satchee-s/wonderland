@@ -16,7 +16,6 @@ namespace GameMap
         public readonly List<Point> outgoing = new List<Point>();
 
         //[JsonConverter(typeof(StringEnumConverter))]
-
         public  readonly NodeType nodeType;
         public readonly string bluePrintName;
         public Vector2 pos;

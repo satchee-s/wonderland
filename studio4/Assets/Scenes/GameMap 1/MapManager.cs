@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
@@ -11,24 +9,26 @@ namespace GameMap
         public MapView mapView;
         public Map CurrentMap { get; private set; }
 
+        //TODO Set up loading map if it was previously saved
         private void Start()
         {
-            if (PlayerPrefs.HasKey("MAP"))
+            if (PlayerPrefs.HasKey("Map"))
             {
-                string mapJson = PlayerPrefs.GetString("Map");
-                Map map = JsonConvert.DeserializeObject<Map>(mapJson);
+                //string mapJson = PlayerPrefs.GetString("Map");
+                //Map map = JsonConvert.DeserializeObject<Map>(mapJson);
 
-                if(map.path.Any(p => p.Equals(map.GetPlayerBattle().point)))
-                {
-                    // if a player has reached the end of the map then generate a new map
-                    GenerateNewMap();
-                }
-                else
-                {
-                    CurrentMap = map;
-                    // player has not reached the end yet load the current map
-                    mapView.ShowMap(map);
-                }
+                //if(map.path.Any(p => p.Equals(map.GetPlayerBattle().point)))
+                //{
+                //    // if a player has reached the end of the map then generate a new map
+                //    GenerateNewMap();
+                //}
+                //else
+                //{
+                //    CurrentMap = map;
+                //    // player has not reached the end yet load the current map
+                //    mapView.ShowMap(map);
+                //}
+                GenerateNewMap();
             }
             else
             {
@@ -38,24 +38,24 @@ namespace GameMap
 
         public void GenerateNewMap()
         {
-            MapConfig map = MapGenerator.GetMap(config);
+            Map map = MapGenerator.GetMap(config);
             CurrentMap = map;
-            Debug.Log(map.ToJson());
+            //Debug.Log(map.ToJson());
             mapView.ShowMap(map);
         }
 
-        public void SaveMap()
-        {
-            if (CurrentMap == null) return;
+        //public void SaveMap()
+        //{
+        //    if (CurrentMap == null) return;
 
-            string json = JsonConvert.SerializeObject(CurrentMap);
-            PlayerPrefs.SetString("Map", json);
-            PlayerPrefs.Save();
-        }
+        //    string json = JsonConvert.SerializeObject(CurrentMap);
+        //    PlayerPrefs.SetString("Map", json);
+        //    PlayerPrefs.Save();
+        //}
 
-        private void OnApplicationQuit()
-        {
-            SaveMap();
-        }
+        //private void OnApplicationQuit()
+        //{
+        //    SaveMap();
+        //}
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -31,7 +30,7 @@ namespace GameMap
 
             GenerateLayerDistances();
 
-            for (int i = 0; i < conf.layers.count; i++) PlaceLayer(i);
+            for (int i = 0; i < conf.layers.Count; i++) PlaceLayer(i);
 
             GeneratePaths();
 
@@ -70,7 +69,7 @@ namespace GameMap
             MapLayer layer = config.layers[layerIndex];
             List<Node> nodesOnThisLayer = new List<Node>();
 
-            var offset = layerDistances.nodesApartDistance * config.GridWidth / 2f;
+            var offset = layer.nodesApartDistance * config.GridWidth / 2f;
 
             for (int i = 0; i < config.GridWidth; i++)
             {
@@ -92,7 +91,7 @@ namespace GameMap
             for (int index = 0; index < nodes.Count; index++)
             {
                 List<Node> list = nodes[index];
-                Maplayer layer = config.layers[index];
+                MapLayer layer = config.layers[index];
                 var distToNextLayer = index + 1 >= layerDistances.Count ? 0f : layerDistances[index + 1];
 
                 var distToPreviousLayer = layerDistances[index];
@@ -243,7 +242,7 @@ namespace GameMap
                 attempt++;
             }
 
-            Debug.Log("Attempts to generate paths: " + attempts);
+            Debug.Log("Attempts to generate paths: " + attempt);
         }
 
         private static bool PathsLeadToAtLeastNDifferentPoints(IEnumerable<List<Point>> paths, int n)
@@ -253,7 +252,7 @@ namespace GameMap
 
         private static List<Point> Path(Point from, int toY, int width, bool firstStepUnconstrained = false)
         {
-            if(from.y = toY)
+            if(from.y == toY)
             {
                 Debug.LogError("Points are on same layers, return");
                 return null;
@@ -282,7 +281,7 @@ namespace GameMap
                     if (lastPoint.x + 1 < width) candidateXs.Add(lastPoint.x + 1);
                 }
 
-                Point nextPoint = new Point(candidateXs[Random.Range(0, candidateXs.Count)]);
+                Point nextPoint = new Point(candidateXs[Random.Range(0, candidateXs.Count)], lastPoint.y + direction);
                 path.Add(nextPoint);
             }
             return path;

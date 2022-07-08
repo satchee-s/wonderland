@@ -48,7 +48,7 @@ namespace GameMap
         {
             Locked = lockAfterSelecting;
             mapManager.CurrentMap.path.Add(mapNode.node.point);
-            mapManager.SaveMap();
+            //mapManager.SaveMap();
             mapView.SetAttainableNodes();
             mapView.SetLineColors();
             mapNode.ShowAnimation();

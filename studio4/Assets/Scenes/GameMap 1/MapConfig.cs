@@ -1,6 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using Malee;
 using UnityEngine;
+using OneLine;
+
 
 
 namespace GameMap
@@ -10,15 +12,16 @@ namespace GameMap
     {
         public List<NodeBlueprint> nodeBlueprints;
         public int GridWidth => Mathf.Max(numOfPrePlayerBattleNodes.max, numOfStartingNodes.max);
-
+        
+        [OneLineWithHeader]
         public IntMinMax numOfPrePlayerBattleNodes;
-
+        [OneLineWithHeader]
         public IntMinMax numOfStartingNodes;
-
+        [Reorderable]
         public ListOfMapLayers layers;
 
         [System.Serializable]
-        public class ListOfMapLayers
+        public class ListOfMapLayers : ReorderableArray<MapLayer>
         {
 
         }

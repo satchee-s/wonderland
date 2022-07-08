@@ -22,7 +22,7 @@ namespace GameMap
        public Image visitedImage;
 
        public Node node { get; private set; }
-       public NodeBlueprint nodeBlueprint;
+       public NodeBlueprint nodeBlueprint { get; private set; }
 
         private float initialScale;
         private const float MaxClickDuration = 0.5f;

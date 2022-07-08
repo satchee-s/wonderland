@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -124,7 +124,12 @@ namespace GameMap
 
        }
 
-       private void CreateMapBackground(Map m)
+        private void ResetNodesRotation()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CreateMapBackground(Map m)
        {
 
             if (background == null) 
@@ -156,9 +161,9 @@ namespace GameMap
             mapParent = new GameObject("MapParentWithAScroll");
             mapParent.transform.SetParent(firstParent.transform);
 
-            ScrollNonUI scrollNonUi = mapParent.AddComponent<ScrollNonUI>();
-            scrollNonUi.freezeX = orientation == MapOrientation.BottomToTop || orientation == MapOrientation.TopToBottom;
-            scrollNonUi.freezeY = orientation == MapOrientation.LeftToRight || orientation == MapOrientation.RightToLeft;
+            //ScrollNonUI scrollNonUi = mapParent.AddComponent<ScrollNonUI>();
+            //scrollNonUi.freezeX = mapOrientation == MapOrientation.BottomToTop || mapOrientation == MapOrientation.TopToBottom;
+            //scrollNonUi.freezeY = mapOrientation == MapOrientation.LeftToRight || mapOrientation == MapOrientation.RightToLeft;
 
             BoxCollider box = mapParent.AddComponent<BoxCollider>();
             box.size = new Vector3(100, 100, 1);
@@ -240,7 +245,7 @@ namespace GameMap
 
             foreach(Point point in currentNode.outgoing)
             {
-                var lineConnection = lineConnections.FirstOrDefault(conn => conn.from.Node == currentNode && conn.to.Node.point.Equals(point));
+                var lineConnection = lineConnections.FirstOrDefault(conn => conn.from.node == currentNode && conn.to.node.point.Equals(point));
                 lineConnection.SetColor(linevisitedColor);
             }
 
@@ -250,7 +255,7 @@ namespace GameMap
             {
                 var current = mapManager.CurrentMap.path[i];
                 var next = mapManager.CurrentMap.path[i + 1];
-                var lineConnection = lineConnections.FirstOrDefault( conn => conn.@from.node.point.Equals(current) && conn.to.Node.point.Equals(next));
+                var lineConnection = lineConnections.FirstOrDefault( conn => conn.@from.node.point.Equals(current) && conn.to.node.point.Equals(next));
 
                 lineConnection?.SetColor(linevisitedColor);
             }
