@@ -14,6 +14,9 @@ public class Card : MonoBehaviour
     public int attack;
     public int health;
     public string description;
+    public bool hasBeenPlayed;
+    public int handIndex;
+    private GameManager gm;
   
     public TextMeshPro nameText;
     public TextMeshPro attackText;
@@ -40,5 +43,20 @@ public class Card : MonoBehaviour
         attackText.text = " " + attack;
         healthText.text = " " + health;
         descriptionText.text = " " + description;
+    }
+
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
+    private void OnMouseDown()
+    {
+        if(hasBeenPlayed == false)
+        {
+            transform.position = Vector3.up * 5;
+            hasBeenPlayed = true;
+            gm.availableCardSlots[handIndex] = true;
+            Invoke("Discard the Card", 2f);
+        }
     }
 }
