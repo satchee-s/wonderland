@@ -1025,9 +1025,11 @@ GameObject:
   m_Component:
   - component: {fileID: 889279686322959750}
   - component: {fileID: 889279686322959753}
+  - component: {fileID: 2562053427353564517}
+  - component: {fileID: -4733878520334864671}
   m_Layer: 0
   m_Name: Creature Card - Cheshire Cat
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1074,6 +1076,32 @@ MonoBehaviour:
   attackText: {fileID: 889279685379414737}
   healthText: {fileID: 889279685543178775}
   descriptionText: {fileID: 889279685639987085}
+--- !u!114 &2562053427353564517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889279686322959751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yDistFromTable: 1
+--- !u!65 &-4733878520334864671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889279686322959751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &889279686975537308
 GameObject:
   m_ObjectHideFlags: 0
