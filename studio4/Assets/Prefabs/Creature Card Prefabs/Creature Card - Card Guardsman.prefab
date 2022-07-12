@@ -694,9 +694,11 @@ GameObject:
   m_Component:
   - component: {fileID: 623117238771622781}
   - component: {fileID: 623117238771622780}
+  - component: {fileID: 5216330673391100866}
+  - component: {fileID: -7551631810495522183}
   m_Layer: 0
   m_Name: Creature Card - Card Guardsman
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,6 +745,32 @@ MonoBehaviour:
   attackText: {fileID: 623117238048489054}
   healthText: {fileID: 623117238985255843}
   descriptionText: {fileID: 623117237949398365}
+--- !u!114 &5216330673391100866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623117238771622722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yDistFromTable: 1
+--- !u!65 &-7551631810495522183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623117238771622722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &623117238781060236
 GameObject:
   m_ObjectHideFlags: 0

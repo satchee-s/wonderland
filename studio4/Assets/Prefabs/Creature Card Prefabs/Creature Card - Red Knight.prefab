@@ -190,9 +190,11 @@ GameObject:
   m_Component:
   - component: {fileID: 613814710725942098}
   - component: {fileID: 613814710725942097}
+  - component: {fileID: 2348690996409229825}
+  - component: {fileID: -8221844088161628060}
   m_Layer: 0
   m_Name: Creature Card - Red Knight
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,6 +241,32 @@ MonoBehaviour:
   attackText: {fileID: 613814711395071917}
   healthText: {fileID: 613814712044907094}
   descriptionText: {fileID: 613814710857991780}
+--- !u!114 &2348690996409229825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613814710725942099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yDistFromTable: 1
+--- !u!65 &-8221844088161628060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613814710725942099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &613814710788658173
 GameObject:
   m_ObjectHideFlags: 0

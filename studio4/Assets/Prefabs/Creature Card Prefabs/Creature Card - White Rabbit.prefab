@@ -644,9 +644,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3142437981194010676}
   - component: {fileID: 3142437981194010679}
+  - component: {fileID: 3623789109716261800}
+  - component: {fileID: 6805603458478687592}
   m_Layer: 0
   m_Name: Creature Card - White Rabbit
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -695,6 +697,32 @@ MonoBehaviour:
   attackText: {fileID: 3142437981817671837}
   healthText: {fileID: 3142437981645828518}
   descriptionText: {fileID: 3142437980382990959}
+--- !u!114 &3623789109716261800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3142437981194010677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yDistFromTable: 1
+--- !u!65 &6805603458478687592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3142437981194010677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3142437981205781912
 GameObject:
   m_ObjectHideFlags: 0
