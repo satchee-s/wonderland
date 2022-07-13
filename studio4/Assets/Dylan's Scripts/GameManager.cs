@@ -9,11 +9,36 @@ public class GameManager : MonoBehaviour
     public List<Card> deck = new List<Card>();
     public List<Card> container = new List<Card>();
     public GameObject Hand;
+
     public GameObject CardSlots;
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
 
+   /* Animator animator;
+    [SerializeField] private Camera mainCam;
 
+    private void Awake()
+    {
+        mainCam = Camera.main;
+    }
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    { 
+        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit raycasthit,10))
+        {
+            transform.position = raycasthit.point;
+            if (raycasthit.collider.CompareTag("Selectable"))
+            {
+                Debug.Log("Hover card");
+                animator.SetTrigger("HoveringCardTrigger");
+            }
+        }
+    }*/
     public void DrawCard()
     {
         if(deck.Count >= 1)
@@ -26,7 +51,7 @@ public class GameManager : MonoBehaviour
                 {
                     randCard.gameObject.SetActive(true);
                     randCard.handIndex = i;
-
+                    randCard.gameObject.tag = "Selectable";
                     randCard.transform.position = cardSlots[i].transform.position;
                     availableCardSlots[i] = false;
                     deck.Remove(randCard);
@@ -40,8 +65,6 @@ public class GameManager : MonoBehaviour
     {
         if (deck.Count > 1) //check if there are more than 1 card in the deck of cards
         {
-            Debug.Log("You Only Have 1 Card Left!!!");
-
             for(int i = 0; i < deck.Count; i++)
             {
                 container[0] = deck[i]; 
