@@ -1305,6 +1305,140 @@ Transform:
   m_Father: {fileID: 1203066438}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &63665038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63665039}
+  - component: {fileID: 63665041}
+  - component: {fileID: 63665040}
+  m_Layer: 0
+  m_Name: RKey to Return
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &63665039
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63665038}
+  m_LocalRotation: {x: -0.12288591, y: -0, z: -0, w: 0.9924208}
+  m_LocalPosition: {x: 0, y: 0, z: -3.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1871388800}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -14.117, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.52, y: -45.44}
+  m_SizeDelta: {x: 25.284, y: 5.158}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &63665040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63665038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: R Key to Return
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278321666
+  m_fontColor: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 2
+  m_fontSizeBase: 2
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0.6533203, z: -0.3308792, w: 0.4237566}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &63665041
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63665038}
+  m_CullTransparentMesh: 1
 --- !u!1001 &68801726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6203,6 +6337,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &276472615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7158,6 +7298,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &315951397
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7679,10 +7825,9 @@ GameObject:
   m_Component:
   - component: {fileID: 332137691}
   - component: {fileID: 332137692}
-  - component: {fileID: 332137693}
   m_Layer: 0
   m_Name: Slot 1
-  m_TagString: Untagged
+  m_TagString: Slot1
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7717,28 +7862,8 @@ MonoBehaviour:
   - {fileID: 276472609}
   container: []
   Hand: {fileID: 0}
-  CardSlots: {fileID: 0}
   cardSlots: []
   availableCardSlots: 
---- !u!95 &332137693
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332137690}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &333783826
 GameObject:
   m_ObjectHideFlags: 0
@@ -8046,6 +8171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &345524344
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8431,6 +8562,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &356862063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10642,6 +10779,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &450582745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11009,6 +11152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &453940518
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12053,6 +12202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &473496908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12736,6 +12891,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &513848230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13396,6 +13557,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &538836848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14595,7 +14762,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Hand: {fileID: 0}
-  CardSlots: {fileID: 0}
   cardSlots:
   - {fileID: 332137691}
   - {fileID: 1306021698}
@@ -15155,6 +15321,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &596489753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15474,6 +15646,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &606117956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16666,6 +16844,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &660434457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19951,6 +20135,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &783985984
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21616,6 +21806,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &855876200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23772,6 +23968,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &920402557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23798,7 +24000,7 @@ GameObject:
   - component: {fileID: 927595612}
   m_Layer: 0
   m_Name: Slot 4
-  m_TagString: Untagged
+  m_TagString: Slot4
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23832,7 +24034,6 @@ MonoBehaviour:
   deck: []
   container: []
   Hand: {fileID: 0}
-  CardSlots: {fileID: 0}
   cardSlots: []
   availableCardSlots: 
 --- !u!95 &927595612
@@ -26980,6 +27181,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1031468942
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28220,6 +28427,140 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1084704367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1084704368}
+  - component: {fileID: 1084704370}
+  - component: {fileID: 1084704369}
+  m_Layer: 0
+  m_Name: EToInteract
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1084704368
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084704367}
+  m_LocalRotation: {x: -0.11597322, y: -0, z: -0, w: 0.9932524}
+  m_LocalPosition: {x: 0, y: 0, z: -0.65}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1871388800}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -13.32, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1, y: -16.29}
+  m_SizeDelta: {x: 25.214, y: 2.837}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1084704369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084704367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: E Key To Interact
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 3
+  m_fontSizeBase: 3
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -2.6508026, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1084704370
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084704367}
+  m_CullTransparentMesh: 1
 --- !u!1 &1087358660
 GameObject:
   m_ObjectHideFlags: 0
@@ -28426,6 +28767,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1088996773
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28921,6 +29268,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1096774393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29953,6 +30306,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1145717004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30076,6 +30435,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1148974740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30227,6 +30592,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1149228185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32081,6 +32452,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1203066442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32256,6 +32633,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1217798305
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32577,6 +32960,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1245505623
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34339,6 +34728,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1283756822
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34674,7 +35069,7 @@ GameObject:
   - component: {fileID: 1306021700}
   m_Layer: 0
   m_Name: Slot 2
-  m_TagString: Untagged
+  m_TagString: Slot2
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34708,7 +35103,6 @@ MonoBehaviour:
   deck: []
   container: []
   Hand: {fileID: 0}
-  CardSlots: {fileID: 0}
   cardSlots: []
   availableCardSlots: 
 --- !u!95 &1306021700
@@ -35687,6 +36081,10 @@ PrefabInstance:
     - target: {fileID: 7716129328419237593, guid: 8e5a9ad116c83b148bf0b0ef1da5f8c3, type: 3}
       propertyPath: m_Name
       value: PlayTable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7716129328419237593, guid: 8e5a9ad116c83b148bf0b0ef1da5f8c3, type: 3}
+      propertyPath: m_TagString
+      value: Table
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e5a9ad116c83b148bf0b0ef1da5f8c3, type: 3}
@@ -37283,6 +37681,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1427719534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39009,7 +39413,7 @@ GameObject:
   - component: {fileID: 1499494635}
   m_Layer: 0
   m_Name: Slot 3
-  m_TagString: Untagged
+  m_TagString: Slot3
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39043,7 +39447,6 @@ MonoBehaviour:
   deck: []
   container: []
   Hand: {fileID: 0}
-  CardSlots: {fileID: 0}
   cardSlots: []
   availableCardSlots: 
 --- !u!95 &1499494635
@@ -39189,6 +39592,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1499801990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40010,6 +40419,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1531362218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41368,6 +41783,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1585475778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41587,6 +42008,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1590465306
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43917,6 +44344,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1669318090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46387,6 +46820,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1760163464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46496,6 +46935,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1761547520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46619,6 +47064,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1762024714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47382,6 +47833,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1785490645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47768,6 +48225,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1814317104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47998,6 +48461,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1815295464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49614,6 +50083,8 @@ RectTransform:
   - {fileID: 581804307}
   - {fileID: 1920789354}
   - {fileID: 1361637483}
+  - {fileID: 1084704368}
+  - {fileID: 63665039}
   m_Father: {fileID: 1318764307}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -50715,6 +51186,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &1911202515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53135,6 +53612,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &2014333715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54937,6 +55420,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
+  EToInteract: {fileID: 1084704369}
+  RToReturn: {fileID: 63665040}
+  slot1: {fileID: 332137690}
+  slot2: {fileID: 1306021697}
+  slot3: {fileID: 1499494632}
+  slot4: {fileID: 927595609}
 --- !u!65 &2078077917
 BoxCollider:
   m_ObjectHideFlags: 0

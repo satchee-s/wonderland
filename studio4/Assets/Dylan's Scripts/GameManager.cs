@@ -10,51 +10,28 @@ public class GameManager : MonoBehaviour
     public List<Card> container = new List<Card>();
     public GameObject Hand;
 
-    public GameObject CardSlots;
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
+    RaycastAnim rc;
 
-   /* Animator animator;
-    [SerializeField] private Camera mainCam;
 
-    private void Awake()
-    {
-        mainCam = Camera.main;
-    }
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
 
-    private void Update()
-    { 
-        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit raycasthit,10))
-        {
-            transform.position = raycasthit.point;
-            if (raycasthit.collider.CompareTag("Selectable"))
-            {
-                Debug.Log("Hover card");
-                animator.SetTrigger("HoveringCardTrigger");
-            }
-        }
-    }*/
     public void DrawCard()
     {
         if(deck.Count >= 1)
         {
-            Card randCard = deck[Random.Range(0, deck.Count)];
+            Card Card = deck[Random.Range(0, deck.Count)];
 
             for(int i = 0; i < availableCardSlots.Length; i++)
             {
                 if(availableCardSlots[i] == true)
                 {
-                    randCard.gameObject.SetActive(true);
-                    randCard.handIndex = i;
-                    randCard.gameObject.tag = "Selectable";
-                    randCard.transform.position = cardSlots[i].transform.position;
+                    Card.gameObject.SetActive(true);
+                    Card.gameObject.tag = "Selectable";
+
+                    Card.transform.position = cardSlots[i].transform.position;
                     availableCardSlots[i] = false;
-                    deck.Remove(randCard);
+                    deck.Remove(Card);
                     return;
                 }
             }
