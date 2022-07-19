@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using System;
 
 
-
 namespace GameMap
 {
 
@@ -70,12 +69,15 @@ namespace GameMap
 
         private void OnMouseEnter()
         {
-           //set visuals
+          // spriteRenderer.transform.DOKill();
+           // spriteRenderer.DOScale(initialScale * HoverScale, 0.3f);
         }
 
         private void OnMouseExit()
         {
-            //set visuals
+            //spriteRenderer.DOKill();
+            // spriteRenderer.DOScale( HoverScale, 0.3f);
+
         }
 
         private void OnMouseDown()
@@ -97,7 +99,11 @@ namespace GameMap
             if (visitedImage == null)
                 return;
 
-       
+            const float fillDuration = 0.3f;
+            visitedImage.fillAmount = 0;
+
+
+            //DOTween.To(() => visitedImage.fillAmount, x => visitedImage.fillAmount = x, 1f, fillDuration);
         }
 
     }

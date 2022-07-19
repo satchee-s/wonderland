@@ -62,7 +62,11 @@ namespace GameMap
                     break;
                 case NodeType.PlayerBattle:
                     break;
-                    default:
+                case NodeType.Mystery:
+                    break;
+                case NodeType.Shop:
+                    break;
+                default:
                     throw new ArgumentOutOfRangeException();
             }
         }

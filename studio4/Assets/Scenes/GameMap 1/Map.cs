@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+
 namespace GameMap
 {
     public class Map
@@ -40,9 +41,9 @@ namespace GameMap
             return nodes.FirstOrDefault(n => n.point.Equals(point));
         }
 
-        //public string ToJson()
+       // public string ToJson()
         //{
-        //    return JsonConvert.SerializeObject(this, Formatting.Indented);
+            //return JsonConvert.SerializeObject(this, Formatting.Indented);
         //}
     }
 }

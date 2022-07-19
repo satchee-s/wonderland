@@ -10,10 +10,7 @@ namespace GameMap
     {
         public enum MapOrientation
         {
-            BottomToTop,
-            TopToBottom,
-            RightToLeft,
-            LeftToRight
+            BottomToTop
         }
 
         public MapManager mapManager;
@@ -22,62 +19,62 @@ namespace GameMap
         [Tooltip("List of all the MapConfig scriptable objects from the " +
             "Assets folder that might be used to construct the maps. define general layout")]
 
-       public List<MapConfig> allMapConfigs;
-       public GameObject nodePrefab;
+        public List<MapConfig> allMapConfigs;
+        public GameObject nodePrefab;
 
         [Tooltip("Offsets the start of the end nodes of the map form the edges of the screen")]
 
-       public float orientationOffset;
+        public float orientationOffset;
 
         [Header("Background Settings")]
         [Tooltip("If the background sprite is null, the background will not be shown")]
 
-       public Sprite background;
-       public Color32 backgroundColor = Color.white;
-       public float xSize;
-       public float yOffset;
+        public Sprite background;
+        public Color32 backgroundColor = Color.white;
+        public float xSize;
+        public float yOffset;
 
         [Header("Line Settings")]
 
-       public GameObject linePrefab;
+        public GameObject linePrefab;
 
         [Tooltip("Line point count should be greater than 2 to get smooth color gradients")]
 
         [Range(3, 10)]
 
-       public int linePointCount = 10;
+        public int linePointCount = 10;
 
         [Tooltip("The distance from the node till the Line starting point")]
 
-       public float offsetFromNodes = 0.5f;
+        public float offsetFromNodes = 0.5f;
 
         [Header("Colors")]
         [Tooltip("Node Visited or Attainable color")]
 
-       public Color32 visitedColor = Color.grey;
+        public Color32 visitedColor = Color.grey;
 
         [Tooltip("Locked node color")]
 
-       public Color32 lockedColor = Color.white;
+        public Color32 lockedColor = Color.white;
 
         [Tooltip("Node Visited or Attainable color")]
 
-       public Color32 linevisitedColor = Color.grey;
+        public Color32 linevisitedColor = Color.grey;
 
         [Tooltip("Unavailable path color")]
-       
-       public Color32 lineLockedColor = Color.white;
+
+        public Color32 lineLockedColor = Color.white;
 
 
-       private GameObject firstParent;
-       private GameObject mapParent;
-       private List<List<Point>> paths;
-       private Camera Cam;
+        private GameObject firstParent;
+        private GameObject mapParent;
+        private List<List<Point>> paths;
+        private Camera Cam;
 
-       public readonly List<MapNode> mapNodes = new List<MapNode>();
-       private readonly List<LineConnection> lineConnections = new List<LineConnection>();
+        public readonly List<MapNode> mapNodes = new List<MapNode>();
+        private readonly List<LineConnection> lineConnections = new List<LineConnection>();
 
-       public static MapView Instance;
+        public static MapView Instance;
 
         private void Awake()
         {
@@ -85,54 +82,56 @@ namespace GameMap
             Cam = Camera.main;
         }
 
-       private void ClearMap()
-       {
-            if(firstParent != null)
-            {
-                Destroy(firstParent);
-
-                mapNodes.Clear();
-                lineConnections.Clear();
-            }
-       }
-
-       public void ShowMap(Map m)
-       {
-            if(m == null)
+        public void ShowMap(Map m)
+        {
+            if (m == null)
             {
                 Debug.LogWarning("Map was null in MapView.ShowMap()");
                 return;
-
-                ClearMap();
-
-                CreateMapParent();
-
-                CreateNodes(m.nodes);
-
-                DrawLines();
-
-                SetOrientation();
-
-                ResetNodesRotation();
-
-                SetAttainableNodes();
-
-                SetLineColors();
-
-                CreateMapBackground(m);
             }
+            ClearMap();
 
-       }
+            CreateMapParent();
+
+            CreateNodes(m.nodes);
+
+            DrawLines();
+
+            SetOrientation();
+
+            ResetNodesRotation();
+
+            SetAttainableNodes();
+
+            SetLineColors();
+
+            CreateMapBackground(m);
+
+
+        }
+        private void ClearMap()
+        {
+            if (firstParent != null)
+            {
+                Destroy(firstParent);
+                mapNodes.Clear();
+                lineConnections.Clear();
+            }
+        }
 
         private void ResetNodesRotation()
         {
-            throw new NotImplementedException();
+            foreach (var node in mapNodes)
+            {
+                node.transform.rotation = Quaternion.identity;
+            }
+                
         }
 
         private void CreateMapBackground(Map m)
-       {
+        {
 
-            if (background == null) 
+            if (background == null)
                 return;
 
             GameObject backgroundObject = new GameObject("Background");
@@ -152,11 +151,11 @@ namespace GameMap
             sr.sprite = background;
             sr.size = new Vector2(xSize, span + yOffset * 2f);
 
-       }
+        }
 
 
-       private void CreateMapParent()
-       {
+        private void CreateMapParent()
+        {
             firstParent = new GameObject("OuterMapParent");
             mapParent = new GameObject("MapParentWithAScroll");
             mapParent.transform.SetParent(firstParent.transform);
@@ -173,18 +172,18 @@ namespace GameMap
 
         private void CreateNodes(IEnumerable<Node> nodes)
         {
-            foreach(Node node in nodes)
+            foreach (Node node in nodes)
             {
                 var mapNode = CreateMapNode(node);
                 mapNodes.Add(mapNode);
 
             }
         }
-
+            
         private MapNode CreateMapNode(Node node)
         {
             GameObject mapNodeObject = Instantiate(nodePrefab, mapParent.transform);
-            MapNode mapNode = mapNodeObject.AddComponent<MapNode>();
+            MapNode mapNode = mapNodeObject.GetComponent<MapNode>();
             NodeBlueprint blueprint = GetBlueprint(node.bluePrintName);
 
             mapNode.SetUp(node, blueprint);
@@ -195,33 +194,33 @@ namespace GameMap
         public void SetAttainableNodes()
         {
             //first we set all the nodes as unattainable/locked
-            foreach(MapNode node in mapNodes)
+            foreach (MapNode node in mapNodes)
             {
                 node.SetState(NodeStates.Locked);
             }
 
-            if(mapManager.CurrentMap.path.Count == 0)
+            if (mapManager.CurrentMap.path.Count == 0)
             {
-               // we have not started traveling on this map yet, set entire first layer as attainable
-              foreach(MapNode node in mapNodes.Where(n => n.node.point.y == 0))
-              {
-                node.SetState(NodeStates.Attainable);
-              }
+                // we have not started traveling on this map yet, set entire first layer as attainable
+                foreach (MapNode node in mapNodes.Where(n => n.node.point.y == 0))
+                {
+                    node.SetState(NodeStates.Attainable);
+                }
             }
             else
             {
                 // we already started moving on the current map, first  highlight the path as visited
-                foreach(Point point in mapManager.CurrentMap.path)
+                foreach (Point point in mapManager.CurrentMap.path)
                 {
                     MapNode mapNode = GetNode(point);
-                    if(mapNode != null) mapNode.SetState(NodeStates.Visited);
+                    if (mapNode != null) mapNode.SetState(NodeStates.Visited);
                 }
 
                 Point currentPoint = mapManager.CurrentMap.path[mapManager.CurrentMap.path.Count - 1];
                 Node currentNode = mapManager.CurrentMap.GetNode(currentPoint);
 
                 // set all the nodes that we can travel to as attainable
-                foreach(Point point in currentNode.outgoing)
+                foreach (Point point in currentNode.outgoing)
                 {
                     MapNode mapNode = GetNode(point);
                     if (mapNode != null) mapNode.SetState(NodeStates.Attainable);
@@ -236,26 +235,33 @@ namespace GameMap
 
             // we set all the lines that are part of the path to visited color
             // if we have not started moving on the map yet then leave everything as is
-            if (mapManager.CurrentMap.path.Count == 0) return;
+            if (mapManager.CurrentMap.path.Count == 0)
+            {
+                return;
+            }
 
             // we mark outgoing connections from the final node with visible/attainable color
             Point currentPoint = mapManager.CurrentMap.path[mapManager.CurrentMap.path.Count - 1];
 
             Node currentNode = mapManager.CurrentMap.GetNode(currentPoint);
 
-            foreach(Point point in currentNode.outgoing)
+            foreach (Point point in currentNode.outgoing)
             {
                 var lineConnection = lineConnections.FirstOrDefault(conn => conn.from.node == currentNode && conn.to.node.point.Equals(point));
                 lineConnection.SetColor(linevisitedColor);
             }
 
-            if(mapManager.CurrentMap.path.Count <= 1) return;
+            if (mapManager.CurrentMap.path.Count <= 1)
+            {
+                return;
+            }
+            
 
             for (int i = 0; i < mapManager.CurrentMap.path.Count - 1; i++)
             {
                 var current = mapManager.CurrentMap.path[i];
                 var next = mapManager.CurrentMap.path[i + 1];
-                var lineConnection = lineConnections.FirstOrDefault( conn => conn.@from.node.point.Equals(current) && conn.to.node.point.Equals(next));
+                var lineConnection = lineConnections.FirstOrDefault(conn => conn.@from.node.point.Equals(current) && conn.to.node.point.Equals(next));
 
                 lineConnection?.SetColor(linevisitedColor);
             }
@@ -265,15 +271,25 @@ namespace GameMap
 
         private void SetOrientation()
         {
+            var span = mapManager.CurrentMap.DistanceBetweenFirstAndLastLayers();
+            var bossNode = mapNodes.FirstOrDefault(node => node.node.nodeType == NodeType.PlayerBattle);
+            Debug.Log("Map span in set orientation: " + span + " camera aspect: " + Cam.aspect);
 
+            // setting first parent to be right in front of the camera first:
+            firstParent.transform.position = new Vector3(Cam.transform.position.x, Cam.transform.position.y, 0f);
+            var offset = orientationOffset;
+            firstParent.transform.localPosition += new Vector3(0, offset, 0);
         }
 
 
         private void DrawLines()
         {
-            foreach(MapNode node in mapNodes)
+            foreach (MapNode node in mapNodes)
             {
-                foreach (Point connection in node.node.outgoing) AddLineConnection(node, GetNode(connection));
+                foreach (Point connection in node.node.outgoing) 
+                {
+                    AddLineConnection(node, GetNode(connection));
+                }
             }
         }
 
@@ -291,13 +307,13 @@ namespace GameMap
             // line renderer with 2 points
             lineRenderer.positionCount = linePointCount;
 
-            for(int i = 0; i < linePointCount; i++)
+            for (int i = 0; i < linePointCount; i++)
             {
-                lineRenderer.SetPosition(i,Vector3.Lerp(Vector3.zero, toPoint - fromPoint, linePointCount - 1));
+                lineRenderer.SetPosition(i, Vector3.Lerp(Vector3.zero, toPoint - fromPoint, linePointCount - 1));
             }
 
             DottedLineRenderer dottedLine = lineObj.GetComponent<DottedLineRenderer>();
-            if(dottedLine != null) dottedLine.ScaleMaterial();
+            if (dottedLine != null) dottedLine.ScaleMaterial();
 
             lineConnections.Add(new LineConnection(lineRenderer, from, to));
         }
@@ -321,7 +337,7 @@ namespace GameMap
 
         public NodeBlueprint GetBlueprint(string blueprintName)
         {
-          MapConfig config = GetConfig(mapManager.CurrentMap.configName);
+            MapConfig config = GetConfig(mapManager.CurrentMap.configName);
             return config.nodeBlueprints.FirstOrDefault(n => n.name == blueprintName);
         }
 

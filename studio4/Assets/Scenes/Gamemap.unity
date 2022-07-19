@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapManager: {fileID: 1622421074}
-  mapOrientation: 3
+  mapOrientation: 0
   allMapConfigs:
   - {fileID: 11400000, guid: c8bad85c0cb60f44b82e2797e7736e91, type: 2}
   nodePrefab: {fileID: 7885537213773904986, guid: 99b39d8c5a9281845b464152dbe0f744, type: 3}
@@ -297,7 +297,7 @@ MonoBehaviour:
   xSize: 11.5
   yOffset: 2
   linePrefab: {fileID: 346742776018712904, guid: 43cc033adaaaad5408396d610ecca02d, type: 3}
-  linePointCount: 10
+  linePointCount: 8
   offsetFromNodes: 0.5
   visitedColor:
     serializedVersion: 2
