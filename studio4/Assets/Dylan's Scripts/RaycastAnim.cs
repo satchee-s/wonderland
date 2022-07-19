@@ -11,13 +11,11 @@ public class RaycastAnim : MonoBehaviour
     GameManager gm;
     public TextMeshProUGUI EToInteract;
     public TextMeshProUGUI RToReturn;
+    public float lockPos;
 
     private bool isOn = true;
 
-    public Transform slot1;
-    public Transform slot2;
-    public Transform slot3;
-    public Transform slot4;
+   
 
     private void Awake()
     {
@@ -27,7 +25,6 @@ public class RaycastAnim : MonoBehaviour
     {
         EToInteract.enabled = false;
         RToReturn.enabled = false;
-        
     }
 
     private void Update()
@@ -39,14 +36,21 @@ public class RaycastAnim : MonoBehaviour
             {
                 EToInteract.enabled = true;
                 Debug.Log(raycasthit.collider.gameObject.name); // Shows which card the mpuse is over
+               
 
                 if (Input.GetKey(KeyCode.E))
                 {
                   isOn = false;
                   EToInteract.enabled = false;
-                   
-                  Vector3 centerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.5f));  //take that specfic gameobj with the mouse hovering over it to do the stuff below
-                  raycasthit.collider.gameObject.transform.position = centerPos;
+
+                  
+                    Vector3 centerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1f));  //take that specfic gameobj with the mouse hovering over it to do the stuff below
+
+                    
+                    raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
+                    //raycasthit.collider.gameObject.transform.eulerAngles. = centerPos;
+
+                    raycasthit.collider.gameObject.transform.position = centerPos;
                   RToReturn.enabled = true;
                 }
             }
@@ -55,11 +59,9 @@ public class RaycastAnim : MonoBehaviour
                 isOn = true;
                 RToReturn.enabled = false;
                 EToInteract.enabled = true;
-               
-                //Figure out how to Make object go back to original Place
 
+                gameObject.transform.position = gameObject.GetComponent<Card>().originalPos;
             }
-
 
             if (raycasthit.collider.CompareTag("Table"))
             {

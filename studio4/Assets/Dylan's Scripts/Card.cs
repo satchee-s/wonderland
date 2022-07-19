@@ -23,6 +23,8 @@ public class Card : MonoBehaviour
     public TextMeshPro healthText;
     public TextMeshPro descriptionText;
 
+    public Vector3 originalPos;
+
     public Card()
     {
 
