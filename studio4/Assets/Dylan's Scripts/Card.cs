@@ -23,9 +23,11 @@ public class Card : MonoBehaviour
     public TextMeshPro healthText;
     public TextMeshPro descriptionText;
 
+    public PlayerManager healthSystem;
+    public Card opponentCard;
+
     public Card()
     {
-
     }
 
     public Card(int CardId, string CardName, int Attack, int Health, string Description)
@@ -37,14 +39,23 @@ public class Card : MonoBehaviour
         description = Description;
     }
 
-     void Update()
+    void Update()
     {
-        nameText.text = " " + cardName;
+        nameText.text = " " + cardName; //???
         attackText.text = " " + attack;
         healthText.text = " " + health;
         descriptionText.text = " " + description;
-    }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerAttack(this.GetComponent<Card>());
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            AttackAgainstCard(this.GetComponent<Card>(), opponentCard);
+
+        }
+    }
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -57,6 +68,21 @@ public class Card : MonoBehaviour
             hasBeenPlayed = true;
             gm.availableCardSlots[handIndex] = true;
             Invoke("Discard the Card", 2f);
+        }
+    }
+
+    public void PlayerAttack(Card card)
+    {
+        healthSystem.DealDamage(card.attack);
+    }
+
+    public void AttackAgainstCard(Card card, Card opponentCard)
+    {
+        opponentCard.health -= card.attack;
+        if (opponentCard.health <= 0)
+        {
+            Debug.Log("Card deactivated");
+            opponentCard.gameObject.SetActive(false);
         }
     }
 }

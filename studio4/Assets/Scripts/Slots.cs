@@ -23,7 +23,7 @@ public class Slots : MonoBehaviour
 
                 if (currentCardPos < 4)
                 {
-                    Debug.Log("Card added to hand");
+                    Debug.Log("Card added to slot");
                     //other.gameObject.SetActive(true);
                     other.transform.position = cardSlots[currentCardPos].transform.position;
                     other.gameObject.GetComponent<MouseMovement>().canBeMoved = false;
