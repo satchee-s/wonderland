@@ -9,27 +9,29 @@ public class GameManager : MonoBehaviour
     public List<Card> deck = new List<Card>();
     public List<Card> container = new List<Card>();
     public GameObject Hand;
-    public GameObject CardSlots;
+
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
+    RaycastAnim rc;
+
 
 
     public void DrawCard()
     {
         if(deck.Count >= 1)
         {
-            Card randCard = deck[Random.Range(0, deck.Count)];
+            Card Card = deck[Random.Range(0, deck.Count)];
 
             for(int i = 0; i < availableCardSlots.Length; i++)
             {
                 if(availableCardSlots[i] == true)
                 {
-                    randCard.gameObject.SetActive(true);
-                    randCard.handIndex = i;
+                    Card.gameObject.SetActive(true);
+                    Card.gameObject.tag = "Selectable";
 
-                    randCard.transform.position = cardSlots[i].transform.position;
+                    Card.transform.position = cardSlots[i].transform.position;
                     availableCardSlots[i] = false;
-                    deck.Remove(randCard);
+                    deck.Remove(Card);
                     return;
                 }
             }
@@ -40,8 +42,6 @@ public class GameManager : MonoBehaviour
     {
         if (deck.Count > 1) //check if there are more than 1 card in the deck of cards
         {
-            Debug.Log("You Only Have 1 Card Left!!!");
-
             for(int i = 0; i < deck.Count; i++)
             {
                 container[0] = deck[i]; 

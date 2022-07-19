@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Card
+  - Selectable
+  - Table
+  - Slot1
+  - Slot2
+  - Slot3
+  - Slot4
   layers:
   - Default
   - TransparentFX
@@ -12,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Selectable
   - 
   - 
   - 
