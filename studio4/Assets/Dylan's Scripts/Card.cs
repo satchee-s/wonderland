@@ -24,6 +24,7 @@ public class Card : MonoBehaviour
     public TextMeshPro descriptionText;
 
     public Vector3 originalPos;
+    public Quaternion originalRotationValue;
 
     public Card()
     {
@@ -50,6 +51,8 @@ public class Card : MonoBehaviour
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        originalRotationValue = transform.rotation;
+
     }
     /*private void OnMouseDown()
     {

@@ -1510,6 +1510,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -1950,6 +1954,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: mainCam
@@ -2773,6 +2781,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
@@ -4314,6 +4326,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: mainCam
@@ -5905,6 +5921,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1689018393}
     m_Modifications:
     - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -6557,6 +6577,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: mainCam
@@ -7424,6 +7448,7 @@ MonoBehaviour:
   healthText: {fileID: 1283066458}
   descriptionText: {fileID: 1200707222}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &315951394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7961,7 +7986,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 326856043}
-  - component: {fileID: 326856045}
   - component: {fileID: 326856044}
   m_Layer: 0
   m_Name: Slot 5
@@ -8003,27 +8027,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &326856045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326856042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!1 &330480697
 GameObject:
   m_ObjectHideFlags: 0
@@ -8064,7 +8067,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332137691}
-  - component: {fileID: 332137692}
   m_Layer: 0
   m_Name: Slot 0
   m_TagString: Slot1
@@ -8086,27 +8088,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!114 &332137692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332137690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!1 &333783826
 GameObject:
   m_ObjectHideFlags: 0
@@ -8692,6 +8673,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -8776,6 +8761,7 @@ MonoBehaviour:
   healthText: {fileID: 1392393888}
   descriptionText: {fileID: 860876452}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &356862060
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11293,6 +11279,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -11377,6 +11367,7 @@ MonoBehaviour:
   healthText: {fileID: 2059454732}
   descriptionText: {fileID: 1345813949}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &453940515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11445,6 +11436,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1689018393}
     m_Modifications:
+    - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
       propertyPath: mainCam
       value: 
@@ -12441,6 +12436,7 @@ MonoBehaviour:
   healthText: {fileID: 326609568}
   descriptionText: {fileID: 882310458}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &473496905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13111,6 +13107,7 @@ MonoBehaviour:
   healthText: {fileID: 451324930}
   descriptionText: {fileID: 185890176}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &513848224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14095,8 +14092,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551727690}
-  - component: {fileID: 551727692}
-  - component: {fileID: 551727691}
   m_Layer: 0
   m_Name: Slot 4
   m_TagString: Slot4
@@ -14118,46 +14113,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!95 &551727691
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551727689}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &551727692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551727689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!1 &557022062
 GameObject:
   m_ObjectHideFlags: 0
@@ -15018,6 +14973,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -15710,6 +15669,7 @@ MonoBehaviour:
   healthText: {fileID: 2102884566}
   descriptionText: {fileID: 2926957}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &596489750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16046,6 +16006,7 @@ MonoBehaviour:
   healthText: {fileID: 2071175421}
   descriptionText: {fileID: 682361359}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &606117954
 Animator:
   serializedVersion: 3
@@ -17251,6 +17212,7 @@ MonoBehaviour:
   healthText: {fileID: 932172738}
   descriptionText: {fileID: 916942843}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &660434454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17806,6 +17768,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
@@ -19787,6 +19753,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -20515,6 +20485,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -20599,6 +20573,7 @@ MonoBehaviour:
   healthText: {fileID: 679341675}
   descriptionText: {fileID: 957563751}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &783985981
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21438,6 +21413,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -21879,6 +21858,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &839544187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839544188}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &839544188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839544187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 315.38934, y: 207.13568, z: -0.0000076293945}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &843185557
 GameObject:
   m_ObjectHideFlags: 0
@@ -22216,6 +22225,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -22311,6 +22324,7 @@ MonoBehaviour:
   healthText: {fileID: 1271051893}
   descriptionText: {fileID: 104324387}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &855876197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23212,6 +23226,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: mainCam
@@ -24474,6 +24492,7 @@ MonoBehaviour:
   healthText: {fileID: 1304643059}
   descriptionText: {fileID: 1848978236}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &920402553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24557,8 +24576,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927595610}
-  - component: {fileID: 927595611}
-  - component: {fileID: 927595612}
   m_Layer: 0
   m_Name: Slot 3
   m_TagString: Slot4
@@ -24580,46 +24597,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &927595611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927595609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
---- !u!95 &927595612
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927595609}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &932172736
 GameObject:
   m_ObjectHideFlags: 0
@@ -26514,6 +26491,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -27770,6 +27751,7 @@ MonoBehaviour:
   healthText: {fileID: 1459440272}
   descriptionText: {fileID: 1814535094}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1031468939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29365,6 +29347,7 @@ MonoBehaviour:
   healthText: {fileID: 31638908}
   descriptionText: {fileID: 1655190839}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1088996770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29864,6 +29847,7 @@ MonoBehaviour:
   healthText: {fileID: 1730826683}
   descriptionText: {fileID: 1581857734}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1096774390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30924,6 +30908,7 @@ MonoBehaviour:
   healthText: {fileID: 1583199264}
   descriptionText: {fileID: 1622074540}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &1145717002
 Animator:
   serializedVersion: 3
@@ -31038,6 +31023,7 @@ MonoBehaviour:
   healthText: {fileID: 70470635}
   descriptionText: {fileID: 1505089642}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1148974737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31167,6 +31153,7 @@ MonoBehaviour:
   healthText: {fileID: 1978711370}
   descriptionText: {fileID: 2103427779}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1149228180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33064,6 +33051,7 @@ MonoBehaviour:
   healthText: {fileID: 1678703445}
   descriptionText: {fileID: 1778314579}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &1203066440
 Animator:
   serializedVersion: 3
@@ -33329,6 +33317,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1689018393}
     m_Modifications:
     - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -33483,6 +33475,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -33573,6 +33569,7 @@ MonoBehaviour:
   healthText: {fileID: 299992976}
   descriptionText: {fileID: 1630760965}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1245505619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34265,6 +34262,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
@@ -35368,6 +35369,7 @@ MonoBehaviour:
   healthText: {fileID: 1031187200}
   descriptionText: {fileID: 1268734174}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1283756819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35769,8 +35771,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1306021698}
-  - component: {fileID: 1306021699}
-  - component: {fileID: 1306021700}
   m_Layer: 0
   m_Name: Slot 1
   m_TagString: Slot2
@@ -35792,46 +35792,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!114 &1306021699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306021697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
---- !u!95 &1306021700
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306021697}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1308705005
 GameObject:
   m_ObjectHideFlags: 0
@@ -36242,6 +36202,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
@@ -36889,6 +36853,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -37376,6 +37344,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3450303557129047638, guid: b43618653a8d47a42a9ab4bbd17e2cce, type: 3}
       propertyPath: mainCam
@@ -38440,6 +38412,7 @@ MonoBehaviour:
   healthText: {fileID: 1079039662}
   descriptionText: {fileID: 697685259}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &1427719532
 Animator:
   serializedVersion: 3
@@ -39435,6 +39408,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -40224,8 +40201,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499494633}
-  - component: {fileID: 1499494634}
-  - component: {fileID: 1499494635}
   m_Layer: 0
   m_Name: Slot 2
   m_TagString: Slot3
@@ -40247,46 +40222,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!114 &1499494634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499494632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
---- !u!95 &1499494635
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499494632}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1499801983
 GameObject:
   m_ObjectHideFlags: 0
@@ -40354,6 +40289,7 @@ MonoBehaviour:
   healthText: {fileID: 2033232502}
   descriptionText: {fileID: 110187333}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1499801986
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41192,6 +41128,7 @@ MonoBehaviour:
   healthText: {fileID: 1826785282}
   descriptionText: {fileID: 1156573567}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1531362215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41635,6 +41572,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4731809418465713673, guid: 18c17bad68c341d44b223829dbcd0814, type: 3}
       propertyPath: mainCam
@@ -42570,6 +42511,7 @@ MonoBehaviour:
   healthText: {fileID: 75981988}
   descriptionText: {fileID: 148015652}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1585475775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42804,6 +42746,7 @@ MonoBehaviour:
   healthText: {fileID: 1021741386}
   descriptionText: {fileID: 460109551}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1590465303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45173,6 +45116,7 @@ MonoBehaviour:
   healthText: {fileID: 1564957441}
   descriptionText: {fileID: 668780173}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &1669318088
 Animator:
   serializedVersion: 3
@@ -47770,6 +47714,7 @@ MonoBehaviour:
   healthText: {fileID: 1633735993}
   descriptionText: {fileID: 879590539}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &1761547518
 Animator:
   serializedVersion: 3
@@ -47884,6 +47829,7 @@ MonoBehaviour:
   healthText: {fileID: 1638099589}
   descriptionText: {fileID: 1725480944}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1762024711
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48651,6 +48597,7 @@ MonoBehaviour:
   healthText: {fileID: 1362123963}
   descriptionText: {fileID: 1137066906}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1785490642
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49730,6 +49677,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
@@ -51483,6 +51434,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -52025,6 +51980,7 @@ MonoBehaviour:
   healthText: {fileID: 151710153}
   descriptionText: {fileID: 1421095158}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &1911202510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53709,6 +53665,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -53734,6 +53694,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1689018393}
     m_Modifications:
+    - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
       propertyPath: mainCam
       value: 
@@ -54530,6 +54494,7 @@ MonoBehaviour:
   healthText: {fileID: 836512754}
   descriptionText: {fileID: 1925609525}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &2014333712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56349,6 +56314,7 @@ MonoBehaviour:
   healthText: {fileID: 692672114}
   descriptionText: {fileID: 1491743863}
   originalPos: {x: 0, y: 0, z: 0}
+  originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &2078077915
 Animator:
   serializedVersion: 3
@@ -57729,6 +57695,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1689018393}
     m_Modifications:
+    - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
+      propertyPath: Cursor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: -3639814191228509960, guid: 26f41d045fed55d4c881d980cef4e821, type: 3}
       propertyPath: mainCam
       value: 

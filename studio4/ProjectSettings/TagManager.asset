@@ -11,6 +11,7 @@ TagManager:
   - Slot2
   - Slot3
   - Slot4
+  - InteractingCard
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Selectable
+  - 
   - 
   - 
   - 
