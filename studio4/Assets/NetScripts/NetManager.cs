@@ -13,15 +13,10 @@ public class NetManager : MonoBehaviour
     delegate void ConnectedToServer();
     ConnectedToServer ConnectedToServerEvent;
 
-
-
     [Header("Connect Panel")]
     [SerializeField] Button connectButton;
     [SerializeField] TMP_InputField playerNameInputField;
     [SerializeField] GameObject connectPanel;
-
-
-
 
     Socket socket;
     Player player;
@@ -32,7 +27,6 @@ public class NetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
 
         connectButton.onClick.AddListener(() =>
         {
@@ -55,10 +49,7 @@ public class NetManager : MonoBehaviour
 
                 Rig();
 
-
-
                 if (ConnectedToServerEvent != null) ConnectedToServerEvent();
-
 
             }
             catch (SocketException e)
@@ -68,11 +59,7 @@ public class NetManager : MonoBehaviour
 
         });
 
-
-
-
     }
-
 
     void Update()
     {
