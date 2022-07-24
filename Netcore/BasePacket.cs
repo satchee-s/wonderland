@@ -1,70 +1,94 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net.Sockets;
+using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Net.Sockets;
+using core;
 
-
-namespace core
+namespace Client
 {
-    public class BasePacket
+
+    public class Program
     {
-        protected MemoryStream ms;
-        protected BinaryReader br;
-        protected BinaryWriter bw;
-
-        public enum PacketType
+        static void Main(string[] args)
         {
-            Unknown = -1,
-            None,
-            Transform,
-            Instantiate,
-            Destroy,
-            Position,
-            Rotation,
-            Scale,
-            RotationAndPosition,
-            Message
-        }
+            Socket Listening = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            Listening.Bind(new IPEndPoint(IPAddress.Any, 3000));
 
-      public PacketType Type { get; set; }
-      public Player player { get; private set; }
+            Listening.Listen(10);
+            Listening.Blocking = false;
 
-        public BasePacket(PacketType type, Player player )
-        {
-            this.player = player;
-            Type = type;
-        }
+            Console.WriteLine("waiting for a Client to Connect");
+            List<Socket> clients = new List<Socket>();
 
-        public BasePacket()
-        {
-            Type = PacketType.Unknown;
-            player = null;
-        }
+            while (true)
+            {
+                try
+                {
+                    clients.Add(Listening.Accept());
+                    Console.WriteLine("Client Connected");
 
-        public virtual byte[] StartSerialization()
-        {
-            ms = new MemoryStream();
-            bw = new BinaryWriter(ms);
+                }
+                catch (SocketException se)
+                {
+                    if (se.SocketErrorCode != SocketError.WouldBlock)
+                        Console.WriteLine(se);
+                }
 
-            bw.Write((int)Type);
-            bw.Write(player.ID);
-            bw.Write(player.Name);
+                try
+                {
+                    for (int i = 0; i < clients.Count; i++)
+                    {
 
-            return null;
-        }
 
-        public virtual BasePacket StartDeserialization(byte[] buffer)
-        {
-            ms = new MemoryStream(buffer);
-            br = new BinaryReader(ms);
+                        if (clients[i].Available > 0)
+                        {
+                            byte[] recievedBuffer = new byte[clients[i].Available];
 
-            Type = (PacketType)br.ReadInt32();
-            player = new Player(br.ReadString(), br.ReadString());
+                            clients[i].Receive(recievedBuffer);
+                            BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
 
-            return this;
+
+
+                            switch (pb.Type)
+                            {
+                                case BasePacket.PacketType.Message:
+                                    MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine($"{mp.player.Name}Said:{mp.message}");
+                                    break;
+
+                                case BasePacket.PacketType.Instantiate:
+                                    InstantiatePacket IP = (InstantiatePacket)new InstantiatePacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine("InstantiatePacket");
+                                    break;
+
+                                case BasePacket.PacketType.Destroy:
+                                    DestroyPacket DP = (DestroyPacket)new DestroyPacket().StartDeserialization(recievedBuffer);
+
+
+                                    Console.WriteLine("(DestroyPacket");
+                                    break;
+
+                                case BasePacket.PacketType.Rigidbody:
+                                    RigidbodyPacket RP = (RigidbodyPacket)new RigidbodyPacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine("(RigidbodyPacket");
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
+                }
+                catch (SocketException se)
+                {
+                    Console.WriteLine("Exception");
+                }
+
+            }
+            Console.ReadKey();
+
+
         }
     }
 }

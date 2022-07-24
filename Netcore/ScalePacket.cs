@@ -8,13 +8,13 @@ namespace core
         public Vector3 Scale { get; private set; }
 
 
-        public ScalePacket(Player player) : base(PacketType.Scale, player)
+        public ScalePacket()
         {
             Scale = Vector3.zero;
 
         }
 
-        public ScalePacket(Vector3 position, Quaternion rotation)
+        public ScalePacket(Vector3 position, Player player) : base(PacketType.Scale, player)
         {
             Scale = position;
 

@@ -1,18 +1,17 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace core
 {
     public class InstantiatePacket : BasePacket
     {
-        public string GameObjectId { get;private set; }
-        public string PrefabName { get;private set; }
+        public string GameObjectId { get; private set; }
+        public string PrefabName { get; private set; }
 
         public Vector3 Position { get; private set; }
         public Quaternion Rotation { get; private set; }
 
-        public InstantiatePacket(Player player) : base(PacketType.Instantiate, player)
+        public InstantiatePacket()
         {
             GameObjectId = "";
             PrefabName = "";
@@ -22,7 +21,7 @@ namespace core
 
         }
 
-        public InstantiatePacket(string gameObjectId, string prefabName, Vector3 position, Quaternion rotation)
+        public InstantiatePacket(string gameObjectId, string prefabName, Vector3 position, Quaternion rotation, Player player) : base(PacketType.Instantiate, player)
         {
             GameObjectId = gameObjectId;
             PrefabName = prefabName;
@@ -30,7 +29,9 @@ namespace core
             Rotation = rotation;
         }
 
-        public byte[] StarStartSerialization()
+
+
+        public override byte[] StartSerialization()
         {
             base.StartSerialization();
 
@@ -62,4 +63,4 @@ namespace core
             return this;
         }
     }
-}
+

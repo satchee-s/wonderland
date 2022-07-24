@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace core
 {
@@ -8,19 +7,19 @@ namespace core
         public Vector3 Position { get; private set; }
         public Quaternion Rotation { get; private set; }
 
-        public RotationAndPositonPacket(Player player) : base(PacketType.RotationAndPosition , player)
+        public RotationAndPositonPacket()
         {
             Position = Vector3.zero;
             Rotation = Quaternion.identity;
         }
 
-        public RotationAndPositonPacket(Vector3 position, Quaternion rotation)
+        public RotationAndPositonPacket(Vector3 position, Quaternion rotation, Player player) : base(PacketType.RotationAndPosition, player)
         {
             Position = position;
             Rotation = rotation;
         }
 
-        public byte[] StarStartSerialization()
+        public override byte[] StartSerialization()
         {
             base.StartSerialization();
 

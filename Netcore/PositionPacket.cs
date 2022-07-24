@@ -6,21 +6,21 @@ namespace core
     {
 
         public Vector3 Position { get; private set; }
-      
 
-        public PositionPacket(Player player) : base(PacketType.Position, player)
+
+        public PositionPacket()
         {
             Position = Vector3.zero;
-           
+
         }
 
-        public PositionPacket(Vector3 position, Quaternion rotation)
+        public PositionPacket(Vector3 position, Player player) : base(PacketType.Position, player)
         {
             Position = position;
-            
+
         }
 
-        public byte[] StarStartSerialization()
+        public override byte[] StartSerialization()
         {
             base.StartSerialization();
 

@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace core
 {
@@ -7,21 +6,21 @@ namespace core
     {
         public Quaternion Rotation { get; private set; }
 
-        public RotationPacket(Player player) : base(PacketType.Rotation, player)
+        public RotationPacket()
         {
             Rotation = Quaternion.identity;
         }
 
-        public RotationPacket( Quaternion rotation)
+        public RotationPacket(Quaternion rotation, Player player) : base(PacketType.Rotation, player)
         {
-           Rotation = rotation;
+            Rotation = rotation;
         }
 
         public byte[] StarStartSerialization()
         {
             base.StartSerialization();
 
-          
+
 
             bw.Write(Rotation.x);
             bw.Write(Rotation.y);

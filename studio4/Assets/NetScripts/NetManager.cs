@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Net.Sockets;
 using System.Net;
@@ -7,25 +6,28 @@ using core;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections.Generic;
 
 public class NetManager : MonoBehaviour
 {
     delegate void ConnectedToServer();
     ConnectedToServer ConnectedToServerEvent;
 
-   
-    
+
+
     [Header("Connect Panel")]
     [SerializeField] Button connectButton;
     [SerializeField] TMP_InputField playerNameInputField;
     [SerializeField] GameObject connectPanel;
 
-   
+
 
 
     Socket socket;
     Player player;
-    NetworkComponent nc;
+    public NetworkComponent nc;
+
+    List<GameObject> playerObjs = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,16 @@ public class NetManager : MonoBehaviour
 
                 connectPanel.SetActive(false);
 
+                //Debug.Log(nc.GameObjectID );
+                //Debug.Log(nc.prefabName);
+                //Debug.Log(nc.GameId);
+                //Debug.Log(nc.OwnerID);
+
                 InstantiateOverNetwork(nc.prefabName, Vector3.zero, Quaternion.identity);
+
+                Rig();
+
+
 
                 if (ConnectedToServerEvent != null) ConnectedToServerEvent();
 
@@ -57,9 +68,9 @@ public class NetManager : MonoBehaviour
 
         });
 
-        
 
-        
+
+
     }
 
 
@@ -85,16 +96,35 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Instantiate:
                         {
                             Debug.Log("Received instantiate packet");
-                            InstantiatePacket ip = new InstantiatePacket(player);
+                            InstantiatePacket ip = new InstantiatePacket();
                             ip.StartDeserialization(recievedBuffer);
 
                             print(ip.player.ID);
                             print(ip.player.Name);
                             print(ip.PrefabName);
 
-                            // InstantiateFromResources(ip.PrefabName, ip.Position, ip.Rotation, ip.GameObjectID, ip.Player);
+                            InstantiateFromResources(ip.PrefabName, ip.Position, ip.Rotation, ip.GameObjectId, ip.player);
                             break;
                         }
+
+                    case BasePacket.PacketType.Rigidbody:
+                        {
+                            RigidbodyPacket Rp = new RigidbodyPacket();
+                            Rp.StartDeserialization(recievedBuffer);
+                            break;
+                        }
+
+                    case BasePacket.PacketType.Destroy:
+                        {
+                            DestroyPacket Dp = new DestroyPacket();
+                            Dp.StartDeserialization(recievedBuffer);
+                            print(Dp.GameObjectId);
+
+                            DestroyObject(Dp.GameObjectId, player);
+                            break;
+                        }
+
+
                     default:
                         break;
                 }
@@ -105,15 +135,24 @@ public class NetManager : MonoBehaviour
         {
 
         }
+
     }
 
     GameObject InstantiateOverNetwork(string prefabName, Vector3 position, Quaternion rotation)
     {
-        GameObject go = Instantiate(Resources.Load($"Prefab/{prefabName}"), position, rotation) as GameObject;
+        Debug.Log(Resources.Load($"Prefabs/{prefabName}"));
+        GameObject go = Instantiate(Resources.Load($"Prefabs/{prefabName}"), position, rotation) as GameObject;
         nc = go.AddComponent<NetworkComponent>();
         nc.OwnerID = player.ID;
         nc.GameObjectID = Guid.NewGuid().ToString("N");
-        socket.Send(new InstantiatePacket(prefabName, nc.GameObjectID, position, rotation).StartSerialization());
+        // Debug.Log(rotation);
+        // Debug.Log(prefabName);
+        //Debug.Log(position);
+        //Debug.Log(nc.GameObjectID);
+
+        playerObjs.Add(go);
+
+        socket.Send(new InstantiatePacket(nc.GameObjectID, prefabName, position, rotation, player).StartSerialization());
 
         return go;
     }
@@ -121,12 +160,53 @@ public class NetManager : MonoBehaviour
 
     GameObject InstantiateFromResources(string prefabName, Vector3 position, Quaternion rotation, string gameObjectID, Player player)
     {
-        GameObject go = Instantiate(Resources.Load($"Prefab/{prefabName}"), position, rotation) as GameObject;
+        GameObject go = Instantiate(Resources.Load($"Prefabs/{prefabName}"), position, rotation) as GameObject;
         nc = go.AddComponent<NetworkComponent>();
         nc.OwnerID = player.ID;
         nc.GameObjectID = gameObjectID;
 
 
         return go;
+    }
+
+    void Rig()
+    {
+
+
+        GameObject go = playerObjs[0];
+        go.GetComponent<Rigidbody>();
+
+        Debug.Log(go);
+        Debug.Log(go.GetComponent<Rigidbody>());
+
+        Vector3 Velocity = go.GetComponent<Rigidbody>().velocity;
+        Debug.Log(Velocity);
+
+        socket.Send(new RigidbodyPacket(player, nc.GameObjectID, Velocity).StartSerialization());
+        Debug.Log("send");
+
+
+    }
+
+    /***
+    UI
+
+    ***/
+
+
+    void DestroyObject(string GameObjectID, Player player)
+    {
+        NetworkComponent[] nc = FindObjectsOfType<NetworkComponent>();
+
+        for (int i = 0; i < nc.Length; i++)
+        {
+            if (nc[i].GameObjectID == GameObjectID)
+            {
+                Destroy(nc[i].gameObject);
+                break;
+            }
+
+        }
+
     }
 }

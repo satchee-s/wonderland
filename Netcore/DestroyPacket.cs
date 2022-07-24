@@ -7,12 +7,12 @@ namespace core
 
         public string GameObjectId { get; private set; }
 
-        public DestroyPacket(Player player) : base(PacketType.Destroy, player)
+        public DestroyPacket()
         {
             GameObjectId = "";
         }
 
-        public DestroyPacket(string gameObjectId)
+        public DestroyPacket(string gameObjectId, Player player) : base(PacketType.Destroy, player)
         {
             GameObjectId = gameObjectId;
         }
@@ -35,3 +35,4 @@ namespace core
         }
     }
 }
+
