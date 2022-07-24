@@ -1,9 +1,0 @@
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\bin\Debug\core.dll
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\bin\Debug\core.pdb
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\obj\Debug\core.csproj.AssemblyReference.cache
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\obj\Debug\core.csproj.CoreCompileInputs.cache
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\obj\Debug\core.dll
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\obj\Debug\core.pdb
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\bin\Debug\UnityEngine.dll
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\bin\Debug\UnityEngine.xml
-C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\obj\Debug\core.csproj.CopyComplete
