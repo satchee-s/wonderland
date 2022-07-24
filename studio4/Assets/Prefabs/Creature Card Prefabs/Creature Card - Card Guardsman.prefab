@@ -741,10 +741,13 @@ MonoBehaviour:
   attack: 4
   health: 4
   description: I Am A Card Guardsman
+  hasBeenPlayed: 0
+  handIndex: 0
   nameText: {fileID: 623117239048423410}
   attackText: {fileID: 623117238048489054}
   healthText: {fileID: 623117238985255843}
   descriptionText: {fileID: 623117237949398365}
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &5216330673391100866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,7 +760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yDistFromTable: 1
+  yDistFromTable: 24
+  canBeMoved: 1
 --- !u!65 &-7551631810495522183
 BoxCollider:
   m_ObjectHideFlags: 0

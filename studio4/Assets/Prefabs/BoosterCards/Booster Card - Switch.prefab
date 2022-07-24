@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 135710375292243330}
   - component: {fileID: 6714826475061346712}
   - component: {fileID: 3450303557129047638}
+  - component: {fileID: -7970431501524499527}
   m_Layer: 0
   m_Name: Booster Card - Switch
   m_TagString: Untagged
@@ -249,6 +250,7 @@ MonoBehaviour:
   attackText: {fileID: 135710376794405944}
   healthText: {fileID: 135710376647177758}
   descriptionText: {fileID: 135710375237840275}
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!65 &6714826475061346712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,10 +279,21 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   EToInteract: {fileID: 0}
   RToReturn: {fileID: 0}
-  slot1: {fileID: 0}
-  slot2: {fileID: 0}
-  slot3: {fileID: 0}
-  slot4: {fileID: 0}
+  lockPos: 0
+--- !u!114 &-7970431501524499527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135710375292243328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yDistFromTable: 0
+  canBeMoved: 1
 --- !u!1 &135710375306721077
 GameObject:
   m_ObjectHideFlags: 0
