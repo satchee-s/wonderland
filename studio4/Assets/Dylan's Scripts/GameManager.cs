@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public List<Card> creatureDeck = new List<Card>();
     public List<Card> boosterDeck = new List<Card>();
     public List<Card> container = new List<Card>();
+    public List<Card> handCards = new List<Card>();
     public GameObject OneboosterOneCreature;
     public GameObject TwoCreature;
     public GameObject ShuffleCard;
@@ -32,78 +33,43 @@ public class GameManager : MonoBehaviour
         FirstTurn();
     }
 
+    void SetRandomCards()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            if (i < 2)
+            { 
+                handCards.Add(boosterDeck[Random.Range(0, boosterDeck.Count)]);
+                handCards[i].tag = "Selectable";
+                boosterDeck.Remove(handCards[i]);
+            }
+            else
+            {
+                handCards.Add(creatureDeck[Random.Range(0, creatureDeck.Count)]);
+                handCards[i].tag = "Selectable";
+                creatureDeck.Remove(handCards[i]);
+            }
+        }
+    }
+
     public void FirstTurn()
     {
+        SetRandomCards();
 
         ShuffleCard.SetActive(false);
-
-        Card creatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
-        Card secCreatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
-        Card thirdCreatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
-        Card fourthCreatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
-
-        Card boosterCard = boosterDeck[Random.Range(0, boosterDeck.Count)];
-        Card secBoosterCard = boosterDeck[Random.Range(0, boosterDeck.Count)];
 
         for (int i = 0; i < availableCardSlots.Length; i++)
         {
             if (availableCardSlots[i] == true)
             {
-                creatureCard.gameObject.SetActive(true);
-                secCreatureCard.gameObject.SetActive(true);
-                thirdCreatureCard.gameObject.SetActive(true);
-                fourthCreatureCard.gameObject.SetActive(true);
-
-                boosterCard.gameObject.SetActive(true);
-                secBoosterCard.gameObject.SetActive(true);  
-
-                creatureCard.gameObject.tag = "Selectable";
-                secCreatureCard.gameObject.tag = "Selectable";
-                thirdCreatureCard.gameObject.tag = "Selectable";
-                fourthCreatureCard.gameObject.tag = "Selectable";
-
-                boosterCard.gameObject.tag = "Selectable";
-                secBoosterCard.gameObject.tag = "Selectable";
-
-                creatureCard.transform.position = cardSlots[i].transform.position;
-                creatureCard.originalPos = creatureCard.transform.position;
-
-
-                secCreatureCard.transform.position = cardSlots[i + 1].transform.position;
-                secCreatureCard.originalPos = secCreatureCard.transform.position;
-
-
-                thirdCreatureCard.transform.position = cardSlots[i + 2].transform.position;
-                thirdCreatureCard.originalPos = thirdCreatureCard.transform.position;
-
-
-                fourthCreatureCard.transform.position = cardSlots[i + 3].transform.position;
-                fourthCreatureCard.originalPos = fourthCreatureCard.transform.position;
-
-
-                boosterCard.transform.position = cardSlots[i + 4].transform.position;
-                boosterCard.originalPos = boosterCard.transform.position;
-
-                secBoosterCard.transform.position = cardSlots[i + 5].transform.position;
-                secBoosterCard.originalPos = secBoosterCard.transform.position;
-
+                handCards[i].transform.position = cardSlots[i].transform.position;
+                handCards[i].originalPos = handCards[i].transform.position;
                 availableCardSlots[i] = false;
-
-                creatureDeck.Remove(creatureCard);
-                creatureDeck.Remove(secCreatureCard);
-                creatureDeck.Remove(thirdCreatureCard);
-                creatureDeck.Remove(fourthCreatureCard);
-
-                boosterDeck.Remove(boosterCard);
-                boosterDeck.Remove(secBoosterCard);
-
-
-                HasDrawedCards = true;
-                OneboosterOneCreature.SetActive(false);
-                TwoCreature.SetActive(false);
-                return;
             }
         }
+        HasDrawedCards = true;
+        OneboosterOneCreature.SetActive(false);
+        TwoCreature.SetActive(false);
 
     }
 

@@ -1072,10 +1072,13 @@ MonoBehaviour:
   attack: 5
   health: 7
   description: I Am Cheshire
+  hasBeenPlayed: 0
+  handIndex: 0
   nameText: {fileID: 889279685848340734}
   attackText: {fileID: 889279685379414737}
   healthText: {fileID: 889279685543178775}
   descriptionText: {fileID: 889279685639987085}
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &2562053427353564517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,7 +1091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yDistFromTable: 1
+  yDistFromTable: 24
+  canBeMoved: 1
 --- !u!65 &-4733878520334864671
 BoxCollider:
   m_ObjectHideFlags: 0
