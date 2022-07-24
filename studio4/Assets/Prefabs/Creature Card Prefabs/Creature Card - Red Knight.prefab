@@ -237,10 +237,13 @@ MonoBehaviour:
   attack: 4
   health: 5
   description: I Am A Red Knight
+  hasBeenPlayed: 0
+  handIndex: 0
   nameText: {fileID: 613814710788658147}
   attackText: {fileID: 613814711395071917}
   healthText: {fileID: 613814712044907094}
   descriptionText: {fileID: 613814710857991780}
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &2348690996409229825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yDistFromTable: 1
+  yDistFromTable: 24
+  canBeMoved: 1
 --- !u!65 &-8221844088161628060
 BoxCollider:
   m_ObjectHideFlags: 0

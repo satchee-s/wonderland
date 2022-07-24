@@ -509,10 +509,13 @@ MonoBehaviour:
   attack: 8
   health: 6
   description: hello
+  hasBeenPlayed: 0
+  handIndex: 0
   nameText: {fileID: 548021709498624393}
   attackText: {fileID: 548021709503998695}
   healthText: {fileID: 548021709659807937}
   descriptionText: {fileID: 548021708921568076}
+  originalPos: {x: 0, y: 0, z: 0}
 --- !u!114 &1824293530850553943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yDistFromTable: 1
+  yDistFromTable: 24
+  canBeMoved: 1
 --- !u!65 &-893324067099915863
 BoxCollider:
   m_ObjectHideFlags: 0
