@@ -35,18 +35,19 @@ public class RaycastAnim : MonoBehaviour
      {
 
         if (raycasthit.collider.gameObject.CompareTag("Selectable") && isOn == true)//check if raycast tag is Equal to selectable tag
-        {
-            EToInteract.enabled = true;
-            Debug.Log(raycasthit.collider.gameObject.name); // Shows which card the mpuse is over
-            raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
+            {
+                EToInteract.enabled = true;
+                Debug.Log(raycasthit.collider.gameObject.name); // Shows which card the mpuse is over
+                raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
+               
 
-           if (Input.GetKey(KeyCode.E))
-           { 
-    
-              foreach (GameObject card in SelectableCardList)
-              {
+                if (Input.GetKey(KeyCode.E))
+                {
+                
+                foreach (GameObject card in SelectableCardList)
+                {
                  card.gameObject.tag = "InteractingCard";
-              }
+                }
 
                     isOn = true;
                     EToInteract.enabled = false;
@@ -54,29 +55,27 @@ public class RaycastAnim : MonoBehaviour
 
                     Vector3 centerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1f));  //take that specfic gameobj with the mouse hovering over it to do the stuff below
                     raycasthit.collider.gameObject.transform.position = centerPos;
-
-                    raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(15f, lockPos, lockPos);
-            }
+                }
         }
-        if (Input.GetKey(KeyCode.R))
-        {
+                if (Input.GetKey(KeyCode.R))
+                {
   
-             foreach (GameObject card in SelectableCardList)
-             {
+                foreach (GameObject card in SelectableCardList)
+                {
                  card.gameObject.tag =  "Selectable";
-             }
+                }
 
-                isOn = true;
-                RToReturn.enabled = false;
-                EToInteract.enabled = true;
+                 isOn = true;
+                 RToReturn.enabled = false;
+                 EToInteract.enabled = true;
 
-                gameObject.transform.position = this.gameObject.GetComponent<Card>().originalPos;
-            }
+                gameObject.transform.position = gameObject.GetComponent<Card>().originalPos;
+                 }
 
         if (raycasthit.collider.CompareTag("Table"))
         {
-            gameObject.transform.rotation = this.gameObject.GetComponent<Card>().originalRotationValue;
-            EToInteract.enabled = false;
+           gameObject.transform.rotation = gameObject.GetComponent<Card>().originalRotationValue;
+           EToInteract.enabled = false;
         }
      }
      }

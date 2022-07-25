@@ -12,6 +12,7 @@ TagManager:
   - Slot3
   - Slot4
   - InteractingCard
+  - HoverCard
   layers:
   - Default
   - TransparentFX

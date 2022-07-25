@@ -215,8 +215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.5644, y: -15.3218}
-  m_SizeDelta: {x: 199.4519, y: 49.8606}
+  m_AnchoredPosition: {x: 59.4, y: -15.28}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &889279685543178777
 MeshRenderer:
@@ -468,18 +468,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Class: Peasant
-
-
-    Magic Hat Cost: One Magic Hat
-
-    Sacrifice Outcome:
-    One Magic Hat
-
-    Hibernation Count When Played: Zero
-
-
-    Effect: None '
+  m_text: "Class: Elite\r\n\nMagic Hat Cost: Six Magic Hats\r\nSacrifice Outcome:
+    Three Magic Hats\r\nHibernation Count When Played: Two Turns\r\n\nEffect: All
+    opposing player\u2019s played creature cards lose one health point when played.
+    This creature card\u2019s effect becomes inactive when discarded.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -506,8 +498,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.68
-  m_fontSizeBase: 0.68
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -679,7 +671,7 @@ GameObject:
   - component: {fileID: 889279685848340673}
   - component: {fileID: 889279685848340734}
   m_Layer: 0
-  m_Name: White Rabbit
+  m_Name: Executioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: White Rabbit
+  m_text: Executioner
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1003,7 +995,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2329dd9bcaeab06468b2c5e8e3c6b719, type: 2}
+  - {fileID: 2100000, guid: 6075eebac9128084ba95a700df870c5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1038,7 +1030,7 @@ GameObject:
   - component: {fileID: 2562053427353564517}
   - component: {fileID: -4733878520334864671}
   m_Layer: 0
-  m_Name: Creature Card - White Rabbit
+  m_Name: Creature Card - Executioner
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1291,7 +1283,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: '6
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1398,8 +1392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.714478, y: -15.323401}
-  m_SizeDelta: {x: 199.41869, y: 49.85521}
+  m_AnchoredPosition: {x: 59.54, y: -15.28}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1167179051968202641
 MeshRenderer:
@@ -1471,7 +1465,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: '8
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
