@@ -7,3 +7,5 @@ C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\obj\Debug\core.pdb
 C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\bin\Debug\UnityEngine.dll
 C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\bin\Debug\UnityEngine.xml
 C:\Users\Rokan\OneDrive\Desktop\netApps\Networking\core\obj\Debug\core.csproj.CopyComplete
+C:\Users\Dylan Suaris\wonderland\Netcore\core\obj\Debug\core.csproj.AssemblyReference.cache
+C:\Users\Dylan Suaris\wonderland\Netcore\core\obj\Debug\core.csproj.CoreCompileInputs.cache
