@@ -48,10 +48,10 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        nameText.text = " " + cardName;
+        /*nameText.text = " " + cardName; --- why??
         attackText.text = " " + attack;
         healthText.text = " " + health;
-        descriptionText.text = " " + description;
+        descriptionText.text = " " + description;*/
 
         if(PlayerTurnSystem.currentMana >= cost && summoned == false)
         {
@@ -62,12 +62,7 @@ public class Card : MonoBehaviour
         if(canBeSummoned == true)
         {
 
-        }
-
-        
-
-        
-        
+        }        
     }
 
     private void Start()
@@ -79,16 +74,6 @@ public class Card : MonoBehaviour
         summoned = false;
 
     }
-    /*private void OnMouseDown()
-    {
-        if(hasBeenPlayed == false)
-        {
-            transform.position = Vector3.up * 5;
-            hasBeenPlayed = true;
-            gm.availableCardSlots[handIndex] = true;
-            Invoke("Discard the Card", 2f);
-        }
-    }*/
 
     public void Summon()
     {
