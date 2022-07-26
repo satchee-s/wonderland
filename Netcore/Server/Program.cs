@@ -16,7 +16,7 @@ namespace Client
             Listening.Listen(10);
             Listening.Blocking = false;
 
-            Console.WriteLine("waiting for a Client to Connect");
+            Console.WriteLine("Waiting for a Client to Connect");
             List<Socket> clients = new List<Socket>();
 
             while (true)
@@ -86,9 +86,7 @@ namespace Client
                 }
 
             }
-                Console.ReadKey();
-
-            
+         Console.ReadKey(); 
         }
     }
 }
