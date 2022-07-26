@@ -10,6 +10,7 @@ using System.Collections.Generic;
 
 public class NetManager : MonoBehaviour
 {
+    SceneController sC;
     delegate void ConnectedToServer();
     ConnectedToServer ConnectedToServerEvent;
 
@@ -17,6 +18,9 @@ public class NetManager : MonoBehaviour
     [SerializeField] Button connectButton;
     [SerializeField] TMP_InputField playerNameInputField;
     [SerializeField] GameObject connectPanel;
+
+    [SerializeField] Button startButton;
+    [SerializeField] TMP_InputField setPLayerName;
 
     Socket socket;
     Player player;
@@ -37,8 +41,10 @@ public class NetManager : MonoBehaviour
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
                 socket.Blocking = false;
-
+ 
                 connectPanel.SetActive(false);
+                sC.connectToLobby();
+                playerNameInputField.text = setPLayerName.text;
 
                 //Debug.Log(nc.GameObjectID );
                 //Debug.Log(nc.prefabName);

@@ -6,35 +6,13 @@ using UnityEngine.UI;
 using TMPro;
 public class SceneController : MonoBehaviour
 {
+    public TMP_InputField enterName;
+    public GameObject AlertMessage;
 
-    public Button searchMatchButton;
-    public Button tutorial;
-
-    public Button exitGame;
-
-    public void Awake()
+    private void Start()
     {
-        MainMenu();
+        AlertMessage.SetActive(false);
     }
-
-   /* public void Update()
-    {
-        if (searchMatchButton)
-        {
-            connectToLobby();
-        }
-
-        if (tutorial)
-        {
-            TutorialScene();
-        }
-
-        if (exitGame)
-        {
-            Exit();
-        }
-        
-    }*/
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
@@ -50,7 +28,15 @@ public class SceneController : MonoBehaviour
     }
     public void Lobby()
     {
-        SceneManager.LoadScene("Lobby");
+        if(enterName != null)
+        {
+            SceneManager.LoadScene("Lobby");
+        }
+        else
+        {
+            AlertMessage.SetActive(true);
+        }
+        
     }
     public void Exit()
     {
