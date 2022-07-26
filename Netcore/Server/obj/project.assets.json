@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rokan\\OneDrive\\Desktop\\netApps\\Networking\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\Rokan\\wonderland\\Netcore\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\Rokan\\OneDrive\\Desktop\\netApps\\Networking\\Server\\Server.csproj",
+      "projectPath": "C:\\Users\\Rokan\\wonderland\\Netcore\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\Rokan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rokan\\OneDrive\\Desktop\\netApps\\Networking\\Server\\obj\\",
+      "outputPath": "C:\\Users\\Rokan\\wonderland\\Netcore\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,8 +57,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Rokan\\OneDrive\\Desktop\\netApps\\Networking\\core\\core.csproj": {
-              "projectPath": "C:\\Users\\Rokan\\OneDrive\\Desktop\\netApps\\Networking\\core\\core.csproj"
+            "C:\\Users\\Rokan\\wonderland\\Netcore\\core\\core.csproj": {
+              "projectPath": "C:\\Users\\Rokan\\wonderland\\Netcore\\core\\core.csproj"
             }
           }
         }

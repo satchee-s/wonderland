@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,8 @@ public class PlayerTurnSystem : MonoBehaviour
 
     public int yourTurn, OponentsTurn , seconds , random;
 
-    public Text turnText , manaText , timerText, enemyManaText;
+    public TextMeshProUGUI turnText , manaText , timerText, enemyManaText;
+
 
     public static int maxMana , currentMana , maxEnemyMana , currentEnemyMana;
 
@@ -84,6 +86,7 @@ public class PlayerTurnSystem : MonoBehaviour
         isYourTurn= true;
         yourTurn += 1;
 
+        maxMana += 1;
         currentMana = maxMana;
 
         startTurn = true;
