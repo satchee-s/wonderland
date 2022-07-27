@@ -13,7 +13,7 @@ public class MouseMovement : MonoBehaviour
     {
         cam = Camera.main;
         card = GetComponent<Card>();
-        yDistFromTable = transform.position.y;
+        yDistFromTable = transform.position.y + 0.2f;
     }
 
     private void OnMouseDrag()
