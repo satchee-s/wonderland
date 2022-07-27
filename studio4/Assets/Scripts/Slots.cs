@@ -4,45 +4,24 @@ using UnityEngine;
 
 public class Slots : MonoBehaviour
 {
-    bool cardInSlot = false;
-    GameObject currentCard;
+    Vector3 slotPosition;
+    bool hasCard = false;
 
-    public Transform[] cardSlots;
-    public bool[] availableCardSlots;
-    int currentCardPos = 0;
+    private void Start()
+    {
+        slotPosition = new Vector3 (transform.position.x, transform.position.y + 0.1f, transform.position.z);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (!cardInSlot)
+        if (other.gameObject.CompareTag("Selectable"))
         {
-            if (other.CompareTag("Card"))
+            if (!hasCard)
             {
-                /*Debug.Log("card detected");
-                other.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y +0.5f, transform.position.z);
-                cardInSlot = true;
-                currentCard = other.gameObject;*/
-
-                if (currentCardPos < 4)
-                {
-                    Debug.Log("Card added to slot");
-                    //other.gameObject.SetActive(true);
-                    other.transform.position = cardSlots[currentCardPos].transform.position;
-                    other.gameObject.GetComponent<MouseMovement>().canBeMoved = false;
-                    availableCardSlots[currentCardPos] = false;
-                    currentCardPos++;
-                }
+                other.gameObject.GetComponent<Card>().originalPos = slotPosition;
+                other.GetComponent<MouseMovement>().canBeMoved = false;
+                other.gameObject.transform.position = slotPosition;
+                hasCard = true;
             }
         }
     }
-
-
-    /*private void OnMouseEnter()
-    {
-        Debug.Log("Object clicked");
-        if (cardInSlot)
-        {
-            currentCard = null;
-            cardInSlot = false;
-        }
-    }*/
-
 }
