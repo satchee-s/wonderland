@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "1.3.9",
       "depth": 0,
@@ -94,6 +100,22 @@
         "com.unity.modules.physics2d": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "st.one-line": {
+      "version": "https://github.com/slavniyteo/one-line.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "st.rect-ex": "0.2.1"
+      },
+      "hash": "0c049d166c59683d136276c63e7f8691f3b6a50c"
+    },
+    "st.rect-ex": {
+      "version": "https://github.com/slavniyteo/rect-ex.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c8c32b33ce250aa927de7f6c79ae7c0b6eab36cb"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

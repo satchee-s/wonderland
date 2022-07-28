@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Card
+  - Selectable
+  - Table
+  - Slot1
+  - Slot2
+  - Slot3
+  - Slot4
+  - InteractingCard
+  - HoverCard
   layers:
   - Default
   - TransparentFX
