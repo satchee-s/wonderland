@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private bool SecondStep = false;
     private bool ThirdStep = false;
 
+    public RaycastAnim rA;
 
     public void Start()
     {
@@ -159,5 +160,10 @@ public class GameManager : MonoBehaviour
                 creatureDeck[randomIndex] = container[0];
             }
         }
+    }
+
+    public void GoBack()
+    {
+        GetComponent<RaycastAnim>().GoBack1();
     }
 }
