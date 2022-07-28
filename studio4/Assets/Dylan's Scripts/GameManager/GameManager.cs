@@ -161,9 +161,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
-    public void GoBack()
-    {
-        GetComponent<RaycastAnim>().GoBack1();
-    }
 }
