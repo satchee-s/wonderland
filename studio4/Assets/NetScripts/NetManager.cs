@@ -19,9 +19,6 @@ public class NetManager : MonoBehaviour
     [SerializeField] GameObject connectPanel;
     [SerializeField] GameObject matchMakingPanel;
 
-    [SerializeField] GameObject PLayer1Panel;
-    [SerializeField] GameObject Player2Panel;
-
     [SerializeField] GameObject opponentFound;
     [SerializeField] GameObject lookingForOpponent;
 

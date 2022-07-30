@@ -10,6 +10,8 @@ public class TutorialManager : MonoBehaviour
     private int i;
     private int countForInput;
 
+    public bool firstRun;
+    public bool interacted;
 
     void Start()
     {
@@ -18,99 +20,108 @@ public class TutorialManager : MonoBehaviour
 
     public void Update()
     {
-        for (int i = 0; i < popUps.Length; i++)
+        if (firstRun)
         {
-            if (this.i == i)
+            firstPopUp.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                popUps[i].SetActive(true);
+                firstRun = false;
+                firstPopUp.SetActive(false);
             }
-            else
+        }
+        else
+        {
+            if (interacted)
             {
-                popUps[i].SetActive(false);
-            }
-            if (i == 0)
-            {
-                if (Input.GetKeyDown(KeyCode.Return)) // INTRO TO SKIP
+                for (int i = 0; i < popUps.Length; i++)
                 {
-                    i++;
+                    if (this.i == i)
+                    {
+                        popUps[i].SetActive(true);
+                    }
+                    else
+                    {
+                        popUps[i].SetActive(false);
+                    }
                 }
-            }
-            else if (i == 1) //MOVING AND LOOKING
-            {
-                if (Input.GetKeyDown(KeyCode.W))
+
+                if (i == 0)
                 {
-                    countForInput++;  //1
+                    if (Input.GetKeyDown(KeyCode.Return)) // INTRO TO SKIP
+                    {
+                        i++;
+                    }
                 }
-                if (Input.GetKeyDown(KeyCode.A))
+                else if (i == 1) //MOVING AND LOOKING
                 {
-                    countForInput++;    //2
+                    if (Input.GetKeyDown(KeyCode.W))
+                    {
+                        countForInput++;  //1
+                    }
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        countForInput++;    //2
+                    }
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        countForInput++; //3
+                    }
+                    if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        countForInput++;   //4
+                    }
+                    if (countForInput >= 4)
+                    {
+                        if (Input.GetKeyDown(KeyCode.Return))
+                        {
+                            Debug.Log("worgehdks");
+                            i++;
+                        }
+                    }
                 }
-                if (Input.GetKeyDown(KeyCode.S))
-                {
-                    countForInput++; //3
-                }
-                if (Input.GetKeyDown(KeyCode.D))
-                {
-                    countForInput++;   //4
-                }
-                if (countForInput >= 4)
+                else if (i == 2) //JUMP
                 {
                     if (Input.GetKeyDown(KeyCode.Return))
                     {
-                        Debug.Log("worgehdks");
+                        i++;
+                    }
+                }
+                else if (i == 3) //RKey
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 4) //coMBAT
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 5) //Inventory
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 6) //End
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
+                        i++;
+                    }
+                }
+                else if (i == 7) //End
+                {
+                    if (Input.GetKeyDown(KeyCode.Return))
+                    {
                         i++;
                     }
                 }
             }
-            else if (i == 2) //JUMP
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    i++;
-                }
-            }
-            else if (i == 3) //RKey
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    i++;
-                }
-            }
-            else if (i == 4) //coMBAT
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    i++;
-                }
-            }
-            else if (i == 5) //Inventory
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    i++;
-                }
-            }
-            else if (i == 6) //End
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    i++;
-                }
-            }
-            else if (i == 7) //End
-            {
-                if (Input.GetKeyDown(KeyCode.Return))
-                {
-                    i++;
-                }
-            }
         }
-
-
-    }
-    public void Next()
-    {
-        i++;
     }
 }
-

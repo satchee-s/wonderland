@@ -43,7 +43,7 @@ public class RaycastAnim : MonoBehaviour
                 //Debug.Log(raycasthit.collider.gameObject.name); // Shows which card the mpuse is over
                 raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
 
-               if (Input.GetMouseButtonDown(0)) //Left click to View Card
+                if (Input.GetMouseButtonDown(0))
                 {
                     
                     foreach (GameObject card in SelectableCardList)
@@ -62,8 +62,7 @@ public class RaycastAnim : MonoBehaviour
 
                 
             }
-
-            if (Input.GetKey(KeyCode.R))
+           /* if (Input.GetKey(KeyCode.R))
             {
 
                 foreach (GameObject card in SelectableCardList)
@@ -73,23 +72,21 @@ public class RaycastAnim : MonoBehaviour
 
                 isOn = true;
                 interactPanel.SetActive(true);
-                goBackButton.gameObject.SetActive(false);
 
-                transform.position = this.gameObject.GetComponent<Card>().originalPos;
-            } 
-
+                gameObject.transform.position = gameObject.GetComponent<Card>().originalPos;
+            } */
 
             if (raycasthit.collider.CompareTag("Table"))
             {
 
                 interactPanel.SetActive(false);
-                transform.rotation = gameObject.GetComponent<Card>().originalRotationValue;
+                gameObject.transform.rotation = gameObject.GetComponent<Card>().originalRotationValue;
            
             }
         }
     }
 
-   /* public void GoBack1()
+    public void GoBack1()
     {
         foreach (GameObject card in SelectableCardList)
         {
@@ -100,6 +97,6 @@ public class RaycastAnim : MonoBehaviour
         interactPanel.SetActive(true);
         goBackButton.gameObject.SetActive(false);
 
-        transform.position = gameObject.GetComponent<Card>().originalPos;
-    }*/
+        this.gameObject.transform.position = this.gameObject.GetComponent<Card>().originalPos;
+    }
 }

@@ -69,7 +69,6 @@ public class Card : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
         originalRotationValue = transform.rotation;
-        originalPos = transform.position;
 
         canBeSummoned = false;
         summoned = false;
