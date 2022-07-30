@@ -19,6 +19,8 @@ namespace Client
             Console.WriteLine("Waiting for a Client to Connect");
             List<Socket> clients = new List<Socket>();
 
+            Player player;
+
             while (true)
             {
                 try
@@ -37,23 +39,6 @@ namespace Client
                 {
                     for (int i = 0; i < clients.Count; i++)
                     {
-                        if (clients.Count == 0) //if first player joins Server
-                        {
-                            //client list packet, socket.send, new client list packet, clients.count, .serealized
-                        }
-                        else if(clients.Count == 1) //if second player Joins the Server
-                        {
-
-                        }
-
-                        if(clients.Count == 2) //if there are 2 players start game button works
-                        {
-                            Console.WriteLine("launch game");
-                        }
-                        else //else if there are not dont start game (start game button doesnt work)
-                        {
-                            Console.WriteLine("Waiting for 2nd PLayer");
-                        }
 
                         if (clients[i].Available > 0)
                         {
@@ -62,7 +47,28 @@ namespace Client
                             clients[i].Receive(recievedBuffer);
                             BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
 
+                            player = pb.player;
 
+                            if (clients.Count == 0) //if first player joins Server
+                            {
+                                //player.ID
+                            //pb.player;
+                            //Set as Host
+                            //client list packet, socket.send, new client list packet, clients.count, .serealized
+                        }
+                            else if (clients.Count == 1) //if second player Joins the Server
+                            {
+
+                            }
+
+                            if (clients.Count == 2) //if there are 2 players start game button works
+                            {
+                                Console.WriteLine("launch game");
+                            }
+                            else //else if there are not dont start game (start game button doesnt work)
+                            {
+                                Console.WriteLine("Waiting for 2nd PLayer");
+                            }
 
                             switch (pb.Type)
                             {

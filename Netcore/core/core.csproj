@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionPackercs.cs" />
     <Compile Include="DestroyPacket.cs" />
     <Compile Include="InstantiatePacket.cs" />
     <Compile Include="MessagePacket.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="PositionPacket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RigidbodyPacket.cs" />
+    <Compile Include="RoomPacket.cs" />
     <Compile Include="RotationAndPositonPacket.cs" />
     <Compile Include="RotationPacket.cs" />
     <Compile Include="ScalePacket.cs" />
