@@ -16,7 +16,7 @@ public class PlayerTurnSystem : MonoBehaviour
     public static int maxMana , currentMana , maxEnemyMana , currentEnemyMana;
 
     
-    public bool timerStart;
+    public bool timerStart , manabool;
     
 
 
@@ -24,8 +24,8 @@ public class PlayerTurnSystem : MonoBehaviour
     void Start()
     {
         StartRound();
-
-        seconds = 60;
+        
+        seconds = 30;
         timerStart = true;
         
     }
@@ -51,7 +51,7 @@ public class PlayerTurnSystem : MonoBehaviour
         {
             EndYourTurn();
             timerStart = true;
-            seconds = 60;
+            seconds = 30;
         }
 
         timerText.text = seconds + "";
@@ -66,7 +66,7 @@ public class PlayerTurnSystem : MonoBehaviour
         {
             EndOponentsTurn();
             timerStart = true;
-            seconds = 60;
+            seconds = 30;
         }
 
         enemyManaText.text = currentEnemyMana + "/" + maxEnemyMana;
@@ -77,8 +77,18 @@ public class PlayerTurnSystem : MonoBehaviour
             isYourTurn = false;
             OponentsTurn += 1;
 
+
+        if(manabool == true)
+        {
+            maxEnemyMana += 2;
+            currentEnemyMana += 2;
+        }
+        else
+        {
             maxEnemyMana += 1;
-        currentEnemyMana += 1;
+            currentEnemyMana += 1;
+        }
+
         }
 
        public void EndOponentsTurn()
@@ -86,8 +96,19 @@ public class PlayerTurnSystem : MonoBehaviour
         isYourTurn= true;
         yourTurn += 1;
 
-        maxMana += 1;
-        currentMana = maxMana;
+        //maxMana += 1;
+        //currentMana = maxMana;
+
+        if(manabool == false)
+        {
+            maxMana += 2;
+            currentMana += 2;
+        }
+        else
+        {
+            maxMana += 1;
+            currentMana += 1;
+        }
 
         startTurn = true;
 
@@ -100,6 +121,7 @@ public class PlayerTurnSystem : MonoBehaviour
         if(random == 0)
         {
             isYourTurn = true;
+            manabool = true;
 
             yourTurn = 1;
             OponentsTurn = 0;
@@ -116,6 +138,7 @@ public class PlayerTurnSystem : MonoBehaviour
         if(random == 1)
         {
             isYourTurn = false;
+            manabool = false;
             yourTurn = 0;
             OponentsTurn = 1;
 
