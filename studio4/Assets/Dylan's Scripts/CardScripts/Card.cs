@@ -19,6 +19,14 @@ public class Card : MonoBehaviour
     public int cost;
     public bool canBeSummoned;
     public bool summoned;
+    public bool sleep;
+    public bool cantAttack;
+    public bool canAttack;
+    public bool targeting;
+    public bool targetingEnemy;
+    public bool onlyThisCardWillAttack;
+    public static bool staticTarget;
+    public static bool staticTargetEnemy;
     private GameManager gm;
     
   
@@ -26,7 +34,12 @@ public class Card : MonoBehaviour
     public TextMeshPro attackText;
     public TextMeshPro healthText;
     public TextMeshPro descriptionText;
-    
+
+    public GameObject attackBordor;
+    public GameObject Target;
+    public GameObject Enemy;
+
+   
 
     public Vector3 originalPos;
     public Quaternion originalRotationValue;
@@ -62,7 +75,17 @@ public class Card : MonoBehaviour
         if(canBeSummoned == true)
         {
 
-        }        
+        }
+
+        if (canAttack == true)
+        {
+            attackBordor.SetActive(true);
+        }
+        else
+        {
+
+        }
+
     }
 
     private void Start()
@@ -73,7 +96,17 @@ public class Card : MonoBehaviour
         canBeSummoned = false;
         summoned = false;
 
+        canAttack = false;
+        sleep = true;
+
+        Enemy = GameObject.Find("Enemy HP");
+
+        targeting = false;
+        targetingEnemy = false;
+
     }
+
+
 
     public void Summon()
     {
@@ -81,6 +114,13 @@ public class Card : MonoBehaviour
         PlayerTurnSystem.currentMana -= cost;
         summoned = true;
 
+        
+
+    }
+
+    public void Maxmana(int x)
+    {
+        PlayerTurnSystem.maxMana += x;
     }
 
 }

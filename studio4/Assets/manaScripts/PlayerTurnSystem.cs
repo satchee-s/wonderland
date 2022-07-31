@@ -28,6 +28,7 @@ public class PlayerTurnSystem : MonoBehaviour
         seconds = 30;
         timerStart = true;
         
+
     }
 
     // Update is called once per frame
@@ -53,6 +54,7 @@ public class PlayerTurnSystem : MonoBehaviour
             timerStart = true;
             seconds = 30;
         }
+       
 
         timerText.text = seconds + "";
 
@@ -89,7 +91,10 @@ public class PlayerTurnSystem : MonoBehaviour
             currentEnemyMana += 1;
         }
 
-        }
+        timerStart = true;
+        seconds = 30;
+
+    }
 
        public void EndOponentsTurn()
        {
@@ -111,8 +116,10 @@ public class PlayerTurnSystem : MonoBehaviour
         }
 
         startTurn = true;
+        timerStart = true;
+        seconds = 30;
 
-       }
+    }
 
     public void StartRound()
     {
@@ -174,6 +181,18 @@ public class PlayerTurnSystem : MonoBehaviour
             StartCoroutine(EnemyTimer());
         }
 
+    }
+
+    public void endTurnbutton()
+    {
+        
+        if (isYourTurn == true)
+        {
+            
+            EndYourTurn();
+        }
+
+        
     }
 
 }
