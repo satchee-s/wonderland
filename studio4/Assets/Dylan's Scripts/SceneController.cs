@@ -17,6 +17,12 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void Level1()
+    {
+        SceneManager.LoadScene("Dylan Scene");
+    }
+    
     public void TutorialScene()
     {
         SceneManager.LoadScene("TutorialScene");

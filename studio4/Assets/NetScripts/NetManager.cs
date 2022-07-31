@@ -10,7 +10,6 @@ using System.Collections.Generic;
 
 public class NetManager : MonoBehaviour
 {
-    SceneController sC;
     delegate void ConnectedToServer();
     ConnectedToServer ConnectedToServerEvent;
 
@@ -18,9 +17,16 @@ public class NetManager : MonoBehaviour
     [SerializeField] Button connectButton;
     [SerializeField] TMP_InputField playerNameInputField;
     [SerializeField] GameObject connectPanel;
+    [SerializeField] GameObject matchMakingPanel;
+
+    [SerializeField] GameObject PLayer1Panel;
+    [SerializeField] GameObject Player2Panel;
+
+    [SerializeField] GameObject opponentFound;
+    [SerializeField] GameObject lookingForOpponent;
 
     [SerializeField] Button startButton;
-    [SerializeField] TMP_InputField setPLayerName;
+    [SerializeField] TextMeshProUGUI setPlayerName;
 
     Socket socket;
     Player player;
@@ -31,7 +37,6 @@ public class NetManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         connectButton.onClick.AddListener(() =>
         {
             try
@@ -41,10 +46,14 @@ public class NetManager : MonoBehaviour
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
                 socket.Blocking = false;
- 
+
                 connectPanel.SetActive(false);
-                sC.connectToLobby();
-                playerNameInputField.text = setPLayerName.text;
+                matchMakingPanel.SetActive(true);
+
+                setPlayerName.text = playerNameInputField.text;
+                lookingForOpponent.SetActive(true);
+
+                //if one player joins, and lobby is empty look for another player UI should pop up and wait until another player Joins
 
                 //Debug.Log(nc.GameObjectID );
                 //Debug.Log(nc.prefabName);

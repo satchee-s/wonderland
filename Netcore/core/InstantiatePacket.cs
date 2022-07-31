@@ -1,7 +1,6 @@
 ﻿
 using UnityEngine;
 
-
 namespace core
 {
     public class InstantiatePacket : BasePacket

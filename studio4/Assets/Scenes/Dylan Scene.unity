@@ -446,9 +446,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &40002113
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,11 +609,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
 --- !u!1001 &49364234
@@ -822,7 +832,7 @@ GameObject:
   - component: {fileID: 63665041}
   - component: {fileID: 63665040}
   m_Layer: 0
-  m_Name: RKey to Return
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,17 +845,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63665038}
-  m_LocalRotation: {x: -0.12288591, y: -0, z: -0, w: 0.9924208}
-  m_LocalPosition: {x: 0, y: 0, z: -3.58}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -28.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1871388800}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -14.117, y: 0, z: 0}
+  m_Father: {fileID: 129571958}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.52, y: -46.71}
-  m_SizeDelta: {x: 25.284, y: 5.158}
+  m_AnchoredPosition: {x: 1.4, y: 1.93}
+  m_SizeDelta: {x: 11.634, y: 1.041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &63665040
 MonoBehaviour:
@@ -867,7 +877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: R Key to Return
+  m_text: Tap On Card To View
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -876,8 +886,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4290511103
+  m_fontColor: {r: 1, g: 0, b: 0.73905563, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -894,8 +904,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 1
+  m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -930,7 +940,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0.6533203, z: -0.3308792, w: 0.4237566}
+  m_margin: {x: 0, y: 0.010938642, z: -0.0881958, w: 0.04112351}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -978,9 +988,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!4 &78942177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
@@ -1109,6 +1121,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90203219}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &104389082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.9699993
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &117206482 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: cf35bc01349f8a544819617168c04b15, type: 3}
@@ -1143,9 +1212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1001 &123126453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1208,13 +1279,97 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+--- !u!1 &129571957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129571958}
+  - component: {fileID: 129571960}
+  - component: {fileID: 129571959}
+  m_Layer: 0
+  m_Name: viewCardpanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &129571958
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129571957}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -4.4800043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 63665039}
+  m_Father: {fileID: 1871388800}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1.3159981, y: -16.600012}
+  m_SizeDelta: {x: -35.693, y: -50.808}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &129571959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129571957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &129571960
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129571957}
+  m_CullTransparentMesh: 1
 --- !u!114 &131305367 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1141676439995869641, guid: cf35bc01349f8a544819617168c04b15, type: 3}
@@ -1453,11 +1608,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
 --- !u!1001 &150468648
@@ -1522,11 +1685,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
 --- !u!1 &154101918 stripped
@@ -1563,9 +1734,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!114 &187684142 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279685848340734, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -1611,9 +1784,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!4 &197516264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
@@ -2131,9 +2306,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &242510007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,11 +2581,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
 --- !u!1001 &285102196
@@ -2473,11 +2658,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
 --- !u!1001 &291217328
@@ -2583,9 +2776,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &317858328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,7 +2910,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 326856043}
-  - component: {fileID: 326856045}
   - component: {fileID: 326856044}
   m_Layer: 0
   m_Name: Slot 5
@@ -2757,28 +2951,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &326856045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326856042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  handCards: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!1 &332137690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2788,7 +2960,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332137691}
-  - component: {fileID: 332137692}
   m_Layer: 0
   m_Name: Slot 0
   m_TagString: Slot1
@@ -2810,28 +2981,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!114 &332137692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332137690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  handCards: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!1001 &338701542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2930,7 +3079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352001096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.63, y: 16.1, z: 16.29}
+  m_LocalPosition: {x: 7.63, y: 16.6, z: 15.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 332137691}
@@ -3186,11 +3335,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
 --- !u!1001 &373386361
@@ -5053,9 +5210,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!4 &524968356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
@@ -5294,7 +5453,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551727690}
-  - component: {fileID: 551727692}
   - component: {fileID: 551727691}
   m_Layer: 0
   m_Name: Slot 4
@@ -5336,28 +5494,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &551727692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551727689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  handCards: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!1 &561372276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,11 +5790,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
 --- !u!1 &571066932
@@ -5855,6 +5999,7 @@ MonoBehaviour:
   - {fileID: 2059995369}
   availableCardSlots: 01010101010101
   HasDrawedCards: 0
+  rA: {fileID: 0}
 --- !u!4 &580501023
 Transform:
   m_ObjectHideFlags: 0
@@ -6290,11 +6435,19 @@ PrefabInstance:
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
 --- !u!1001 &634161656
@@ -6555,9 +6708,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!114 &643482452 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279685848340734, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -6795,9 +6950,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
+--- !u!1001 &667842801
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1871388800}
+    m_Modifications:
+    - target: {fileID: 2676531874573945893, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000054359443
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.821296
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15.507203
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+--- !u!224 &667842802 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2676531874573945894, guid: 53b62d7e10510304eb9f5b207988aea5, type: 3}
+  m_PrefabInstance: {fileID: 667842801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &670149920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6860,13 +7079,26 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+--- !u!4 &678714160 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 1039880792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &695330865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6929,11 +7161,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
 --- !u!1 &696311431 stripped
@@ -6970,9 +7210,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &696625790
 GameObject:
   m_ObjectHideFlags: 0
@@ -7199,9 +7441,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &709487314
 GameObject:
   m_ObjectHideFlags: 0
@@ -7589,9 +7833,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1001 &757022333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8197,9 +8443,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!114 &781860161 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5548041953974737745, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -8289,11 +8537,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
 --- !u!1 &792043946 stripped
@@ -8330,9 +8586,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1001 &793635159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8395,13 +8653,78 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59011c409a601349acb293771240d7e, type: 3}
+--- !u!1001 &800949724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4700003
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02599907
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &806473813
 GameObject:
   m_ObjectHideFlags: 0
@@ -8676,9 +8999,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1001 &818540169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8927,11 +9252,19 @@ PrefabInstance:
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
 --- !u!1001 &879881261
@@ -9088,11 +9421,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
 --- !u!1001 &881506355
@@ -9584,6 +9925,139 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897023329}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &898021999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898022000}
+  - component: {fileID: 898022003}
+  - component: {fileID: 898022002}
+  - component: {fileID: 898022001}
+  m_Layer: 0
+  m_Name: GoBackButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &898022000
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898021999}
+  m_LocalRotation: {x: -0.6149814, y: -0, z: -0, w: 0.7885416}
+  m_LocalPosition: {x: 0, y: 0, z: -4.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1863249331}
+  m_Father: {fileID: 1871388800}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -75.901, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 17.7, y: -32.5}
+  m_SizeDelta: {x: 16.875, y: 1.722}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &898022001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898021999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 898022002}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 704083424}
+        m_TargetAssemblyTypeName: RaycastAnim, Assembly-CSharp
+        m_MethodName: GoBack1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &898022002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898021999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9056604, g: 0.13157704, b: 0.13157704, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &898022003
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898021999}
+  m_CullTransparentMesh: 1
 --- !u!1 &898554734
 GameObject:
   m_ObjectHideFlags: 0
@@ -9928,11 +10402,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
 --- !u!114 &919073872 stripped
@@ -9987,7 +10469,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 927595610}
-  - component: {fileID: 927595611}
   - component: {fileID: 927595612}
   m_Layer: 0
   m_Name: Slot 3
@@ -10010,28 +10491,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &927595611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927595609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  handCards: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!95 &927595612
 Animator:
   serializedVersion: 3
@@ -10085,9 +10544,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &938266401
 GameObject:
   m_ObjectHideFlags: 0
@@ -10438,11 +10899,19 @@ PrefabInstance:
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
 --- !u!1001 &947109379
@@ -10729,6 +11198,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951435718}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &953861165
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.026
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1001 &956176575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10981,11 +11507,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59011c409a601349acb293771240d7e, type: 3}
 --- !u!1 &992459206
@@ -11113,7 +11647,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1871388800}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11283,6 +11817,63 @@ Transform:
   m_Father: {fileID: 639350616}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1039880792
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02599907
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &1050084160
 GameObject:
   m_ObjectHideFlags: 0
@@ -11593,9 +12184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1070216406
 GameObject:
   m_ObjectHideFlags: 0
@@ -11725,7 +12318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1084704368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11733,13 +12326,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084704367}
-  m_LocalRotation: {x: -0.11597322, y: -0, z: -0, w: 0.9932524}
+  m_LocalRotation: {x: -0.37925798, y: -0, z: -0, w: 0.92529094}
   m_LocalPosition: {x: 0, y: 0, z: -3.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1871388800}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -13.32, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -44.575, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1.37, y: -24.58}
@@ -12164,9 +12757,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1103328667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
@@ -12201,9 +12796,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1109280323
 GameObject:
   m_ObjectHideFlags: 0
@@ -12300,6 +12897,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109280323}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1109498212
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4700003
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.9699993
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!4 &1110773167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
@@ -12566,11 +13220,19 @@ PrefabInstance:
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
 --- !u!1 &1124183253
@@ -12994,9 +13656,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
+--- !u!4 &1152626189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 1438521868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1159403922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
@@ -13149,11 +13818,19 @@ PrefabInstance:
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
 --- !u!1 &1169847747 stripped
@@ -13190,9 +13867,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!4 &1174509366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
@@ -13531,9 +14210,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
+--- !u!4 &1205670493 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 1810590715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1210460465
 GameObject:
   m_ObjectHideFlags: 0
@@ -13710,11 +14396,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59011c409a601349acb293771240d7e, type: 3}
 --- !u!1 &1233987983 stripped
@@ -13854,9 +14548,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1262360230
 GameObject:
   m_ObjectHideFlags: 0
@@ -14385,11 +15081,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59011c409a601349acb293771240d7e, type: 3}
 --- !u!1001 &1304270529
@@ -14454,11 +15158,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
 --- !u!1 &1306021697
@@ -14470,7 +15182,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1306021698}
-  - component: {fileID: 1306021699}
   - component: {fileID: 1306021700}
   m_Layer: 0
   m_Name: Slot 1
@@ -14493,28 +15204,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!114 &1306021699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306021697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  handCards: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!95 &1306021700
 Animator:
   serializedVersion: 3
@@ -14568,9 +15257,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!20 &1313921558 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
@@ -14750,9 +15441,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1336810044
 GameObject:
   m_ObjectHideFlags: 0
@@ -15089,9 +15782,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1359619761
 GameObject:
   m_ObjectHideFlags: 0
@@ -15220,7 +15915,7 @@ RectTransform:
   m_Children:
   - {fileID: 214264456}
   m_Father: {fileID: 1871388800}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 341.9, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15417,6 +16112,44 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377112628}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1379496455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379496456}
+  m_Layer: 0
+  m_Name: SlotContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1379496456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379496455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.43, y: 15.75, z: 20.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1699396053}
+  - {fileID: 2014267974}
+  - {fileID: 1911323218}
+  - {fileID: 1205670493}
+  - {fileID: 1513552545}
+  - {fileID: 1152626189}
+  - {fileID: 678714160}
+  - {fileID: 1599693188}
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1379804600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -15451,9 +16184,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1397306271
 GameObject:
   m_ObjectHideFlags: 0
@@ -15956,6 +16691,63 @@ PrefabInstance:
       objectReference: {fileID: 1319471907}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+--- !u!1001 &1438521868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02599907
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1001 &1441683507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16668,9 +17460,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1482726490
 GameObject:
   m_ObjectHideFlags: 0
@@ -16810,7 +17604,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499494633}
-  - component: {fileID: 1499494634}
   - component: {fileID: 1499494635}
   m_Layer: 0
   m_Name: Slot 2
@@ -16833,28 +17626,6 @@ Transform:
   m_Father: {fileID: 352001098}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!114 &1499494634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499494632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  handCards: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!95 &1499494635
 Animator:
   serializedVersion: 3
@@ -17032,11 +17803,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
 --- !u!1 &1511103324
@@ -17135,6 +17914,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511103324}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1513552545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 800949724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1516153254 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279685639987085, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
@@ -17303,9 +18087,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!4 &1556649636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
@@ -17452,9 +18238,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1577420839
 GameObject:
   m_ObjectHideFlags: 0
@@ -17658,6 +18446,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589393750}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1599693188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 953861165}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1607674411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18274,9 +19067,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1001 &1666375233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18583,9 +19378,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1689018392
 GameObject:
   m_ObjectHideFlags: 0
@@ -18813,6 +19610,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698235106}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1699396053 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 1109498212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1702958405
 GameObject:
   m_ObjectHideFlags: 0
@@ -18992,9 +19794,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1001 &1734549145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19562,9 +20366,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!4 &1765692166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: b59011c409a601349acb293771240d7e, type: 3}
@@ -19777,9 +20583,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1792528932
 GameObject:
   m_ObjectHideFlags: 0
@@ -19876,6 +20684,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792528932}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1810590715
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.9699993
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &1813173890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -19910,9 +20775,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1835738327
 GameObject:
   m_ObjectHideFlags: 0
@@ -20105,6 +20972,140 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837760202}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1851745299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1851745300}
+  - component: {fileID: 1851745302}
+  - component: {fileID: 1851745301}
+  m_Layer: 5
+  m_Name: manaText (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1851745300
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851745299}
+  m_LocalRotation: {x: 0.12810995, y: -0, z: -0, w: 0.99175996}
+  m_LocalPosition: {x: 0, y: 0, z: -5.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 667842802}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 14.721, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 9.49, y: 0.687}
+  m_SizeDelta: {x: 25.214, y: 2.837}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1851745301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851745299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Magic Hat: '
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294963954
+  m_fontColor: {r: 0.9496855, g: 0.9496855, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.3
+  m_fontSizeBase: 0.3
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0.20595157}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1851745302
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851745299}
+  m_CullTransparentMesh: 1
 --- !u!1 &1853024315
 GameObject:
   m_ObjectHideFlags: 0
@@ -20290,11 +21291,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
 --- !u!1 &1862203809
@@ -20332,6 +21341,140 @@ Transform:
   m_Father: {fileID: 1853024316}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1863249330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863249331}
+  - component: {fileID: 1863249333}
+  - component: {fileID: 1863249332}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1863249331
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863249330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 898022000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1863249332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863249330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Go Back
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 1
+  m_fontSizeBase: 1
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0.025775522, z: -0.15268707, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1863249333
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863249330}
+  m_CullTransparentMesh: 1
 --- !u!1 &1868450926
 GameObject:
   m_ObjectHideFlags: 0
@@ -20400,9 +21543,11 @@ RectTransform:
   - {fileID: 581804307}
   - {fileID: 1920789354}
   - {fileID: 1084704368}
-  - {fileID: 63665039}
   - {fileID: 1008193835}
   - {fileID: 1361637483}
+  - {fileID: 667842802}
+  - {fileID: 898022000}
+  - {fileID: 129571958}
   m_Father: {fileID: 1318764307}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -20821,6 +21966,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906274059}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1911323218 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 2070149966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1911622434
 GameObject:
   m_ObjectHideFlags: 0
@@ -21121,9 +22271,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1934041680
 GameObject:
   m_ObjectHideFlags: 0
@@ -21254,9 +22406,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &1954061469
 GameObject:
   m_ObjectHideFlags: 0
@@ -21838,13 +22992,26 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+--- !u!4 &2014267974 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+  m_PrefabInstance: {fileID: 104389082}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2020867756
 GameObject:
   m_ObjectHideFlags: 0
@@ -22206,11 +23373,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
 --- !u!1 &2048494958
@@ -22334,7 +23509,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059995369}
-  - component: {fileID: 2059995371}
   - component: {fileID: 2059995370}
   m_Layer: 0
   m_Name: Slot 6
@@ -22376,28 +23550,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2059995371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059995368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471e04c960d0f34da920babf8248286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creatureDeck: []
-  boosterDeck: []
-  container: []
-  handCards: []
-  OneboosterOneCreature: {fileID: 0}
-  TwoCreature: {fileID: 0}
-  ShuffleCard: {fileID: 0}
-  cardSlots: []
-  availableCardSlots: 
-  HasDrawedCards: 0
 --- !u!1001 &2061031982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22583,6 +23735,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a351d125fa68446a714f9c46b671e7, type: 3}
+--- !u!1001 &2070149966
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1379496456}
+    m_Modifications:
+    - target: {fileID: 245535884367033817, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_Name
+      value: Slot1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.9699993
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1001 &2071233853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23122,11 +24331,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
 --- !u!1 &2103329741
@@ -23322,11 +24539,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59011c409a601349acb293771240d7e, type: 3}
 --- !u!1 &2121798510
@@ -23398,9 +24623,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1313921558}
-  EToInteract: {fileID: 1084704369}
-  RToReturn: {fileID: 63665040}
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!1 &2127738566
 GameObject:
   m_ObjectHideFlags: 0
@@ -23671,11 +24898,19 @@ PrefabInstance:
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: RToReturn
       value: 
-      objectReference: {fileID: 63665040}
+      objectReference: {fileID: 0}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: EToInteract
       value: 
       objectReference: {fileID: 1084704369}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
 --- !u!1001 &6784779580464327103
@@ -23727,6 +24962,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6784779579488121768, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784779579488121769, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
+      propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6784779579488121771, guid: d5139e48342008b4e8318bfd04a02f22, type: 3}
