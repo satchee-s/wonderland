@@ -24,7 +24,7 @@ public class Card : MonoBehaviour
     public bool canAttack;
     public bool targeting;
     public bool targetingEnemy;
-    public bool onlyThisCardWillAttack;
+    public bool onlyThisCardAttack;
     public static bool staticTarget;
     public static bool staticTargetEnemy;
     private GameManager gm;
@@ -83,7 +83,40 @@ public class Card : MonoBehaviour
         }
         else
         {
+            attackBordor.SetActive(false);
+        }
 
+        if (PlayerTurnSystem.isYourTurn == false && summoned == true)
+        {
+            sleep = false;
+            canAttack = false;
+        }
+
+        if(PlayerTurnSystem.isYourTurn == true && sleep == false && cantAttack == false)
+        {
+            cantAttack = true;
+        }
+        else
+        {
+            cantAttack= false;
+        }
+
+        targeting = staticTarget;
+
+        targetingEnemy = staticTargetEnemy;
+
+        if(targetingEnemy == true)
+        {
+            Target = Enemy;
+        }
+        else
+        {
+            Target = null;
+        }
+
+        if(targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
+        {
+            Attack();
         }
 
     }
@@ -106,7 +139,7 @@ public class Card : MonoBehaviour
 
     }
 
-
+   
 
     public void Summon()
     {
@@ -121,6 +154,57 @@ public class Card : MonoBehaviour
     public void Maxmana(int x)
     {
         PlayerTurnSystem.maxMana += x;
+    }
+
+    public void Attack()
+    {
+        if(canAttack == true)
+        {
+            if(Target != null)
+            {
+                if(Target == Enemy)
+                {
+                    //EnemyHp.staticHp -= power;
+                    targeting = false;
+                    cantAttack = true;
+                }
+
+                if(Target.name == "CardToHand(Clone)")
+                {
+                    canAttack = true;
+                }
+            }
+        }
+    }
+
+    public void UntargetEnemy()
+    {
+        staticTargetEnemy = false;
+    }
+
+    public void TargetEnemy()
+    {
+        staticTargetEnemy = true;
+    }
+
+    public void StartAttack()
+    {
+        staticTarget = true;
+    }
+
+    public void StopAttack()
+    {
+        staticTarget = false;
+    }
+
+    public void OneCardAttack()
+    {
+        onlyThisCardAttack = true;
+    }
+
+    public void OneCardAttackStop()
+    {
+        onlyThisCardAttack = false;
     }
 
 }
