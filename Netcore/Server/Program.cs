@@ -3,9 +3,9 @@ using System.Net;
 using System.Text;
 using core;
 
-namespace Client
+namespace Server
 {
-   public  class Client
+ /*public  class Client
     {
         public Socket socket;
         public Player player;
@@ -15,7 +15,7 @@ namespace Client
             this.socket = socket;
             this.player = player;
         }
-    }
+    }*/
     public class Program
     {
         static void Main(string[] args)
@@ -65,14 +65,17 @@ namespace Client
                                 case BasePacket.PacketType.Information:
                                     InformationPacket infoPacket = (InformationPacket)new InformationPacket().StartDeserialization(recievedBuffer);
 
-                                    //add player info to Cilent List
-                                    //For every cilent in list, send LobbyInfo Packet
+                                    clients.Add(infoPacket.client); //add player info to Cilent List     
 
-                                    Console.WriteLine("InformationPacket");
+                                    for (int J = 0; J < clients.Count; J++) //For every cilent in list, send LobbyInfo Packet
+                                    {
+                                        clients[J].socket.Send(infoPacket.StartSerialization());
+                                    }
+                                        Console.WriteLine("InformationPacket");
                                     break;
                                
 
-                                case BasePacket.PacketType.Message:
+                              /*case BasePacket.PacketType.Message:
                                     MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
 
                                     
@@ -98,7 +101,7 @@ namespace Client
                                     RigidbodyPacket RP = (RigidbodyPacket)new RigidbodyPacket().StartDeserialization(recievedBuffer);
 
                                     Console.WriteLine("(RigidbodyPacket");
-                                    break;
+                                    break; */
                                 default:
                                     break;
                             }
@@ -110,6 +113,8 @@ namespace Client
                     Console.WriteLine("Exception");
                 }
 
+
+               // for(int i = 0; i < clients.Count; i++)
             }
          Console.ReadKey(); 
         }

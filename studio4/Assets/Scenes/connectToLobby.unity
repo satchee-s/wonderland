@@ -615,8 +615,11 @@ MonoBehaviour:
   opponentFound: {fileID: 448209585}
   lookingForOpponent: {fileID: 1213276912}
   startButton: {fileID: 1010789208}
-  setPlayerName: {fileID: 0}
+  setPlayerName: {fileID: 605480732}
   nc: {fileID: 1947815107}
+  playerName:
+  - {fileID: 605480732}
+  - {fileID: 268221356}
 --- !u!4 &210454067
 Transform:
   m_ObjectHideFlags: 0

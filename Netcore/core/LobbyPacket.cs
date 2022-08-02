@@ -8,7 +8,7 @@ namespace core
 {
     public class LobbyPacket : BasePacket
     {
-        List<string> clientsName = new List<string>();
+        public List<string> clientsName = new List<string>();
         public LobbyPacket()
         {
             
@@ -24,8 +24,11 @@ namespace core
             base.StartSerialization();
 
             bw.Write(clientsName.Count);  //sereialize list count 
-           
-            //loop through the list and serialize the list of strings (All the elements)
+
+            for (int i = 0; i < clientsName.Count; i++)//loop through the list and serialize the list of strings (All the elements)
+            {
+                bw.Write(clientsName[i]);
+            }
 
             return ms.GetBuffer();
         }
@@ -33,8 +36,13 @@ namespace core
         {
             base.StartDeserialization(buffer);
 
+            int count = br.ReadInt32();
 
-          //clientsName.Count = br.ReadString();
+            for (int i = 0; i < count; i++) 
+            {
+                clientsName.Add(br.ReadString());
+            }
+          
             return this;
         }
        

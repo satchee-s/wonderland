@@ -30,6 +30,8 @@ public class NetManager : MonoBehaviour
     public NetworkComponent nc;
 
     List<GameObject> playerObjs = new List<GameObject>();
+    //List<TextMeshProUGUI> playerName = new List<TextMeshProUGUI>();
+    public TextMeshProUGUI[] playerName = new TextMeshProUGUI[2];
 
     // Start is called before the first frame update
     void Start()
@@ -47,8 +49,13 @@ public class NetManager : MonoBehaviour
                 connectPanel.SetActive(false);
                 matchMakingPanel.SetActive(true);
 
-                setPlayerName.text = playerNameInputField.text;
+                playerName[0].text = playerNameInputField.text;
+               // playerName[1].text = playerNameInputField.text;
+
+
+
                 lookingForOpponent.SetActive(true);
+
 
                 //if one player joins, and lobby is empty look for another player UI should pop up and wait until another player Joins
 
@@ -86,6 +93,14 @@ public class NetManager : MonoBehaviour
 
                 switch (pb.Type)
                 {
+
+                    case BasePacket.PacketType.Lobby:
+                        LobbyPacket lp = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
+
+                        playerName[1].text = lp.clientsName[lp.clientsName.Count];
+
+                        break;
+
                     case BasePacket.PacketType.Message:
                         MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
 
