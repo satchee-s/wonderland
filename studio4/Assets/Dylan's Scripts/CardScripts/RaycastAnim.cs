@@ -36,6 +36,7 @@ public class RaycastAnim : MonoBehaviour
         Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit raycasthit, 100))
         {
+            
 
             if (raycasthit.collider.gameObject.CompareTag("Selectable") && isOn == true)//check if raycast tag is Equal to selectable tag
             {
@@ -62,7 +63,7 @@ public class RaycastAnim : MonoBehaviour
 
                 
             }
-           /* if (Input.GetKey(KeyCode.R))
+           if (Input.GetKey(KeyCode.R))
             {
 
                 foreach (GameObject card in SelectableCardList)
@@ -73,20 +74,20 @@ public class RaycastAnim : MonoBehaviour
                 isOn = true;
                 interactPanel.SetActive(true);
 
-                gameObject.transform.position = gameObject.GetComponent<Card>().originalPos;
-            } */
+                gameObject.transform.position = this.gameObject.GetComponent<Card>().originalPos;
+            }
 
             if (raycasthit.collider.CompareTag("Table"))
             {
 
                 interactPanel.SetActive(false);
-                gameObject.transform.rotation = gameObject.GetComponent<Card>().originalRotationValue;
+                this.gameObject.transform.rotation = gameObject.GetComponent<Card>().originalRotationValue;
            
             }
         }
     }
 
-    public void GoBack1()
+    /*public void GoBack1()
     {
         foreach (GameObject card in SelectableCardList)
         {
@@ -98,5 +99,5 @@ public class RaycastAnim : MonoBehaviour
         goBackButton.gameObject.SetActive(false);
 
         this.gameObject.transform.position = this.gameObject.GetComponent<Card>().originalPos;
-    }
+    }*/
 }
