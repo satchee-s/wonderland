@@ -44,7 +44,7 @@ public class RaycastAnim : MonoBehaviour
                 //Debug.Log(raycasthit.collider.gameObject.name); // Shows which card the mpuse is over
                 raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(1))
                 {
                     
                     foreach (GameObject card in SelectableCardList)
@@ -74,14 +74,14 @@ public class RaycastAnim : MonoBehaviour
                 isOn = true;
                 interactPanel.SetActive(true);
 
-                gameObject.transform.position = this.gameObject.GetComponent<Card>().originalPos;
+                gameObject.transform.position = gameObject.GetComponent<Card>().originalPos;
             }
 
             if (raycasthit.collider.CompareTag("Table"))
             {
 
                 interactPanel.SetActive(false);
-                this.gameObject.transform.rotation = gameObject.GetComponent<Card>().originalRotationValue;
+                gameObject.transform.rotation = gameObject.GetComponent<Card>().originalRotationValue;
            
             }
         }

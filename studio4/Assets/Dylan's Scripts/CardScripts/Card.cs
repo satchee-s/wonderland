@@ -25,6 +25,7 @@ public class Card : MonoBehaviour
     public bool targeting;
     public bool targetingEnemy;
     public bool onlyThisCardAttack;
+    public bool isHibernating;
     public static bool staticTarget;
     public static bool staticTargetEnemy;
     private GameManager gm;
@@ -35,17 +36,9 @@ public class Card : MonoBehaviour
     public TextMeshPro healthText;
     public TextMeshPro descriptionText;
 
-    public GameObject attackBordor;
-    public GameObject Target;
-    public GameObject Enemy;
-
-   
-
-
-    [SerializeField] TextMeshPro nameText;
-    [SerializeField] TextMeshPro attackText;
-    [SerializeField] TextMeshPro healthText;
-    [SerializeField] TextMeshPro descriptionText;
+   // public GameObject attackBordor;
+   // public GameObject Target;
+   // public GameObject Enemy;
 
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
@@ -76,38 +69,39 @@ public class Card : MonoBehaviour
         CardClass = cardClass;
     }*/
 
-/*public Card (string CardName, int Cost, CardType type) --- alt one for boosters
-{
-    cardName = CardName;
-    cost = Cost;
-    Type = type;
-}*/
+    /*public Card (string CardName, int Cost, CardType type) --- alt one for boosters
+    {
+        cardName = CardName;
+        cost = Cost;
+        Type = type;
+    }*/
 
-void Update()
+    void Update()
     {
         /*nameText.text = " " + cardName; --- why??
         attackText.text = " " + attack;
         healthText.text = " " + health;
         descriptionText.text = " " + description;*/
 
-        if(PlayerTurnSystem.currentMana >= cost && summoned == false) //does this need to be in update?
+        if (PlayerTurnSystem.currentMana >= cost && summoned == false) //does this need to be in update?
         {
             canBeSummoned = true;
         }
-        else canBeSummoned = false;
+        else canBeSummoned = false; 
+    
 
-        /*if(canBeSummoned == true)
+        if(canBeSummoned == true)
         {
 
         }
 
         if (canAttack == true)
         {
-            attackBordor.SetActive(true);
+           // attackBordor.SetActive(true);
         }
         else
         {
-            attackBordor.SetActive(false);
+           // attackBordor.SetActive(false);
         }
 
         if (PlayerTurnSystem.isYourTurn == false && summoned == true)
@@ -131,11 +125,11 @@ void Update()
 
         if(targetingEnemy == true)
         {
-            Target = Enemy;
+          //  Target = Enemy;
         }
         else
         {
-            Target = null;
+          //  Target = null;
         }
 
         if(targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
@@ -150,32 +144,43 @@ void Update()
         //gm = FindObjectOfType<GameManager>();
         originalRotationValue = transform.rotation;
 
+        originalPos = transform.position;
+
         canBeSummoned = false;
         summoned = false;
 
         canAttack = false;
         sleep = true;
 
-        Enemy = GameObject.Find("Enemy HP");
+      //  Enemy = GameObject.Find("Enemy HP");
 
         targeting = false;
         targetingEnemy = false;
 
     }
 
-   
+    public void Damage(Card opponentCard, Slots slot)
+    {
+        if (Type == CardType.Creature && opponentCard.Type == CardType.Creature)
+        {
+            health -= opponentCard.attack;
+            opponentCard.health = health;
+            //Debug.Log($"card health: {health} opponent health {opponentCard.health}");
+            //ChangeDescription();
+            //opponentCard.ChangeDescription();
+            if (health <= 0)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
 
-    public void Summon()
+   public void Summon()
     {
         PlayerTurnSystem.currentMana -= cost;
         summoned = true;
         hasBeenPlayed = true;
     }
-
-        
-
-    }
-
     public void Maxmana(int x)
     {
         PlayerTurnSystem.maxMana += x;
@@ -183,22 +188,22 @@ void Update()
 
     public void Attack()
     {
-        if(canAttack == true)
+        if (canAttack == true)
         {
-            if(Target != null)
-            {
-                if(Target == Enemy)
-                {
+           // if (Target != null)
+           // {
+               // if (Target == Enemy)
+               // {
                     //EnemyHp.staticHp -= power;
-                    targeting = false;
-                    cantAttack = true;
-                }
+               //     targeting = false;
+              //      cantAttack = true;
+              //  }
 
-                if(Target.name == "CardToHand(Clone)")
-                {
-                    canAttack = true;
-                }
-            }
+               // if (Target.name == "CardToHand(Clone)")
+              //  {
+               //     canAttack = true;
+               // }
+           // }
         }
     }
 
@@ -231,5 +236,4 @@ void Update()
     {
         onlyThisCardAttack = false;
     }
-
 }

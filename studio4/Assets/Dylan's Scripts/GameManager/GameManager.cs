@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         ThirdStep = false;
         HasDrawedCards = false;
 
-        FirstTurn();
+      //  FirstTurn();
     }
 
     void SetRandomCards()
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void FirstTurn()
+   /* public void FirstTurn()
     {
         SetRandomCards();
 
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         OneboosterOneCreature.SetActive(false);
         TwoCreature.SetActive(false);
 
-    }
+    } */
 
     public void DrawOneFromBothDecks()
     {

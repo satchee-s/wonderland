@@ -240,16 +240,27 @@ MonoBehaviour:
   health: 6
   description: hello
   hasBeenPlayed: 0
-  handIndex: 0
   cost: 0
   canBeSummoned: 0
   summoned: 0
+  sleep: 0
+  cantAttack: 0
+  canAttack: 0
+  targeting: 0
+  targetingEnemy: 0
+  onlyThisCardAttack: 0
+  isHibernating: 0
   nameText: {fileID: 135710376888385366}
   attackText: {fileID: 135710376794405944}
   healthText: {fileID: 0}
   descriptionText: {fileID: 135710375237840275}
+  attackBordor: {fileID: 0}
+  Target: {fileID: 0}
+  Enemy: {fileID: 0}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  Type: 1
+  CardClass: 0
 --- !u!65 &6714826475061346712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -276,9 +287,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
-  EToInteract: {fileID: 0}
-  RToReturn: {fileID: 0}
+  interactPanel: {fileID: 0}
+  goBackButton: {fileID: 0}
   lockPos: 0
+  isOn: 1
+  SelectableCardList: []
 --- !u!114 &6337448104506470128
 MonoBehaviour:
   m_ObjectHideFlags: 0
