@@ -8,7 +8,6 @@ namespace core
 {
     public  class InformationPacket : BasePacket
     {
-        public Client client;
         public InformationPacket()
         {
 

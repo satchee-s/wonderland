@@ -37,7 +37,7 @@ namespace Server
                 {
                     clients.Add(new Client (Listening.Accept(), new Player("", "")));
                     Console.WriteLine("Client Connected");
-
+                    
                 }
                 catch (SocketException se)
                 {
@@ -54,6 +54,7 @@ namespace Server
                         {
                             byte[] recievedBuffer = new byte[clients[i].socket.Available];
 
+
                             clients[i].socket.Receive(recievedBuffer);
                             BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
 
@@ -65,7 +66,11 @@ namespace Server
                                 case BasePacket.PacketType.Information:
                                     InformationPacket infoPacket = (InformationPacket)new InformationPacket().StartDeserialization(recievedBuffer);
 
-                                    clients.Add(infoPacket.client); //add player info to Cilent List     
+                                    clients[i].player.ID   = infoPacket.player.ID;
+                                    clients[i].player.Name = infoPacket.player.Name;
+
+
+                                    //add player info to Cilent List     
 
                                     for (int J = 0; J < clients.Count; J++) //For every cilent in list, send LobbyInfo Packet
                                     {
@@ -73,7 +78,6 @@ namespace Server
                                     }
                                         Console.WriteLine("InformationPacket");
                                     break;
-                               
 
                               /*case BasePacket.PacketType.Message:
                                     MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
@@ -112,8 +116,6 @@ namespace Server
                 {
                     Console.WriteLine("Exception");
                 }
-
-
                // for(int i = 0; i < clients.Count; i++)
             }
          Console.ReadKey(); 

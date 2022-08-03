@@ -33,7 +33,7 @@ namespace core
         }
 
       public PacketType Type { get; set; }
-      public Player player { get; private set; }
+      public Player player { get;  set; }
 
         public BasePacket(PacketType type, Player player )
         {
