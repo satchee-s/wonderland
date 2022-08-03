@@ -33,7 +33,7 @@ namespace core
             bw.Write(Rotation.z);
             bw.Write(Rotation.w);
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)

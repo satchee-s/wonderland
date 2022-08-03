@@ -23,7 +23,7 @@ namespace core
             base.StartSerialization();
             bw.Write(message);
 
-            return ms.ToArray();
+            return msw.ToArray();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)

@@ -42,16 +42,16 @@ public class RaycastAnim : MonoBehaviour
             {
                 interactPanel.SetActive(true);
                 //Debug.Log(raycasthit.collider.gameObject.name); // Shows which card the mpuse is over
-                raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
+                raycasthit.collider.gameObject.transform.rotation = Quaternion.Euler(5f, lockPos, lockPos); //Hover Rotations
 
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonDown(1)) //right click to Interact
                 {
                     
                     foreach (GameObject card in SelectableCardList)
                     {
                         card.gameObject.tag = "InteractingCard";
                     }
-                  
+                  //try and get card to face camera instead of Upwards
                     isOn = true;
                     interactPanel.SetActive(false);
                     goBackButton.SetActive(true);

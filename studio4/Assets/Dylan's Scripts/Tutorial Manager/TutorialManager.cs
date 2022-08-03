@@ -266,12 +266,12 @@ public class TutorialManager : MonoBehaviour
             AttackCard.SetActive(false);
             AttackFace.SetActive(false);
 
-            //if(players taps on 1 enemy card)
-            //deal damage & take damage
-            //set i == 25
+              //if(players taps on 1 enemy card)
+              //deal damage & take damage
+              //set i == 25
 
-            //else if(player taps on face button)
-            //{ i == 25 }
+              //else if(player taps on face button)
+              //{ i == 25 }
 
             if (Input.GetKeyDown(KeyCode.Return))
                  {

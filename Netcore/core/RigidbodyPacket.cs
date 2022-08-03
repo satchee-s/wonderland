@@ -31,7 +31,7 @@ namespace core
             bw.Write(Velocity.y);
             bw.Write(Velocity.z);
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)

@@ -28,7 +28,7 @@ namespace core
             bw.Write(Position.y);
             bw.Write(Position.z);
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)

@@ -15,15 +15,15 @@ namespace core
 
         public InformationPacket(Player player) : base(PacketType.Information, player)
         {
-      
+           this.player = player;
         }
 
-        public byte[] StarStartSerialization()
+        public override byte[] StartSerialization()
         {
             base.StartSerialization();
 
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)

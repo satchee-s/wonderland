@@ -17,13 +17,13 @@ namespace core
             GameObjectId = gameObjectId;
         }
 
-        public byte[] StarStartSerialization()
+        public override byte[] StartSerialization()
         {
             base.StartSerialization();
 
             bw.Write(GameObjectId);
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)

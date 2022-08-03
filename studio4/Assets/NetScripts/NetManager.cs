@@ -31,7 +31,7 @@ public class NetManager : MonoBehaviour
 
     List<GameObject> playerObjs = new List<GameObject>();
     //List<TextMeshProUGUI> playerName = new List<TextMeshProUGUI>();
-    public TextMeshProUGUI[] playerName = new TextMeshProUGUI[2];
+    public TextMeshProUGUI[] playerName;
 
     // Start is called before the first frame update
     void Start()
@@ -40,21 +40,30 @@ public class NetManager : MonoBehaviour
         {
             try
             {
+
                 player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
 
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
-                socket.Blocking = false;
 
+                socket.Send(new InformationPacket(player).StartSerialization());
+
+                
                 connectPanel.SetActive(false);
                 matchMakingPanel.SetActive(true);
-
-                playerName[0].text = playerNameInputField.text;
-               // playerName[1].text = playerNameInputField.text;
+               
+                // playerName[1].text = playerNameInputField.text;
 
 
 
                 lookingForOpponent.SetActive(true);
+
+
+                socket.Blocking = false;
+
+
+
+                
 
 
                 //if one player joins, and lobby is empty look for another player UI should pop up and wait until another player Joins
@@ -86,18 +95,25 @@ public class NetManager : MonoBehaviour
         {
             if (socket.Available > 0)
             {
+
+                print("receiving from lobby");
                 byte[] recievedBuffer = new byte[socket.Available];
 
                 socket.Receive(recievedBuffer);
+
                 BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
 
                 switch (pb.Type)
                 {
-
                     case BasePacket.PacketType.Lobby:
                         LobbyPacket lp = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
 
-                        playerName[1].text = lp.clientsName[lp.clientsName.Count];
+
+                        for (int i = 0; i < lp.clientsName.Count; i++)
+                        {
+                            print(lp.clientsName[i]);
+                            playerName[i].text = lp.clientsName[i];
+                        }
 
                         break;
 
@@ -137,8 +153,6 @@ public class NetManager : MonoBehaviour
                             DestroyObject(Dp.GameObjectId, player);
                             break;
                         }
-
-
                     default:
                         break;
                 }

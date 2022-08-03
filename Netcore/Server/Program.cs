@@ -29,15 +29,16 @@ namespace Server
             Console.WriteLine("Waiting for a Client to Connect");
             List<Client> clients = new List<Client>();
 
-            Player player;
+            //Player player;
 
             while (true)
             {
                 try
                 {
                     clients.Add(new Client (Listening.Accept(), new Player("", "")));
-                    Console.WriteLine("Client Connected");
                     
+                    Console.WriteLine("Client Connected");
+                 
                 }
                 catch (SocketException se)
                 {
@@ -56,27 +57,35 @@ namespace Server
 
 
                             clients[i].socket.Receive(recievedBuffer);
+                            
                             BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
 
-                            player = pb.player;
+                           // player = pb.player;
 
 
                             switch (pb.Type)
                             {
+
                                 case BasePacket.PacketType.Information:
                                     InformationPacket infoPacket = (InformationPacket)new InformationPacket().StartDeserialization(recievedBuffer);
 
                                     clients[i].player.ID   = infoPacket.player.ID;
                                     clients[i].player.Name = infoPacket.player.Name;
 
+                                    List<string> clientNames = new List<string>();
 
+                                    for (int j = 0; j < clients.Count; j++)
+                                    {
+                                        clientNames.Add(clients[j].player.Name);
+                                    }
                                     //add player info to Cilent List     
 
-                                    for (int J = 0; J < clients.Count; J++) //For every cilent in list, send LobbyInfo Packet
+                                    for (int j = 0; j < clients.Count; j++) //For every cilent in list, send LobbyInfo Packet
                                     {
-                                        clients[J].socket.Send(infoPacket.StartSerialization());
+                                        clients[j].socket.Send(new LobbyPacket(clientNames, clients[j].player).StartSerialization());
+                                        Console.WriteLine($"Sent lobby packet {clientNames[j]}");
                                     }
-                                        Console.WriteLine("InformationPacket");
+                                       
                                     break;
 
                               /*case BasePacket.PacketType.Message:

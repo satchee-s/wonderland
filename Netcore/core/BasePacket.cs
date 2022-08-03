@@ -11,7 +11,8 @@ namespace core
 {
     public class BasePacket
     {
-        protected MemoryStream ms;
+        protected MemoryStream msr;
+        protected MemoryStream msw;
         protected BinaryReader br;
         protected BinaryWriter bw;
 
@@ -49,8 +50,8 @@ namespace core
 
         public virtual byte[] StartSerialization()
         {
-            ms = new MemoryStream();
-            bw = new BinaryWriter(ms);
+            msw = new MemoryStream();
+            bw = new BinaryWriter(msw);
 
             bw.Write((int)Type);
             bw.Write(player.ID);
@@ -61,8 +62,8 @@ namespace core
 
         public virtual BasePacket StartDeserialization(byte[] buffer)
         {
-            ms = new MemoryStream(buffer);
-            br = new BinaryReader(ms);
+            msr = new MemoryStream(buffer);
+            br = new BinaryReader(msr);
 
             Type = (PacketType)br.ReadInt32();
             player = new Player(br.ReadString(), br.ReadString());

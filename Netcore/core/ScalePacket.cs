@@ -20,7 +20,7 @@ namespace core
 
         }
 
-        public byte[] StarStartSerialization()
+        public override byte[] StartSerialization()
         {
             base.StartSerialization();
 
@@ -28,7 +28,7 @@ namespace core
             bw.Write(Scale.y);
             bw.Write(Scale.z);
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)

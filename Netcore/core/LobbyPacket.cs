@@ -8,15 +8,15 @@ namespace core
 {
     public class LobbyPacket : BasePacket
     {
-        public List<string> clientsName = new List<string>();
+        public List<string> clientsName;
         public LobbyPacket()
         {
             
         }
 
-        public LobbyPacket(Player player) : base(PacketType.Lobby, player)
+        public LobbyPacket(List<string> clientNames, Player player) : base(PacketType.Lobby, player)
         {
-
+            this.clientsName = clientNames;
         }
 
         public override byte[] StartSerialization()
@@ -30,13 +30,15 @@ namespace core
                 bw.Write(clientsName[i]);
             }
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
         public override BasePacket StartDeserialization(byte[] buffer)
         {
             base.StartDeserialization(buffer);
 
             int count = br.ReadInt32();
+
+            clientsName = new List<string>(count);
 
             for (int i = 0; i < count; i++) 
             {

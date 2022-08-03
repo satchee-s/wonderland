@@ -17,7 +17,7 @@ namespace core
            Rotation = rotation;
         }
 
-        public byte[] StarStartSerialization()
+        public override byte[] StartSerialization()
         {
             base.StartSerialization();
 
@@ -28,7 +28,7 @@ namespace core
             bw.Write(Rotation.z);
             bw.Write(Rotation.w);
 
-            return ms.GetBuffer();
+            return msw.GetBuffer();
         }
 
 
