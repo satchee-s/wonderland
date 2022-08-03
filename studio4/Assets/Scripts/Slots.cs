@@ -7,6 +7,7 @@ public class Slots : MonoBehaviour
     Vector3 slotPosition;
     public bool hasCard = false;
     bool canBePlaced = false;
+    bool hasCollidedWithSlot = false;
     Card cardBeingMoved;
     Card cardInSlot;
     [SerializeField] Card.CardType cardType;
@@ -22,6 +23,9 @@ public class Slots : MonoBehaviour
         {
             cardBeingMoved = other.gameObject.GetComponent<Card>();
             canBePlaced = true;
+            hasCollidedWithSlot = true;
+            Debug.Log("CARD COLLIDED WITH SLOT");
+
         }
     }
 
@@ -36,11 +40,12 @@ public class Slots : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) //use q to place card in slot
+        if (hasCollidedWithSlot) //this is drag and drop card placement. Make sure to place it in the middle of the slot bc wonky
         {
             PlaceCard();
-        }
+            Debug.Log("CARD PLACED IN SLOT");
 
+        }
         else if (Input.GetKeyDown(KeyCode.W))//to attack opponent's cards
         {
             if (cardBeingMoved != cardInSlot)
