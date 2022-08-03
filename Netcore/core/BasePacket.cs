@@ -27,7 +27,9 @@ namespace core
             Scale,
             RotationAndPosition,
             Message,
-            Rigidbody
+            Rigidbody,
+             Information,
+                Lobby
         }
 
       public PacketType Type { get; set; }

@@ -3,9 +3,19 @@ using System.Net;
 using System.Text;
 using core;
 
-namespace Client
+namespace Server
 {
+ /*public  class Client
+    {
+        public Socket socket;
+        public Player player;
 
+        public Client(Socket socket, Player player)
+        {
+            this.socket = socket;
+            this.player = player;
+        }
+    }*/
     public class Program
     {
         static void Main(string[] args)
@@ -17,7 +27,7 @@ namespace Client
             Listening.Blocking = false;
 
             Console.WriteLine("Waiting for a Client to Connect");
-            List<Socket> clients = new List<Socket>();
+            List<Client> clients = new List<Client>();
 
             Player player;
 
@@ -25,7 +35,7 @@ namespace Client
             {
                 try
                 {
-                    clients.Add(Listening.Accept());
+                    clients.Add(new Client (Listening.Accept(), new Player("", "")));
                     Console.WriteLine("Client Connected");
 
                 }
@@ -40,40 +50,36 @@ namespace Client
                     for (int i = 0; i < clients.Count; i++)
                     {
 
-                        if (clients[i].Available > 0)
+                        if (clients[i].socket.Available > 0)
                         {
-                            byte[] recievedBuffer = new byte[clients[i].Available];
+                            byte[] recievedBuffer = new byte[clients[i].socket.Available];
 
-                            clients[i].Receive(recievedBuffer);
+                            clients[i].socket.Receive(recievedBuffer);
                             BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
 
                             player = pb.player;
 
-                            if (clients.Count == 0) //if first player joins Server
-                            {
-                                //player.ID
-                            //pb.player;
-                            //Set as Host
-                            //client list packet, socket.send, new client list packet, clients.count, .serealized
-                        }
-                            else if (clients.Count == 1) //if second player Joins the Server
-                            {
-
-                            }
-
-                            if (clients.Count == 2) //if there are 2 players start game button works
-                            {
-                                Console.WriteLine("launch game");
-                            }
-                            else //else if there are not dont start game (start game button doesnt work)
-                            {
-                                Console.WriteLine("Waiting for 2nd PLayer");
-                            }
 
                             switch (pb.Type)
                             {
-                                case BasePacket.PacketType.Message:
+                                case BasePacket.PacketType.Information:
+                                    InformationPacket infoPacket = (InformationPacket)new InformationPacket().StartDeserialization(recievedBuffer);
+
+                                    clients.Add(infoPacket.client); //add player info to Cilent List     
+
+                                    for (int J = 0; J < clients.Count; J++) //For every cilent in list, send LobbyInfo Packet
+                                    {
+                                        clients[J].socket.Send(infoPacket.StartSerialization());
+                                    }
+                                        Console.WriteLine("InformationPacket");
+                                    break;
+                               
+
+                              /*case BasePacket.PacketType.Message:
                                     MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
+
+                                    
+
 
                                     Console.WriteLine($"{mp.player.Name}Said:{mp.message}");
                                     break;
@@ -95,7 +101,7 @@ namespace Client
                                     RigidbodyPacket RP = (RigidbodyPacket)new RigidbodyPacket().StartDeserialization(recievedBuffer);
 
                                     Console.WriteLine("(RigidbodyPacket");
-                                    break;
+                                    break; */
                                 default:
                                     break;
                             }
@@ -107,6 +113,8 @@ namespace Client
                     Console.WriteLine("Exception");
                 }
 
+
+               // for(int i = 0; i < clients.Count; i++)
             }
          Console.ReadKey(); 
         }
