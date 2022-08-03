@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
     {
         if (creatureDeck.Count > 1 ) //check if there are more than 1 card in the deck of cards
         {
-            for(int i = 0; i < creatureDeck.Count; i++)
+            for(int i = 0; i < creatureDeck.Count; i++) //???
             {
                 container[0] = creatureDeck[i]; 
                 int randomIndex = Random.Range(i, creatureDeck.Count);

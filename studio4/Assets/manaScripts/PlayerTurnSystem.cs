@@ -81,9 +81,9 @@ public class PlayerTurnSystem : MonoBehaviour
         currentEnemyMana += 1;
         }
 
-       public void EndOponentsTurn()
-       {
-        isYourTurn= true;
+    public void EndOponentsTurn()
+    {
+        isYourTurn = true;
         yourTurn += 1;
 
         maxMana += 1;
@@ -91,7 +91,7 @@ public class PlayerTurnSystem : MonoBehaviour
 
         startTurn = true;
 
-       }
+    }
 
     public void StartRound()
     {

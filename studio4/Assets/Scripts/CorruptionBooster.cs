@@ -2,23 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CorruptionBooster : MonoBehaviour
+public class CorruptionBooster : CreatureManager
 {
-    Card card;
-
-    private void Start()
+    public override void PlayCard(Card otherCard, Slots slot)
     {
-        card = GetComponent<Card>();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (card.hasBeenPlayed)
-        {
-            if (other.CompareTag("CreatureCard"))
-            {
-                other.GetComponent<Card>().health -= 3;
-            }
-        }
+        otherCard.health -= 3;
+        base.PlayCard(otherCard, slot);
     }
 }

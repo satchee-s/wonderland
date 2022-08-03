@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkullsChoice : MonoBehaviour
+public class SkullsChoice : CreatureManager
 {
-    public List<Card> opponentCreatureCards;
-
-    public void RemoveCard()
+    public override void PlayCard(Card otherCard, Slots slot)
     {
         if (opponentCreatureCards.Count > 0)
         {
@@ -16,5 +14,6 @@ public class SkullsChoice : MonoBehaviour
             removedCard.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
+        base.PlayCard(otherCard, slot);
     }
 }

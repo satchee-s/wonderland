@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Damage : MonoBehaviour
 {
     //card functions
-    public PlayerManager healthSystem;
+    /*public PlayerManager healthSystem;
     public Card opponentCard;
     [SerializeField] Slider opponentCardSlider;
     [SerializeField] Text status;
@@ -44,7 +44,6 @@ public class Damage : MonoBehaviour
             opponentCardSlider.value = opponentCard.health;
 
         }
-    }
+    }*/
 
 }
-*/

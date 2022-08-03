@@ -2,23 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchBooster : MonoBehaviour
+public class SwitchBooster : CreatureManager
 {
-    public List<Card> opponentCreatureCards;
-    public List<Card> playerCreatureCards;
-    public Card chosenCard;
-
-    public void SelectRandomCard()
+    public override void PlayCard(Card otherCard, Slots slot)
     {
         if (opponentCreatureCards.Count > 0 && playerCreatureCards.Count > 0)
         {
-            playerCreatureCards.Remove(chosenCard);
+            playerCreatureCards.Remove(otherCard);
             Card swappedCard = opponentCreatureCards[Random.Range(0, opponentCreatureCards.Count)];
             opponentCreatureCards.Remove(swappedCard);
             playerCreatureCards.Add(swappedCard);
-            opponentCreatureCards.Add(chosenCard);
+            opponentCreatureCards.Add(otherCard);
             Debug.Log("Card swapped");
             gameObject.SetActive(false);
         }
+        base.PlayCard(otherCard, slot);
     }
 }

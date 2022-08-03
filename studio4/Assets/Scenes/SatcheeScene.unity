@@ -570,6 +570,10 @@ PrefabInstance:
       value: Executioner
       objectReference: {fileID: 0}
     - target: {fileID: 889279686322959753, guid: 77c940120d61e414ba78f99ceddd9bdb, type: 3}
+      propertyPath: summoned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 889279686322959753, guid: 77c940120d61e414ba78f99ceddd9bdb, type: 3}
       propertyPath: attackText
       value: 
       objectReference: {fileID: 746480485}
@@ -577,6 +581,10 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1566874105}
+    - target: {fileID: 889279686322959753, guid: 77c940120d61e414ba78f99ceddd9bdb, type: 3}
+      propertyPath: hasBeenPlayed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c940120d61e414ba78f99ceddd9bdb, type: 3}
 --- !u!114 &78431459 stripped
@@ -3861,6 +3869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 0
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &475169288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4020,6 +4031,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 0
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &511491005
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5574,6 +5588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 1
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &811930692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6674,6 +6691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 0
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &1120944654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6748,6 +6768,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 0
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &1121317294
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10217,6 +10240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 0
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &1866417059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10410,6 +10436,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 0
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &1908159471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11135,6 +11164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ac3b3e269aba114e965b2b751ebd86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasCard: 0
+  cardType: 0
+  creatureCardSlot: {fileID: 0}
 --- !u!65 &1963675638
 BoxCollider:
   m_ObjectHideFlags: 0
