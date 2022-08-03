@@ -96,9 +96,9 @@ public class PlayerTurnSystem : MonoBehaviour
 
     }
 
-       public void EndOponentsTurn()
-       {
-        isYourTurn= true;
+    public void EndOponentsTurn()
+    {
+        isYourTurn = true;
         yourTurn += 1;
 
         //maxMana += 1;
