@@ -367,7 +367,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Draw 1 Creature & 1 Booster Card
+  m_text: Draw one creature card and one booster card.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3084,7 +3084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.3159981, y: -16.600012}
+  m_AnchoredPosition: {x: -1.3159943, y: -16.600012}
   m_SizeDelta: {x: -35.693, y: -50.808}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &129571959
@@ -5472,9 +5472,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'So Go Ahead! Look through your cards in hand and Place 2 Creature Cards
-    on the Creature Row and Sacrifice them by tapping Once on both the cards to Get 
-    Magic Hats '
+  m_text: 'So go ahead! Look through your cards in hand and place one creature card
+    on the creature row and sacrifice it by tapping once to get magic hats. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6920,35 +6919,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Before I let you go...Lets Recap!
+  m_text: 'Before you go... Let''s Recap!
 
-    - You can only play two creature
-    cards max.
+    - You can only play two creature cards
+    max.
 
+    - You can use as many creature cards as you want to attack, but one
+    creature card can only attack once.
 
+    - You can play as many booster cards
+    as you want.
 
-    - You can use as many creature cards as you want to attack,
-    but one creature card can only attack once.
+    - You can sacrifice as many creature cards on the play field
+    as you want.
 
+    - You can discard as many booster cards on hand as you want.
 
-
-    - You can play as many booster
-    cards as you want.
-
-
-
-    - You can sacrifice as many creature cards on the play
-    field as you want.
-
-
-
-    - You can discard as many booster cards on hand as
-    you want.
-
-
-
-    - During the start of a turn, you can only either draw two creature
-    cards or one creature card and one booster card.
+    -
+    During the start of a turn, you can only either draw two creature cards or one
+    creature card and one booster card.
 
 '
   m_isRightToLeft: 0
@@ -7241,8 +7230,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Successfully Dealth Damage to your Opponents face!, Which resulted
-    in their Health Dropping!
+  m_text: You successfully dealt damage to your opponents face! Which resulted in
+    their health dropping!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9162,8 +9151,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Over here is the Timer, Always be Alert of how much time you have left
-    before your Timer/Turn Ends Automatically!!!
+  m_text: This is the timer, always be alert of how much time you have left before
+    your turn ends automatically!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11456,7 +11445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap On 1 of your creature cards that are placed on the tablle
+  m_text: Tap one one of your creature cards that are placed on the table.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11880,7 +11869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: If you Decide to End your turn Simply Tap this Button!
+  m_text: If you decide to end your turn simply tap this button!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14025,7 +14014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is NOT a Booster Card, Interact with the card to make sure it is!
+  m_text: This is NOT a booster card, interact with the card to make sure it is!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15110,7 +15099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\tWelcome To The Tutorial!!!"
+  m_text: "\tWelcome To The Tutorial!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15470,7 +15459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '        Go ahead and Draw Cards to your hand!'
+  m_text: '        Go ahead and draw cards to your hand!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16197,7 +16186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go Ahead and Tap On any Card to Interact with it!
+  m_text: Go ahead and tap on any card to interact with it!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18012,8 +18001,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: So Go Ahead! Look through your cards in hand and Place a Booster Card in
-    the Booster Row and Discard of the one left in your Hand!
+  m_text: So go ahead! Look through your cards in hand and place a booster card on
+    the booster row and discard the one left in your hand!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19800,8 +19789,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: These are Your Playable Cards, You start off every game with 5 creature
-    Cards and 2 Booster Card.
+  m_text: These are your playable cards, you start off every game with five creature
+    cards and two booster cards.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24223,8 +24212,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nicely Done! Ending your turn will Trigger the Opponents turn Automatically,
-    You can keep track of whose turn it is over here
+  m_text: Nicely done! Ending your turn will mark the start of your opponent's turn.
+    You can keep track of whose turn it is here.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26339,7 +26328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &881888429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29883,7 +29872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "All creature cards go in a state of hibernation When Played, making them
+  m_text: "All creature cards go in a state of hibernation when played, making them
     unable to attack during this state. However, creature cards will attack back
     to the opposing player\u2019s creature cards when attacked during and out of
     hibernation state."
@@ -35618,7 +35607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is your magic hats currency/Count. Magic hats are spent to play creature
+  m_text: This is your magic hats currency/count. Magic hats are spent to play creature
     cards and booster cards. You must manage your magic hats wisely or you might
     not be able to play a certain card during a turn.
   m_isRightToLeft: 0
@@ -36389,8 +36378,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose which creature you'd like to Attack, keep in mind they deal damage
-    back to be sure to read their stats too before making a decision!
+  m_text: Choose which creature you would like to attack. Keep in mind that creature
+    cards will damage back so be sure to read their stats too before making a decision!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -38950,7 +38939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '                                     Well Done !!!'
+  m_text: '                                     Well Done!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -42880,8 +42869,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Always make sure you Read the Description of each card you pick up to Understand
-    how they Work and how they may contribute to your other cards!!
+  m_text: Always make sure you read the description of each card you pick up to understand
+    how they work and how they may contribute to your other cards!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -45932,7 +45921,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565800125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: 2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 476073814}
@@ -45940,7 +45929,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00012338161, y: 6.6}
+  m_AnchoredPosition: {x: 0.00012338161, y: -0.32}
   m_SizeDelta: {x: 51.877, y: 4.362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565800127
@@ -45963,8 +45952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Goal Of the Game is to Drain Your Opponents Health completely OR Drain
-    their creature card Deck (Which would prevent them from drawing cards)
+  m_text: The goal of the game is to drain your opponents health completely.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -49595,7 +49583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Draw 2 Creature Cards
+  m_text: Draw two creature cards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -50410,7 +50398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '                                    Well Done !!!'
+  m_text: '                                    Well Done!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -51702,7 +51690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '        Place Down either 1 or 2 Creature cards!'
+  m_text: '        Place down either one or two creature cards!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -53266,7 +53254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '    Now.....Let''s get into some action Shall we?'
+  m_text: '    Now... Let''s get into some action shall we?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -54269,8 +54257,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Remember! These are Your Playable Cards, You start off every game with
-    5 creature Cards and 2 Booster Card.
+  m_text: Remember! These are your playable cards. You start off every game with
+    five creature cards and two booster cards.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -56293,7 +56281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack One of the Players Creature cards or Their Face
+  m_text: Attack one of the player's creature cards or their face.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
