@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Discarded Level Designs/Level Design 1 (Original).unity
     guid: 9cc657f6310c5564f989523e2b6ec8fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 300a6b174ae4340448719966ae004a35
-  - enabled: 0
-    path: Assets/Scenes/TutorialScene.unity
-    guid: 673ae49f7a75fbf45ac9b15a70084047
+  - enabled: 1
+    path: Assets/Scenes/Main Menu 2.unity
+    guid: a53c9b2587beeac4d9122695797fdc1e
   - enabled: 1
     path: Assets/Scenes/connectToLobby.unity
     guid: 7c7cb6e724c9d0e418ad6baf3832c4e1
+  - enabled: 0
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 673ae49f7a75fbf45ac9b15a70084047
   - enabled: 1
     path: Assets/Scenes/Dylan Scene.unity
     guid: c01ee3bca8485784a82ac6f19d250f83

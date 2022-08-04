@@ -23,8 +23,10 @@ public class NetManager : MonoBehaviour
     [SerializeField] GameObject lookingForOpponent;
 
     [SerializeField] Button startButton;
+    [SerializeField] Button exitButton;
     [SerializeField] TextMeshProUGUI setPlayerName;
 
+    SceneController sC;
     Socket socket;
     Player player;
     public NetworkComponent nc;
@@ -40,31 +42,17 @@ public class NetManager : MonoBehaviour
         {
             try
             {
-
                 player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
 
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
-
                 socket.Send(new InformationPacket(player).StartSerialization());
 
-                
                 connectPanel.SetActive(false);
                 matchMakingPanel.SetActive(true);
-               
-                // playerName[1].text = playerNameInputField.text;
-
-
-
-                lookingForOpponent.SetActive(true);
-
+                startButton.gameObject.SetActive(false);
 
                 socket.Blocking = false;
-
-
-
-                
-
 
                 //if one player joins, and lobby is empty look for another player UI should pop up and wait until another player Joins
 
@@ -86,7 +74,6 @@ public class NetManager : MonoBehaviour
             }
 
         });
-
     }
 
     void Update()
@@ -114,6 +101,22 @@ public class NetManager : MonoBehaviour
                             print(lp.clientsName[i]);
                             playerName[i].text = lp.clientsName[i];
                         }
+                        if(lp.clientsName.Count == 1)
+                        {
+                            //set this player as player 1
+                            opponentFound.SetActive(false);
+                            lookingForOpponent.SetActive(true);
+                        }
+                        if(lp.clientsName.Count == 2)
+                        {
+
+                            //set this player as player 2
+                            startButton.gameObject.SetActive(true);
+                            print("doggy");
+                            opponentFound.SetActive(true);
+                            lookingForOpponent.SetActive(false);
+                        }
+                        //if both players are there, then player 1 should click on start and launch both players into the game scene!
 
                         break;
 
