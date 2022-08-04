@@ -30,7 +30,8 @@ namespace core
             Message,
             Rigidbody,
              Information,
-                Lobby
+                Lobby,
+            CardPacket
         }
 
       public PacketType Type { get; set; }
