@@ -15,20 +15,24 @@ public class CardMouseInteraction : MonoBehaviour
     private Vector3 centerScreenPosition;
     private bool isZoomedIn;
 
-    public  void Awake()
+    public void Awake()
     {
         mainCam = Camera.main;
-        goBackButton.SetActive(false);
+        if(goBackButton != null)
+            goBackButton.SetActive(false);
         card = GetComponent<Card>();
     }
     void Start()
     {
         centerScreenPosition = mainCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.5f));
         SelectableCardList = GameObject.FindGameObjectsWithTag("Selectable");
-        interactPanel.SetActive(false);
+        if (interactPanel != null)
+            interactPanel.SetActive(false);
         yDistFromTable = transform.position.y + 0.2f;
         if (card.isOpponentCard)
+        {
             Destroy(this);
+        }
     }
 
     private void OnMouseEnter()

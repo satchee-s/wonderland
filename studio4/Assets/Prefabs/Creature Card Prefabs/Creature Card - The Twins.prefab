@@ -1035,8 +1035,8 @@ GameObject:
   m_Component:
   - component: {fileID: 889279686322959750}
   - component: {fileID: 889279686322959753}
-  - component: {fileID: 2562053427353564517}
   - component: {fileID: -4733878520334864671}
+  - component: {fileID: 7972644245687400759}
   m_Layer: 0
   m_Name: Creature Card - The Twins
   m_TagString: Card
@@ -1051,7 +1051,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889279686322959751}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.14, y: -0.6757488, z: 1.018}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
@@ -1078,35 +1078,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 1
-  cardName: Cheshire Cat
-  attack: 5
-  health: 7
+  cardName: The Twins
+  attack: 3
+  health: 2
   description: I Am Cheshire
   hasBeenPlayed: 0
-  handIndex: 0
   cost: 0
   canBeSummoned: 0
   summoned: 0
-  nameText: {fileID: 889279685848340734}
-  attackText: {fileID: 889279685379414737}
-  healthText: {fileID: 889279685543178775}
-  descriptionText: {fileID: 889279685639987085}
+  sleep: 0
+  cantAttack: 0
+  canAttack: 0
+  targeting: 0
+  targetingEnemy: 0
+  onlyThisCardAttack: 0
+  isHibernating: 0
+  nameText: {fileID: 0}
+  attackText: {fileID: 0}
+  healthText: {fileID: 0}
+  descriptionText: {fileID: 0}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2562053427353564517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889279686322959751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yDistFromTable: 24
-  canBeMoved: 1
+  Type: 0
+  CardClass: 0
+  isOpponentCard: 0
 --- !u!65 &-4733878520334864671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1120,6 +1115,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7972644245687400759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889279686322959751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368389428d434df48a81eb2de806777d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPanel: {fileID: 0}
+  goBackButton: {fileID: 0}
+  lockPos: 0
+  SelectableCardList: []
+  card: {fileID: 0}
 --- !u!1 &889279686975537308
 GameObject:
   m_ObjectHideFlags: 0

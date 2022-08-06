@@ -194,8 +194,7 @@ GameObject:
   - component: {fileID: 135710375292243331}
   - component: {fileID: 135710375292243330}
   - component: {fileID: 6714826475061346712}
-  - component: {fileID: 3167272405855750389}
-  - component: {fileID: 6872698188636439710}
+  - component: {fileID: 415979692152904426}
   m_Layer: 0
   m_Name: Booster Card - Corruption
   m_TagString: Untagged
@@ -255,13 +254,11 @@ MonoBehaviour:
   attackText: {fileID: 135710376794405944}
   healthText: {fileID: 0}
   descriptionText: {fileID: 135710375237840275}
-  attackBordor: {fileID: 0}
-  Target: {fileID: 0}
-  Enemy: {fileID: 0}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
   Type: 1
   CardClass: 0
+  isOpponentCard: 0
 --- !u!65 &6714826475061346712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -275,7 +272,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3167272405855750389
+--- !u!114 &415979692152904426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,29 +281,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 135710375292243328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 368389428d434df48a81eb2de806777d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
   interactPanel: {fileID: 0}
   goBackButton: {fileID: 0}
   lockPos: 0
-  isOn: 1
   SelectableCardList: []
---- !u!114 &6872698188636439710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135710375292243328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08efd2a59fdf8dd4db34afb447858742, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yDistFromTable: 0
-  canBeMoved: 1
+  card: {fileID: 0}
 --- !u!1 &135710375306721077
 GameObject:
   m_ObjectHideFlags: 0

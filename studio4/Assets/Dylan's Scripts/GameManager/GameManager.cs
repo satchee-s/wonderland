@@ -15,15 +15,16 @@ public class GameManager : MonoBehaviour
     public GameObject ShuffleCard;
 
     public Transform[] cardSlots;
-    public bool[] availableCardSlots;
-
+    public bool[] availableCardSlots;//this shouldnt be here
+    public Slots player1Slots; //8 slots
+    public Slots player2Slots;//8 slots
     public bool HasDrawedCards = false;
     private bool FirstStep = false;
     private bool SecondStep = false;
     private bool ThirdStep = false;
 
-    public RaycastAnim rA;
-
+    //public RaycastAnim rA;
+    CardMouseInteraction rA;
     public void Start()
     {
         FirstStep = false;
@@ -31,7 +32,8 @@ public class GameManager : MonoBehaviour
         ThirdStep = false;
         HasDrawedCards = false;
 
-      //  FirstTurn();
+        //  FirstTurn();
+        placeCard(creatureDeck[0], player1Slots.creatureCardSlots[0]);
     }
 
     void SetRandomCards()
@@ -159,6 +161,7 @@ public class GameManager : MonoBehaviour
                 creatureDeck[i] = creatureDeck[randomIndex];
                 creatureDeck[randomIndex] = container[0];
             }
+           
         }
     }
 
@@ -166,4 +169,15 @@ public class GameManager : MonoBehaviour
     {
         GetComponent<RaycastAnim>().GoBack1();
     }*/
+    
+
+    public void placeCard(Card movingCard, Slot targetedSlot)
+    {
+        if ((movingCard.getCardType = targetedSlot.GetType) targetedSlot.isAvailable = true)
+        {
+            //change card position to the slot position.. so you're placing it there
+            movingCard.transform.position =  targetedSlot.transform.position;
+        }
+
+    }
 }

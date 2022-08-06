@@ -15,15 +15,10 @@ public class Card : MonoBehaviour
     public bool canBeSummoned;
     public bool summoned;
     public bool sleep;
-    public bool cantAttack;
-    public bool canAttack;
-    public bool targeting;
-    public bool targetingEnemy;
-    public bool onlyThisCardAttack;
+    public PlayerManager playerManager;
     public bool isHibernating;
     public static bool staticTarget;
     public static bool staticTargetEnemy;
-    private GameManager gm;
 
 
     public TextMeshPro nameText;
@@ -97,52 +92,17 @@ public class Card : MonoBehaviour
 
         }
 
-        if (canAttack == true)
-        {
-            // attackBordor.SetActive(true);
-        }
-        else
-        {
-            // attackBordor.SetActive(false);
-        }
+       
 
-        if (PlayerTurnSystem.isYourTurn == false && summoned == true)
-        {
-            sleep = false;
-            canAttack = false;
-        }
-
-        if (PlayerTurnSystem.isYourTurn == true && sleep == false && cantAttack == false)
-        {
-            cantAttack = true;
-        }
-        else
-        {
-            cantAttack = false;
-        }
-
-        targeting = staticTarget;
-
-        targetingEnemy = staticTargetEnemy;
-
-        if (targetingEnemy == true)
-        {
-            //  Target = Enemy;
-        }
-        else
-        {
-            //  Target = null;
-        }
-
-        if (targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
-        {
-            Attack();
-        }
+        
+       
+       
 
     }
 
     private void Start()
     {
+        playerManager = GetComponent<PlayerManager>();
         //gm = FindObjectOfType<GameManager>();
         originalRotationValue = transform.rotation;
         originalPos = transform.position;
@@ -150,29 +110,40 @@ public class Card : MonoBehaviour
         canBeSummoned = false;
         summoned = false;
 
-        canAttack = false;
+        
         sleep = true;
 
         //  Enemy = GameObject.Find("Enemy HP");
 
-        targeting = false;
-        targetingEnemy = false;
+        
     }
 
-    public void Damage(Card opponentCard, Slots slot)
+    public void Attack(Card opponentCard)
     {
-        if (Type == CardType.Creature && opponentCard.Type == CardType.Creature)
+        
+        if (Type == CardType.Creature && opponentCard.Type == CardType.Creature && sleep == false)
         {
-            health -= opponentCard.attack;
-            opponentCard.health = health;
-            //Debug.Log($"card health: {health} opponent health {opponentCard.health}");
-            //ChangeDescription();
-            //opponentCard.ChangeDescription();
+            opponentCard.TakeDamage(attack);
+           
+           
+        }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        
+        if(CardType.Creature == Type)
+        {
+            health -= amount;
+
             if (health <= 0)
             {
                 gameObject.SetActive(false);
+                playerManager.health -= Mathf.Abs(health);
             }
         }
+
+       
     }
 
     public void Summon()
@@ -180,62 +151,21 @@ public class Card : MonoBehaviour
         PlayerTurnSystem.currentMana -= cost;
         summoned = true;
         hasBeenPlayed = true;
+        sleep = true;
     }
     public void Maxmana(int x)
     {
         PlayerTurnSystem.maxMana += x;
     }
 
-    public void Attack()
+    public CardType getCardType()
     {
-        if (canAttack == true)
-        {
-            // if (Target != null)
-            // {
-            // if (Target == Enemy)
-            // {
-            //EnemyHp.staticHp -= power;
-            //     targeting = false;
-            //      cantAttack = true;
-            //  }
-
-            // if (Target.name == "CardToHand(Clone)")
-            //  {
-            //     canAttack = true;
-            // }
-            // }
-        }
+        return this.Type;
     }
 
-    public void UntargetEnemy()
-    {
-        staticTargetEnemy = false;
-    }
+    
 
-    public void TargetEnemy()
-    {
-        staticTargetEnemy = true;
-    }
-
-    public void StartAttack()
-    {
-        staticTarget = true;
-    }
-
-    public void StopAttack()
-    {
-        staticTarget = false;
-    }
-
-    public void OneCardAttack()
-    {
-        onlyThisCardAttack = true;
-    }
-
-    public void OneCardAttackStop()
-    {
-        onlyThisCardAttack = false;
-    }
+   
 
     private Transform FindLastParent()
     {

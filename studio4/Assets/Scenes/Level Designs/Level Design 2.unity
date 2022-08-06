@@ -686,12 +686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &10575145 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -778,6 +772,14 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1882408255}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1 &11738752
@@ -1642,12 +1644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &27547614 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
@@ -2033,12 +2029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &40467745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,6 +2283,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: mainCam
       value: 
@@ -2402,6 +2400,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1578808976}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf35bc01349f8a544819617168c04b15, type: 3}
 --- !u!1 &49544118
@@ -3726,12 +3732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &69694520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4393,7 +4393,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 135710375292243330, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
   m_PrefabInstance: {fileID: 2011045626}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 695044946}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
@@ -4979,12 +4979,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &90188109 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
@@ -5720,12 +5714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &102563311 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -6341,12 +6329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &119896771
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,6 +6562,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: mainCam
       value: 
@@ -7822,6 +7812,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
@@ -7958,12 +7956,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &148239160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -8030,6 +8022,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: mainCam
       value: 
@@ -8376,11 +8376,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153721297}
   m_Mesh: {fileID: -4393675991995823134, guid: 0464afc39207ab540b94807b2273e3e5, type: 3}
---- !u!1 &154101918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 11577364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &154101919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -8391,30 +8386,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 11577364}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154101918}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &154101923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154101918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &154510561
 GameObject:
   m_ObjectHideFlags: 0
@@ -9689,12 +9666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &174298565 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
@@ -9904,12 +9875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &175916291 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
@@ -10772,12 +10737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!4 &197516264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
@@ -11325,12 +11284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &208789540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -12070,6 +12023,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1319471907}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
 --- !u!1 &235885767
@@ -12308,12 +12269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &240761484
 GameObject:
   m_ObjectHideFlags: 0
@@ -13151,12 +13106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &246423950 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -14243,6 +14192,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
@@ -14899,6 +14856,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
@@ -15384,12 +15349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &294431085
 GameObject:
   m_ObjectHideFlags: 0
@@ -16429,12 +16388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &314689475 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -19103,6 +19056,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1759182703}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1 &355114054
@@ -19753,6 +19714,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: mainCam
       value: 
@@ -20181,12 +20150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &370400192 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -20812,6 +20775,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1759182703}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1 &380218578
@@ -21283,6 +21254,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1759182703}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1 &385335518
@@ -22719,12 +22698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &417900210 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -23697,18 +23670,6 @@ PrefabInstance:
       value: Creature Card - The Twins
       objectReference: {fileID: 0}
     - target: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-      propertyPath: attack
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-      propertyPath: health
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-      propertyPath: cardName
-      value: The Twins
-      objectReference: {fileID: 0}
-    - target: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
       propertyPath: nameText
       value: 
       objectReference: {fileID: 187684142}
@@ -23724,6 +23685,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1759182703}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1001 &445390697
@@ -24096,6 +24065,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448414167}
+  - component: {fileID: 448414168}
+  - component: {fileID: 448414169}
   m_Layer: 0
   m_Name: Opponent
   m_TagString: Untagged
@@ -24121,6 +24092,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &448414168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448414166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a46f09d4dfd7c94b81a92558683fe40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  role: 1
+--- !u!114 &448414169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448414166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af7199adc46cfc4bbfc17d0b35d4c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthSlider: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!1 &449289267
 GameObject:
   m_ObjectHideFlags: 0
@@ -24512,12 +24511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &454762823 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -25592,12 +25585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &473870242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 77c940120d61e414ba78f99ceddd9bdb, type: 3}
@@ -26978,12 +26965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &500420417
 GameObject:
   m_ObjectHideFlags: 0
@@ -29128,6 +29109,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1759182703}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1001 &547014202
@@ -30266,6 +30255,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: mainCam
       value: 
@@ -30833,12 +30830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &570261305 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -31492,12 +31483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &577971992 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: cf35bc01349f8a544819617168c04b15, type: 3}
@@ -31829,7 +31814,6 @@ MonoBehaviour:
   - {fileID: 1447919625}
   availableCardSlots: 
   HasDrawedCards: 0
-  rA: {fileID: 0}
   TutorialDeck:
   - {fileID: 922362178}
   - {fileID: 1662193866}
@@ -32259,6 +32243,14 @@ PrefabInstance:
         played creature cards lose one attack point when played. This creature card\u2019s
         effect becomes inactive when discarded"
       objectReference: {fileID: 0}
+    - target: {fileID: 3009203315285532489, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3009203315285532489, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
 --- !u!1 &586023028
@@ -33188,7 +33180,7 @@ RectTransform:
   - {fileID: 1233903169}
   - {fileID: 1866059804}
   m_Father: {fileID: 1936780537}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -73.469, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -33658,6 +33650,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
@@ -34483,6 +34483,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 2027456170}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
 --- !u!114 &634560556 stripped
@@ -34831,12 +34839,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &637921683 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -35175,11 +35177,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642062599}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &642715608 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 1267450729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &642715609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -35190,30 +35187,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 1267450729}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642715608}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &642715613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642715608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1001 &643440800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35313,12 +35292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &643440806 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
@@ -36780,11 +36753,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &660219810 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 385160767}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &660219811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -36795,30 +36763,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 385160767}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660219810}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &660219815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660219810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &660839107
 GameObject:
   m_ObjectHideFlags: 0
@@ -37712,6 +37662,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
@@ -38744,6 +38702,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694844257}
   m_CullTransparentMesh: 1
+--- !u!1 &695044946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 135710375292243328, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+  m_PrefabInstance: {fileID: 2011045626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &695044947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695044946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368389428d434df48a81eb2de806777d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPanel: {fileID: 129571957}
+  goBackButton: {fileID: 898021999}
+  lockPos: 0
+  SelectableCardList: []
+  card: {fileID: 0}
 --- !u!1001 &695330865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38799,6 +38779,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: mainCam
       value: 
@@ -38854,12 +38842,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &698844515
 GameObject:
   m_ObjectHideFlags: 0
@@ -39181,12 +39163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &706748134
 GameObject:
   m_ObjectHideFlags: 0
@@ -40133,12 +40109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &715661959 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: cf35bc01349f8a544819617168c04b15, type: 3}
@@ -41796,12 +41766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!4 &755826782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
@@ -41972,6 +41936,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1759182703}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1 &759105152
@@ -42137,7 +42109,16 @@ PrefabInstance:
       value: 'Class: Peasant  Magic Hat Cost: One Magic Hat Sacrifice Outcome: One
         Magic Hat Hibernation Count When Played: Zero  Effect: None '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
+    m_RemovedComponents:
+    - {fileID: 2562053427353564517, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
 --- !u!1 &762039139
 GameObject:
@@ -42652,12 +42633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &772077305
 GameObject:
   m_ObjectHideFlags: 0
@@ -43356,6 +43331,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: mainCam
       value: 
@@ -43680,12 +43663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &792181357
 GameObject:
   m_ObjectHideFlags: 0
@@ -43837,6 +43814,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: mainCam
       value: 
@@ -44702,6 +44687,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1578808976}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf35bc01349f8a544819617168c04b15, type: 3}
 --- !u!1 &809961142
@@ -45028,12 +45021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1001 &818540169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45122,6 +45109,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1319471907}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
 --- !u!4 &819474028 stripped
@@ -46394,6 +46389,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
@@ -46949,12 +46952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &861170407 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
@@ -47935,6 +47932,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 449586682}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
 --- !u!1001 &880621296
@@ -47992,6 +47997,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 2744923352083632861, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: mainCam
       value: 
@@ -48104,6 +48117,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 2027456170}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
 --- !u!1 &882638236
@@ -49383,6 +49404,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1319471907}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
 --- !u!1 &901093515
@@ -50513,6 +50542,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: mainCam
       value: 
@@ -51052,12 +51089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1001 &939697349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51763,6 +51794,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
@@ -51875,6 +51914,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 449586682}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
 --- !u!1 &948732511
@@ -53841,6 +53888,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: mainCam
       value: 
@@ -54361,12 +54416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1002469566 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
@@ -54588,12 +54637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1003130176 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -57197,12 +57240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1069183345
 GameObject:
   m_ObjectHideFlags: 0
@@ -58991,12 +59028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1103328667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
@@ -59030,12 +59061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1105317939
 GameObject:
   m_ObjectHideFlags: 0
@@ -59369,6 +59394,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 2027456170}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
 --- !u!1 &1112562705
@@ -59759,12 +59792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1117457761 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -59927,6 +59954,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
@@ -61387,12 +61422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1153702575
 GameObject:
   m_ObjectHideFlags: 0
@@ -62111,6 +62140,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 415979692152904426, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 3167272405855750389, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: mainCam
       value: 
@@ -62215,11 +62252,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167827483}
   m_Mesh: {fileID: -4393675991995823134, guid: 0464afc39207ab540b94807b2273e3e5, type: 3}
---- !u!1 &1169847747 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 757022333}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1169847748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -62230,30 +62262,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 757022333}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169847747}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1169847752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169847747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1170391157
 GameObject:
   m_ObjectHideFlags: 0
@@ -62857,12 +62871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1179418998 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -63484,12 +63492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1196602021
 GameObject:
   m_ObjectHideFlags: 0
@@ -63739,6 +63741,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1199200977}
+  - component: {fileID: 1199200978}
+  - component: {fileID: 1199200979}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -63764,6 +63768,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1199200978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199200976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a46f09d4dfd7c94b81a92558683fe40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  role: 0
+--- !u!114 &1199200979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199200976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af7199adc46cfc4bbfc17d0b35d4c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthSlider: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!1 &1201027725
 GameObject:
   m_ObjectHideFlags: 0
@@ -64557,6 +64589,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: mainCam
       value: 
@@ -66129,11 +66169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2acf02c8bf12bfe42b0ca8eda4f581f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1262122605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 443769287}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1262122606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -66144,30 +66179,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 443769287}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262122605}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1262122610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1262122605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1262140281
 GameObject:
   m_ObjectHideFlags: 0
@@ -66552,6 +66569,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1759182703}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7972644245687400759, guid: f1340767d0d75834baeea5deddda472f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1340767d0d75834baeea5deddda472f, type: 3}
 --- !u!1 &1268287490
@@ -67086,6 +67111,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: mainCam
       value: 
@@ -67571,6 +67604,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: mainCam
       value: 
@@ -67739,11 +67780,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306450182}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1310017502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 544354781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1310017503 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -67754,30 +67790,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 544354781}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310017502}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1310017507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310017502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1314350159
 GameObject:
   m_ObjectHideFlags: 0
@@ -68742,12 +68760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1330309378
 GameObject:
   m_ObjectHideFlags: 0
@@ -69483,6 +69495,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1319471907}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
 --- !u!1001 &1347339187
@@ -69597,12 +69617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1347339193 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
@@ -70060,11 +70074,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352875269}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1353268062 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 378531924}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1353268063 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -70075,30 +70084,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 378531924}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353268062}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1353268067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353268062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1353519824
 GameObject:
   m_ObjectHideFlags: 0
@@ -71453,12 +71444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1380189250 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 135710375292243330, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
@@ -72983,12 +72968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1400664325 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
@@ -73099,12 +73078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1400967616 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
@@ -73390,12 +73363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1407324422 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -74019,6 +73986,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 449586682}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
 --- !u!1 &1420047609
@@ -74276,12 +74251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1426332093 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: cf35bc01349f8a544819617168c04b15, type: 3}
@@ -74493,6 +74462,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1319471907}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
 --- !u!1 &1429509611
@@ -75319,6 +75296,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 2027456170}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
 --- !u!1 &1442248087
@@ -75499,6 +75484,14 @@ PrefabInstance:
         other played creature cards on the play field an additional one health point
         when played. This creature card\u2019s effect becomes inactive when discarded."
       objectReference: {fileID: 0}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
 --- !u!1 &1445335820
@@ -77460,12 +77453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1476166887
 GameObject:
   m_ObjectHideFlags: 0
@@ -78178,12 +78165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1487410160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
@@ -78768,6 +78749,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: mainCam
       value: 
@@ -79130,6 +79119,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1319471907}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 9147841325522013256, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
 --- !u!1 &1525431008
@@ -79863,7 +79860,6 @@ MonoBehaviour:
   - {fileID: 1220251100}
   availableCardSlots: 
   HasDrawedCards: 0
-  rA: {fileID: 1560287251}
   TutorialDeck:
   - {fileID: 1886663687}
   - {fileID: 1109943677}
@@ -80856,12 +80852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1551744619
 GameObject:
   m_ObjectHideFlags: 0
@@ -81377,12 +81367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1560287254 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 77c940120d61e414ba78f99ceddd9bdb, type: 3}
@@ -81675,12 +81659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1564680508 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
@@ -81969,12 +81947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1571434414
 GameObject:
   m_ObjectHideFlags: 0
@@ -82755,6 +82727,14 @@ PrefabInstance:
         from their corresponding decks to be discarded during their next turn. This
         creature card\u2019s effect becomes inactive when discarded."
       objectReference: {fileID: 0}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf35bc01349f8a544819617168c04b15, type: 3}
 --- !u!1 &1608944946
@@ -83616,12 +83596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1628220392 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: cf35bc01349f8a544819617168c04b15, type: 3}
@@ -84142,12 +84116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1636100709 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
@@ -84631,6 +84599,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1578808976}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 4486294906879840376, guid: cf35bc01349f8a544819617168c04b15, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf35bc01349f8a544819617168c04b15, type: 3}
 --- !u!1 &1655036707
@@ -85382,11 +85358,6 @@ PrefabInstance:
       objectReference: {fileID: 1516153254}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
---- !u!1 &1662193862 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 353018044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1662193863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -85397,30 +85368,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 353018044}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662193862}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1662193867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662193862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1662205723
 GameObject:
   m_ObjectHideFlags: 0
@@ -85630,6 +85583,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1067847209}
+    - target: {fileID: 3009203315285532489, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3009203315285532489, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
 --- !u!1 &1668056304
@@ -86387,12 +86348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!4 &1688331527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
@@ -87374,12 +87329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1725840140
 GameObject:
   m_ObjectHideFlags: 0
@@ -88062,6 +88011,14 @@ PrefabInstance:
         other played creature cards on the play field an additional one attack point
         when played. This creature card\u2019s effect becomes inactive when discarded."
       objectReference: {fileID: 0}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6661661393492267199, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
 --- !u!1 &1734566827
@@ -89041,12 +88998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1747319172 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
@@ -89421,12 +89372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1762084919 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -89602,12 +89547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1765163760
 GameObject:
   m_ObjectHideFlags: 0
@@ -90578,12 +90517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1784432021
 GameObject:
   m_ObjectHideFlags: 0
@@ -91705,12 +91638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1805842596 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -92081,12 +92008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1814138038
 GameObject:
   m_ObjectHideFlags: 0
@@ -93645,6 +93566,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 7379642177704370876, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: mainCam
       value: 
@@ -95375,12 +95304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &1886974688 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
@@ -97138,12 +97061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1921773438
 GameObject:
   m_ObjectHideFlags: 0
@@ -97795,12 +97712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &1934534647
 GameObject:
   m_ObjectHideFlags: 0
@@ -98073,8 +97984,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -2.8775997}
   m_LocalScale: {x: 0.125, y: 0.12500001, z: 0.5}
   m_Children:
-  - {fileID: 418558064}
   - {fileID: 610392337}
+  - {fileID: 418558064}
   - {fileID: 1728460391}
   - {fileID: 445708186}
   - {fileID: 514871884}
@@ -101444,12 +101355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &2013950281 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: 19f08f20f5864334cb135d1eb9466d9d, type: 3}
@@ -103056,6 +102961,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 6423744243187712171, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: mainCam
       value: 
@@ -103700,6 +103613,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 449586682}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
 --- !u!1 &2062023630
@@ -104336,6 +104257,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 449586682}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 8537004361735485638, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
 --- !u!1001 &2075080303
@@ -104416,6 +104345,14 @@ PrefabInstance:
       propertyPath: descriptionText
       value: 
       objectReference: {fileID: 1067847209}
+    - target: {fileID: 3009203315285532489, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3009203315285532489, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5d697d9c62b2a4c9f79c2a3d2fd46b, type: 3}
 --- !u!1 &2075889433
@@ -106011,6 +105948,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: mainCam
       value: 
@@ -106259,12 +106204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 2069280410}
-  goBackButton: {fileID: 679503346}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!114 &2105032781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -106872,6 +106811,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 1606287103927451939, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: mainCam
       value: 
@@ -107093,12 +107040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  interactPanel: {fileID: 129571957}
-  goBackButton: {fileID: 898021999}
-  lockPos: 0
-  isOn: 1
-  SelectableCardList: []
 --- !u!1 &2127826112
 GameObject:
   m_ObjectHideFlags: 0
@@ -108242,6 +108183,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: goBackButton
+      value: 
+      objectReference: {fileID: 898021999}
+    - target: {fileID: 3541349809039652831, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: interactPanel
+      value: 
+      objectReference: {fileID: 129571957}
     - target: {fileID: 9101502673355088743, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: mainCam
       value: 
