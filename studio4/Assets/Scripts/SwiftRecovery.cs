@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwiftRecovery : CreatureManager
 {
-    public override void PlayCard(Card otherCard, Slots slot)
+    public override void PlayCard(Card otherCard, SlotsManager slot)
     {
         if (playerCreatureCards.Contains(otherCard))
         {

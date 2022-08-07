@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
 
     public Transform[] cardSlots;
     public bool[] availableCardSlots;//this shouldnt be here
-    public Slots player1Slots; //8 slots
-    public Slots player2Slots;//8 slots
+    public SlotsManager player1Slots; //8 slots
+    public SlotsManager player2Slots;//8 slots
     public bool HasDrawedCards = false;
     private bool FirstStep = false;
     private bool SecondStep = false;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         HasDrawedCards = false;
 
         //  FirstTurn();
-        placeCard(creatureDeck[0], player1Slots.creatureCardSlots[0]);
+        
     }
 
     void SetRandomCards()
@@ -171,13 +171,5 @@ public class GameManager : MonoBehaviour
     }*/
     
 
-    public void placeCard(Card movingCard, Slot targetedSlot)
-    {
-        if ((movingCard.getCardType = targetedSlot.GetType) targetedSlot.isAvailable = true)
-        {
-            //change card position to the slot position.. so you're placing it there
-            movingCard.transform.position =  targetedSlot.transform.position;
-        }
-
-    }
+  
 }

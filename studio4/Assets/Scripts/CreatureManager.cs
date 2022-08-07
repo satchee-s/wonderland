@@ -12,9 +12,9 @@ public abstract class CreatureManager : MonoBehaviour
     {
         card = GetComponent<Card>();
     }
-    public virtual void PlayCard(Card otherCard, Slots slot)
+    public virtual void PlayCard(Card otherCard, SlotsManager slot)
     {
-        slot.hasCard = false;
+        //slot.hasCard = false;
         this.gameObject.SetActive(false);
     }
 }

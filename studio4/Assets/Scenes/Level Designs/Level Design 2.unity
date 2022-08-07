@@ -31813,6 +31813,8 @@ MonoBehaviour:
   - {fileID: 1973603456}
   - {fileID: 1447919625}
   availableCardSlots: 
+  player1Slots: {fileID: 0}
+  player2Slots: {fileID: 0}
   HasDrawedCards: 0
   TutorialDeck:
   - {fileID: 922362178}
@@ -34784,11 +34786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &637921675 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1340767d0d75834baeea5deddda472f, type: 3}
-  m_PrefabInstance: {fileID: 637921673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &637921676 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1141676439995869641, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -34827,24 +34824,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 637921673}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &637921680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637921675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &637921683 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1340767d0d75834baeea5deddda472f, type: 3}
   m_PrefabInstance: {fileID: 637921673}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637921675}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
@@ -58995,11 +58980,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101339730}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1101953906 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
-  m_PrefabInstance: {fileID: 1441683507}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1101953907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -59010,22 +58990,10 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 889279686322959753, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
   m_PrefabInstance: {fileID: 1441683507}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101953906}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1101953911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101953906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb4f515742e0344da23d3ba68afc2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1103328667 stripped
@@ -79859,6 +79827,8 @@ MonoBehaviour:
   - {fileID: 337222020}
   - {fileID: 1220251100}
   availableCardSlots: 
+  player1Slots: {fileID: 0}
+  player2Slots: {fileID: 0}
   HasDrawedCards: 0
   TutorialDeck:
   - {fileID: 1886663687}

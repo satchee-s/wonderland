@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class CardMouseInteraction : MonoBehaviour
     private float yDistFromTable;
     public GameObject interactPanel;
     public GameObject goBackButton;
-
+    public static event Action<CardMouseInteraction> onDragEvent;
     public float lockPos;
     public GameObject[] SelectableCardList;
     public Card card;
@@ -33,6 +34,10 @@ public class CardMouseInteraction : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+    private void OnMouseDown()
+    {
+        onDragEvent?.Invoke(this);
     }
 
     private void OnMouseEnter()
