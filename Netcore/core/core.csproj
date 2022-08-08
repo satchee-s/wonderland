@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acknowledgedPacket.cs" />
+    <Compile Include="CardPacket.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ConnectionPackercs.cs" />
     <Compile Include="DestroyPacket.cs" />

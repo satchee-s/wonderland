@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseMovement : MonoBehaviour
+/*public class MouseMovement : MonoBehaviour
 {
     Camera cam;
     public float yDistFromTable;
@@ -33,4 +33,4 @@ public class MouseMovement : MonoBehaviour
             transform.position = card.originalPos;
         }
     }
-}
+}*/

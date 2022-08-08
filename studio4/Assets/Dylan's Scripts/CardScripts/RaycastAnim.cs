@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class RaycastAnim : MonoBehaviour
+/*public class RaycastAnim : MonoBehaviour
 {
 
     [SerializeField] private Camera mainCam;
@@ -100,4 +100,4 @@ public class RaycastAnim : MonoBehaviour
 
         this.gameObject.transform.position = this.gameObject.GetComponent<Card>().originalPos;
     }*/
-}
+//}

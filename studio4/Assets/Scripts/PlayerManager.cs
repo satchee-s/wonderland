@@ -11,16 +11,16 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        healthSlider.maxValue = health;
+        //healthSlider.maxValue = health;
     }
 
     public void DealDamage(int damage)
     {
         health -= damage;
-        healthSlider.value = health;
+       // healthSlider.value = health;
         if (health <= 0)
         {
-            healthText.text = "Player died";
+           // healthText.text = "Player died";
             Debug.Log(gameObject.name + " died");
             gameObject.SetActive(false);
         }

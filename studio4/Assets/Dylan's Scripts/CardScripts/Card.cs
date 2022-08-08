@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Text;
 using TMPro;
+
 
 [System.Serializable]
 public class Card : MonoBehaviour
@@ -20,34 +16,33 @@ public class Card : MonoBehaviour
     public bool canBeSummoned;
     public bool summoned;
     public bool sleep;
-    public bool cantAttack;
-    public bool canAttack;
-    public bool targeting;
-    public bool targetingEnemy;
-    public bool onlyThisCardAttack;
+    public PlayerManager playerManager;
     public bool isHibernating;
     public static bool staticTarget;
     public static bool staticTargetEnemy;
-    private GameManager gm;
-    
-  
+
+
     public TextMeshPro nameText;
     public TextMeshPro attackText;
     public TextMeshPro healthText;
     public TextMeshPro descriptionText;
 
-   // public GameObject attackBordor;
-   // public GameObject Target;
-   // public GameObject Enemy;
+    // public GameObject attackBordor;
+    // public GameObject Target;
+    // public GameObject Enemy;
 
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
 
-    public enum CardType {Creature, Booster};
     public CardType Type;
 
-    public enum CreatureCardClass { Peasant, Elite};
+    public enum CreatureCardClass { Peasant, Elite };
     public CreatureCardClass CardClass;
+
+    public bool isOpponentCard;
+
+    private CardMouseInteraction mouseInteraction;
+    public CardMouseInteraction MouseInteraction => mouseInteraction;
 
     public Card(int CardId, string CardName, int Attack, int Health, string Description, int Cost)
     {
@@ -76,6 +71,12 @@ public class Card : MonoBehaviour
         Type = type;
     }*/
 
+    private void Awake()
+    {
+        isOpponentCard = FindLastParent().GetComponent<PlayerRole>().IsOpponent;
+        mouseInteraction = GetComponent<CardMouseInteraction>();
+    }
+
     void Update()
     {
         /*nameText.text = " " + cardName; --- why??
@@ -87,153 +88,96 @@ public class Card : MonoBehaviour
         {
             canBeSummoned = true;
         }
-        else canBeSummoned = false; 
-    
+        else canBeSummoned = false;
 
-        if(canBeSummoned == true)
+
+        if (canBeSummoned == true)
         {
 
         }
 
-        if (canAttack == true)
-        {
-           // attackBordor.SetActive(true);
-        }
-        else
-        {
-           // attackBordor.SetActive(false);
-        }
 
-        if (PlayerTurnSystem.isYourTurn == false && summoned == true)
-        {
-            sleep = false;
-            canAttack = false;
-        }
 
-        if(PlayerTurnSystem.isYourTurn == true && sleep == false && cantAttack == false)
-        {
-            cantAttack = true;
-        }
-        else
-        {
-            cantAttack= false;
-        }
 
-        targeting = staticTarget;
 
-        targetingEnemy = staticTargetEnemy;
 
-        if(targetingEnemy == true)
-        {
-          //  Target = Enemy;
-        }
-        else
-        {
-          //  Target = null;
-        }
-
-        if(targeting == true && targetingEnemy == true && onlyThisCardAttack == true)
-        {
-            Attack();
-        }
 
     }
 
     private void Start()
     {
+        playerManager = GetComponent<PlayerManager>();
         //gm = FindObjectOfType<GameManager>();
         originalRotationValue = transform.rotation;
-
         originalPos = transform.position;
 
         canBeSummoned = false;
         summoned = false;
 
-        canAttack = false;
+
         sleep = true;
 
-      //  Enemy = GameObject.Find("Enemy HP");
+        //  Enemy = GameObject.Find("Enemy HP");
 
-        targeting = false;
-        targetingEnemy = false;
 
     }
 
-    public void Damage(Card opponentCard, Slots slot)
+    public void Attack(Card opponentCard)
     {
-        if (Type == CardType.Creature && opponentCard.Type == CardType.Creature)
+
+        if (Type == CardType.Creature && opponentCard.Type == CardType.Creature && sleep == false)
         {
-            health -= opponentCard.attack;
-            opponentCard.health = health;
-            //Debug.Log($"card health: {health} opponent health {opponentCard.health}");
-            //ChangeDescription();
-            //opponentCard.ChangeDescription();
-            if (health <= 0)
-            {
-                gameObject.SetActive(false);
-            }
+            opponentCard.TakeDamage(attack);
+
+
         }
     }
 
-   public void Summon()
+    public void TakeDamage(int amount)
+    {
+
+        if (CardType.Creature == Type)
+        {
+            health -= amount;
+
+            if (health <= 0)
+            {
+                gameObject.SetActive(false);
+                playerManager.health -= Mathf.Abs(health);
+            }
+        }
+
+
+    }
+
+    public void Summon()
     {
         PlayerTurnSystem.currentMana -= cost;
         summoned = true;
         hasBeenPlayed = true;
+        sleep = true;
     }
     public void Maxmana(int x)
     {
         PlayerTurnSystem.maxMana += x;
     }
 
-    public void Attack()
+    public CardType getCardType()
     {
-        if (canAttack == true)
-        {
-           // if (Target != null)
-           // {
-               // if (Target == Enemy)
-               // {
-                    //EnemyHp.staticHp -= power;
-               //     targeting = false;
-              //      cantAttack = true;
-              //  }
-
-               // if (Target.name == "CardToHand(Clone)")
-              //  {
-               //     canAttack = true;
-               // }
-           // }
-        }
+        return this.Type;
     }
 
-    public void UntargetEnemy()
-    {
-        staticTargetEnemy = false;
-    }
 
-    public void TargetEnemy()
-    {
-        staticTargetEnemy = true;
-    }
 
-    public void StartAttack()
-    {
-        staticTarget = true;
-    }
 
-    public void StopAttack()
-    {
-        staticTarget = false;
-    }
 
-    public void OneCardAttack()
+    private Transform FindLastParent()
     {
-        onlyThisCardAttack = true;
-    }
+        Transform current = transform.parent;
 
-    public void OneCardAttackStop()
-    {
-        onlyThisCardAttack = false;
+        while (current != null && current.parent != null)
+            current = current.parent;
+
+        return current;
     }
 }

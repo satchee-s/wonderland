@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class TutorialManager : MonoBehaviour
 {
 
-    RaycastAnim rayCast;
+     //RaycastAnim rayCast;
+    CardMouseInteraction rayCast;
     public GameObject[] popUps;
     public GameObject firstPopUp;
 
