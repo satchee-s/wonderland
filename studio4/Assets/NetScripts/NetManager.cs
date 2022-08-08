@@ -96,20 +96,19 @@ public class NetManager : MonoBehaviour
                         LobbyPacket lp = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
 
 
-                        for (int i = 0; i < lp.clientsName.Count; i++)
+                        for (int i = 0; i < lp.clientsName.Count; i++) // loop 
                         {
                             print(lp.clientsName[i]);
                             playerName[i].text = lp.clientsName[i];
                         }
-                        if(lp.clientsName.Count == 1)
+                        if(lp.clientsName.Count == 1) //this is the first player that joins
                         {
                             //set this player as player 1
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
                         }
-                        if(lp.clientsName.Count == 2)
+                        if(lp.clientsName.Count == 2) //this is when the 2nd client joins
                         {
-
                             //set this player as player 2
                             startButton.gameObject.SetActive(true);
                             print("doggy");

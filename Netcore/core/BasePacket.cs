@@ -31,7 +31,8 @@ namespace core
             Rigidbody,
              Information,
                 Lobby,
-            CardPacket
+            CardPacket,
+            Room
         }
 
       public PacketType Type { get; set; }
