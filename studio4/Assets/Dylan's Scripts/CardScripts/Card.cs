@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+
 [System.Serializable]
 public class Card : MonoBehaviour
 {
@@ -33,13 +34,15 @@ public class Card : MonoBehaviour
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
 
-    public enum CardType { Creature, Booster };
     public CardType Type;
 
     public enum CreatureCardClass { Peasant, Elite };
     public CreatureCardClass CardClass;
 
     public bool isOpponentCard;
+
+    private CardMouseInteraction mouseInteraction;
+    public CardMouseInteraction MouseInteraction => mouseInteraction;
 
     public Card(int CardId, string CardName, int Attack, int Health, string Description, int Cost)
     {
@@ -71,6 +74,7 @@ public class Card : MonoBehaviour
     private void Awake()
     {
         isOpponentCard = FindLastParent().GetComponent<PlayerRole>().IsOpponent;
+        mouseInteraction = GetComponent<CardMouseInteraction>();
     }
 
     void Update()
@@ -92,11 +96,11 @@ public class Card : MonoBehaviour
 
         }
 
-       
 
-        
-       
-       
+
+
+
+
 
     }
 
@@ -110,29 +114,29 @@ public class Card : MonoBehaviour
         canBeSummoned = false;
         summoned = false;
 
-        
+
         sleep = true;
 
         //  Enemy = GameObject.Find("Enemy HP");
 
-        
+
     }
 
     public void Attack(Card opponentCard)
     {
-        
+
         if (Type == CardType.Creature && opponentCard.Type == CardType.Creature && sleep == false)
         {
             opponentCard.TakeDamage(attack);
-           
-           
+
+
         }
     }
 
     public void TakeDamage(int amount)
     {
-        
-        if(CardType.Creature == Type)
+
+        if (CardType.Creature == Type)
         {
             health -= amount;
 
@@ -143,7 +147,7 @@ public class Card : MonoBehaviour
             }
         }
 
-       
+
     }
 
     public void Summon()
@@ -163,9 +167,9 @@ public class Card : MonoBehaviour
         return this.Type;
     }
 
-    
 
-   
+
+
 
     private Transform FindLastParent()
     {

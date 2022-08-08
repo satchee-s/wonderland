@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
 
     public Transform[] cardSlots;
     public bool[] availableCardSlots;//this shouldnt be here
-    public SlotsManager player1Slots; //8 slots
-    public SlotsManager player2Slots;//8 slots
+    public PlayerSlotsManager player1Slots; //8 slots
+    public PlayerSlotsManager player2Slots;//8 slots
     public bool HasDrawedCards = false;
     private bool FirstStep = false;
     private bool SecondStep = false;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         HasDrawedCards = false;
 
         //  FirstTurn();
-        
+
     }
 
     void SetRandomCards()
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 7; i++)
         {
             if (i < 2)
-            { 
+            {
                 handCards.Add(boosterDeck[Random.Range(0, boosterDeck.Count)]);
                 handCards[i].tag = "Selectable";
                 boosterDeck.Remove(handCards[i]);
@@ -55,37 +55,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   /* public void FirstTurn()
-    {
-        SetRandomCards();
+    /* public void FirstTurn()
+     {
+         SetRandomCards();
 
-        ShuffleCard.SetActive(false);
+         ShuffleCard.SetActive(false);
 
-        for (int i = 0; i < availableCardSlots.Length; i++)
-        {
-            if (availableCardSlots[i] == true)
-            {
-                handCards[i].transform.position = cardSlots[i].transform.position;
-                handCards[i].originalPos = handCards[i].transform.position;
-                availableCardSlots[i] = false;
-            }
-        }
-        HasDrawedCards = true;
-        OneboosterOneCreature.SetActive(false);
-        TwoCreature.SetActive(false);
+         for (int i = 0; i < availableCardSlots.Length; i++)
+         {
+             if (availableCardSlots[i] == true)
+             {
+                 handCards[i].transform.position = cardSlots[i].transform.position;
+                 handCards[i].originalPos = handCards[i].transform.position;
+                 availableCardSlots[i] = false;
+             }
+         }
+         HasDrawedCards = true;
+         OneboosterOneCreature.SetActive(false);
+         TwoCreature.SetActive(false);
 
-    } */
+     } */
 
     public void DrawOneFromBothDecks()
     {
-        if(creatureDeck.Count  >= 1 && boosterDeck.Count >=1)
+        if (creatureDeck.Count >= 1 && boosterDeck.Count >= 1)
         {
             Card creatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
             Card boosterCard = boosterDeck[Random.Range(0, boosterDeck.Count)];
 
             for (int i = 0; i < availableCardSlots.Length; i++)
             {
-                if(availableCardSlots[i] == true)
+                if (availableCardSlots[i] == true)
                 {
                     creatureCard.gameObject.SetActive(true);
                     boosterCard.gameObject.SetActive(true);
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
                     creatureCard.originalPos = creatureCard.transform.position;
 
                     boosterCard.transform.position = cardSlots[i + 1].transform.position;
-                    boosterCard.originalPos = boosterCard.transform.position;   
+                    boosterCard.originalPos = boosterCard.transform.position;
 
                     availableCardSlots[i] = false;
 
@@ -152,16 +152,16 @@ public class GameManager : MonoBehaviour
 
     public void ShuffleDeck()
     {
-        if (creatureDeck.Count > 1 ) //check if there are more than 1 card in the deck of cards
+        if (creatureDeck.Count > 1) //check if there are more than 1 card in the deck of cards
         {
-            for(int i = 0; i < creatureDeck.Count; i++) //???
+            for (int i = 0; i < creatureDeck.Count; i++) //???
             {
-                container[0] = creatureDeck[i]; 
+                container[0] = creatureDeck[i];
                 int randomIndex = Random.Range(i, creatureDeck.Count);
                 creatureDeck[i] = creatureDeck[randomIndex];
                 creatureDeck[randomIndex] = container[0];
             }
-           
+
         }
     }
 
@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     {
         GetComponent<RaycastAnim>().GoBack1();
     }*/
-    
 
-  
+
+
 }

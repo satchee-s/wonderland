@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CardMouseInteraction : MonoBehaviour
 {
     private Camera mainCam;
-    
+
     private float yDistFromTable;
     public GameObject interactPanel;
     public GameObject goBackButton;
@@ -15,11 +15,15 @@ public class CardMouseInteraction : MonoBehaviour
     public Card card;
     private Vector3 centerScreenPosition;
     private bool isZoomedIn;
+    private static bool isDragged;
+    public Vector3 DragPosition { get; private set; }
+
+    public event Action onRelease;
 
     public void Awake()
     {
         mainCam = Camera.main;
-        if(goBackButton != null)
+        if (goBackButton != null)
             goBackButton.SetActive(false);
         card = GetComponent<Card>();
     }
@@ -35,20 +39,26 @@ public class CardMouseInteraction : MonoBehaviour
             Destroy(this);
         }
     }
+
     private void OnMouseDown()
     {
+        print("On Drag Event");
         onDragEvent?.Invoke(this);
+        isDragged = true;
     }
 
     private void OnMouseEnter()
     {
-        transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
-        interactPanel.SetActive(true);
+        if (!isDragged)
+        {
+            transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
+            interactPanel.SetActive(true);
+        }
     }
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(1) && !isZoomedIn)
+        if (Input.GetMouseButtonDown(1) && !isZoomedIn && !isDragged)
         {
             ZoomInOnCard();
         }
@@ -68,17 +78,21 @@ public class CardMouseInteraction : MonoBehaviour
         if (gameObject.CompareTag("Selectable"))
             MoveAlongMouse();
     }
-    
+
     private void OnMouseUp()
     {
-        if (gameObject.CompareTag("Selectable")) 
+        if (gameObject.CompareTag("Selectable"))
+        {
+            onRelease?.Invoke();
             transform.position = card.originalPos;
+            isDragged = false;
+        }
     }
 
     private void ZoomInOnCard()
     {
         isZoomedIn = true;
-        foreach (GameObject card in SelectableCardList) 
+        foreach (GameObject card in SelectableCardList)
             card.gameObject.tag = "InteractingCard";
 
         interactPanel.SetActive(false);
@@ -91,7 +105,7 @@ public class CardMouseInteraction : MonoBehaviour
     private void ZoomOutOfCard()
     {
         isZoomedIn = false;
-        foreach (GameObject card in SelectableCardList) 
+        foreach (GameObject card in SelectableCardList)
             card.gameObject.tag = "Selectable";
 
         ResetRotation();
@@ -107,13 +121,14 @@ public class CardMouseInteraction : MonoBehaviour
         Vector3 newPos = mainCam.ScreenToWorldPoint(screenPos);
         Vector3 pos = new Vector3(newPos.x, yDistFromTable, newPos.z);
         transform.position = pos;
+        DragPosition = pos;
     }
-    
+
     private void MoveCardToCenter()
     {
         Vector3 centerPos = centerScreenPosition;
         transform.position = centerPos;
     }
-    private void ResetRotation() => 
+    private void ResetRotation() =>
         gameObject.transform.rotation = card.originalRotationValue;
 }

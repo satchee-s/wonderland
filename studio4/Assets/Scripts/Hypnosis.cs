@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hypnosis : CreatureManager
 {
-    public override void PlayCard(Card otherCard, SlotsManager slot)
+    public override void PlayCard(Card otherCard, PlayerSlotsManager slot)
     {
         if (opponentCreatureCards.Count > 0)
         {
