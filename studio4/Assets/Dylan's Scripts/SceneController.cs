@@ -15,7 +15,7 @@ public class SceneController : MonoBehaviour
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("Main Menu 2");
     }
 
     public void Level1()
@@ -27,11 +27,16 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("TutorialScene");
     }
-
+    public void FirstTimePlaying()
+    {
+        SceneManager.LoadScene("FirstTimePlaying");
+    }
     public void connectToLobby()
     {
         SceneManager.LoadScene("connectToLobby");
     }
+
+    
     public void Lobby()
     {
         if(enterName != null)
