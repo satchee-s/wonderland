@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SwiftRecovery : CreatureManager
 {
-    public override void PlayCard(Card otherCard, PlayerSlotsManager slot)
+    public override void PlayCard(Card otherCard)
     {
         if (playerCreatureCards.Contains(otherCard))
         {
             if (otherCard.isHibernating)
             {
                 otherCard.isHibernating = false;
-                base.PlayCard(otherCard, slot);
+                base.PlayCard(otherCard);
             }
         }
         

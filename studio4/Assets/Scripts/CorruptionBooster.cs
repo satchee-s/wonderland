@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CorruptionBooster : CreatureManager
 {
-    public override void PlayCard(Card otherCard, PlayerSlotsManager slot)
+    public override void PlayCard(Card otherCard)
     {
         otherCard.health -= 3;
-        base.PlayCard(otherCard, slot);
+        base.PlayCard(otherCard);
     }
 }
