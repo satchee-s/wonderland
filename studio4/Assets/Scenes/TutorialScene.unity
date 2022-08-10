@@ -31464,6 +31464,7 @@ MonoBehaviour:
   - {fileID: 423838696}
   - {fileID: 1593173965}
   - {fileID: 259284582}
+  - {fileID: 1905156737}
   slots: {fileID: 1276099421}
   guardsman: {fileID: 889279686322959753, guid: 48d32bd04dc120a4994db9025818c9d2, type: 3}
   dodo: {fileID: 889279686322959753, guid: ef4f69007be7c7a4791cf86fc18e5fd6, type: 3}
@@ -64314,12 +64315,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1905156738}
   m_Layer: 5
-  m_Name: FaceAttack (1)
+  m_Name: EndOfTurnMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1905156738
 RectTransform:
   m_ObjectHideFlags: 0
