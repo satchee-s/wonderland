@@ -3,7 +3,9 @@
 public class Slot : MonoBehaviour
 {
     [SerializeField] private CardType slotType;
-    private Card currentCard;
+    public Card currentCard;
+    public Slot correspondingSlot;
+
     public bool HasCard => currentCard != null;
     public CardType Type => slotType;
     

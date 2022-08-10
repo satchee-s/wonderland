@@ -5,13 +5,12 @@ using TMPro;
 [System.Serializable]
 public class Card : MonoBehaviour
 {
-    public int cardId; //dont need this
+    public int cardId;
     public string cardName;
     public int attack;
     public int health;
-    public string description; //???
+    public string description;
     public bool hasBeenPlayed;
-    //public int handIndex; //???
     public int cost;
     public bool canBeSummoned;
     public bool summoned;
@@ -79,12 +78,12 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        /*nameText.text = " " + cardName; --- why??
+        /*nameText.text = " " + cardName;
         attackText.text = " " + attack;
         healthText.text = " " + health;
         descriptionText.text = " " + description;*/
 
-        if (PlayerTurnSystem.currentMana >= cost && summoned == false) //does this need to be in update?
+        if (PlayerTurnSystem.currentMana >= cost && summoned == false)
         {
             canBeSummoned = true;
         }
@@ -95,13 +94,6 @@ public class Card : MonoBehaviour
         {
 
         }
-
-
-
-
-
-
-
     }
 
     private void Start()
@@ -128,8 +120,6 @@ public class Card : MonoBehaviour
         if (Type == CardType.Creature && opponentCard.Type == CardType.Creature && sleep == false)
         {
             opponentCard.TakeDamage(attack);
-
-
         }
     }
 
