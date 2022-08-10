@@ -205,7 +205,7 @@ public class TutorialManager : MonoBehaviour
                 i++;
             }
         }
-        else if (i == 18)
+        else if (i == 18) //if start pop up (Deactivate Opponents turn UI or Move it elsewhere)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
