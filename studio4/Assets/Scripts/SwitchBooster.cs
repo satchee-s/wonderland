@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchBooster : CreatureManager
 {
-    public override void PlayCard(Card otherCard, PlayerSlotsManager slot)
+    public override void PlayCard(Card otherCard)
     {
         if (opponentCreatureCards.Count > 0 && playerCreatureCards.Count > 0)
         {
@@ -16,6 +16,6 @@ public class SwitchBooster : CreatureManager
             Debug.Log("Card swapped");
             gameObject.SetActive(false);
         }
-        base.PlayCard(otherCard, slot);
+        base.PlayCard(otherCard);
     }
 }

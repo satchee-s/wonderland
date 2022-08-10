@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkullsChoice : CreatureManager
 {
-    public override void PlayCard(Card otherCard, PlayerSlotsManager slot)
+    public override void PlayCard(Card otherCard)
     {
         if (opponentCreatureCards.Count > 0)
         {
@@ -14,6 +14,6 @@ public class SkullsChoice : CreatureManager
             removedCard.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
-        base.PlayCard(otherCard, slot);
+        base.PlayCard(otherCard);
     }
 }

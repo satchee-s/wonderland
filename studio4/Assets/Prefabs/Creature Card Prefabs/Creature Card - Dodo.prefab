@@ -1078,12 +1078,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 1
-  cardName: Cheshire Cat
+  cardName: Dodo
   attack: 5
   health: 7
   description: I Am Cheshire
   hasBeenPlayed: 0
   cost: 0
+  canBeSummoned: 0
+  summoned: 0
   sleep: 0
   playerManager: {fileID: 0}
   isHibernating: 0

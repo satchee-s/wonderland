@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 135710375292243330}
   - component: {fileID: 6714826475061346712}
   - component: {fileID: 415979692152904426}
+  - component: {fileID: -217908628199144061}
   m_Layer: 0
   m_Name: Booster Card - Corruption
   m_TagString: Untagged
@@ -244,11 +245,7 @@ MonoBehaviour:
   canBeSummoned: 0
   summoned: 0
   sleep: 0
-  cantAttack: 0
-  canAttack: 0
-  targeting: 0
-  targetingEnemy: 0
-  onlyThisCardAttack: 0
+  playerManager: {fileID: 0}
   isHibernating: 0
   nameText: {fileID: 135710376888385366}
   attackText: {fileID: 135710376794405944}
@@ -289,6 +286,20 @@ MonoBehaviour:
   lockPos: 0
   SelectableCardList: []
   card: {fileID: 0}
+--- !u!114 &-217908628199144061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135710375292243328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a28572c9462d5724abe3d10288200e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opponentCreatureCards: []
+  playerCreatureCards: []
 --- !u!1 &135710375306721077
 GameObject:
   m_ObjectHideFlags: 0
