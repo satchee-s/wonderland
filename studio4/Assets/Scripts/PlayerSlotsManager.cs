@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSlotsManager : MonoBehaviour
@@ -16,6 +17,8 @@ public class PlayerSlotsManager : MonoBehaviour
     //[SerializeField] Card.CardType cardType;
     public Slot[] allSlots = new Slot[8];
     private Card cardBeingMoved;
+    [HideInInspector] public List<Card> cardsPlaced = new List<Card>();
+    [HideInInspector] public Card currentCard;
 
     private void OnEnable()
     {
@@ -30,6 +33,7 @@ public class PlayerSlotsManager : MonoBehaviour
     {
         cardBeingMoved = card.card;
         card.onRelease += HandleCardRelease;
+        currentCard = card.gameObject.GetComponent<Card>();
     }
 
 
@@ -52,6 +56,8 @@ public class PlayerSlotsManager : MonoBehaviour
         closestSlot.PlaceCardInSlot(cardBeingMoved);
         }
         cardBeingMoved.MouseInteraction.onRelease -= HandleCardRelease;
+        cardsPlaced.Remove(cardBeingMoved);
+
         cardBeingMoved = null;
     }
     
@@ -75,6 +81,9 @@ public class PlayerSlotsManager : MonoBehaviour
 
     private void PlaceCard(Slot targetSlots)
     {
+        if (!cardsPlaced.Contains(cardBeingMoved)){
+            cardsPlaced.Add(cardBeingMoved);
+        }
         cardBeingMoved.transform.position = targetSlots.transform.position;
     }
 }

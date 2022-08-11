@@ -5,26 +5,25 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-
-    //RaycastAnim rayCast;
-    CardMouseInteraction rayCast;
     public GameObject[] popUps;
-    public GameObject firstPopUp;
+    [SerializeField] TutorialGameManager gameManager;
+    [SerializeField] PlayerManager playerManager;
+    //[SerializeField] PlayerTurnSystem turnSystem;
 
-    public GameObject TurnObj;
-    public GameObject discardButton;
-    public GameObject DrawOneandOne;
-    public GameObject DrawTwo;
-    public GameObject Shuffle;
-    public GameObject endTurn;
-    public GameObject sacrifice;
-    public GameObject AttackCard;
-    public GameObject AttackFace;
-    public GameObject endTutorial;
-    public GameObject Error;
+    [SerializeField] GameObject TurnObj;
+    [SerializeField] GameObject discardButton;
+    [SerializeField] GameObject DrawOneandOne;
+    [SerializeField] GameObject DrawTwo;
+    [SerializeField] GameObject Shuffle;
+    [SerializeField] GameObject endTurn;
+    [SerializeField] GameObject sacrifice;
+    [SerializeField] GameObject AttackCard;
+    [SerializeField] GameObject AttackFace;
+    [SerializeField] GameObject endTutorial;
+    [SerializeField] Card swiftRecovery;
+    [SerializeField] PlayerSlotsManager slots;
 
-
-    private int i;
+    private int i = 0;
     private int countForInput;
 
 
@@ -40,7 +39,11 @@ public class TutorialManager : MonoBehaviour
 
     public void Update()
     {
-
+        if (i != 2)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+                i++;
+        }
         for (int i = 0; i < popUps.Length; i++)
         {
             if (this.i == i)
@@ -55,10 +58,10 @@ public class TutorialManager : MonoBehaviour
 
         if (i == 0)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 1)
         {
@@ -68,45 +71,43 @@ public class TutorialManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-
                 i++;
             }
         }
         else if (i == 3)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 4)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 5)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 6)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 7)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
-
                 i++;
-            }
+            }*/
         }
         else if (i == 8)
         {
@@ -114,114 +115,137 @@ public class TutorialManager : MonoBehaviour
             //{ if(player clicks on Discard button)
             //destroy this card (that is being interacted with)
             //discardButton.SetActive(true);
-            //i++;
-
-            //else if(player palces creature card)
-            //Error.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.Return))
+            //i++; else if(player palces creature card)
+            //Error.SetActive(true); 
+            if (slots.currentCard.Type == CardType.Booster)
             {
+                popUps[i].GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    gameManager.TutorialDeck.Remove(slots.currentCard);
+                    slots.currentCard.gameObject.SetActive(false);
+                    i++;
+                    return;
+                });
 
+                FindCard(swiftRecovery);
             }
         }
         else if (i == 9)
         {
             discardButton.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
-
-
                 i++;
-            }
+            }*/
         }
         else if (i == 10)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 11)
         {
             //if(player places 2 Creature cards on the creature row)
             //{ //if player taps on 2 creature cards then sacrifice button should pop up!)} 
-            //sacrifice.setActive(True)
             // IF sacrifice button is pressed then destroy both of those cards 
             //Increase Mana
             // { i++ }
 
             //else if(booster is placed, Error Message (This is Not a Creature Card!
             //Error.SetActive(true);
-
-
-            if (Input.GetKeyDown(KeyCode.Return))
+            int creatureCounter = 0;
+            Card[] sacrificeCards = new Card[2];
+            foreach (Card cards in slots.cardsPlaced)
+            {
+                if (cards.Type == CardType.Creature)
+                {
+                    sacrificeCards[creatureCounter] = cards;
+                    creatureCounter++;
+                }
+                else if (cards.Type == CardType.Booster)
+                {
+                    //error ui
+                }
+            }
+            if (creatureCounter == 2)
+                sacrifice.SetActive(true); 
+            sacrifice.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                sacrificeCards[0].gameObject.SetActive(false);
+                sacrificeCards[1].gameObject.SetActive(false);
+                PlayerTurnSystem.maxMana += 2;
+                PlayerTurnSystem.currentMana += 2;
+                sacrifice.SetActive(false);
+                i++;
+            });
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 12)
         {
             sacrifice.SetActive(false);
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 13)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 14)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 15)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 16)
         {
             endTurn.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 17)
         {
             endTurn.SetActive(false);
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 18) //if start pop up (Deactivate Opponents turn UI or Move it elsewhere)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 19)
         {
             DrawOneandOne.SetActive(true);
             DrawTwo.SetActive(true);
-
-
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 20)
         {
@@ -233,86 +257,124 @@ public class TutorialManager : MonoBehaviour
             //else if(Booster card has been played)
             //{ activate error that says (Cant Place Booster card here)
             //Error.SetActive(true);
-
-
-            if (Input.GetKeyDown(KeyCode.Return))
+            int creatureCounter = 0;
+            foreach (Card cards in slots.cardsPlaced)
+            {
+                if (cards.Type == CardType.Booster)
+                {
+                    //error message ui
+                    break;
+                }
+                if (cards.Type == CardType.Creature) 
+                    creatureCounter++;
+            }
+            if (creatureCounter >= 0) 
+                i++;            
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 21)
         {
-
             //if( 1 creature card has been tapped on
             // i++
-
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (slots.currentCard.Type == CardType.Creature)
             {
                 i++;
             }
+            /*if (Input.GetKeyDown(KeyCode.Return))
+            {
+                i++;
+            }*/
         }
         else if (i == 22)
         {
-
             AttackCard.SetActive(true);
             AttackFace.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 23)
         {
-
             AttackCard.SetActive(false);
             AttackFace.SetActive(false);
+            AttackFace.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                playerManager.health -= slots.currentCard.attack;
+                i = 25;
+            });
+
+            AttackCard.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                //attack card ui should specify which card is being used
+                //slots.currentCard.health -= opponentCard.attack;
+                //opponentCard.health -= slots.currentCard.health;
+                i++;
+            });
 
             //if(players taps on 1 enemy card)
             //deal damage & take damage
-            //set i == 25
-
-            //else if(player taps on face button)
+            //set i == 25 else if(player taps on face button)
             //{ i == 25 }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
+
         }
         else if (i == 24)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 25)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 26)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
         else if (i == 27)
         {
-
             endTutorial.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Return))
+            /*if (Input.GetKeyDown(KeyCode.Return))
             {
                 i++;
-            }
+            }*/
         }
     }
 
     public void Next()
     {
         i++;
+    }
+
+    void FindCard(Card cardNeeded)
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            if (slots.allSlots[i].currentCard != null)
+            {
+                if (slots.allSlots[i].currentCard.name == cardNeeded.name)
+                {
+                    Debug.Log(cardNeeded + " Played");
+                    i++;
+                    break;
+                }
+            }
+        }
     }
 }
