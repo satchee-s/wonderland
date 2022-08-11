@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class NetManager : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class NetManager : MonoBehaviour
     Socket socket;
     Player player;
     public NetworkComponent nc;
+    Card card;
+    GameManager gameManager;
+    PlayerManager playerManager;
 
     List<GameObject> playerObjs = new List<GameObject>();
     //List<TextMeshProUGUI> playerName = new List<TextMeshProUGUI>();
@@ -43,7 +47,7 @@ public class NetManager : MonoBehaviour
             try
             {
                 player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
-
+                
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
                 socket.Send(new InformationPacket(player).StartSerialization());
@@ -155,6 +159,36 @@ public class NetManager : MonoBehaviour
                             DestroyObject(Dp.GameObjectId, player);
                             break;
                         }
+
+                    case BasePacket.PacketType.Position:
+                        PositionPacket PP = new PositionPacket();
+                        PP.StartDeserialization(recievedBuffer);
+
+                        break;
+
+                    case BasePacket.PacketType.Rotation:
+                        RotationPacket RotatP = new RotationPacket();
+                        RotatP.StartDeserialization(recievedBuffer);
+
+                        break;
+
+                    case BasePacket.PacketType.Card:
+                        CardPacket Card = new CardPacket();
+                        Card.StartDeserialization(recievedBuffer);
+
+
+                        CardInformation();
+                        break;
+
+                    case BasePacket.PacketType.Acknowledged:
+                        acknowledgedPacket AP = new acknowledgedPacket();
+
+                        break;
+
+                    case BasePacket.PacketType.RotationAndPosition:
+                        RotationAndPositonPacket RPP = new RotationAndPositonPacket();
+
+                        break;
                     default:
                         break;
                 }
@@ -199,7 +233,7 @@ public class NetManager : MonoBehaviour
         return go;
     }
 
-    void Rig()
+  private void Rig()
     {
 
 
@@ -224,7 +258,7 @@ public class NetManager : MonoBehaviour
     ***/
 
 
-    void DestroyObject(string GameObjectID, Player player)
+  private  void DestroyObject(string GameObjectID, Player player)
     {
         NetworkComponent[] nc = FindObjectsOfType<NetworkComponent>();
 
@@ -238,5 +272,50 @@ public class NetManager : MonoBehaviour
 
         }
 
+    }
+
+  private Card  CardInformation()
+    {
+        card = GetComponent<Card>();
+
+        socket.Send(new CardPacket(card.cardId, card.cardName, card.health, card.attack, card.sleep, player).StartSerialization());
+        return card;
+    }
+
+ private void AcknowledgedInformation()
+    {
+        //gameManager = GetComponent<GameManager>();
+        playerManager = GetComponent<PlayerManager>();
+
+
+        socket.Send(new acknowledgedPacket().StartSerialization());
+    }
+
+private void getPosition()
+    {
+        GameObject go = playerObjs[0];
+        go.GetComponent<Transform>();
+
+        socket.Send(new PositionPacket(go.transform.position, player).StartSerialization());
+    }
+
+
+private void getRotation()
+    {
+        GameObject go = playerObjs[0];
+        go.GetComponent<Transform>();
+
+
+
+        socket.Send(new RotationPacket(go.transform.rotation, player).StartSerialization());
+    }
+
+    private void getPositionAndRotation()
+    {
+        GameObject go = playerObjs[0];
+        go.GetComponent<Transform>();
+
+
+        socket.Send(new RotationAndPositonPacket(go.transform.position, go.transform.rotation, player).StartSerialization());
     }
 }

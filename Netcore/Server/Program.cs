@@ -35,8 +35,8 @@ namespace Server
             {
                 try
                 {
-                    clients.Add(new Client (Listening.Accept(), new Player("", "")));
-                    
+                    clients.Add(new Client(Listening.Accept(), new Player("", "")));               
+                    clients[clients.Count -1].socket.Send(new acknowledgedPacket().StartSerialization());
                     Console.WriteLine("Client Connected");
                  
                 }
@@ -91,7 +91,7 @@ namespace Server
                                     
                                     break;
 
-                              /*case BasePacket.PacketType.Message:
+                              case BasePacket.PacketType.Message:
                                     MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
 
                                     
@@ -110,14 +110,53 @@ namespace Server
                                     DestroyPacket DP = (DestroyPacket)new DestroyPacket().StartDeserialization(recievedBuffer);
 
 
-                                    Console.WriteLine("(DestroyPacket");
+                                    Console.WriteLine("DestroyPacket");
                                     break;
 
                                 case BasePacket.PacketType.Rigidbody:
                                     RigidbodyPacket RP = (RigidbodyPacket)new RigidbodyPacket().StartDeserialization(recievedBuffer);
 
-                                    Console.WriteLine("(RigidbodyPacket");
-                                    break; */
+                                    Console.WriteLine("RigidbodyPacket");
+                                    break;
+
+                                case BasePacket.PacketType.Position:
+                                    PositionPacket PP = (PositionPacket)new PositionPacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine("PositionPacket");
+                                    break;
+
+                                case BasePacket.PacketType.Rotation:
+                                    RotationPacket RotatP = (RotationPacket) new RotationPacket().StartDeserialization(recievedBuffer);
+                                    Console.WriteLine("RotationPacket");
+
+                                    break;
+
+                                case BasePacket.PacketType.RotationAndPosition:
+                                    RotationAndPositonPacket RPP = (RotationAndPositonPacket)new RotationAndPositonPacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine(" RotationAndPositonPacket");
+                                    break;
+
+                                case BasePacket.PacketType.Card:
+                                    CardPacket CP = (CardPacket)new CardPacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine("CardPacket");
+
+                                    break;
+
+                                case BasePacket.PacketType.Lobby:
+                                    LobbyPacket LP = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine("LobbyPacket");
+
+                                    break;
+
+                                case BasePacket.PacketType.Acknowledged:
+                                    acknowledgedPacket AP = (acknowledgedPacket)new acknowledgedPacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine("acknowledgedPacket");
+
+                                    break;
                                 default:
                                     break;
                             }
