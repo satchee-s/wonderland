@@ -1800,7 +1800,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 972896643}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: connectToLobby
+        m_MethodName: FirstTimePlaying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
