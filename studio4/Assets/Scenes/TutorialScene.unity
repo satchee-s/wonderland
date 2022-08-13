@@ -21604,7 +21604,7 @@ MonoBehaviour:
   HasDrawedCards: 0
   TutorialDeck:
   - {fileID: 922362178}
-  - {fileID: 1662193866}
+  - {fileID: 1273869516}
   - {fileID: 753832179}
   - {fileID: 39256921}
   - {fileID: 1725071792}
@@ -37642,8 +37642,8 @@ MonoBehaviour:
   AttackCard: {fileID: 58917166}
   AttackFace: {fileID: 295353956}
   endTutorial: {fileID: 1730570218}
-  swiftRecovery: {fileID: 0}
-  slots: {fileID: 0}
+  swiftRecovery: {fileID: 922362178}
+  slots: {fileID: 1379496457}
 --- !u!1 &1010394277
 GameObject:
   m_ObjectHideFlags: 0

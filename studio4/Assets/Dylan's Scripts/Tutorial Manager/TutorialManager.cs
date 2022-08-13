@@ -69,7 +69,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if (i == 2)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 i++;
             }
