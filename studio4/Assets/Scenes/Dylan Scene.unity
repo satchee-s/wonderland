@@ -10647,8 +10647,9 @@ MonoBehaviour:
   - {fileID: 1973603456}
   - {fileID: 1447919625}
   availableCardSlots: 
+  player1Slots: {fileID: 0}
+  player2Slots: {fileID: 0}
   HasDrawedCards: 0
-  rA: {fileID: 0}
   TutorialDeck:
   - {fileID: 922362178}
   - {fileID: 1662193866}
@@ -11137,7 +11138,7 @@ RectTransform:
   - {fileID: 1233903169}
   - {fileID: 1866059804}
   m_Father: {fileID: 1936780537}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -73.469, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -28265,8 +28266,9 @@ MonoBehaviour:
   - {fileID: 337222020}
   - {fileID: 1220251100}
   availableCardSlots: 
+  player1Slots: {fileID: 0}
+  player2Slots: {fileID: 0}
   HasDrawedCards: 0
-  rA: {fileID: 1560287251}
   TutorialDeck:
   - {fileID: 1886663687}
   - {fileID: 1109943677}
@@ -34591,8 +34593,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -2.8775997}
   m_LocalScale: {x: 0.125, y: 0.12500001, z: 0.5}
   m_Children:
-  - {fileID: 418558064}
   - {fileID: 610392337}
+  - {fileID: 418558064}
   - {fileID: 1728460391}
   - {fileID: 445708186}
   - {fileID: 514871884}
