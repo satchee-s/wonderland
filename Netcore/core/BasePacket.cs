@@ -30,9 +30,10 @@ namespace core
             Message,
             Rigidbody,
              Information,
-                Lobby,
-            CardPacket,
-            Room
+                Lobby,            
+            Card,
+            Room,
+            Acknowledged,
         }
 
       public PacketType Type { get; set; }

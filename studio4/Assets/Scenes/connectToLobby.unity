@@ -5531,9 +5531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be3984c7c3209f4ca7be49d1b203e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OwnerID: 
-  GameObjectID: 
-  GameId: 
+  OwnerID: 1212
+  GameObjectID: 12
+  GameId: 1
   prefabName: 
 --- !u!4 &1947815108
 Transform:

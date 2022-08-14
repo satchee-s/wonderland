@@ -21,7 +21,7 @@ namespace core
             
         }
 
-        public acknowledgedPacket(bool gameover, int health, bool moveAccepted)
+        public acknowledgedPacket(bool gameover, int health, bool moveAccepted, Player player): base(PacketType.Acknowledged, player)
         {
             this.gameover = gameover;
             Health = health;

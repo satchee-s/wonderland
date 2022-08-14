@@ -23,7 +23,7 @@ namespace core
             cardName = "";
         }
 
-        public CardPacket(int cardID, string cardName, int cardHealth, int cardAttack, bool sleep, Player player) : base(PacketType.CardPacket, player)
+        public CardPacket(int cardID, string cardName, int cardHealth, int cardAttack, bool sleep, Player player) : base(PacketType.Card, player)
         {
             this.cardID = cardID;
             this.cardName = cardName;
