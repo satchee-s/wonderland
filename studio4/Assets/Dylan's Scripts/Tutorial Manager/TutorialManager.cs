@@ -30,7 +30,6 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         countForInput = 0;
-        TurnObj.SetActive(false);
         DrawOneandOne.SetActive(false);
         DrawTwo.SetActive(false);
         Shuffle.SetActive(false);
