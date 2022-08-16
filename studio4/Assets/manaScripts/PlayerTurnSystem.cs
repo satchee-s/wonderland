@@ -2,36 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Net.Sockets;
+using core;
 
 public class PlayerTurnSystem : MonoBehaviour
 {
-    public static bool isYourTurn , startTurn, endTurn;
-
-    public int yourTurn, OponentsTurn , seconds , random;
-
-    public TextMeshProUGUI turnText , manaText , timerText, enemyManaText;
-
-
-    public static int maxMana , currentMana , maxEnemyMana , currentEnemyMana;
-
+    public static bool isYourTurn, startTurn, endTurn;
+    public int yourTurn, OponentsTurn, seconds, random;
+    public TextMeshProUGUI turnText, manaText, timerText, enemyManaText;
+    public static int maxMana, currentMana, maxEnemyMana, currentEnemyMana;
+    public bool timerStart, manabool;
+    [SerializeField] NetManager netManager;
+    [SerializeField] PlayerManager playerManager;
     
-    public bool timerStart , manabool;
-    
-
-
-    // Start is called before the first frame update
     void Start()
     {
         StartRound();
-        
         seconds = 30;
         timerStart = true;
-        
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isYourTurn == true)
@@ -39,48 +29,42 @@ public class PlayerTurnSystem : MonoBehaviour
             turnText.text = "your Turn";
         }
         else turnText.text = "Oponent Turn";
-
         manaText.text = currentMana + "/" + maxMana;
 
-        if(isYourTurn == true && seconds > 0 && timerStart == true)
+        if (isYourTurn == true && seconds > 0 && timerStart == true)
         {
             StartCoroutine(Timer());
             timerStart = false;
         }
 
-        if(seconds == 0 && isYourTurn == true)
+        if (seconds == 0 && isYourTurn == true)
         {
             EndYourTurn();
             timerStart = true;
             seconds = 30;
         }
-       
-
         timerText.text = seconds + "";
 
-        if(isYourTurn == false && seconds>0 && timerStart == true)
+        if (isYourTurn == false && seconds > 0 && timerStart == true)
         {
             StartCoroutine(EnemyTimer());
             timerStart = false;
         }
 
-        if(seconds == 0 && isYourTurn == false)
+        if (seconds == 0 && isYourTurn == false)
         {
             EndOponentsTurn();
             timerStart = true;
             seconds = 30;
         }
-
         enemyManaText.text = currentEnemyMana + "/" + maxEnemyMana;
-
     }
-        public void EndYourTurn()
-        {
-            isYourTurn = false;
-            OponentsTurn += 1;
+    public void EndYourTurn()
+    {
+        isYourTurn = false;
+        OponentsTurn += 1;
 
-
-        if(manabool == true)
+        if (manabool == true)
         {
             maxEnemyMana += 2;
             currentEnemyMana += 2;
@@ -93,7 +77,7 @@ public class PlayerTurnSystem : MonoBehaviour
 
         timerStart = true;
         seconds = 30;
-
+        UpdatePlayerData();
     }
 
     public void EndOponentsTurn()
@@ -104,7 +88,7 @@ public class PlayerTurnSystem : MonoBehaviour
         //maxMana += 1;
         //currentMana = maxMana;
 
-        if(manabool == false)
+        if (manabool == false)
         {
             maxMana += 2;
             currentMana += 2;
@@ -118,14 +102,13 @@ public class PlayerTurnSystem : MonoBehaviour
         startTurn = true;
         timerStart = true;
         seconds = 30;
-
     }
 
     public void StartRound()
     {
         random = Random.Range(0, 2);
 
-        if(random == 0)
+        if (random == 0)
         {
             isYourTurn = true;
             manabool = true;
@@ -142,7 +125,7 @@ public class PlayerTurnSystem : MonoBehaviour
             startTurn = false;
         }
 
-        if(random == 1)
+        if (random == 1)
         {
             isYourTurn = false;
             manabool = false;
@@ -160,14 +143,13 @@ public class PlayerTurnSystem : MonoBehaviour
 
     IEnumerator Timer()
     {
-        if(isYourTurn == true && seconds > 0)
+        if (isYourTurn == true && seconds > 0)
         {
             yield return new WaitForSeconds(1);
-            seconds --;
+            seconds--;
 
             StartCoroutine(Timer());
         }
-
     }
 
 
@@ -180,19 +162,28 @@ public class PlayerTurnSystem : MonoBehaviour
 
             StartCoroutine(EnemyTimer());
         }
-
     }
 
     public void endTurnbutton()
     {
-        
         if (isYourTurn == true)
         {
-            
+
             EndYourTurn();
         }
+    }
 
-        
+    void UpdatePlayerData()
+    {
+        PlayerDataPacket playerData = new PlayerDataPacket(netManager.player, playerManager.health, currentMana);
+        byte[] buffer = playerData.StartSerialization();
+        netManager.SendPacket(buffer);
+        Debug.Log("Player data sent");
+    }
+
+    public void ChangeOpponentMana(int newMana)
+    {
+        currentEnemyMana = newMana;
     }
 
 }

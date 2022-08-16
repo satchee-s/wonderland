@@ -23796,7 +23796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthSlider: {fileID: 0}
   healthText: {fileID: 0}
 --- !u!114 &448686945 stripped
 MonoBehaviour:
@@ -63058,6 +63057,7 @@ GameObject:
   - component: {fileID: 1199200977}
   - component: {fileID: 1199200978}
   - component: {fileID: 1199200979}
+  - component: {fileID: 1199200980}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -63109,8 +63109,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+--- !u!114 &1199200980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199200976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222960ee4dc13344ba60d53a9c76d88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectButton: {fileID: 0}
+  playerNameInputField: {fileID: 0}
+  connectPanel: {fileID: 0}
+  matchMakingPanel: {fileID: 0}
+  opponentFound: {fileID: 0}
+  lookingForOpponent: {fileID: 0}
+  startButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  setPlayerName: {fileID: 0}
+  nc: {fileID: 0}
+  role: {fileID: 0}
+  playerName:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1201027725
 GameObject:
   m_ObjectHideFlags: 0
@@ -70729,6 +70754,8 @@ MonoBehaviour:
   - {fileID: 2017679615}
   - {fileID: 1461022060}
   - {fileID: 157307483}
+  cardsPlaced: []
+  currentCard: {fileID: 0}
 --- !u!4 &1379804601 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}

@@ -36,7 +36,7 @@ namespace Server
                 try
                 {
                     clients.Add(new Client(Listening.Accept(), new Player("", "")));               
-                    clients[clients.Count -1].socket.Send(new acknowledgedPacket().StartSerialization());
+                    //clients[clients.Count -1].socket.Send(new acknowledgedPacket().StartSerialization());
                     Console.WriteLine("Client Connected");
                  
                 }
@@ -54,8 +54,6 @@ namespace Server
                         if (clients[i].socket.Available > 0)
                         {
                             byte[] recievedBuffer = new byte[clients[i].socket.Available];
-
-
                             clients[i].socket.Receive(recievedBuffer);
                             
                             BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
@@ -94,9 +92,6 @@ namespace Server
                               case BasePacket.PacketType.Message:
                                     MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
 
-                                    
-
-
                                     Console.WriteLine($"{mp.player.Name}Said:{mp.message}");
                                     break;
 
@@ -108,7 +103,6 @@ namespace Server
 
                                 case BasePacket.PacketType.Destroy:
                                     DestroyPacket DP = (DestroyPacket)new DestroyPacket().StartDeserialization(recievedBuffer);
-
 
                                     Console.WriteLine("DestroyPacket");
                                     break;
@@ -159,6 +153,9 @@ namespace Server
                                     break;
                                 default:
                                     break;
+
+                                    /*BasePacket bp = new BasePacket().Deserialize(receivedBuffer);
+                                    client[i].Send(receivedBuffer);*/
                             }
                         }
                     }

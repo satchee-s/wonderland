@@ -56,6 +56,7 @@
     <Compile Include="MessagePacket.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="BasePacket.cs" />
+    <Compile Include="PlayerDataPacket.cs" />
     <Compile Include="PositionPacket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RigidbodyPacket.cs" />

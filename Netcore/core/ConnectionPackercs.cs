@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace core
 {
-    internal class ConnectionPacket : BasePacket
+    internal class ConnectionPacket
     {
 
 

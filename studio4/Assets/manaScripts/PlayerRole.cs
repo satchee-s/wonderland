@@ -4,11 +4,11 @@ public class PlayerRole : MonoBehaviour
 {
     private enum Role
     {
-        Player,
-        Opponent
+        Player1,
+        Player2
     }
 
     [SerializeField] private Role role;
-
-    public bool IsOpponent => role == Role.Opponent;
+    public bool IsPlayer2 => role == Role.Player2;
+    public bool IsPlayer1 => role == Role.Player1;
 }

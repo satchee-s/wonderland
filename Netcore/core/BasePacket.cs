@@ -29,11 +29,12 @@ namespace core
             RotationAndPosition,
             Message,
             Rigidbody,
-             Information,
-                Lobby,            
+            Information,
+            Lobby,
             Card,
             Room,
             Acknowledged,
+            PlayerData
         }
 
       public PacketType Type { get; set; }

@@ -28,12 +28,14 @@ public class NetManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI setPlayerName;
 
     SceneController sC;
-    Socket socket;
-    Player player;
+    [HideInInspector] public Socket socket;
+    public Player player;
     public NetworkComponent nc;
     Card card;
     GameManager gameManager;
     PlayerManager playerManager;
+    PlayerTurnSystem turnSystem;
+    [SerializeField] PlayerRole role;
 
     List<GameObject> playerObjs = new List<GameObject>();
     //List<TextMeshProUGUI> playerName = new List<TextMeshProUGUI>();
@@ -47,7 +49,7 @@ public class NetManager : MonoBehaviour
             try
             {
                 player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
-                
+
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
                 socket.Send(new InformationPacket(player).StartSerialization());
@@ -77,6 +79,7 @@ public class NetManager : MonoBehaviour
                 print(e);
             }
 
+            turnSystem = FindObjectOfType<PlayerTurnSystem>();
         });
     }
 
@@ -105,13 +108,14 @@ public class NetManager : MonoBehaviour
                             print(lp.clientsName[i]);
                             playerName[i].text = lp.clientsName[i];
                         }
-                        if(lp.clientsName.Count == 1) //this is the first player that joins
+                        if (lp.clientsName.Count == 1) //this is the first player that joins
                         {
-                            //set this player as player 1
+                            //set this player as player 1 from player manager + roles
+                            
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
                         }
-                        if(lp.clientsName.Count == 2) //this is when the 2nd client joins
+                        if (lp.clientsName.Count == 2) //this is when the 2nd client joins
                         {
                             //set this player as player 2
                             startButton.gameObject.SetActive(true);
@@ -182,24 +186,39 @@ public class NetManager : MonoBehaviour
 
                     case BasePacket.PacketType.Acknowledged:
                         acknowledgedPacket AP = new acknowledgedPacket();
+                        AP.StartDeserialization(recievedBuffer);
 
                         break;
 
                     case BasePacket.PacketType.RotationAndPosition:
                         RotationAndPositonPacket RPP = new RotationAndPositonPacket();
-
                         break;
+
+                    case BasePacket.PacketType.PlayerData:
+                        PlayerDataPacket PD = new PlayerDataPacket();
+                        PD.StartDeserialization(recievedBuffer);
+                        PlayerData(PD);
+                        break;
+
                     default:
                         break;
                 }
             }
 
         }
-        else
+    }
+
+    private void PlayerData(PlayerDataPacket PD)
+    {
+        if (PD.player != player)
         {
+            turnSystem.ChangeOpponentMana(PD.Mana);
+            if (role.IsPlayer2)
+            {
+                this.playerManager.health = PD.Health;
+            }
 
         }
-
     }
 
     GameObject InstantiateOverNetwork(string prefabName, Vector3 position, Quaternion rotation)
@@ -228,15 +247,11 @@ public class NetManager : MonoBehaviour
         nc = go.AddComponent<NetworkComponent>();
         nc.OwnerID = player.ID;
         nc.GameObjectID = gameObjectID;
-
-
         return go;
     }
 
-  private void Rig()
+    private void Rig()
     {
-
-
         GameObject go = playerObjs[0];
         go.GetComponent<Rigidbody>();
 
@@ -258,7 +273,7 @@ public class NetManager : MonoBehaviour
     ***/
 
 
-  private  void DestroyObject(string GameObjectID, Player player)
+    private void DestroyObject(string GameObjectID, Player player)
     {
         NetworkComponent[] nc = FindObjectsOfType<NetworkComponent>();
 
@@ -274,7 +289,7 @@ public class NetManager : MonoBehaviour
 
     }
 
-  private Card  CardInformation()
+    private Card CardInformation()
     {
         card = GetComponent<Card>();
 
@@ -282,7 +297,7 @@ public class NetManager : MonoBehaviour
         return card;
     }
 
- private void AcknowledgedInformation()
+    private void AcknowledgedInformation()
     {
         //gameManager = GetComponent<GameManager>();
         playerManager = GetComponent<PlayerManager>();
@@ -291,7 +306,7 @@ public class NetManager : MonoBehaviour
         socket.Send(new acknowledgedPacket().StartSerialization());
     }
 
-private void getPosition()
+    private void getPosition()
     {
         GameObject go = playerObjs[0];
         go.GetComponent<Transform>();
@@ -300,7 +315,7 @@ private void getPosition()
     }
 
 
-private void getRotation()
+    private void getRotation()
     {
         GameObject go = playerObjs[0];
         go.GetComponent<Transform>();
@@ -317,5 +332,10 @@ private void getRotation()
 
 
         socket.Send(new RotationAndPositonPacket(go.transform.position, go.transform.rotation, player).StartSerialization());
+    }
+
+    public void SendPacket(byte[] buffer)
+    {
+        socket.Send(buffer);
     }
 }
