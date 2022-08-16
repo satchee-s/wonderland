@@ -21,15 +21,12 @@ namespace core
         public override byte[] StartSerialization()
         {
             base.StartSerialization();
-
-
             return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)
         {
             base.StartDeserialization(buffer);
-    
             return this;
         }
     }

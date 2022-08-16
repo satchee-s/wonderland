@@ -38,10 +38,10 @@ public class NetManager : MonoBehaviour
     [SerializeField] PlayerRole role;
 
     List<GameObject> playerObjs = new List<GameObject>();
-    //List<TextMeshProUGUI> playerName = new List<TextMeshProUGUI>();
     public TextMeshProUGUI[] playerName;
+    [SerializeField] PlayerManager [] playerManagers = new PlayerManager [2];
+    //don't destroy on load
 
-    // Start is called before the first frame update
     void Start()
     {
         connectButton.onClick.AddListener(() =>
@@ -81,6 +81,7 @@ public class NetManager : MonoBehaviour
 
             turnSystem = FindObjectOfType<PlayerTurnSystem>();
         });
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -89,7 +90,6 @@ public class NetManager : MonoBehaviour
         {
             if (socket.Available > 0)
             {
-
                 print("receiving from lobby");
                 byte[] recievedBuffer = new byte[socket.Available];
 
@@ -102,7 +102,6 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Lobby:
                         LobbyPacket lp = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
 
-
                         for (int i = 0; i < lp.clientsName.Count; i++) // loop 
                         {
                             print(lp.clientsName[i]);
@@ -114,14 +113,15 @@ public class NetManager : MonoBehaviour
                             
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
+                            playerManagers[0].role = PlayerManager.Role.Player1;
                         }
                         if (lp.clientsName.Count == 2) //this is when the 2nd client joins
                         {
                             //set this player as player 2
                             startButton.gameObject.SetActive(true);
-                            print("doggy");
                             opponentFound.SetActive(true);
                             lookingForOpponent.SetActive(false);
+                            playerManagers[1].role = PlayerManager.Role.Player2;
                         }
                         //if both players are there, then player 1 should click on start and launch both players into the game scene!
 
@@ -213,7 +213,7 @@ public class NetManager : MonoBehaviour
         if (PD.player != player)
         {
             turnSystem.ChangeOpponentMana(PD.Mana);
-            if (role.IsPlayer2)
+            if (playerManager.IsPlayer2)
             {
                 this.playerManager.health = PD.Health;
             }

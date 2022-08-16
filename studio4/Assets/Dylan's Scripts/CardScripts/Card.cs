@@ -72,7 +72,7 @@ public class Card : MonoBehaviour
 
     private void Awake()
     {
-        isOpponentCard = FindLastParent().GetComponent<PlayerRole>().IsPlayer2;
+        isOpponentCard = FindLastParent().GetComponent<PlayerManager>().IsPlayer2;
         mouseInteraction = GetComponent<CardMouseInteraction>();
     }
 

@@ -12,7 +12,7 @@ namespace core
        public Player(string Id, string name)
        {
            ID = Id;
-            Name = name;
+           Name = name;
        }
     }
 

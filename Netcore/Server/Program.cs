@@ -70,8 +70,6 @@ namespace Server
                                     clients[i].player.ID   = infoPacket.player.ID;
                                     clients[i].player.Name = infoPacket.player.Name;
 
-                                    //Room room = new Room(clients, 2);
-
                                     List<string> clientNames = new List<string>();
 
                                     for (int j = 0; j < clients.Count; j++)
@@ -85,8 +83,6 @@ namespace Server
                                         clients[j].socket.Send(new LobbyPacket(clientNames, clients[j].player).StartSerialization());
                                         Console.WriteLine($"Sent lobby packet {clientNames[j]}");
                                     }
-                                       
-                                    
                                     break;
 
                               case BasePacket.PacketType.Message:
