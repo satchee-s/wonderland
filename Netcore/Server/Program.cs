@@ -22,7 +22,7 @@ namespace Server
         {
             Socket Listening = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Listening.Bind(new IPEndPoint(IPAddress.Any, 3000));
-
+            Player player = new Player("12","name1");
             Listening.Listen(10);
             Listening.Blocking = false;
 
@@ -36,8 +36,15 @@ namespace Server
                 try
                 {
                     clients.Add(new Client(Listening.Accept(), new Player("", "")));               
-                    //clients[clients.Count -1].socket.Send(new acknowledgedPacket().StartSerialization());
+                    clients[clients.Count -1].socket.Send(new AcknowledgedPacket(player).StartSerialization());
                     Console.WriteLine("Client Connected");
+
+                    if(clients.Count == 2)
+                    {
+                        clients[0].socket.Send(new StartGamePacket(player).StartSerialization());
+                        clients[1].socket.Send(new StartGamePacket(player).StartSerialization());
+                        Console.WriteLine("send startgamePacket");
+                    }
                  
                 }
                 catch (SocketException se)
@@ -143,10 +150,16 @@ namespace Server
                                     break;
 
                                 case BasePacket.PacketType.Acknowledged:
-                                    acknowledgedPacket AP = (acknowledgedPacket)new acknowledgedPacket().StartDeserialization(recievedBuffer);
+                                    AcknowledgedPacket AP = (AcknowledgedPacket)new AcknowledgedPacket(player).StartDeserialization(recievedBuffer);
 
                                     Console.WriteLine("acknowledgedPacket");
 
+                                    break;
+
+                                case BasePacket.PacketType.StartGame:
+                                    StartGamePacket SG = (StartGamePacket)new StartGamePacket().StartDeserialization(recievedBuffer);
+
+                                    Console.WriteLine("startGamePacket");
                                     break;
                                 default:
                                     break;

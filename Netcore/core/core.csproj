@@ -46,7 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="acknowledgedPacket.cs" />
+    <Compile Include="AcknowledgedPacket.cs" />
     <Compile Include="CardPacket.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ConnectionPackercs.cs" />
@@ -64,6 +64,7 @@
     <Compile Include="RotationAndPositonPacket.cs" />
     <Compile Include="RotationPacket.cs" />
     <Compile Include="ScalePacket.cs" />
+    <Compile Include="StartGamePacket.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
