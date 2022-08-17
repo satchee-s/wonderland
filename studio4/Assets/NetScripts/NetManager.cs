@@ -8,6 +8,7 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class NetManager : MonoBehaviour
 {
@@ -212,6 +213,7 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.StartGame:
                         StartGamePacket SG = new StartGamePacket(player);
 
+                        startGame();
                         Debug.Log("startGame");
                         break;
                     default:
@@ -351,5 +353,10 @@ public class NetManager : MonoBehaviour
     public void SendPacket(byte[] buffer)
     {
         socket.Send(buffer);
+    }
+
+    public void startGame()
+    {
+        SceneManager.LoadScene("Level Design 2");
     }
 }
