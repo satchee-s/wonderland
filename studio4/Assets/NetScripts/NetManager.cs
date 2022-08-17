@@ -19,6 +19,7 @@ public class NetManager : MonoBehaviour
     [SerializeField] TMP_InputField playerNameInputField;
     [SerializeField] GameObject connectPanel;
     [SerializeField] GameObject matchMakingPanel;
+    [SerializeField] GameObject Player2Panel;
 
     [SerializeField] GameObject opponentFound;
     [SerializeField] GameObject lookingForOpponent;
@@ -110,7 +111,7 @@ public class NetManager : MonoBehaviour
                         if (lp.clientsName.Count == 1) //this is the first player that joins
                         {
                             //set this player as player 1 from player manager + roles
-                            
+                            Player2Panel.SetActive(false);
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
                             playerManagers[0].role = PlayerManager.Role.Player1;
@@ -118,6 +119,7 @@ public class NetManager : MonoBehaviour
                         if (lp.clientsName.Count == 2) //this is when the 2nd client joins
                         {
                             //set this player as player 2
+                            Player2Panel.SetActive(true);
                             startButton.gameObject.SetActive(true);
                             opponentFound.SetActive(true);
                             lookingForOpponent.SetActive(false);
@@ -126,6 +128,10 @@ public class NetManager : MonoBehaviour
                         //if both players are there, then player 1 should click on start and launch both players into the game scene!
 
                         break;
+
+                    //Once start button has been clicked, send packet to server, then have server send TransitionToScene Packet to all exisiting clients
+                    //case BasePacket.PacketType.Connection:
+                    //  ConnectionPacket mp = (ConnectionPacket)new ConnectionPacket().StartDeserialization(recievedBuffer);
 
                     case BasePacket.PacketType.Message:
                         MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);

@@ -82,10 +82,11 @@ namespace Server
                                     {
                                         clients[j].socket.Send(new LobbyPacket(clientNames, clients[j].player).StartSerialization());
                                         Console.WriteLine($"Sent lobby packet {clientNames[j]}");
+
                                     }
                                     break;
 
-                              case BasePacket.PacketType.Message:
+                                case BasePacket.PacketType.Message:
                                     MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
 
                                     Console.WriteLine($"{mp.player.Name}Said:{mp.message}");

@@ -34,7 +34,8 @@ namespace core
             Card,
             Room,
             Acknowledged,
-            PlayerData
+            PlayerData,
+            Connection
         }
 
       public PacketType Type { get; set; }
