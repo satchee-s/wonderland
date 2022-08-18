@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using System.Threading;
 
 public class NetManager : MonoBehaviour
 {
@@ -70,7 +71,7 @@ public class NetManager : MonoBehaviour
                 //Debug.Log(nc.OwnerID);
 
                 InstantiateOverNetwork(nc.prefabName, Vector3.zero, Quaternion.identity);
-
+                //Thread.Sleep(2000);
                 Rig();
 
                 if (ConnectedToServerEvent != null) ConnectedToServerEvent();
@@ -176,12 +177,14 @@ public class NetManager : MonoBehaviour
                         PositionPacket PP = new PositionPacket();
                         PP.StartDeserialization(recievedBuffer);
 
+                        getPosition();
                         break;
 
                     case BasePacket.PacketType.Rotation:
                         RotationPacket RotatP = new RotationPacket();
                         RotatP.StartDeserialization(recievedBuffer);
 
+                        getRotation();
                         break;
 
                     case BasePacket.PacketType.Card:
@@ -201,6 +204,8 @@ public class NetManager : MonoBehaviour
 
                     case BasePacket.PacketType.RotationAndPosition:
                         RotationAndPositonPacket RPP = new RotationAndPositonPacket();
+
+                        getPositionAndRotation();
                         break;
 
                     case BasePacket.PacketType.PlayerData:
@@ -325,6 +330,7 @@ public class NetManager : MonoBehaviour
     private void getPosition()
     {
         GameObject go = playerObjs[0];
+        
         go.GetComponent<Transform>();
 
         socket.Send(new PositionPacket(go.transform.position, player).StartSerialization());
@@ -350,10 +356,10 @@ public class NetManager : MonoBehaviour
         socket.Send(new RotationAndPositonPacket(go.transform.position, go.transform.rotation, player).StartSerialization());
     }
 
-    public void SendPacket(byte[] buffer)
-    {
-        socket.Send(buffer);
-    }
+    //public void SendPacket(byte[] buffer)
+    //{
+        //socket.Send(buffer);
+    //}
 
     public void startGame()
     {
