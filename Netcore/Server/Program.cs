@@ -42,7 +42,10 @@ namespace Server
                     if(clients.Count == 2)
                     {
                         clients[0].socket.Send(new StartGamePacket(player).StartSerialization());
+                        Console.WriteLine(clients[0].socket);
+                        Thread.Sleep(2000);
                         clients[1].socket.Send(new StartGamePacket(player).StartSerialization());
+                        Console.WriteLine(clients[1].socket);
                         Console.WriteLine("send startgamePacket");
                     }
                  

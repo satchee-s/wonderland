@@ -177,7 +177,7 @@ public class PlayerTurnSystem : MonoBehaviour
     {
         PlayerDataPacket playerData = new PlayerDataPacket(netManager.player, playerManager.health, currentMana);
         byte[] buffer = playerData.StartSerialization();
-        netManager.SendPacket(buffer);
+        //netManager.SendPacket(buffer);
         Debug.Log("Player data sent");
     }
 
