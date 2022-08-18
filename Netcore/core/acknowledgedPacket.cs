@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace core
 {
-    public class acknowledgedPacket: BasePacket
+    public class AcknowledgedPacket: BasePacket
     {
         public bool gameover { get;private set; }
         public int Health { get; private set; }
         public bool moveAccepted { get; private set; }
 
-        public acknowledgedPacket()
+        public AcknowledgedPacket(Player player) : base(PacketType.Acknowledged, player)
         {
             gameover = false;
             Health = 0;
@@ -21,7 +21,7 @@ namespace core
             
         }
 
-        public acknowledgedPacket(bool gameover, int health, bool moveAccepted, Player player): base(PacketType.Acknowledged, player)
+        public AcknowledgedPacket(bool gameover, int health, bool moveAccepted, Player player): base(PacketType.Acknowledged, player)
         {
             this.gameover = gameover;
             Health = health;

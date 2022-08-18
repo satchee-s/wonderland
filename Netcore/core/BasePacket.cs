@@ -35,7 +35,8 @@ namespace core
             Room,
             Acknowledged,
             PlayerData,
-            Connection
+            Connection,
+            StartGame
         }
 
       public PacketType Type { get; set; }

@@ -8,6 +8,7 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class NetManager : MonoBehaviour
 {
@@ -89,6 +90,7 @@ public class NetManager : MonoBehaviour
     {
         if (socket != null)
         {
+            Debug.Log(socket.Available);
             if (socket.Available > 0)
             {
                 print("receiving from lobby");
@@ -97,7 +99,7 @@ public class NetManager : MonoBehaviour
                 socket.Receive(recievedBuffer);
 
                 BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
-
+                Debug.Log("received packet");
                 switch (pb.Type)
                 {
                     case BasePacket.PacketType.Lobby:
@@ -191,9 +193,10 @@ public class NetManager : MonoBehaviour
                         break;
 
                     case BasePacket.PacketType.Acknowledged:
-                        acknowledgedPacket AP = new acknowledgedPacket();
+                        AcknowledgedPacket AP = new AcknowledgedPacket(player);
                         AP.StartDeserialization(recievedBuffer);
 
+                        Debug.Log("Acknowledged");
                         break;
 
                     case BasePacket.PacketType.RotationAndPosition:
@@ -206,6 +209,13 @@ public class NetManager : MonoBehaviour
                         PlayerData(PD);
                         break;
 
+
+                    case BasePacket.PacketType.StartGame:
+                        StartGamePacket SG = new StartGamePacket(player);
+
+                        startGame();
+                        Debug.Log("startGame");
+                        break;
                     default:
                         break;
                 }
@@ -234,8 +244,8 @@ public class NetManager : MonoBehaviour
         nc = go.AddComponent<NetworkComponent>();
         nc.OwnerID = player.ID;
         nc.GameObjectID = Guid.NewGuid().ToString("N");
-        // Debug.Log(rotation);
-        // Debug.Log(prefabName);
+         //Debug.Log(rotation);
+         //Debug.Log(prefabName);
         //Debug.Log(position);
         //Debug.Log(nc.GameObjectID);
 
@@ -309,7 +319,7 @@ public class NetManager : MonoBehaviour
         playerManager = GetComponent<PlayerManager>();
 
 
-        socket.Send(new acknowledgedPacket().StartSerialization());
+        socket.Send(new AcknowledgedPacket(player).StartSerialization());
     }
 
     private void getPosition()
@@ -343,5 +353,10 @@ public class NetManager : MonoBehaviour
     public void SendPacket(byte[] buffer)
     {
         socket.Send(buffer);
+    }
+
+    public void startGame()
+    {
+        SceneManager.LoadScene("Level Design 2");
     }
 }
