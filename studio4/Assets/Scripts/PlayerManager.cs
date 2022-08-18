@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 {
     public int health;
     [SerializeField] TextMeshProUGUI healthText;
+    public List<Card> playedCards = new List<Card>();
 
     public void DealDamage(int damage)
     {

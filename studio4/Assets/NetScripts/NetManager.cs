@@ -173,27 +173,23 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Position:
                         PositionPacket PP = new PositionPacket();
                         PP.StartDeserialization(recievedBuffer);
-
                         break;
 
                     case BasePacket.PacketType.Rotation:
                         RotationPacket RotatP = new RotationPacket();
                         RotatP.StartDeserialization(recievedBuffer);
-
                         break;
 
                     case BasePacket.PacketType.Card:
-                        CardPacket Card = new CardPacket();
-                        Card.StartDeserialization(recievedBuffer);
-
-
+                        CardPacket cp = new CardPacket();
+                        cp.StartDeserialization(recievedBuffer);
                         CardInformation();
+                        UpdateCardStats(cp.cardHealth, cp.sleep);
                         break;
 
                     case BasePacket.PacketType.Acknowledged:
                         acknowledgedPacket AP = new acknowledgedPacket();
                         AP.StartDeserialization(recievedBuffer);
-
                         break;
 
                     case BasePacket.PacketType.RotationAndPosition:
@@ -211,6 +207,18 @@ public class NetManager : MonoBehaviour
                 }
             }
 
+        }
+    }
+
+    void UpdateCardStats(int health, bool sleep)
+    {
+        for (int i = 0; i < playerManager.playedCards.Count; i++)
+        {
+            if (playerManager.playedCards[i] == card)
+            {
+                playerManager.playedCards[i].health = health;
+                playerManager.playedCards[i].sleep = sleep;
+            }
         }
     }
 
@@ -273,12 +281,6 @@ public class NetManager : MonoBehaviour
 
     }
 
-    /***
-    UI
-
-    ***/
-
-
     private void DestroyObject(string GameObjectID, Player player)
     {
         NetworkComponent[] nc = FindObjectsOfType<NetworkComponent>();
@@ -292,13 +294,11 @@ public class NetManager : MonoBehaviour
             }
 
         }
-
     }
 
     private Card CardInformation()
     {
         card = GetComponent<Card>();
-
         socket.Send(new CardPacket(card.cardId, card.cardName, card.health, card.attack, card.sleep, player).StartSerialization());
         return card;
     }
@@ -316,7 +316,6 @@ public class NetManager : MonoBehaviour
     {
         GameObject go = playerObjs[0];
         go.GetComponent<Transform>();
-
         socket.Send(new PositionPacket(go.transform.position, player).StartSerialization());
     }
 
@@ -325,9 +324,6 @@ public class NetManager : MonoBehaviour
     {
         GameObject go = playerObjs[0];
         go.GetComponent<Transform>();
-
-
-
         socket.Send(new RotationPacket(go.transform.rotation, player).StartSerialization());
     }
 

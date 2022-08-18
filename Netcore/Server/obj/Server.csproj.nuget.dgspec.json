@@ -1,14 +1,14 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\Server\\Server.csproj": {}
+    "C:\\Users\\satch\\wonderland\\Netcore\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\core\\core.csproj": {
+    "C:\\Users\\satch\\wonderland\\Netcore\\core\\core.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\core\\core.csproj",
+        "projectUniqueName": "C:\\Users\\satch\\wonderland\\Netcore\\core\\core.csproj",
         "projectName": "core",
-        "projectPath": "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\core\\core.csproj",
+        "projectPath": "C:\\Users\\satch\\wonderland\\Netcore\\core\\core.csproj",
         "frameworks": {
           "net48": {
             "projectReferences": {}
@@ -19,17 +19,17 @@
         "net48": {}
       }
     },
-    "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\Server\\Server.csproj": {
+    "C:\\Users\\satch\\wonderland\\Netcore\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\satch\\wonderland\\Netcore\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\Dylan Suaris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\Server\\obj\\",
+        "projectPath": "C:\\Users\\satch\\wonderland\\Netcore\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\satch\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\satch\\wonderland\\Netcore\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dylan Suaris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\satch\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,8 +43,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\core\\core.csproj": {
-                "projectPath": "C:\\Users\\Dylan Suaris\\wonderland\\Netcore\\core\\core.csproj"
+              "C:\\Users\\satch\\wonderland\\Netcore\\core\\core.csproj": {
+                "projectPath": "C:\\Users\\satch\\wonderland\\Netcore\\core\\core.csproj"
               }
             }
           }
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
