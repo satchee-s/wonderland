@@ -43,7 +43,7 @@ public class NetManager : MonoBehaviour
 
     List<GameObject> playerObjs = new List<GameObject>();
     public TextMeshProUGUI[] playerName;
-    [SerializeField] PlayerManager [] playerManagers = new PlayerManager [2];
+    public PlayerManager [] playerManagers = new PlayerManager [2];
     //don't destroy on load
 
     void Start()
