@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
         ThirdStep = false;
         HasDrawedCards = false;
 
+        SetRandomCards();
+
         //  FirstTurn();
 
     }
@@ -45,12 +47,14 @@ public class GameManager : MonoBehaviour
                 handCards.Add(boosterDeck[Random.Range(0, boosterDeck.Count)]);
                 handCards[i].tag = "Selectable";
                 boosterDeck.Remove(handCards[i]);
+                handCards[i].transform.position = cardSlots[i].transform.position;
             }
             else
             {
                 handCards.Add(creatureDeck[Random.Range(0, creatureDeck.Count)]);
                 handCards[i].tag = "Selectable";
                 creatureDeck.Remove(handCards[i]);
+                handCards[i].transform.position = cardSlots[i].transform.position;
             }
         }
     }
