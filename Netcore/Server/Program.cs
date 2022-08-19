@@ -2,6 +2,7 @@
 using System.Net;
 using System.Text;
 using core;
+using System.Diagnostics;
 
 namespace Server
 {
@@ -25,12 +26,15 @@ namespace Server
             Player player = new Player("12","name1");
             Listening.Listen(10);
             Listening.Blocking = false;
+            int clientsOnline;
 
             Console.WriteLine("Waiting for a Client to Connect");
             List<Client> clients = new List<Client>();
 
-            //Player player;
-
+            
+            //2 clients which you already have
+            //1 scene
+            //clients change the scene in order based on their turn, then the scene is sent over to the other client
             while (true)
             {
                 try
@@ -41,10 +45,10 @@ namespace Server
 
                     if(clients.Count == 2)
                     {
-                        clients[0].socket.Send(new StartGamePacket(player).StartSerialization());
+                        clients[0].socket.Send(new StartGamePacket("",player).StartSerialization());
                         Console.WriteLine(clients[0].socket);
                         Thread.Sleep(2000);
-                        clients[1].socket.Send(new StartGamePacket(player).StartSerialization());
+                        clients[1].socket.Send(new StartGamePacket("",player).StartSerialization());
                         Console.WriteLine(clients[1].socket);
                         Console.WriteLine("send startgamePacket");
                     }
@@ -76,10 +80,10 @@ namespace Server
 
                                 case BasePacket.PacketType.Information:
                                     InformationPacket infoPacket = (InformationPacket)new InformationPacket().StartDeserialization(recievedBuffer);
-
                                     clients[i].player.ID   = infoPacket.player.ID;
                                     clients[i].player.Name = infoPacket.player.Name;
-
+                                    Console.WriteLine("playerID infromation: "+ infoPacket.player.ID);
+                                    Console.WriteLine("playerName infromation: " + infoPacket.player.Name);
                                     List<string> clientNames = new List<string>();
 
                                     for (int j = 0; j < clients.Count; j++)

@@ -55,7 +55,7 @@ public class NetManager : MonoBehaviour
 
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
-                socket.Send(new InformationPacket(player).StartSerialization());
+                
 
                 connectPanel.SetActive(false);
                 matchMakingPanel.SetActive(true);
@@ -94,33 +94,36 @@ public class NetManager : MonoBehaviour
             Debug.Log(socket.Available);
             if (socket.Available > 0)
             {
-                print("receiving from lobby");
                 byte[] recievedBuffer = new byte[socket.Available];
 
                 socket.Receive(recievedBuffer);
 
                 BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
+                Debug.Log("Heres your base packet:" + pb.Type);
                 Debug.Log("received packet");
-                switch (pb.Type)
+                switch(pb.Type)
                 {
                     case BasePacket.PacketType.Lobby:
-                        LobbyPacket lp = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
+                        Debug.Log("case 1");
 
-                        for (int i = 0; i < lp.clientsName.Count; i++) // loop 
+                        LobbyPacket LP = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
+                        for (int i = 0; i < LP.clientsName.Count; i++) // loop 
                         {
-                            print(lp.clientsName[i]);
-                            playerName[i].text = lp.clientsName[i];
+                            print(LP.clientsName[i]);
+                            playerName[i].text = LP.clientsName[i];
                         }
-                        if (lp.clientsName.Count == 1) //this is the first player that joins
+                        if (LP.clientsName.Count == 1) //this is the first player that joins
                         {
+                            Debug.Log("if1");
                             //set this player as player 1 from player manager + roles
                             Player2Panel.SetActive(false);
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
                             playerManagers[0].role = PlayerManager.Role.Player1;
                         }
-                        if (lp.clientsName.Count == 2) //this is when the 2nd client joins
+                        if (LP.clientsName.Count == 2) //this is when the 2nd client joins
                         {
+                            Debug.Log("if2");
                             //set this player as player 2
                             Player2Panel.SetActive(true);
                             startButton.gameObject.SetActive(true);
@@ -137,11 +140,13 @@ public class NetManager : MonoBehaviour
                     //  ConnectionPacket mp = (ConnectionPacket)new ConnectionPacket().StartDeserialization(recievedBuffer);
 
                     case BasePacket.PacketType.Message:
+                        {
                         MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
+                        Debug.Log("case 2");
 
                         print($"{mp.player.Name}Said:{mp.message}");
                         break;
-
+                        }
                     case BasePacket.PacketType.Instantiate:
                         {
                             Debug.Log("Received instantiate packet");
@@ -198,7 +203,7 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Acknowledged:
                         AcknowledgedPacket AP = new AcknowledgedPacket(player);
                         AP.StartDeserialization(recievedBuffer);
-
+                        socket.Send(new InformationPacket(player).StartSerialization());
                         Debug.Log("Acknowledged");
                         break;
 
@@ -217,8 +222,10 @@ public class NetManager : MonoBehaviour
 
                     case BasePacket.PacketType.StartGame:
                         StartGamePacket SG = new StartGamePacket(player);
-
-                        startGame();
+                        startButton.onClick.AddListener(() =>
+                        {
+                            startGame();
+                        });
                         Debug.Log("startGame");
                         break;
                     default:
@@ -356,10 +363,10 @@ public class NetManager : MonoBehaviour
         socket.Send(new RotationAndPositonPacket(go.transform.position, go.transform.rotation, player).StartSerialization());
     }
 
-    //public void SendPacket(byte[] buffer)
-    //{
-        //socket.Send(buffer);
-    //}
+    public void SendPacket(byte[] buffer)
+    {
+        socket.Send(buffer);
+    }
 
     public void startGame()
     {
