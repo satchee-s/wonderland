@@ -113,7 +113,7 @@ public class NetManager : MonoBehaviour
                         }
                         if (LP.clientsName.Count == 1) //this is the first player that joins
                         {
-                            Debug.Log("if1");
+                            Debug.Log("player 1 joined");
                             //set this player as player 1 from player manager + roles
                             TransitionPanel.SetActive(false);
                             matchMakingPanel.SetActive(true);
@@ -124,7 +124,7 @@ public class NetManager : MonoBehaviour
                         }
                         if (LP.clientsName.Count == 2) //this is when the 2nd client joins
                         {
-                            Debug.Log("if2");
+                            Debug.Log("player 2 joined");
                             //set this player as player 2
                             matchMakingPanel.SetActive(false);
                             Player2Panel.SetActive(false);
@@ -184,7 +184,7 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Position:
                         PositionPacket PP = new PositionPacket();
                         PP.StartDeserialization(recievedBuffer);
-
+                       // playerManagers[1].playedCards
                         getPosition();
                         break;
 

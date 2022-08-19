@@ -85,7 +85,7 @@ namespace Server
                                     Console.WriteLine("playerID infromation: "+ infoPacket.player.ID);
                                     Console.WriteLine("playerName infromation: " + infoPacket.player.Name);
                                     List<string> clientNames = new List<string>();
-
+                                    Thread.Sleep(2000);
                                     for (int j = 0; j < clients.Count; j++)
                                     {
                                         clientNames.Add(clients[j].player.Name);
@@ -96,6 +96,7 @@ namespace Server
                                     {
                                         clients[j].socket.Send(new LobbyPacket(clientNames, clients[j].player).StartSerialization());
                                         Console.WriteLine($"Sent lobby packet {clientNames[j]}");
+                                        Thread.Sleep(2000);
 
                                     }
                                     break;
