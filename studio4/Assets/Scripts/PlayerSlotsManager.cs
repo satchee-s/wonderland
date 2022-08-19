@@ -7,17 +7,10 @@ public class PlayerSlotsManager : MonoBehaviour
     /**
      THIS MANAGES MULTIPLE SLOTS.
      */
-    //Vector3 slotPosition;
-    // public bool hasCard = false;
-    // public enum slotType { Creature, Booster };
-    // bool canBePlaced = false; //this is an attribute for the card, not the slot
-    //  bool hasCollidedWithSlot = false;
-    //  Card cardBeingMoved;
-    //  Card cardInSlot;
-    //[SerializeField] Card.CardType cardType;
-    public Slot[] allSlots = new Slot[8];
-    private Card cardBeingMoved;
-    [HideInInspector] public List<Card> cardsPlaced = new List<Card>();
+ 
+    public Slot[] allSlots = new Slot[8]; 
+    private Card cardBeingMoved;//this card is gonna be palced somewhere. when this is placed in a slot, it gets added to allSlots
+    public List<Card> cardsPlaced = new List<Card>();// EACH SLOT HOLDS A CARD OBJECT, THIS MEANS THAT EACH INDEX IS A SLOT ID
     [HideInInspector] public Card currentCard;
     public PlayerTurnSystem ptsi;
     private void OnEnable()
@@ -34,6 +27,8 @@ public class PlayerSlotsManager : MonoBehaviour
         cardBeingMoved = card.card;
         card.onRelease += HandleCardRelease;
         currentCard = card.gameObject.GetComponent<Card>();
+        cardsPlaced.Add(currentCard);
+        //now we need to send the cardsPlaced over the network IN THE NET MANAGER.
     }
 
 
@@ -48,7 +43,7 @@ public class PlayerSlotsManager : MonoBehaviour
             }
         }
         else {
-            Debug.Log("Its not your turn bro." + ptsi.getTime() + " seconds left"); 
+            Debug.Log("Ïts not your turn bro." + ptsi.getTime() + "seconds left"); 
         }
        
     }
@@ -63,6 +58,7 @@ public class PlayerSlotsManager : MonoBehaviour
         }
         cardBeingMoved.MouseInteraction.onRelease -= HandleCardRelease;
         cardsPlaced.Remove(cardBeingMoved);
+
         cardBeingMoved = null;
     }
     
@@ -90,5 +86,7 @@ public class PlayerSlotsManager : MonoBehaviour
             cardsPlaced.Add(cardBeingMoved);
         }
         cardBeingMoved.transform.position = targetSlots.transform.position;
+
+
     }
 }

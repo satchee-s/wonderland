@@ -19,6 +19,14 @@ namespace core
             moveAccepted = false;
             
             
+        } 
+        public AcknowledgedPacket() : base(PacketType.Acknowledged)
+        {
+            gameover = false;
+            Health = 0;
+            moveAccepted = false;
+            
+            
         }
 
         public AcknowledgedPacket(bool gameover, int health, bool moveAccepted, Player player): base(PacketType.Acknowledged, player)

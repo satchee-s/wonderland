@@ -36,7 +36,8 @@ namespace core
             Acknowledged,
             PlayerData,
             Connection,
-            StartGame
+            StartGame,
+            SlotPacket
         }
 
       public PacketType Type { get; set; }
@@ -45,6 +46,11 @@ namespace core
         public BasePacket(PacketType type, Player player )
         {
             this.player = player;
+            Type = type;
+        } 
+        
+        public BasePacket(PacketType type )
+        {
             Type = type;
         }
 

@@ -96,7 +96,7 @@ public class CardMouseInteraction : MonoBehaviour
 
         foreach (GameObject card in SelectableCardList)
         {
-            card.gameObject.tag = "Disabled";
+            card.gameObject.tag = "InteractingCard";
         }
        
         interactPanel.SetActive(false);

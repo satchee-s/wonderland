@@ -64,6 +64,7 @@
     <Compile Include="RotationAndPositonPacket.cs" />
     <Compile Include="RotationPacket.cs" />
     <Compile Include="ScalePacket.cs" />
+    <Compile Include="SlotPacket.cs" />
     <Compile Include="StartGamePacket.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

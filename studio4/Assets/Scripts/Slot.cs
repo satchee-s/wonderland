@@ -19,8 +19,8 @@ public class Slot : MonoBehaviour
         currentCard = card;
         card.originalPos = transform.position;
         CardMouseInteraction.onDragEvent += RemoveCardFromSlot;
-        SendCardPacket(card);
-        playerManager.playedCards.Add(card);
+       // SendCardPacket(card);
+        //playerManager.playedCards.Add(card);
     }
 
     private void RemoveCardFromSlot(CardMouseInteraction draggedCard)
