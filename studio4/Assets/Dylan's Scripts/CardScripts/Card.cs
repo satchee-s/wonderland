@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using core;
 
 
 [System.Serializable]
@@ -32,6 +33,7 @@ public class Card : MonoBehaviour
 
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
+    [SerializeField] NetManager netManager;
 
     public CardType Type;
 
@@ -53,23 +55,6 @@ public class Card : MonoBehaviour
         cost = Cost;
     }
 
-    /*public Card(string CardName, int Attack, int Health, int Cost, CardType type, CreatureCardClass cardClass)
-    { //--- alt one for creatures
-        cardName = CardName;
-        attack = Attack;
-        health = Health;
-        cost = Cost;
-        Type = type;
-        CardClass = cardClass;
-    }*/
-
-    /*public Card (string CardName, int Cost, CardType type) --- alt one for boosters
-    {
-        cardName = CardName;
-        cost = Cost;
-        Type = type;
-    }*/
-
     private void Awake()
     {
         isOpponentCard = FindLastParent().GetComponent<PlayerManager>().IsPlayer2;
@@ -78,11 +63,6 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        /*nameText.text = " " + cardName;
-        attackText.text = " " + attack;
-        healthText.text = " " + health;
-        descriptionText.text = " " + description;*/
-
         if (PlayerTurnSystem.currentMana >= cost && summoned == false)
         {
             canBeSummoned = true;
@@ -105,8 +85,6 @@ public class Card : MonoBehaviour
 
         canBeSummoned = false;
         summoned = false;
-
-
         sleep = true;
 
         //  Enemy = GameObject.Find("Enemy HP");
@@ -116,7 +94,6 @@ public class Card : MonoBehaviour
 
     public void Attack(Card opponentCard)
     {
-
         if (Type == CardType.Creature && opponentCard.Type == CardType.Creature && sleep == false)
         {
             opponentCard.TakeDamage(attack);
@@ -125,10 +102,11 @@ public class Card : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-
         if (CardType.Creature == Type)
         {
             health -= amount;
+            CardPacket cp = new CardPacket(cardId, cardName, health, attack, sleep, netManager.player);
+            netManager.SendPacket(cp.StartSerialization());
 
             if (health <= 0)
             {
@@ -136,8 +114,6 @@ public class Card : MonoBehaviour
                 playerManager.health -= Mathf.Abs(health);
             }
         }
-
-
     }
 
     public void Summon()
@@ -156,10 +132,6 @@ public class Card : MonoBehaviour
     {
         return this.Type;
     }
-
-
-
-
 
     private Transform FindLastParent()
     {
