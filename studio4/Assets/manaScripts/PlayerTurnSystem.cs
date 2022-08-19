@@ -13,14 +13,16 @@ public class PlayerTurnSystem : MonoBehaviour
     public static int maxMana, currentMana, maxEnemyMana, currentEnemyMana;
     public bool timerStart, manabool;
     [SerializeField] NetManager netManager;
-    [SerializeField] PlayerManager playerManager;
- 
+    PlayerManager player1, player2; 
     
     void Start()
     {
         StartRound();
         seconds = 30;
         timerStart = true;
+        player1 = netManager.playerManagers[0];
+        player2 = netManager.playerManagers[1];
+        netManager = FindObjectOfType<NetManager>();//only works when server is running
     }
 
     void Update()
@@ -28,8 +30,16 @@ public class PlayerTurnSystem : MonoBehaviour
         if (isYourTurn == true)
         {
             turnText.text = "your Turn";
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
-        else turnText.text = "Oponent Turn";
+        else
+        {
+            turnText.text = "Oponent Turn";
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         manaText.text = currentMana + "/" + maxMana;
 
         if (isYourTurn == true && seconds > 0 && timerStart == true)
@@ -78,16 +88,13 @@ public class PlayerTurnSystem : MonoBehaviour
 
         timerStart = true;
         seconds = 30;
-        UpdatePlayerData();
+        //UpdatePlayerData();
     }
 
     public void EndOponentsTurn()
     {
         isYourTurn = true;
         yourTurn += 1;
-
-        //maxMana += 1;
-        //currentMana = maxMana;
 
         if (manabool == false)
         {
@@ -169,14 +176,13 @@ public class PlayerTurnSystem : MonoBehaviour
     {
         if (isYourTurn == true)
         {
-
             EndYourTurn();
         }
     }
 
     void UpdatePlayerData()
     {
-        PlayerDataPacket playerData = new PlayerDataPacket(netManager.player, playerManager.health, currentMana);
+        PlayerDataPacket playerData = new PlayerDataPacket(netManager.player, player1.health, currentMana);
         byte[] buffer = playerData.StartSerialization();
         netManager.SendPacket(buffer);
         Debug.Log("Player data sent");

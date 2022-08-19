@@ -8,6 +8,4 @@ public class NetworkComponent : MonoBehaviour
     public string GameId;
     public string prefabName;
 
-
-
 }

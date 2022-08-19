@@ -48,7 +48,7 @@ public class PlayerSlotsManager : MonoBehaviour
             }
         }
         else {
-            Debug.Log("Ïts not your turn bro." + ptsi.getTime() + "seconds left"); 
+            Debug.Log("Its not your turn bro." + ptsi.getTime() + " seconds left"); 
         }
        
     }
@@ -63,7 +63,6 @@ public class PlayerSlotsManager : MonoBehaviour
         }
         cardBeingMoved.MouseInteraction.onRelease -= HandleCardRelease;
         cardsPlaced.Remove(cardBeingMoved);
-
         cardBeingMoved = null;
     }
     
