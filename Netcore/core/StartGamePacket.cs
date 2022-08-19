@@ -9,15 +9,15 @@ namespace core
     public class StartGamePacket : BasePacket 
     {
 
-        public string Scene { get; private set; }
+       // public string Scene { get; private set; }
         public StartGamePacket()
         {
-            Scene = "";
+           // Scene = "";
         }
 
-        public StartGamePacket(string scene, Player player) : base(PacketType.StartGame, player)
+        public StartGamePacket(Player player) : base(PacketType.StartGame, player)
         {
-            this.Scene = scene;
+            //this.Scene = scene;
             this.player = player;
         }
 
@@ -25,7 +25,7 @@ namespace core
         {
             base.StartSerialization();
 
-            bw.Write(Scene);
+           // bw.Write(Scene);
             return msw.GetBuffer();
         }
 
@@ -33,7 +33,7 @@ namespace core
         {
             base.StartDeserialization(buffer);
 
-            Scene = br.ReadString();
+           // Scene = br.ReadString();
 
 
             return this;

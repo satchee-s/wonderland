@@ -22,6 +22,7 @@ public class NetManager : MonoBehaviour
     [SerializeField] GameObject connectPanel;
     [SerializeField] GameObject matchMakingPanel;
     [SerializeField] GameObject Player2Panel;
+    [SerializeField] GameObject TransitionPanel;
 
     [SerializeField] GameObject opponentFound;
     [SerializeField] GameObject lookingForOpponent;
@@ -55,10 +56,8 @@ public class NetManager : MonoBehaviour
 
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
-                
-
+                TransitionPanel.SetActive(true);
                 connectPanel.SetActive(false);
-                matchMakingPanel.SetActive(true);
                 startButton.gameObject.SetActive(false);
 
                 socket.Blocking = false;
@@ -116,6 +115,8 @@ public class NetManager : MonoBehaviour
                         {
                             Debug.Log("if1");
                             //set this player as player 1 from player manager + roles
+                            TransitionPanel.SetActive(false);
+                            matchMakingPanel.SetActive(true);
                             Player2Panel.SetActive(false);
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
@@ -125,10 +126,12 @@ public class NetManager : MonoBehaviour
                         {
                             Debug.Log("if2");
                             //set this player as player 2
-                            Player2Panel.SetActive(true);
-                            startButton.gameObject.SetActive(true);
-                            opponentFound.SetActive(true);
-                            lookingForOpponent.SetActive(false);
+                            matchMakingPanel.SetActive(false);
+                            Player2Panel.SetActive(false);
+                            opponentFound.SetActive(false);
+                            lookingForOpponent.SetActive(true);
+                           
+                            
                             playerManagers[1].role = PlayerManager.Role.Player2;
                         }
                         //if both players are there, then player 1 should click on start and launch both players into the game scene!
@@ -222,10 +225,9 @@ public class NetManager : MonoBehaviour
 
                     case BasePacket.PacketType.StartGame:
                         StartGamePacket SG = new StartGamePacket(player);
-                        startButton.onClick.AddListener(() =>
-                        {
+                        
                             startGame();
-                        });
+                      
                         Debug.Log("startGame");
                         break;
                     default:
