@@ -38,11 +38,6 @@ public class TutorialManager : MonoBehaviour
 
     public void Update()
     {
-        if (i != 2)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-                i++;
-        }
         for (int i = 0; i < popUps.Length; i++)
         {
             if (this.i == i)
@@ -54,60 +49,19 @@ public class TutorialManager : MonoBehaviour
                 popUps[i].SetActive(false);
             }
         }
-
-        if (i == 0)
+        if (i != 2)
         {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
+            if (Input.GetKeyDown(KeyCode.Return))
                 i++;
-            }*/
-        }
-        else if (i == 1)
-        {
-
-        }
-        else if (i == 2)
+        }  
+        if (i == 2)
         {
             if (Input.GetMouseButtonDown(1))
             {
                 i++;
             }
         }
-        else if (i == 3)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 4)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 5)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 6)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 7)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
+
         else if (i == 8)
         {
             //if player places booster card
@@ -116,6 +70,8 @@ public class TutorialManager : MonoBehaviour
             //discardButton.SetActive(true);
             //i++; else if(player palces creature card)
             //Error.SetActive(true); 
+            discardButton.SetActive(true);
+
             if (slots.currentCard.Type == CardType.Booster)
             {
                 popUps[i].GetComponent<Button>().onClick.AddListener(() =>
@@ -132,17 +88,6 @@ public class TutorialManager : MonoBehaviour
         else if (i == 9)
         {
             discardButton.SetActive(false);
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 10)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 11)
         {
@@ -179,56 +124,18 @@ public class TutorialManager : MonoBehaviour
                 sacrifice.SetActive(false);
                 i++;
             });
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 12)
         {
             sacrifice.SetActive(false);
-
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 13)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 14)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 15)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 16)
         {
             endTurn.SetActive(true);
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 17)
         {
             endTurn.SetActive(false);
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 18) //if start pop up (Deactivate Opponents turn UI or Move it elsewhere)
         {
@@ -241,10 +148,6 @@ public class TutorialManager : MonoBehaviour
         {
             DrawOneandOne.SetActive(true);
             DrawTwo.SetActive(true);
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 20)
         {
@@ -269,10 +172,6 @@ public class TutorialManager : MonoBehaviour
             }
             if (creatureCounter >= 0) 
                 i++;            
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 21)
         {
@@ -282,19 +181,11 @@ public class TutorialManager : MonoBehaviour
             {
                 i++;
             }
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 22)
         {
             AttackCard.SetActive(true);
             AttackFace.SetActive(true);
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 23)
         {
@@ -318,41 +209,10 @@ public class TutorialManager : MonoBehaviour
             //deal damage & take damage
             //set i == 25 else if(player taps on face button)
             //{ i == 25 }
-
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-
-        }
-        else if (i == 24)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 25)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
-        }
-        else if (i == 26)
-        {
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
         else if (i == 27)
         {
             endTutorial.SetActive(true);
-            /*if (Input.GetKeyDown(KeyCode.Return))
-            {
-                i++;
-            }*/
         }
     }
 

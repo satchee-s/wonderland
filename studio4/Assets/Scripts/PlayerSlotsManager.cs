@@ -19,7 +19,7 @@ public class PlayerSlotsManager : MonoBehaviour
     private Card cardBeingMoved;
     [HideInInspector] public List<Card> cardsPlaced = new List<Card>();
     [HideInInspector] public Card currentCard;
-
+    public PlayerTurnSystem ptsi;
     private void OnEnable()
     {
         CardMouseInteraction.onDragEvent += GetCardBeingMoved;
@@ -39,12 +39,18 @@ public class PlayerSlotsManager : MonoBehaviour
 
     private void Update()
     {
-        if (cardBeingMoved != null)
-        {
-            Slot closestSlot = GetClosestToMovingCard(allSlots, cardBeingMoved.Type);
-            if(closestSlot != null)
-                PlaceCard(closestSlot);
+        if (PlayerTurnSystem.isYourTurn) {
+            if (cardBeingMoved != null)
+            {
+                Slot closestSlot = GetClosestToMovingCard(allSlots, cardBeingMoved.Type);
+                if (closestSlot != null)
+                    PlaceCard(closestSlot);
+            }
         }
+        else {
+            Debug.Log("Ïts not your turn bro." + ptsi.getTime() + "seconds left"); 
+        }
+       
     }
     
     private void HandleCardRelease()
