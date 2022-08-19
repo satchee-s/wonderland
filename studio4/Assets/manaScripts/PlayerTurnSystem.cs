@@ -14,6 +14,7 @@ public class PlayerTurnSystem : MonoBehaviour
     public bool timerStart, manabool;
     [SerializeField] NetManager netManager;
     [SerializeField] PlayerManager playerManager;
+ 
     
     void Start()
     {
@@ -186,4 +187,10 @@ public class PlayerTurnSystem : MonoBehaviour
         currentEnemyMana = newMana;
     }
 
+
+    public bool getTime()
+    {
+        Debug.Log("timer started" + timerStart);
+        return this.timerStart;
+    }
 }
