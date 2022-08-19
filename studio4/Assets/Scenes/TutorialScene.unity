@@ -44804,6 +44804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a46f09d4dfd7c94b81a92558683fe40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  role: 0
 --- !u!114 &1199200979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44818,6 +44819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthText: {fileID: 179302580}
+  playedCards: []
   role: 0
 --- !u!1 &1201027725
 GameObject:
@@ -51832,6 +51834,7 @@ MonoBehaviour:
   - {fileID: 157307483}
   cardsPlaced: []
   currentCard: {fileID: 0}
+  ptsi: {fileID: 0}
 --- !u!1 &1379804600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -72976,6 +72979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthText: {fileID: 0}
+  playedCards: []
   role: 0
 --- !u!114 &1965042437
 MonoBehaviour:
@@ -72989,6 +72993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a46f09d4dfd7c94b81a92558683fe40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  role: 0
 --- !u!4 &1965042438
 Transform:
   m_ObjectHideFlags: 0
@@ -76294,7 +76299,6 @@ GameObject:
   - component: {fileID: 2053331540}
   - component: {fileID: 2053331539}
   - component: {fileID: 2053331538}
-  - component: {fileID: 2053331542}
   m_Layer: 5
   m_Name: GameMatchPanel
   m_TagString: Untagged
@@ -76388,21 +76392,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2053331542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053331537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46e4e79dfa1a073409bdcc5528d1899d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
-  Player1MagicHatCount: {fileID: 0}
-  Player2MagicHatCount: {fileID: 0}
 --- !u!1 &2054227793
 GameObject:
   m_ObjectHideFlags: 0

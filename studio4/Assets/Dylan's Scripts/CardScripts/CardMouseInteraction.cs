@@ -29,7 +29,7 @@ public class CardMouseInteraction : MonoBehaviour
     }
     void Start()
     {
-        centerScreenPosition = mainCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.5f));
+        centerScreenPosition = mainCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 1.3f));
         SelectableCardList = GameObject.FindGameObjectsWithTag("Selectable");
         if (interactPanel != null)
             interactPanel.SetActive(false);
@@ -49,7 +49,7 @@ public class CardMouseInteraction : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!isDragged)
+        if (!isDragged && gameObject.CompareTag("Selectable")) //only do this is card tag is set to Selectable!
         {
             transform.rotation = Quaternion.Euler(5f, lockPos, lockPos);
             interactPanel.SetActive(true);
@@ -61,6 +61,7 @@ public class CardMouseInteraction : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && !isZoomedIn && !isDragged)
         {
             ZoomInOnCard();
+
         }
     }
 
@@ -92,15 +93,19 @@ public class CardMouseInteraction : MonoBehaviour
     private void ZoomInOnCard()
     {
         isZoomedIn = true;
-        foreach (GameObject card in SelectableCardList)
-            card.gameObject.tag = "InteractingCard";
 
+        foreach (GameObject card in SelectableCardList)
+        {
+            card.gameObject.tag = "Disabled";
+        }
+       
         interactPanel.SetActive(false);
         goBackButton.SetActive(true);
         goBackButton.GetComponent<Button>().onClick.AddListener(ZoomOutOfCard);
 
         MoveCardToCenter();
-        transform.rotation = Quaternion.Euler(25f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(21f, 0f, 0f);
+      
     }
     private void ZoomOutOfCard()
     {
@@ -127,7 +132,7 @@ public class CardMouseInteraction : MonoBehaviour
     private void MoveCardToCenter()
     {
         Vector3 centerPos = centerScreenPosition;
-        transform.position = centerPos;
+        transform.position = centerPos ;
     }
     private void ResetRotation() =>
         gameObject.transform.rotation = card.originalRotationValue;
