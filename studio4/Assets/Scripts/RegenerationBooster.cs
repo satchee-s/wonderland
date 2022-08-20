@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RegenerationBooster : CreatureManager
+public class RegenerationBooster : BoosterManager
 {
     public override void PlayCard(Card otherCard)
     {

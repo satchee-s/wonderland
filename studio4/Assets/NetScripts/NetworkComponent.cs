@@ -4,8 +4,12 @@ using UnityEngine;
 public class NetworkComponent : MonoBehaviour
 {
     public string OwnerID;
-    public string GameObjectID;
+    public int GameObjectID;
     public string GameId;
     public string prefabName;
 
+    private void Start()
+    {
+        GameObjectID = GetInstanceID();
+    }
 }

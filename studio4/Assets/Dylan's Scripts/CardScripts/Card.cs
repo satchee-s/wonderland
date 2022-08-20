@@ -27,18 +27,14 @@ public class Card : MonoBehaviour
     public TextMeshPro healthText;
     public TextMeshPro descriptionText;
 
-    // public GameObject attackBordor;
-    // public GameObject Target;
-    // public GameObject Enemy;
-
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
-    [SerializeField] NetManager netManager;
+    NetManager netManager;
 
-    public CardType Type;
+    public CardType type;
 
     public enum CreatureCardClass { Peasant, Elite };
-    public CreatureCardClass CardClass;
+    public CreatureCardClass cardClass;
 
     public bool isOpponentCard;
 
@@ -55,10 +51,21 @@ public class Card : MonoBehaviour
         cost = Cost;
     }
 
+    public Card(string CardName, int Attack, int Health, int Cost, CreatureCardClass CardClass, CardType Type)
+    {
+        cardName = CardName;
+        attack = Attack;
+        health = Health;
+        cost = Cost;
+        cardClass = CardClass;
+        type = Type;
+    }
+
     private void Awake()
     {
         isOpponentCard = FindLastParent().GetComponent<PlayerManager>().IsPlayer2;
         mouseInteraction = GetComponent<CardMouseInteraction>();
+        netManager = FindObjectOfType<NetManager>();
     }
 
     void Update()
@@ -68,33 +75,22 @@ public class Card : MonoBehaviour
             canBeSummoned = true;
         }
         else canBeSummoned = false;
-
-
-        if (canBeSummoned == true)
-        {
-
-        }
     }
 
     private void Start()
     {
         playerManager = GetComponent<PlayerManager>();
-        //gm = FindObjectOfType<GameManager>();
         originalRotationValue = transform.rotation;
         originalPos = transform.position;
 
         canBeSummoned = false;
         summoned = false;
         sleep = true;
-
-        //  Enemy = GameObject.Find("Enemy HP");
-
-
     }
 
     public void Attack(Card opponentCard)
     {
-        if (Type == CardType.Creature && opponentCard.Type == CardType.Creature && sleep == false)
+        if (type == CardType.Creature && opponentCard.type == CardType.Creature && sleep == false)
         {
             opponentCard.TakeDamage(attack);
         }
@@ -102,15 +98,17 @@ public class Card : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (CardType.Creature == Type)
+        if (CardType.Creature == type)
         {
             health -= amount;
-            CardPacket cp = new CardPacket(cardId, cardName, health, attack, sleep, netManager.player);
+            CardPacket cp = new CardPacket(cardId, cardName, health, attack, sleep);
             netManager.SendPacket(cp.StartSerialization());
 
             if (health <= 0)
             {
                 gameObject.SetActive(false);
+                DestroyPacket dp = new DestroyPacket(GetInstanceID());
+                netManager.SendPacket(dp.StartSerialization());
                 playerManager.health -= Mathf.Abs(health);
             }
         }
@@ -130,7 +128,7 @@ public class Card : MonoBehaviour
 
     public CardType getCardType()
     {
-        return this.Type;
+        return this.type;
     }
 
     private Transform FindLastParent()

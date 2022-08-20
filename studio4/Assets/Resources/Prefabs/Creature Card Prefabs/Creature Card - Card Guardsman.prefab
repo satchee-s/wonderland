@@ -215,8 +215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.5644, y: -15.3218}
-  m_SizeDelta: {x: 199.4519, y: 49.8606}
+  m_AnchoredPosition: {x: 59.3968, y: -15.2852}
+  m_SizeDelta: {x: 200.0106, y: 49.9827}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &889279685543178777
 MeshRenderer:
@@ -468,18 +468,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Class: Peasant
-
-
-    Magic Hat Cost: One Magic Hat
-
-    Sacrifice Outcome:
-    One Magic Hat
-
-    Hibernation Count When Played: Zero
-
-
-    Effect: None '
+  m_text: "Class: Elite\r\n\nMagic Hat Cost: Two Magic Hats\r\nSacrifice Outcome:
+    One Magic Hat\r\nHibernation Count When Played: One Turn\r\n\nEffect: Gives player\u2019s
+    other played creature cards on the play field an additional one health point
+    when played. This creature card\u2019s effect becomes inactive when discarded."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -506,8 +498,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.68
-  m_fontSizeBase: 0.68
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -679,7 +671,7 @@ GameObject:
   - component: {fileID: 889279685848340673}
   - component: {fileID: 889279685848340734}
   m_Layer: 0
-  m_Name: White Rabbit
+  m_Name: Card Guardsman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,8 +693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3947029, y: 0.23229027}
-  m_SizeDelta: {x: 5.393, y: 3.163}
+  m_AnchoredPosition: {x: 0.3415, y: 0.23229027}
+  m_SizeDelta: {x: 5.8189, y: 3.163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &889279685848340672
 CanvasRenderer:
@@ -774,7 +766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: White Rabbit
+  m_text: Card Guardsman
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1003,7 +995,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2329dd9bcaeab06468b2c5e8e3c6b719, type: 2}
+  - {fileID: 2100000, guid: e3d23910e337f794b8e88f129e592d16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1036,9 +1028,10 @@ GameObject:
   - component: {fileID: 889279686322959750}
   - component: {fileID: 889279686322959753}
   - component: {fileID: -4733878520334864671}
-  - component: {fileID: 9147841325522013256}
+  - component: {fileID: 8537004361735485638}
+  - component: {fileID: 8289350843070185898}
   m_Layer: 0
-  m_Name: Creature Card - White Rabbit
+  m_Name: Creature Card - Card Guardsman
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,10 +1071,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 1
-  cardName: White Rabbit
+  cardName: Card Guardsman
   attack: 5
   health: 7
-  description: I Am Cheshire
+  description: I Am Card Guardsman
   hasBeenPlayed: 0
   cost: 0
   canBeSummoned: 0
@@ -1095,6 +1088,7 @@ MonoBehaviour:
   descriptionText: {fileID: 889279685639987085}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  cardPrefab: {fileID: 889279686322959751}
   Type: 0
   CardClass: 0
   isOpponentCard: 0
@@ -1111,7 +1105,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9147841325522013256
+--- !u!114 &8537004361735485638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1128,6 +1122,22 @@ MonoBehaviour:
   lockPos: 0
   SelectableCardList: []
   card: {fileID: 0}
+--- !u!114 &8289350843070185898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889279686322959751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be3984c7c3209f4ca7be49d1b203e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OwnerID: 
+  GameObjectID: 
+  GameId: 
+  prefabName: 
 --- !u!1 &889279686975537308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1406,8 +1416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.714478, y: -15.323401}
-  m_SizeDelta: {x: 199.41869, y: 49.85521}
+  m_AnchoredPosition: {x: 59.5437, y: -15.285}
+  m_SizeDelta: {x: 199.9878, y: 49.9832}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1167179051968202641
 MeshRenderer:
@@ -1479,7 +1489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CorruptionBooster : CreatureManager
+public class CorruptionBooster : BoosterManager
 {
     public override void PlayCard(Card otherCard)
     {

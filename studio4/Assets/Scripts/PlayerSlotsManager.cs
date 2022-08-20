@@ -37,7 +37,7 @@ public class PlayerSlotsManager : MonoBehaviour
         if (PlayerTurnSystem.isYourTurn) {
             if (cardBeingMoved != null)
             {
-                Slot closestSlot = GetClosestToMovingCard(allSlots, cardBeingMoved.Type);
+                Slot closestSlot = GetClosestToMovingCard(allSlots, cardBeingMoved.type);
                 if (closestSlot != null)
                     PlaceCard(closestSlot);
             }
@@ -50,7 +50,7 @@ public class PlayerSlotsManager : MonoBehaviour
     
     private void HandleCardRelease()
     {
-        Slot closestSlot = GetClosestToMovingCard(allSlots, cardBeingMoved.Type);
+        Slot closestSlot = GetClosestToMovingCard(allSlots, cardBeingMoved.type);
         if(closestSlot == null) return;
         if(cardBeingMoved.cost <= PlayerTurnSystem.currentMana)
         {

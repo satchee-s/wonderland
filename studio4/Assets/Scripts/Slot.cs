@@ -14,13 +14,16 @@ public class Slot : MonoBehaviour
     
     public void PlaceCardInSlot(Card card)
     {
-        if(card.Type != slotType) return;
+        if(card.type != slotType) return;
         
         currentCard = card;
         card.originalPos = transform.position;
         CardMouseInteraction.onDragEvent += RemoveCardFromSlot;
-       // SendCardPacket(card);
-        //playerManager.playedCards.Add(card);
+        InstantiatePacket ip = new InstantiatePacket(card.name, card.transform.position, card.transform.rotation);
+        netManager.SendPacket(ip.StartSerialization());
+        CardPacket cp = new CardPacket(card.cardId, card.name, card.health, card.attack, card.sleep);
+        netManager.SendPacket(cp.StartSerialization());
+        playerManager.playedCards.Add(card);
     }
 
     private void RemoveCardFromSlot(CardMouseInteraction draggedCard)
@@ -28,14 +31,9 @@ public class Slot : MonoBehaviour
         if(currentCard.MouseInteraction != draggedCard) return;
         playerManager.playedCards.Remove(currentCard);
         print("Remove");
+        DestroyPacket dp = new DestroyPacket(currentCard.GetInstanceID());
+        netManager.SendPacket(dp.StartSerialization());
         currentCard = null;
         CardMouseInteraction.onDragEvent -= RemoveCardFromSlot;
-        //netManager.DestroyObject(currentCard);
-    }
-
-    void SendCardPacket(Card card)
-    {
-        InstantiatePacket ip = new InstantiatePacket(card.name, card.name, card.transform.position, card.transform.rotation, netManager.player);
-        netManager.SendPacket(ip.StartSerialization());
     }
 }

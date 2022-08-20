@@ -108,11 +108,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Effect: A booster card played on the space above the creature card space
-    (having  a creature played on the creature card row) to put an elite creature
-    card currently in a hibernation state out of its hibernation state. This makes
-    the elite creature card usable in the same turn after being played. This card
-    has no effect when played above peasant creature cards.'
+  m_text: "Effect: When played on a chosen creature card\u2019s booster card slot
+    above, the card chooses one random played creature card from the opposing player\u2019s
+    side and discards the randomly selected played creature card by random. The discarded
+    played creature card\u2019s health points will be equivalent to draining the
+    player\u2019s health points depending on which player side the played creature
+    card belonged to during the round. Card function remains useless if there are
+    no two played creature cards present."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -139,8 +141,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.57
-  m_fontSizeBase: 0.57
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -195,10 +197,11 @@ GameObject:
   - component: {fileID: 135710375292243331}
   - component: {fileID: 135710375292243330}
   - component: {fileID: 6714826475061346712}
-  - component: {fileID: 6423744243187712171}
-  - component: {fileID: 7398639939021495774}
+  - component: {fileID: 3541349809039652831}
+  - component: {fileID: 4230755447828512767}
+  - component: {fileID: 5838385215131152957}
   m_Layer: 0
-  m_Name: Booster Card - Swift Recovery
+  m_Name: "Booster Card -  The Skull\u2019s Choice"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,6 +257,7 @@ MonoBehaviour:
   descriptionText: {fileID: 135710375237840275}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  cardPrefab: {fileID: 135710375292243328}
   Type: 1
   CardClass: 0
   isOpponentCard: 0
@@ -270,7 +274,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6423744243187712171
+--- !u!114 &3541349809039652831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,7 +291,7 @@ MonoBehaviour:
   lockPos: 0
   SelectableCardList: []
   card: {fileID: 0}
---- !u!114 &7398639939021495774
+--- !u!114 &4230755447828512767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,11 +300,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 135710375292243328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b9b5b56a16cdd24f800948b9292961c, type: 3}
+  m_Script: {fileID: 11500000, guid: aa1299d405dbd5240b581db2c2dd3b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   opponentCreatureCards: []
   playerCreatureCards: []
+--- !u!114 &5838385215131152957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135710375292243328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be3984c7c3209f4ca7be49d1b203e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OwnerID: 
+  GameObjectID: 
+  GameId: 
+  prefabName: 
 --- !u!1 &135710375306721077
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,7 +396,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d739e5e071d1114fa8e9fe1bb986667, type: 2}
+  - {fileID: 2100000, guid: b6ac6140e8bf00d4491aa633e47fb6e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -453,7 +473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135710375917652247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.09, z: 1.49}
+  m_LocalPosition: {x: 0.25, y: 0.08, z: 1.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 135710376794405945}
@@ -733,7 +753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Magic Hat Cost: 1'
+  m_text: 'Magic Hat Cost: 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -818,7 +838,7 @@ GameObject:
   - component: {fileID: 135710376888385360}
   - component: {fileID: 135710376888385366}
   m_Layer: 0
-  m_Name: Swift Recovery
+  m_Name: "The Skull\u2019s Choice"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,7 +860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.342, y: 0.238}
+  m_AnchoredPosition: {x: 0.258, y: 0.238}
   m_SizeDelta: {x: 5.393, y: 3.163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &135710376888385361
@@ -913,7 +933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Swift Recovery
+  m_text: "The Skull\u2019s Choice"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -72,7 +72,7 @@ public class TutorialManager : MonoBehaviour
             //Error.SetActive(true); 
             discardButton.SetActive(true);
 
-            if (slots.currentCard.Type == CardType.Booster)
+            if (slots.currentCard.type == CardType.Booster)
             {
                 popUps[i].GetComponent<Button>().onClick.AddListener(() =>
                 {
@@ -103,12 +103,12 @@ public class TutorialManager : MonoBehaviour
             Card[] sacrificeCards = new Card[2];
             foreach (Card cards in slots.cardsPlaced)
             {
-                if (cards.Type == CardType.Creature)
+                if (cards.type == CardType.Creature)
                 {
                     sacrificeCards[creatureCounter] = cards;
                     creatureCounter++;
                 }
-                else if (cards.Type == CardType.Booster)
+                else if (cards.type == CardType.Booster)
                 {
                     //error ui
                 }
@@ -162,12 +162,12 @@ public class TutorialManager : MonoBehaviour
             int creatureCounter = 0;
             foreach (Card cards in slots.cardsPlaced)
             {
-                if (cards.Type == CardType.Booster)
+                if (cards.type == CardType.Booster)
                 {
                     //error message ui
                     break;
                 }
-                if (cards.Type == CardType.Creature) 
+                if (cards.type == CardType.Creature) 
                     creatureCounter++;
             }
             if (creatureCounter >= 0) 
@@ -177,7 +177,7 @@ public class TutorialManager : MonoBehaviour
         {
             //if( 1 creature card has been tapped on
             // i++
-            if (slots.currentCard.Type == CardType.Creature)
+            if (slots.currentCard.type == CardType.Creature)
             {
                 i++;
             }

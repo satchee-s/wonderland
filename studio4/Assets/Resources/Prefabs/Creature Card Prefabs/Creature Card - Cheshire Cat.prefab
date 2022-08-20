@@ -215,8 +215,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.5644, y: -15.3218}
-  m_SizeDelta: {x: 199.4519, y: 49.8606}
+  m_AnchoredPosition: {x: 59.4, y: -15.28}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &889279685543178777
 MeshRenderer:
@@ -468,18 +468,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Class: Peasant
-
-
-    Magic Hat Cost: Zero
-
-    Sacrifice Outcome: One
-    Magic Hat
-
-    Hibernation Count When Played: Zero
-
-
-    Effect: None'
+  m_text: "Class: Elite\r\n\nMagic Hat Cost: Five Magic Hats\r\nSacrifice Outcome:
+    Two Magic Hats\r\nHibernation Count When Played: One Turn\r\n\nEffect: All opposing
+    played creature cards lose one attack point when played. This creature card\u2019s
+    effect becomes inactive when discarded"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -506,8 +498,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.68
-  m_fontSizeBase: 0.68
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -679,7 +671,7 @@ GameObject:
   - component: {fileID: 889279685848340673}
   - component: {fileID: 889279685848340734}
   m_Layer: 0
-  m_Name: Dodo
+  m_Name: Cheshire Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,7 +685,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889279685848340732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.003}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0029974282}
   m_LocalScale: {x: 0.25, y: 0.25000003, z: 1}
   m_Children: []
   m_Father: {fileID: 889279686322959750}
@@ -701,8 +693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.4459, y: 0.2346}
-  m_SizeDelta: {x: 4.9832, y: 3.1818}
+  m_AnchoredPosition: {x: 0.3947029, y: 0.23229027}
+  m_SizeDelta: {x: 5.393, y: 3.163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &889279685848340672
 CanvasRenderer:
@@ -774,7 +766,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dodo
+  m_text: 'Cheshire Cat
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -837,7 +831,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.17458344, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1003,7 +997,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41739a20a984cdd42bc64a392195e4e0, type: 2}
+  - {fileID: 2100000, guid: 79c03c1909cb37842944c01d0b6dd932, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1036,9 +1030,10 @@ GameObject:
   - component: {fileID: 889279686322959750}
   - component: {fileID: 889279686322959753}
   - component: {fileID: -4733878520334864671}
-  - component: {fileID: 4488609902187654164}
+  - component: {fileID: 3009203315285532489}
+  - component: {fileID: 7572367780789973446}
   m_Layer: 0
-  m_Name: Creature Card - Dodo
+  m_Name: Creature Card - Cheshire Cat
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 1
-  cardName: Dodo
+  cardName: Cheshire Cat
   attack: 5
   health: 7
   description: I Am Cheshire
@@ -1095,6 +1090,7 @@ MonoBehaviour:
   descriptionText: {fileID: 889279685639987085}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  cardPrefab: {fileID: 889279686322959751}
   Type: 0
   CardClass: 0
   isOpponentCard: 0
@@ -1111,7 +1107,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4488609902187654164
+--- !u!114 &3009203315285532489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1128,6 +1124,22 @@ MonoBehaviour:
   lockPos: 0
   SelectableCardList: []
   card: {fileID: 0}
+--- !u!114 &7572367780789973446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889279686322959751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be3984c7c3209f4ca7be49d1b203e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OwnerID: 
+  GameObjectID: 
+  GameId: 
+  prefabName: 
 --- !u!1 &889279686975537308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1406,8 +1418,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.714478, y: -15.323401}
-  m_SizeDelta: {x: 199.41869, y: 49.85521}
+  m_AnchoredPosition: {x: 59.54, y: -15.28}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1167179051968202641
 MeshRenderer:
@@ -1479,7 +1491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: 7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

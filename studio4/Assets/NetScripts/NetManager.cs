@@ -49,7 +49,6 @@ public class NetManager : MonoBehaviour
     public PlayerSlotsManager [] playerSlotsManagers = new PlayerSlotsManager [2];
     public int numberOfLocalCardsPlaced = 0;
     public int numberOfEnemyCardsPlaced = 0;
-    //don't destroy on load
 
     void Start()
     {
@@ -129,9 +128,6 @@ public class NetManager : MonoBehaviour
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
                             playerManagers[0].role = PlayerManager.Role.Player1;
-                            
-
-
                         }
                         if (LP.clientsName.Count == 2) //this is when the 2nd client joins
                         {
@@ -140,9 +136,7 @@ public class NetManager : MonoBehaviour
                             matchMakingPanel.SetActive(false);
                             Player2Panel.SetActive(false);
                             opponentFound.SetActive(false);
-                            lookingForOpponent.SetActive(true);
-                           
-                            
+                            lookingForOpponent.SetActive(true);                            
                             playerManagers[1].role = PlayerManager.Role.Player2;
                         }
                         //if both players are there, then player 1 should click on start and launch both players into the game scene!
@@ -170,8 +164,7 @@ public class NetManager : MonoBehaviour
                             print(ip.player.ID);
                             print(ip.player.Name);
                             print(ip.PrefabName);
-
-                            InstantiateFromResources(ip.PrefabName, ip.Position, ip.Rotation, ip.GameObjectId, ip.player);
+                            InstantiateFromResources(ip.PrefabName, ip.Position, ip.Rotation);
                             break;
                         }
 
@@ -188,7 +181,7 @@ public class NetManager : MonoBehaviour
                             Dp.StartDeserialization(recievedBuffer);
                             print(Dp.GameObjectId);
 
-                            DestroyObject(Dp.GameObjectId, player);
+                            DestroyObject(Dp.GameObjectId);
                             break;
                         }
 
@@ -208,8 +201,9 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Card:
                         CardPacket cp = new CardPacket();
                         cp.StartDeserialization(recievedBuffer);
-                        CardInformation();
-                        playerManagers[1].playedCards.Add(CardInformation());
+                        //CardInformation();
+                        LoadCardInformation(cp.cardID, cp.cardName, cp.cardHealth, cp.cardAttack, cp.sleep);
+                        playerManagers[1].playedCards.Add(card);
 
 
                         UpdateCardStats(cp.cardHealth, cp.sleep);
@@ -334,28 +328,20 @@ public class NetManager : MonoBehaviour
     {
         Debug.Log(Resources.Load($"Prefabs/{prefabName}"));
         GameObject go = Instantiate(Resources.Load($"Prefabs/{prefabName}"), position, rotation) as GameObject;
-        nc = go.AddComponent<NetworkComponent>();
-        nc.OwnerID = player.ID;
-        nc.GameObjectID = Guid.NewGuid().ToString("N");
-         //Debug.Log(rotation);
-         //Debug.Log(prefabName);
-        //Debug.Log(position);
-        //Debug.Log(nc.GameObjectID);
+        card = go.AddComponent<Card>();
 
         playerObjs.Add(go);
-
-        socket.Send(new InstantiatePacket(nc.GameObjectID, prefabName, position, rotation, player).StartSerialization());
+        socket.Send(new InstantiatePacket(prefabName, position, rotation).StartSerialization());
 
         return go;
     }
 
 
-    GameObject InstantiateFromResources(string prefabName, Vector3 position, Quaternion rotation, string gameObjectID, Player player)
+    GameObject InstantiateFromResources(string prefabName, Vector3 position, Quaternion rotation)
     {
         GameObject go = Instantiate(Resources.Load($"Prefabs/{prefabName}"), position, rotation) as GameObject;
-        nc = go.AddComponent<NetworkComponent>();
-        nc.OwnerID = player.ID;
-        nc.GameObjectID = gameObjectID;
+        card = go.AddComponent<Card>();
+        //nc.GameObjectID = gameObjectID;
         return go;
     }
 
@@ -370,19 +356,16 @@ public class NetManager : MonoBehaviour
         Vector3 Velocity = go.GetComponent<Rigidbody>().velocity;
         Debug.Log(Velocity);
 
-        socket.Send(new RigidbodyPacket(player, nc.GameObjectID, Velocity).StartSerialization());
+        socket.Send(new RigidbodyPacket(player, nc.GameId, Velocity).StartSerialization());
         Debug.Log("send");
-
-
     }
 
-    private void DestroyObject(string GameObjectID, Player player)
+    private void DestroyObject(int instanceID)
     {
         NetworkComponent[] nc = FindObjectsOfType<NetworkComponent>();
-
         for (int i = 0; i < nc.Length; i++)
         {
-            if (nc[i].GameObjectID == GameObjectID)
+            if (nc[i].GameObjectID == instanceID)
             {
                 Destroy(nc[i].gameObject);
                 break;
@@ -394,8 +377,17 @@ public class NetManager : MonoBehaviour
     private Card CardInformation()
     {
         Card card = GetComponent<Card>();
-        socket.Send(new CardPacket(card.cardId, card.cardName, card.health, card.attack, card.sleep, player).StartSerialization());
+        socket.Send(new CardPacket(card.cardId, card.cardName, card.health, card.attack, card.sleep).StartSerialization());
         return card;
+    }
+
+    void LoadCardInformation(int cardID, string cardName, int cardHealth, int cardAttack, bool sleep)
+    {
+        card.cardId = cardID;
+        card.cardName = cardName;
+        card.health = cardHealth;
+        card.attack = cardAttack;
+        card.sleep = sleep;
     }
 
     private void AcknowledgedInformation()

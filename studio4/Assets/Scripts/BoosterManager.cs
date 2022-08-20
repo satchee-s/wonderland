@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CreatureManager : MonoBehaviour
+public abstract class BoosterManager : MonoBehaviour
 {
     protected Card card;
     public List<Card> opponentCreatureCards; //get list of opponent cards

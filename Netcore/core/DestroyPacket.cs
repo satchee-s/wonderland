@@ -4,15 +4,13 @@ namespace core
 {
     public class DestroyPacket : BasePacket
     {
-
-        public string GameObjectId { get; private set; }
-
+        public int GameObjectId { get; private set; }
         public DestroyPacket() 
         {
-            GameObjectId = "";
+            GameObjectId = 0;
         }
 
-        public DestroyPacket(string gameObjectId , Player player) : base(PacketType.Destroy, player)
+        public DestroyPacket(int gameObjectId) : base(PacketType.Destroy)
         {
             GameObjectId = gameObjectId;
         }
@@ -20,17 +18,14 @@ namespace core
         public override byte[] StartSerialization()
         {
             base.StartSerialization();
-
+            
             bw.Write(GameObjectId);
-
             return msw.GetBuffer();
         }
 
         public override BasePacket StartDeserialization(byte[] buffer)
         {
             base.StartDeserialization(buffer);
-            GameObjectId = br.ReadString();
-
             return this;
         }
     }

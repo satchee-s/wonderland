@@ -468,10 +468,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Class: Elite\r\n\nMagic Hat Cost: Five Magic Hats\r\nSacrifice Outcome:
-    Two Magic Hats\r\nHibernation Count When Played: One Turn\r\n\nEffect: All opposing
-    played creature cards lose one attack point when played. This creature card\u2019s
-    effect becomes inactive when discarded"
+  m_text: "Class: Elite\r\n\nMagic Hat Cost: Six Magic Hats\r\nSacrifice Outcome:
+    Three Magic Hats\r\nHibernation Count When Played: Two Turns\r\n\nEffect: All
+    opposing player\u2019s played creature cards lose one health point when played.
+    This creature card\u2019s effect becomes inactive when discarded.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 889279685848340673}
   - component: {fileID: 889279685848340734}
   m_Layer: 0
-  m_Name: Cheshire Cat
+  m_Name: Executioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,9 +766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cheshire Cat
-
-'
+  m_text: Executioner
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -997,7 +995,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 79c03c1909cb37842944c01d0b6dd932, type: 2}
+  - {fileID: 2100000, guid: 6075eebac9128084ba95a700df870c5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1030,9 +1028,10 @@ GameObject:
   - component: {fileID: 889279686322959750}
   - component: {fileID: 889279686322959753}
   - component: {fileID: -4733878520334864671}
-  - component: {fileID: 3009203315285532489}
+  - component: {fileID: 9072740911042229105}
+  - component: {fileID: -286419383689411580}
   m_Layer: 0
-  m_Name: Creature Card - Cheshire Cat
+  m_Name: Creature Card - Executioner
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 1
-  cardName: Cheshire Cat
+  cardName: Executioner
   attack: 5
   health: 7
   description: I Am Cheshire
@@ -1081,11 +1080,7 @@ MonoBehaviour:
   canBeSummoned: 0
   summoned: 0
   sleep: 0
-  cantAttack: 0
-  canAttack: 0
-  targeting: 0
-  targetingEnemy: 0
-  onlyThisCardAttack: 0
+  playerManager: {fileID: 0}
   isHibernating: 0
   nameText: {fileID: 889279685848340734}
   attackText: {fileID: 889279685379414737}
@@ -1093,6 +1088,7 @@ MonoBehaviour:
   descriptionText: {fileID: 889279685639987085}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
+  cardPrefab: {fileID: 889279686322959751}
   Type: 0
   CardClass: 0
   isOpponentCard: 0
@@ -1109,7 +1105,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3009203315285532489
+--- !u!114 &9072740911042229105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1126,6 +1122,22 @@ MonoBehaviour:
   lockPos: 0
   SelectableCardList: []
   card: {fileID: 0}
+--- !u!114 &-286419383689411580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889279686322959751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3be3984c7c3209f4ca7be49d1b203e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OwnerID: 
+  GameObjectID: 
+  GameId: 
+  prefabName: 
 --- !u!1 &889279686975537308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1309,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: '6
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1477,7 +1491,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 7
+  m_text: '8
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

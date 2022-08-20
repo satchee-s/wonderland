@@ -5,7 +5,7 @@ namespace core
 {
     public class InstantiatePacket : BasePacket
     {
-        public string GameObjectId { get;private set; }
+        //public string GameObjectId { get;private set; }
         public string PrefabName { get;private set; }
 
         public Vector3 Position { get; private set; }
@@ -13,17 +13,15 @@ namespace core
 
         public InstantiatePacket() 
         {
-            GameObjectId = "";
+            //GameObjectId = "";
             PrefabName = "";
             Position = Vector3.zero;
             Rotation = Quaternion.identity;
-
-
         }
 
-        public InstantiatePacket(string gameObjectId, string prefabName, Vector3 position, Quaternion rotation , Player player) : base(PacketType.Instantiate, player)
+        public InstantiatePacket(string prefabName, Vector3 position, Quaternion rotation) : base(PacketType.Instantiate)
         {
-            GameObjectId = gameObjectId;
+            //GameObjectId = gameObjectId;
             PrefabName = prefabName;
             Position = position;
             Rotation = rotation;
@@ -35,7 +33,7 @@ namespace core
         {
             base.StartSerialization();
 
-            bw.Write(GameObjectId);
+            //bw.Write(GameObjectId);
             bw.Write(PrefabName);
 
             bw.Write(Position.x);
@@ -54,7 +52,7 @@ namespace core
         {
             base.StartDeserialization(buffer);
 
-            GameObjectId = br.ReadString();
+            //GameObjectId = br.ReadString();
             PrefabName = br.ReadString();
 
             Position = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
