@@ -40,6 +40,7 @@ public class PlayerTurnSystem : MonoBehaviour
             Cursor.visible = false;
         }
 
+        if(manaText)
         manaText.text = currentMana + "/" + maxMana;
 
         if (isYourTurn == true && seconds > 0 && timerStart == true)

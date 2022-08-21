@@ -34,6 +34,7 @@ public class NetManager : MonoBehaviour
     SceneController sC;
     [HideInInspector] public Socket socket;
     public Player player;
+    public Player playerEnemy;
     public NetworkComponent nc;
     Card card;
     int slotId; //holder variables that temporarily hold the received slotId and cardId just so they card be passed to the constructor
@@ -52,6 +53,9 @@ public class NetManager : MonoBehaviour
 
     void Start()
     {
+        if (connectButton)
+       
+        
         connectButton.onClick.AddListener(() =>
         {
             try
@@ -62,6 +66,7 @@ public class NetManager : MonoBehaviour
                 TransitionPanel.SetActive(true);
                 connectPanel.SetActive(false);
                 startButton.gameObject.SetActive(false);
+               
 
                 socket.Blocking = false;
 
@@ -86,7 +91,7 @@ public class NetManager : MonoBehaviour
 
             turnSystem = FindObjectOfType<PlayerTurnSystem>();
         });
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         bool falseness = false;
         do{
         //send slot packet while 
@@ -111,8 +116,9 @@ public class NetManager : MonoBehaviour
                 {
                     case BasePacket.PacketType.Lobby:
                         Debug.Log("case 1");
-
+                        
                         LobbyPacket LP = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
+                        LP.player = playerEnemy;
                         for (int i = 0; i < LP.clientsName.Count; i++) // loop 
                         {
                             print(LP.clientsName[i]);
@@ -138,6 +144,8 @@ public class NetManager : MonoBehaviour
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);                            
                             playerManagers[1].role = PlayerManager.Role.Player2;
+                            
+                            
                         }
                         //if both players are there, then player 1 should click on start and launch both players into the game scene!
 
