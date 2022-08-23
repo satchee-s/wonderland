@@ -20,8 +20,8 @@ public class PlayerTurnSystem : MonoBehaviour
         StartRound();
         seconds = 30;
         timerStart = true;
-        player1 = netManager.playerManagers[0];
-        player2 = netManager.playerManagers[1];
+       // player1 = netManager.playerManagers[0];
+       // player2 = netManager.playerManagers[1];
         netManager = FindObjectOfType<NetManager>();//only works when server is running
     }
 

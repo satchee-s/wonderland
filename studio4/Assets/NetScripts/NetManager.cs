@@ -31,23 +31,27 @@ public class NetManager : MonoBehaviour
     [SerializeField] Button exitButton;
     [SerializeField] TextMeshProUGUI setPlayerName;
 
+
     SceneController sC;
     [HideInInspector] public Socket socket;
-    public Player player;
-    public Player playerEnemy;
+
+    public Player player; //local player
+    public Player playerEnemy;  //local enemy
+
+    public PlayerManager playerManager; 
+    public PlayerManager playerEnemyManager; 
     public NetworkComponent nc;
     Card card;
     int slotId; //holder variables that temporarily hold the received slotId and cardId just so they card be passed to the constructor
     int cardId;
     GameManager gameManager;
-    PlayerManager playerManager;
+    //PlayerManager playerManager;
     PlayerTurnSystem turnSystem;
-    [SerializeField] PlayerRole role;
 
     List<GameObject> playerObjs = new List<GameObject>();
     public TextMeshProUGUI[] playerName;
-    public PlayerManager [] playerManagers = new PlayerManager [2];
-    public PlayerSlotsManager [] playerSlotsManagers = new PlayerSlotsManager [2];
+
+    public PlayerSlotsManager enemySlotManager;
     public int numberOfLocalCardsPlaced = 0;
     public int numberOfEnemyCardsPlaced = 0;
 
@@ -133,7 +137,7 @@ public class NetManager : MonoBehaviour
                             Player2Panel.SetActive(false);
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);
-                            playerManagers[0].role = PlayerManager.Role.Player1;
+                            playerManager.role = PlayerManager.Role.Player1;
                         }
                         if (LP.clientsName.Count == 2) //this is when the 2nd client joins
                         {
@@ -143,7 +147,7 @@ public class NetManager : MonoBehaviour
                             Player2Panel.SetActive(false);
                             opponentFound.SetActive(false);
                             lookingForOpponent.SetActive(true);                            
-                            playerManagers[1].role = PlayerManager.Role.Player2;
+                            playerEnemyManager.role = PlayerManager.Role.Player2;
                             
                             
                         }
@@ -211,7 +215,7 @@ public class NetManager : MonoBehaviour
                         cp.StartDeserialization(recievedBuffer);
                         //CardInformation();
                         LoadCardInformation(cp.cardID, cp.cardName, cp.cardHealth, cp.cardAttack, cp.sleep);
-                        playerManagers[1].playedCards.Add(card);
+                        playerEnemyManager.playedCards.Add(card);
 
 
                         UpdateCardStats(cp.cardHealth, cp.sleep);
@@ -252,12 +256,12 @@ public class NetManager : MonoBehaviour
                         //JUST ADD A NEW CARD OBJECT LOCALLY TO THE DUMMY ENEMY PLAYERMANAGERS[ENEMYPLAYER].PLAYERSLOTSMANAGER.cARDSPLACED<>
 
                         //NEW STUFF NEED TO DOUBLE CHECK
-                        numberOfEnemyCardsPlaced = numberOfEnemyCardsPlaced + 1;
+                        /*numberOfEnemyCardsPlaced = numberOfEnemyCardsPlaced + 1;
 
-                        if (playerManagers[1].slotsManager.cardsPlaced[0]) 
+                        if (playerEnemyManager.slotsManager.cardsPlaced[0]) 
                         {
-                            playerManagers[1].slotsManager.cardsPlaced.Add(playerManagers[0].slotsManager.cardsPlaced[0]);
-                        }
+                            playerEnemyManager.slotsManager.cardsPlaced.Add(playerManager.slotsManager.cardsPlaced[0]);
+                        } */
 
                         //NEW STUFF NEED TO DOUBLE CHECK
                         break;
@@ -273,14 +277,17 @@ public class NetManager : MonoBehaviour
             //IF ALL OF THE ABOVE IS NOT EQUAL TO numberOfLocalCardsPlaced
             //numberOfLocalCardsPlaced = THE NEW LENGTH/SIZE/COUNT OF THE CARDSpLACED
 
-            if (playerManagers[0].slotsManager.cardsPlaced.Count != 0)
+           /* if (playerManager.slotsManager.cardsPlaced.Count != 0)
                 {
-                    if(playerManagers[0].slotsManager.cardsPlaced.Count != numberOfLocalCardsPlaced)
+                    if(playerManager.slotsManager.cardsPlaced.Count != numberOfLocalCardsPlaced)
                     {
-                        numberOfLocalCardsPlaced = playerManagers[0].slotsManager.cardsPlaced.Count;
+                        numberOfLocalCardsPlaced = playerManager.slotsManager.cardsPlaced.Count;
                     }
                     GetNewSlots(slotId, cardId);
-                }
+                }*/
+
+
+
             //NEW STUFF NEED TO DOUBLE CHECK
 
             //call a function that gets the newly added PLAYERMAMANGERS[LOCALPLAYER].PLAYERSLOTSMANAGER.CARDSPLACED<i>.cardID & [i] <-THIS IS THE SLOT ID
@@ -293,17 +300,17 @@ public class NetManager : MonoBehaviour
 
 
     //NEW STUFF NEED TO DOUBLE CHECK
-    void GetNewSlots(int slotId, int cardId)
+    /*void GetNewSlots(int slotId, int cardId)
     {
         this.slotId = slotId;
         this.cardId = cardId;  
 
         for(int i = 0; i < playerManager.playedCards.Count; i++)
         {
-            playerManagers[i].slotsManager.cardsPlaced[i].cardId = slotId;
+            playerManager[i].slotsManager.cardsPlaced[i].cardId = slotId;
         }
         socket.Send(new SlotPacket(slotId, cardId, player).StartSerialization());
-    }
+    } */
     //NEW STUFF NEED TO DOUBLE CHECK
 
 
@@ -321,15 +328,11 @@ public class NetManager : MonoBehaviour
 
     private void PlayerData(PlayerDataPacket PD)
     {
-        if (PD.player != player)
-        {
-            turnSystem.ChangeOpponentMana(PD.Mana);
-            if (playerManager.IsPlayer2)
-            {
-                this.playerManager.health = PD.Health;
-            }
+       turnSystem.ChangeOpponentMana(PD.Mana);
 
-        }
+        playerEnemyManager.health = PD.Health;
+           
+
     }
 
     GameObject InstantiateOverNetwork(string prefabName, Vector3 position, Quaternion rotation)
