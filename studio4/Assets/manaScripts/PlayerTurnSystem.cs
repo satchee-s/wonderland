@@ -30,14 +30,14 @@ public class PlayerTurnSystem : MonoBehaviour
         if (isYourTurn == true)
         {
             turnText.text = "your Turn";
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
         }
         else
         {
             turnText.text = "Oponent Turn";
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
         }
 
         if(manaText)

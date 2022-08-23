@@ -6,8 +6,10 @@ public class Slot : MonoBehaviour
     [SerializeField] private CardType slotType;
     public Card currentCard;
     public Slot correspondingSlot;
+
+    //PlayerManager playerManager;
     //[SerializeField] NetManager netManager;
-    //[SerializeField] PlayerManager playerManager;
+    [SerializeField] PlayerManager playerManager;
 
     public bool HasCard => currentCard != null;
     public CardType Type => slotType;
@@ -15,7 +17,8 @@ public class Slot : MonoBehaviour
     public void PlaceCardInSlot(Card card)
     {
         if(card.type != slotType) return;
-        
+
+        playerManager.playedCards.Add(card);
         currentCard = card;
         card.originalPos = transform.position;
         CardMouseInteraction.onDragEvent += RemoveCardFromSlot;
@@ -30,6 +33,8 @@ public class Slot : MonoBehaviour
     private void RemoveCardFromSlot(CardMouseInteraction draggedCard)
     {
         if(currentCard.MouseInteraction != draggedCard) return;
+
+        playerManager.playedCards.Remove(currentCard);
         //playerManager.playedCards.Remove(currentCard);
         print("Remove");
         //DestroyPacket dp = new DestroyPacket(currentCard.GetInstanceID());

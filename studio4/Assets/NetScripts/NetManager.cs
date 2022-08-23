@@ -406,10 +406,7 @@ public class NetManager : MonoBehaviour
 
     private void getPosition(PositionPacket pp)
     {
-        if (slotManager == null)
-        {
-            slotManager = FindObjectOfType<PlayerSlotsManager>();
-        }
+       
         GameObject go = slotManager.currentCard.gameObject;
         Debug.Log($"rotation packet applied to {go}");
         //go.GetComponent<Transform>();

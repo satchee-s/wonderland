@@ -20,6 +20,11 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] GameObject AttackCard;
     [SerializeField] GameObject AttackFace;
     [SerializeField] GameObject endTutorial;
+    [SerializeField] GameObject turnText;
+
+    [SerializeField] GameObject GameMatchPanel;
+
+    [SerializeField] GameObject placeboostertext;
     [SerializeField] Card swiftRecovery;
     [SerializeField] PlayerSlotsManager slots;
 
@@ -34,6 +39,9 @@ public class TutorialManager : MonoBehaviour
         DrawTwo.SetActive(false);
         Shuffle.SetActive(false);
         discardButton.SetActive(false);
+        GameMatchPanel.SetActive(false);
+        TurnObj.SetActive(false);
+
     }
 
     public void Update()
@@ -54,7 +62,42 @@ public class TutorialManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
                 i++;
         }  
-        if (i == 2)
+        else if (i == 2)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                i++;
+            }
+        }
+        else if (i == 3)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                i++;
+            }
+        }
+        else if (i == 4)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                i++;
+            }
+        }
+        else if (i == 5)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                i++;
+            }
+        }
+        else if (i == 6)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                i++;
+            }
+        }
+        else if (i == 7)
         {
             if (Input.GetMouseButtonDown(1))
             {
@@ -64,25 +107,27 @@ public class TutorialManager : MonoBehaviour
 
         else if (i == 8)
         {
+            placeboostertext.SetActive(true);
             //if player places booster card
             //{ if(player clicks on Discard button)
             //destroy this card (that is being interacted with)
             //discardButton.SetActive(true);
             //i++; else if(player palces creature card)
             //Error.SetActive(true); 
-            discardButton.SetActive(true);
-
+            Debug.Log(slots.currentCard);
             if (slots.currentCard.type == CardType.Booster)
             {
-                popUps[i].GetComponent<Button>().onClick.AddListener(() =>
-                {
-                    gameManager.TutorialDeck.Remove(slots.currentCard);
-                    slots.currentCard.gameObject.SetActive(false);
-                    i++;
-                    return;
-                });
+                placeboostertext.SetActive(true);
 
-                FindCard(swiftRecovery);
+                
+            
+                 placeboostertext.SetActive(false);
+                  GameMatchPanel.SetActive(false);
+                 discardButton.SetActive(true);
+             
+
+                
+               // FindCard(swiftRecovery);
             }
         }
         else if (i == 9)
@@ -236,4 +281,12 @@ public class TutorialManager : MonoBehaviour
             }
         }
     }
+
+    public void DiscardButton()
+    {
+        gameManager.TutorialDeck.Remove(slots.currentCard);
+        slots.currentCard.gameObject.SetActive(false);
+        i++;
+    }
+
 }

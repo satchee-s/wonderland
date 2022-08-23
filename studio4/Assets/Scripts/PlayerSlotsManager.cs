@@ -92,8 +92,16 @@ public class PlayerSlotsManager : MonoBehaviour
             cardsPlaced.Add(cardBeingMoved);
         }
         cardBeingMoved.transform.position = targetSlots.transform.position;
-        PositionPacket pp = new PositionPacket(cardBeingMoved.transform.position, netManager.player);
-        netManager.SendPacket(pp.StartSerialization());
+        try
+        {
+            PositionPacket pp = new PositionPacket(cardBeingMoved.transform.position, netManager.player);
+            netManager.SendPacket(pp.StartSerialization());
+        }
+        catch(Exception ex)
+        {
+
+        }
+        
         //Debug.Log("Sent position packet to unity");
     }
 }

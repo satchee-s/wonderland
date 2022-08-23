@@ -39796,6 +39796,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -41825,6 +41829,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -48353,6 +48361,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -57673,6 +57685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &866402229
@@ -63175,6 +63191,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -70946,6 +70966,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &1090549605
@@ -71874,6 +71898,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!114 &1109943677 stripped
@@ -75255,6 +75283,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &1167827483
@@ -76484,6 +76516,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -77344,7 +77380,6 @@ MonoBehaviour:
   exitButton: {fileID: 0}
   setPlayerName: {fileID: 0}
   nc: {fileID: 0}
-  enemyManager: {fileID: 0}
   playerManager: {fileID: 0}
   role: {fileID: 0}
   playerName:
@@ -80228,6 +80263,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1001 &1252635667
@@ -92876,6 +92915,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -104905,6 +104948,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &1697949970
@@ -114146,6 +114193,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1 &1868262339
@@ -114875,6 +114926,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -115050,6 +115105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!114 &1886663687 stripped
@@ -118966,6 +119025,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 626864551}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -126206,7 +126269,6 @@ MonoBehaviour:
   exitButton: {fileID: 203258399}
   setPlayerName: {fileID: 1162023570}
   nc: {fileID: 0}
-  enemyManager: {fileID: 626864551}
   playerManager: {fileID: 1199200979}
   role: {fileID: 0}
   playerName:

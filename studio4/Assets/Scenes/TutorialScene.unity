@@ -1685,6 +1685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Swift Recovery (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2822,6 +2826,10 @@ PrefabInstance:
       propertyPath: turnText
       value: 
       objectReference: {fileID: 88244921}
+    - target: {fileID: 4936036226222175069, guid: a387d2dc917cb584d8300c9afad91ae0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4936036226222175069, guid: a387d2dc917cb584d8300c9afad91ae0, type: 3}
       propertyPath: timerText
       value: 
@@ -4078,6 +4086,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card -  Creature Swap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4851,6 +4863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Regeneration (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4938,6 +4954,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_Name
       value: "Booster Card -  The Skull\u2019s Choice (1)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_RootOrder
@@ -10236,6 +10256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Regeneration
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11257,6 +11281,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: m_Name
       value: Booster Card - Regeneration (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: m_RootOrder
@@ -12479,56 +12507,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &326856042
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 326856043}
-  - component: {fileID: 326856044}
-  m_Layer: 0
-  m_Name: Slot 5
-  m_TagString: Slot4
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &326856043
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326856042}
-  m_LocalRotation: {x: -0.24984771, y: 0, z: 0, w: 0.96828514}
-  m_LocalPosition: {x: 1.118, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 352001098}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!95 &326856044
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326856042}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &328218500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 889279686322959750, guid: f1340767d0d75834baeea5deddda472f, type: 3}
@@ -12545,36 +12523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &332137690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 332137691}
-  m_Layer: 0
-  m_Name: Slot 0
-  m_TagString: Slot1
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &332137691
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332137690}
-  m_LocalRotation: {x: -0.24984539, y: -0, z: -0, w: 0.9682858}
-  m_LocalPosition: {x: -1.315, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 352001098}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
 --- !u!1 &332966719
 GameObject:
   m_ObjectHideFlags: 0
@@ -13283,43 +13231,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349262742}
   m_CullTransparentMesh: 1
---- !u!1 &352001096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 352001098}
-  m_Layer: 0
-  m_Name: Player Hand
-  m_TagString: Card
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &352001098
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352001096}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.8000002, y: 0.8500004, z: 9.68}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 332137691}
-  - {fileID: 1306021698}
-  - {fileID: 1499494633}
-  - {fileID: 927595610}
-  - {fileID: 551727690}
-  - {fileID: 326856043}
-  - {fileID: 2059995369}
-  m_Father: {fileID: 1379496456}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
 --- !u!1 &352652772
 GameObject:
   m_ObjectHideFlags: 0
@@ -13811,6 +13722,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: m_Name
       value: Booster Card -  Creature Swap (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: m_RootOrder
@@ -20756,56 +20671,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547757891}
   m_CullTransparentMesh: 1
---- !u!1 &551727689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 551727690}
-  - component: {fileID: 551727691}
-  m_Layer: 0
-  m_Name: Slot 4
-  m_TagString: Slot4
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &551727690
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551727689}
-  m_LocalRotation: {x: -0.24984771, y: 0, z: 0, w: 0.96828514}
-  m_LocalPosition: {x: 0.621, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 352001098}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!95 &551727691
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551727689}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &552122252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
@@ -21087,6 +20952,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_Name
       value: "Booster Card -  The Skull\u2019s Choice (2)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_RootOrder
@@ -22311,6 +22180,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -23508,6 +23381,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Corruption (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -23845,6 +23722,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -25615,6 +25496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Regeneration (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -26335,6 +26220,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: m_Name
       value: Booster Card - Swift Recovery (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: m_RootOrder
@@ -30346,6 +30235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card -  Creature Swap (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -30669,6 +30562,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: m_Name
       value: Booster Card - Hypnosis (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: m_RootOrder
@@ -32163,6 +32060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Corruption (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -32872,6 +32773,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!4 &864650529 stripped
@@ -33388,6 +33293,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: m_Name
       value: Booster Card - Regeneration (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 38b63f364f03cf247b83e6b7677410b8, type: 3}
       propertyPath: m_RootOrder
@@ -35199,6 +35108,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Swift Recovery
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -35647,56 +35560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdcb1fbab475d344eb89b3f946e1a6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &927595609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 927595610}
-  - component: {fileID: 927595612}
-  m_Layer: 0
-  m_Name: Slot 3
-  m_TagString: Slot4
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &927595610
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927595609}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.141, y: 0, z: 0}
-  m_LocalScale: {x: -28.937, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 352001098}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &927595612
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927595609}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &929081031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
@@ -36139,6 +36002,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_Name
       value: Booster Card - Corruption (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_RootOrder
@@ -36764,6 +36631,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -37482,6 +37353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Hypnosis (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -37892,7 +37767,7 @@ MonoBehaviour:
   - {fileID: 617221759}
   - {fileID: 851300426}
   gameManager: {fileID: 162544457}
-  playerManager: {fileID: 0}
+  playerManager: {fileID: 1199200979}
   TurnObj: {fileID: 686459529}
   discardButton: {fileID: 1714900395}
   DrawOneandOne: {fileID: 43420926}
@@ -37903,6 +37778,9 @@ MonoBehaviour:
   AttackCard: {fileID: 58917166}
   AttackFace: {fileID: 295353956}
   endTutorial: {fileID: 1730570218}
+  turnText: {fileID: 686459529}
+  GameMatchPanel: {fileID: 2053331537}
+  placeboostertext: {fileID: 2079874250}
   swiftRecovery: {fileID: 922362178}
   slots: {fileID: 1379496457}
 --- !u!1 &1010394277
@@ -41572,6 +41450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!4 &1110773167 stripped
@@ -41958,6 +41840,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_Name
       value: Booster Card - Corruption (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_RootOrder
@@ -43315,6 +43201,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_Name
       value: Booster Card - Corruption
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
       propertyPath: m_RootOrder
@@ -44820,6 +44710,7 @@ MonoBehaviour:
   health: 100
   healthText: {fileID: 179302580}
   playedCards: []
+  slotsManager: {fileID: 0}
   role: 0
 --- !u!1 &1201027725
 GameObject:
@@ -46176,6 +46067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Hypnosis (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -46898,6 +46793,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1001 &1252985459
@@ -48505,6 +48404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Hypnosis (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -49009,6 +48912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Booster Card -  The Skull\u2019s Choice (4)"
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -49086,56 +48993,6 @@ PrefabInstance:
     - {fileID: 135710375237840274, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
     - {fileID: 135710376888385361, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
---- !u!1 &1306021697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1306021698}
-  - component: {fileID: 1306021700}
-  m_Layer: 0
-  m_Name: Slot 1
-  m_TagString: Slot2
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1306021698
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306021697}
-  m_LocalRotation: {x: -0.24984771, y: 0, z: 0, w: 0.96828514}
-  m_LocalPosition: {x: -0.834, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 352001098}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!95 &1306021700
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306021697}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1307339415
 GameObject:
   m_ObjectHideFlags: 0
@@ -51807,7 +51664,6 @@ Transform:
   - {fileID: 690898477}
   - {fileID: 251421117}
   - {fileID: 916818616}
-  - {fileID: 352001098}
   m_Father: {fileID: 1199200977}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56867,56 +56723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1499494632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1499494633}
-  - component: {fileID: 1499494635}
-  m_Layer: 0
-  m_Name: Slot 2
-  m_TagString: Slot3
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1499494633
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499494632}
-  m_LocalRotation: {x: -0.24984771, y: 0, z: 0, w: 0.96828514}
-  m_LocalPosition: {x: -0.352, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 352001098}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!95 &1499494635
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499494632}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1502774224
 GameObject:
   m_ObjectHideFlags: 0
@@ -57235,6 +57041,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: m_Name
       value: Booster Card - Swift Recovery (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: m_RootOrder
@@ -63275,6 +63085,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
 --- !u!1001 &1697042459
@@ -64077,7 +63891,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714900395}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -2.6300008}
+  m_LocalPosition: {x: 0, y: 0, z: -3.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 296363872}
@@ -64086,7 +63900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.720007, y: -12.400008}
+  m_AnchoredPosition: {x: -1.4, y: -43.4}
   m_SizeDelta: {x: 12.883, y: 1.423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714900397
@@ -64135,7 +63949,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1008193836}
         m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
-        m_MethodName: Next
+        m_MethodName: DiscardButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -64158,7 +63972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -68726,6 +68540,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card -  Creature Swap (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -69710,6 +69528,10 @@ PrefabInstance:
       propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2972067698394735868, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: playerManager
+      value: 
+      objectReference: {fileID: 1199200979}
     - target: {fileID: 5009998095100070213, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: slotType
       value: 1
@@ -72980,6 +72802,7 @@ MonoBehaviour:
   health: 100
   healthText: {fileID: 0}
   playedCards: []
+  slotsManager: {fileID: 0}
   role: 0
 --- !u!114 &1965042437
 MonoBehaviour:
@@ -74488,6 +74311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card -  Creature Swap
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 98b654c9754eb364880f775cc871a0ab, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -75903,6 +75730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Booster Card - Swift Recovery (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 443c7aef6ffe18e4399b28bb7360e90f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -76621,56 +76452,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058919079}
   m_CullTransparentMesh: 1
---- !u!1 &2059995368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2059995369}
-  - component: {fileID: 2059995370}
-  m_Layer: 0
-  m_Name: Slot 6
-  m_TagString: Slot4
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2059995369
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059995368}
-  m_LocalRotation: {x: -0.24984771, y: 0, z: 0, w: 0.96828514}
-  m_LocalPosition: {x: 1.61, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 352001098}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -28.937, y: 0, z: 0}
---- !u!95 &2059995370
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059995368}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 46353713ec592c24a956c14b4094477d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &2061031982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77779,7 +77560,7 @@ GameObject:
   - component: {fileID: 2079874253}
   - component: {fileID: 2079874252}
   m_Layer: 0
-  m_Name: Image
+  m_Name: PlaceBoosterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78456,6 +78237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Booster Card -  The Skull\u2019s Choice"
       objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -79042,6 +78827,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: m_Name
       value: Booster Card - Hypnosis
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: b59011c409a601349acb293771240d7e, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: b59011c409a601349acb293771240d7e, type: 3}
       propertyPath: m_RootOrder
@@ -79906,6 +79695,10 @@ PrefabInstance:
     - target: {fileID: 135710375292243328, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_Name
       value: "Booster Card -  The Skull\u2019s Choice (3)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 135710375292243330, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135710375292243331, guid: 042c2d961a1b73a498966d7d8d31754e, type: 3}
       propertyPath: m_RootOrder
