@@ -98,7 +98,7 @@ namespace Server
                                 default:
                                     for (int k = 0; k < clients.Count; k++)
                                     {
-                                        if (k == i)
+                                        if (k != i)
                                         {
                                             clients[k].socket.Send(recievedBuffer);
                                             Console.WriteLine($"{pb.Type} sent to {clients[k].player.Name}");
@@ -112,7 +112,7 @@ namespace Server
                 }
                 catch (SocketException se)
                 {
-                    Console.WriteLine("Exception");
+                    Console.WriteLine(se);
                 }
                // for(int i = 0; i < clients.Count; i++)
             }

@@ -21,7 +21,6 @@ public class Card : MonoBehaviour
     public static bool staticTarget;
     public static bool staticTargetEnemy;
 
-
     public TextMeshPro nameText;
     public TextMeshPro attackText;
     public TextMeshPro healthText;
@@ -29,6 +28,7 @@ public class Card : MonoBehaviour
 
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
+    [SerializeField] GameObject cardPrefab;
     NetManager netManager;
 
     public CardType type;
@@ -75,6 +75,7 @@ public class Card : MonoBehaviour
             canBeSummoned = true;
         }
         else canBeSummoned = false;
+        cardName = cardPrefab.name;
     }
 
     private void Start()
@@ -101,13 +102,13 @@ public class Card : MonoBehaviour
         if (CardType.Creature == type)
         {
             health -= amount;
-            CardPacket cp = new CardPacket(cardId, cardName, health, attack, sleep);
-            netManager.SendPacket(cp.StartSerialization());
+            //CardPacket cp = new CardPacket(cardId, cardName, health, attack, sleep);
+            //netManager.SendPacket(cp.StartSerialization());
 
             if (health <= 0)
             {
-                DestroyPacket dp = new DestroyPacket(GetInstanceID());
-                netManager.SendPacket(dp.StartSerialization());
+                //DestroyPacket dp = new DestroyPacket(GetInstanceID());
+                //netManager.SendPacket(dp.StartSerialization());
                 playerManager.health -= Mathf.Abs(health);
                 gameObject.SetActive(false);
             }

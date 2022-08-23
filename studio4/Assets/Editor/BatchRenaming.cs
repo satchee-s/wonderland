@@ -4,8 +4,8 @@ using UnityEditor;
 public class BatchRenaming : ScriptableWizard
 {
     public string baseName = "";
-    public bool incrementValues = true;
-    public bool incrementFirstValue = true;
+    public bool incrementValues = false;
+    public bool incrementFirstValue = false;
     public int startNumber = 1;
     public int incrementBy = 1;
 

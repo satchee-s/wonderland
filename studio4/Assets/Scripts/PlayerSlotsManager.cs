@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using core;
 
 public class PlayerSlotsManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerSlotsManager : MonoBehaviour
     public List<Card> cardsPlaced = new List<Card>();// EACH SLOT HOLDS A CARD OBJECT, THIS MEANS THAT EACH INDEX IS A SLOT ID
     [HideInInspector] public Card currentCard;
     public PlayerTurnSystem ptsi;
+    NetManager netManager;
     private void OnEnable()
     {
         CardMouseInteraction.onDragEvent += GetCardBeingMoved;
@@ -28,10 +30,14 @@ public class PlayerSlotsManager : MonoBehaviour
         card.onRelease += HandleCardRelease;
         currentCard = card.gameObject.GetComponent<Card>();
         cardsPlaced.Add(currentCard);
+
         //now we need to send the cardsPlaced over the network IN THE NET MANAGER.
     }
 
-
+    private void Start()
+    {
+        netManager = FindObjectOfType<NetManager>();
+    }
     private void Update()
     {
         if (PlayerTurnSystem.isYourTurn) {
@@ -86,7 +92,8 @@ public class PlayerSlotsManager : MonoBehaviour
             cardsPlaced.Add(cardBeingMoved);
         }
         cardBeingMoved.transform.position = targetSlots.transform.position;
-
-
+        PositionPacket pp = new PositionPacket(cardBeingMoved.transform.position, netManager.player);
+        netManager.SendPacket(pp.StartSerialization());
+        //Debug.Log("Sent position packet to unity");
     }
 }
