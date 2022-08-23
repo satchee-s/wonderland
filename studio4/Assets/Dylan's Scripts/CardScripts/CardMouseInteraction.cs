@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-
+using core;
 public class CardMouseInteraction : MonoBehaviour
 {
     private Camera mainCam;
@@ -45,6 +45,11 @@ public class CardMouseInteraction : MonoBehaviour
         print("On Drag Event");
         onDragEvent?.Invoke(this);
         isDragged = true;
+       // MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization();
+        //Debug.Log("case 2");
+
+       // print($"{mp.player.Name}Said:{mp.message}");
+       // break;
     }
 
     private void OnMouseEnter()

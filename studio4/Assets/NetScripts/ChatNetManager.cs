@@ -41,7 +41,7 @@ public class ChatNetManager : MonoBehaviour
         {
             try
             {
-                player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text, 0);
+                player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
 
              socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));

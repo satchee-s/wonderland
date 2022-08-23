@@ -23,7 +23,7 @@ namespace Server
         {
             Socket Listening = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Listening.Bind(new IPEndPoint(IPAddress.Any, 3000));
-            Player player = new Player("12","name1", 0);
+            Player player = new Player("12","name1");
             Listening.Listen(10);
             Listening.Blocking = false;
             int clientsOnline;
@@ -39,7 +39,7 @@ namespace Server
             {
                 try
                 {
-                    clients.Add(new Client(Listening.Accept(), new Player("", "", 0)));               
+                    clients.Add(new Client(Listening.Accept(), new Player("", "")));               
                     clients[clients.Count -1].socket.Send(new AcknowledgedPacket(player).StartSerialization());
                     Console.WriteLine("Client Connected");
 
@@ -87,8 +87,8 @@ namespace Server
                                     //add player info to Cilent List     
                                     for (int j = 0; j < clients.Count; j++) //For every cilent in list, send LobbyInfo Packet
                                     {
-                                        clients[j].player.PlayerNumber = j + 1;
-                                        Console.WriteLine("Assigning player value " + clients[j].player.PlayerNumber);
+                                       // clients[j].player.PlayerNumber = j + 1;
+                                        Console.WriteLine("Assigning player value " + clients[j].player);
                                         clients[j].socket.Send(new LobbyPacket(clientNames, clients[j].player).StartSerialization());
                                         Console.WriteLine($"Sent lobby packet {clientNames[j]}");
                                         Thread.Sleep(2000);

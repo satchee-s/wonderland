@@ -33,8 +33,10 @@ public class NetManager : MonoBehaviour
 
     SceneController sC;
     [HideInInspector] public Socket socket;
+
     public Player player;
     public Player playerEnemy;
+
     public NetworkComponent nc;
     Card card;
     int slotId; //holder variables that temporarily hold the received slotId and cardId just so they card be passed to the constructor
@@ -60,7 +62,7 @@ public class NetManager : MonoBehaviour
             {
                 try
                 {
-                    player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text, 0);
+                    player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
                     socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                     socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
                     TransitionPanel.SetActive(true);
@@ -121,7 +123,8 @@ public class NetManager : MonoBehaviour
 
 
                         LobbyPacket LP = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
-                        LP.player = playerEnemy;
+                        LP.player = playerEnemy; // this works
+
                         for (int i = 0; i < LP.clientsName.Count; i++) // loop 
                         {
                             print(LP.clientsName[i]);
@@ -150,13 +153,8 @@ public class NetManager : MonoBehaviour
 
 
                         }
-                        //if both players are there, then player 1 should click on start and launch both players into the game scene!
 
                         break;
-
-                    //Once start button has been clicked, send packet to server, then have server send TransitionToScene Packet to all exisiting clients
-                    //case BasePacket.PacketType.Connection:
-                    //  ConnectionPacket mp = (ConnectionPacket)new ConnectionPacket().StartDeserialization(recievedBuffer);
 
                     case BasePacket.PacketType.Message:
                         {
