@@ -106,10 +106,10 @@ public class Card : MonoBehaviour
 
             if (health <= 0)
             {
-                gameObject.SetActive(false);
                 DestroyPacket dp = new DestroyPacket(GetInstanceID());
                 netManager.SendPacket(dp.StartSerialization());
                 playerManager.health -= Mathf.Abs(health);
+                gameObject.SetActive(false);
             }
         }
     }

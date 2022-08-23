@@ -23,7 +23,7 @@ namespace Server
         {
             Socket Listening = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Listening.Bind(new IPEndPoint(IPAddress.Any, 3000));
-            Player player = new Player("12","name1");
+            Player player = new Player("12","name1", 0);
             Listening.Listen(10);
             Listening.Blocking = false;
             int clientsOnline;
@@ -39,7 +39,7 @@ namespace Server
             {
                 try
                 {
-                    clients.Add(new Client(Listening.Accept(), new Player("", "")));               
+                    clients.Add(new Client(Listening.Accept(), new Player("", "", 0)));               
                     clients[clients.Count -1].socket.Send(new AcknowledgedPacket(player).StartSerialization());
                     Console.WriteLine("Client Connected");
 
@@ -68,16 +68,10 @@ namespace Server
                         if (clients[i].socket.Available > 0)
                         {
                             byte[] recievedBuffer = new byte[clients[i].socket.Available];
-                            clients[i].socket.Receive(recievedBuffer);
-                            
+                            clients[i].socket.Receive(recievedBuffer);                            
                             BasePacket pb = new BasePacket().StartDeserialization(recievedBuffer);
-
-                           // player = pb.player;
-
-
                             switch (pb.Type)
                             {
-
                                 case BasePacket.PacketType.Information:
                                     InformationPacket infoPacket = (InformationPacket)new InformationPacket().StartDeserialization(recievedBuffer);
                                     clients[i].player.ID   = infoPacket.player.ID;
@@ -91,89 +85,27 @@ namespace Server
                                         clientNames.Add(clients[j].player.Name);
                                     }
                                     //add player info to Cilent List     
-
                                     for (int j = 0; j < clients.Count; j++) //For every cilent in list, send LobbyInfo Packet
                                     {
+                                        clients[j].player.PlayerNumber = j + 1;
+                                        Console.WriteLine("Assigning player value " + clients[j].player.PlayerNumber);
                                         clients[j].socket.Send(new LobbyPacket(clientNames, clients[j].player).StartSerialization());
                                         Console.WriteLine($"Sent lobby packet {clientNames[j]}");
                                         Thread.Sleep(2000);
-
                                     }
                                     break;
 
-                                case BasePacket.PacketType.Message:
-                                    MessagePacket mp = (MessagePacket)new MessagePacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine($"{mp.player.Name}Said:{mp.message}");
-                                    break;
-
-                                case BasePacket.PacketType.Instantiate:
-                                    InstantiatePacket IP = (InstantiatePacket)new InstantiatePacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("InstantiatePacket");
-                                    break;
-
-                                case BasePacket.PacketType.Destroy:
-                                    DestroyPacket DP = (DestroyPacket)new DestroyPacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("DestroyPacket");
-                                    break;
-
-                                case BasePacket.PacketType.Rigidbody:
-                                    RigidbodyPacket RP = (RigidbodyPacket)new RigidbodyPacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("RigidbodyPacket");
-                                    break;
-
-                                case BasePacket.PacketType.Position:
-                                    PositionPacket PP = (PositionPacket)new PositionPacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("PositionPacket");
-                                    break;
-
-                                case BasePacket.PacketType.Rotation:
-                                    RotationPacket RotatP = (RotationPacket) new RotationPacket().StartDeserialization(recievedBuffer);
-                                    Console.WriteLine("RotationPacket");
-
-                                    break;
-
-                                case BasePacket.PacketType.RotationAndPosition:
-                                    RotationAndPositonPacket RPP = (RotationAndPositonPacket)new RotationAndPositonPacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine(" RotationAndPositonPacket");
-                                    break;
-
-                                case BasePacket.PacketType.Card:
-                                    CardPacket CP = (CardPacket)new CardPacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("CardPacket");
-
-                                    break;
-
-                                case BasePacket.PacketType.Lobby:
-                                    LobbyPacket LP = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("LobbyPacket");
-
-                                    break;
-
-                                case BasePacket.PacketType.Acknowledged:
-                                    AcknowledgedPacket AP = (AcknowledgedPacket)new AcknowledgedPacket(player).StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("acknowledgedPacket");
-
-                                    break;
-
-                                case BasePacket.PacketType.StartGame:
-                                    StartGamePacket SG = (StartGamePacket)new StartGamePacket().StartDeserialization(recievedBuffer);
-
-                                    Console.WriteLine("startGamePacket");
-                                    break;
                                 default:
+                                    for (int k = 0; k < clients.Count; k++)
+                                    {
+                                        if (k == i)
+                                        {
+                                            clients[k].socket.Send(recievedBuffer);
+                                            Console.WriteLine($"{pb.Type} sent to {clients[k].player.Name}");
+                                        }
+                                    }
                                     break;
 
-                                    /*BasePacket bp = new BasePacket().Deserialize(receivedBuffer);
-                                    client[i].Send(receivedBuffer);*/
                             }
                         }
                     }

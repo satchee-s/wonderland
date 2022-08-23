@@ -42,9 +42,9 @@ public class PlayerSlotsManager : MonoBehaviour
                     PlaceCard(closestSlot);
             }
         }
-        else {
+        /*else {
             Debug.Log("Ïts not your turn bro." + ptsi.getTime() + "seconds left"); 
-        }
+        }*/
        
     }
     

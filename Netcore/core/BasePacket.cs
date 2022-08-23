@@ -78,7 +78,7 @@ namespace core
             br = new BinaryReader(msr);
 
             Type = (PacketType)br.ReadInt32();
-            player = new Player(br.ReadString(), br.ReadString());
+            player = new Player(br.ReadString(), br.ReadString(), br.ReadInt32());
 
             return this;
         }
