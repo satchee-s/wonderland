@@ -101,6 +101,7 @@ namespace Server
                                         if (k != i)
                                         {
                                             clients[k].socket.Send(recievedBuffer);
+
                                             Console.WriteLine($"{pb.Type} sent to {clients[k].player.Name}");
                                         }
                                     }

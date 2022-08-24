@@ -95,6 +95,7 @@ public class PlayerSlotsManager : MonoBehaviour
         try
         {
             PositionPacket pp = new PositionPacket(cardBeingMoved.transform.position, netManager.player);
+            Debug.Log("position sent: " + pp.Position);
             netManager.SendPacket(pp.StartSerialization());
         }
         catch(Exception ex)
