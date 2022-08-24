@@ -232,7 +232,7 @@ MonoBehaviour:
   connectButton: {fileID: 611373553}
   playerNameInputField: {fileID: 853394892}
   connectPanel: {fileID: 1899309472}
-  matchMakingPanel: {fileID: 975533660}
+  matchMakingPanel: {fileID: 0}
   Player2Panel: {fileID: 10026783}
   TransitionPanel: {fileID: 2143665594}
   opponentFound: {fileID: 448209585}
@@ -241,13 +241,14 @@ MonoBehaviour:
   exitButton: {fileID: 625527298}
   setPlayerName: {fileID: 605480732}
   nc: {fileID: 1947815107}
+  playerManager: {fileID: 0}
   role: {fileID: 0}
   playerName:
   - {fileID: 605480732}
   - {fileID: 268221356}
-  playerManagers:
-  - {fileID: 0}
-  - {fileID: 0}
+  slotManager: {fileID: 0}
+  numberOfLocalCardsPlaced: 0
+  numberOfEnemyCardsPlaced: 0
 --- !u!4 &210454067
 Transform:
   m_ObjectHideFlags: 0
@@ -2979,6 +2980,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280518180}
   m_CullTransparentMesh: 1
+--- !u!1 &1440391441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1440391443}
+  - component: {fileID: 1440391442}
+  m_Layer: 0
+  m_Name: referenceObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1440391442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440391441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f69462a6357154fa107d5588b6bf6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectButton: {fileID: 0}
+  playerNameInputField: {fileID: 0}
+  connectPanel: {fileID: 0}
+  matchMakingPanel: {fileID: 0}
+  Player2Panel: {fileID: 0}
+  TransitionPanel: {fileID: 0}
+  opponentFound: {fileID: 0}
+  lookingForOpponent: {fileID: 0}
+  startButton: {fileID: 0}
+  exitButton: {fileID: 0}
+  setPlayerName: {fileID: 0}
+  nc: {fileID: 0}
+  playerManager: {fileID: 0}
+--- !u!4 &1440391443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440391441}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.0178514, y: 18.30097, z: 24.4181}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506388201
 GameObject:
   m_ObjectHideFlags: 0

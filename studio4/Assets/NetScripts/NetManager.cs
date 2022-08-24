@@ -452,5 +452,6 @@ public class NetManager : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("Level Design 2");
+        //FindObjectOfType<ReferenceSheet>(connectButton);
     }
 }

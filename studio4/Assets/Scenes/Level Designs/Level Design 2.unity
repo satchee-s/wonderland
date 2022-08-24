@@ -77379,6 +77379,7 @@ MonoBehaviour:
   startButton: {fileID: 0}
   exitButton: {fileID: 0}
   setPlayerName: {fileID: 0}
+  referenceSheet: {fileID: 0}
   nc: {fileID: 0}
   playerManager: {fileID: 0}
   role: {fileID: 0}
@@ -115111,6 +115112,62 @@ PrefabInstance:
       objectReference: {fileID: 626864551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+--- !u!1 &1883661751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883661753}
+  - component: {fileID: 1883661752}
+  m_Layer: 0
+  m_Name: referenceObj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1883661752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883661751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f69462a6357154fa107d5588b6bf6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectButton: {fileID: 488216135}
+  playerNameInputField: {fileID: 326481392}
+  connectPanel: {fileID: 148964311}
+  matchMakingPanel: {fileID: 1505511557}
+  Player2Panel: {fileID: 416023297}
+  TransitionPanel: {fileID: 1628899152}
+  opponentFound: {fileID: 1509702439}
+  lookingForOpponent: {fileID: 0}
+  startButton: {fileID: 2070146140}
+  exitButton: {fileID: 203258399}
+  setPlayerName: {fileID: 1162023570}
+  nc: {fileID: 0}
+  playerManager: {fileID: 1199200979}
+--- !u!4 &1883661753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883661751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.0178514, y: 18.30097, z: 24.4181}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1886663687 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 135710375292243330, guid: b4dd0bdfc07d33e4eae3817201147a08, type: 3}
@@ -126268,6 +126325,7 @@ MonoBehaviour:
   startButton: {fileID: 2070146140}
   exitButton: {fileID: 203258399}
   setPlayerName: {fileID: 1162023570}
+  referenceSheet: {fileID: 0}
   nc: {fileID: 0}
   playerManager: {fileID: 1199200979}
   role: {fileID: 0}
