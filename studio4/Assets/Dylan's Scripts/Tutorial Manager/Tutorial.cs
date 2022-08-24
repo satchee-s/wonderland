@@ -13,6 +13,8 @@ public class Tutorial : MonoBehaviour
     [SerializeField] Card.NameOfCard corruption;
     [SerializeField] Card.NameOfCard recovery;
     [SerializeField] GameObject gameMatchPanel;
+    [SerializeField] GameObject turnText;
+
     Card currentCard;
 
     [SerializeField] GameObject wrongSlot;
@@ -26,27 +28,32 @@ public class Tutorial : MonoBehaviour
 
     private void Update()
     {
-        if (currentStep == 5)
+        if(currentStep == 0)
+        {
+            gameMatchPanel.SetActive(false);
+            turnText.SetActive(false);
+        }
+        if (currentStep == 6) //face health
         {
             gameMatchPanel.SetActive(true);
         }
-        if (currentStep == 9)
+        if (currentStep == 13) //play cardgaurdsman
         {
             FindCard(guardsman);
         }
-        if (currentStep == 10)
+        if (currentStep == 14) //play dodo
         {
             FindCard(dodo);
         }
-        if (currentStep == 12)
+        if (currentStep == 16) //play corruption
         {
             FindCard(corruption);
         }
-        if (currentStep == 13)
+        if (currentStep == 17) //knight health
         {
             currentCard.gameObject.SetActive(false);
         }
-        if (currentStep == 14)
+        if (currentStep == 18) //play recovery
         {
             for (int i = 0; i < 8; i++)
             {
@@ -70,11 +77,19 @@ public class Tutorial : MonoBehaviour
                 }
             }
         }
-        if (currentStep == 20)
+        if (currentStep == 27) //sacrificetext
         {
             PlayerTurnSystem.currentMana = 1;
             PlayerTurnSystem.maxMana = 1;
             turnObject.ChangePlayerManaText("1/1");
+        }
+        if (currentStep == 33) 
+        {
+            turnText.SetActive(true);
+        }
+        if (currentStep == 34)
+        {
+            turnText.SetActive(false);
         }
     }
 
