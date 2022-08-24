@@ -194,6 +194,11 @@ public class PlayerTurnSystem : MonoBehaviour
         currentEnemyMana = newMana;
     }
 
+    public void ChangePlayerManaText(string newMana)
+    {
+        manaText.text = newMana;
+    }
+
 
     public bool getTime()
     {

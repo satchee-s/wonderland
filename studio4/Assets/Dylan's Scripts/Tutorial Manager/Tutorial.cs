@@ -8,13 +8,16 @@ public class Tutorial : MonoBehaviour
     [SerializeField] List<GameObject> popups = new List<GameObject>();
     [SerializeField] PlayerSlotsManager slots;
     int currentStep = 0;
-    [SerializeField] Card guardsman;
-    [SerializeField] Card dodo;
-    [SerializeField] Card corruption;
-    [SerializeField] Card recovery;
+    [SerializeField] Card.NameOfCard guardsman;
+    [SerializeField] Card.NameOfCard dodo;
+    [SerializeField] Card.NameOfCard corruption;
+    [SerializeField] Card.NameOfCard recovery;
+    [SerializeField] GameObject gameMatchPanel;
     Card currentCard;
 
     [SerializeField] GameObject wrongSlot;
+    [SerializeField] PlayerTurnSystem turnObject;
+    [SerializeField] TutorialGameManager manager;
 
     private void Start()
     {
@@ -23,36 +26,42 @@ public class Tutorial : MonoBehaviour
 
     private void Update()
     {
-        if (currentStep == 7)
+        if (currentStep == 5)
+        {
+            gameMatchPanel.SetActive(true);
+        }
+        if (currentStep == 9)
         {
             FindCard(guardsman);
         }
-        if (currentStep == 8)
+        if (currentStep == 10)
         {
             FindCard(dodo);
         }
-        if (currentStep == 11)
+        if (currentStep == 12)
         {
             FindCard(corruption);
         }
-        if (currentStep == 12)
+        if (currentStep == 13)
         {
             currentCard.gameObject.SetActive(false);
         }
-        if (currentStep == 13)
+        if (currentStep == 14)
         {
             for (int i = 0; i < 8; i++)
             {
                 if (slots.allSlots[i].currentCard != null)
                 {
-                    if (slots.allSlots[i].currentCard.name == recovery.name)
+                    if (slots.allSlots[i].currentCard.nameCard == recovery)
                     {
-                        if (slots.allSlots[i].correspondingSlot.currentCard != guardsman)
+                        if (slots.allSlots[i].correspondingSlot.currentCard.nameCard != guardsman)
                         {
                             StartCoroutine(ErrorMessage(wrongSlot));
+                            Debug.Log("Wrong slot used");
                         }
                         else
                         {
+                            Debug.Log("Guardsman found in corresponding slot");
                             currentCard = slots.allSlots[i].currentCard;
                             NextStep();
                             break;
@@ -60,6 +69,12 @@ public class Tutorial : MonoBehaviour
                     }
                 }
             }
+        }
+        if (currentStep == 20)
+        {
+            PlayerTurnSystem.currentMana = 1;
+            PlayerTurnSystem.maxMana = 1;
+            turnObject.ChangePlayerManaText("1/1");
         }
     }
 
@@ -73,13 +88,13 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    void FindCard(Card cardNeeded)
+    void FindCard(Card.NameOfCard cardNeeded)
     {
         for (int i = 0; i < 8; i++)
         {
             if (slots.allSlots[i].currentCard != null)
             {
-                if (slots.allSlots[i].currentCard.name == cardNeeded.name)
+                if (slots.allSlots[i].currentCard.nameCard == cardNeeded)
                 {
                     currentCard = slots.allSlots[i].currentCard;
                     NextStep();

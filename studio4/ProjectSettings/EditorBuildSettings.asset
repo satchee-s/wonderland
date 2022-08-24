@@ -9,27 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Discarded Level Designs/Level Design 1 (Original).unity
     guid: 9cc657f6310c5564f989523e2b6ec8fe
   - enabled: 0
-    path: Assets/Scenes/Main Menu.unity
-    guid: 300a6b174ae4340448719966ae004a35
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Main Menu 2.unity
     guid: a53c9b2587beeac4d9122695797fdc1e
   - enabled: 0
     path: Assets/Scenes/FirstTimePlaying.unity
     guid: 54e30c40ae5d74940b7335b8faec01bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/connectToLobby.unity
     guid: 7c7cb6e724c9d0e418ad6baf3832c4e1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 673ae49f7a75fbf45ac9b15a70084047
   - enabled: 0
     path: Assets/Scenes/Level Designs/Level 1.unity
     guid: c01ee3bca8485784a82ac6f19d250f83
   - enabled: 0
-    path: Assets/Scenes/Lobby.unity
-    guid: 0486de740c398a7489c9c8c6294f80f4
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Level Designs/Level Design 2.unity
     guid: d96f5767b4039a1499e629641c3940fc
   m_configObjects: {}

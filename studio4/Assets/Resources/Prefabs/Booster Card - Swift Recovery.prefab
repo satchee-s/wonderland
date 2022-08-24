@@ -256,8 +256,9 @@ MonoBehaviour:
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
   cardPrefab: {fileID: 135710375292243328}
-  Type: 1
-  CardClass: 0
+  type: 0
+  cardClass: 0
+  nameCard: 10
   isOpponentCard: 0
 --- !u!65 &6714826475061346712
 BoxCollider:
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368389428d434df48a81eb2de806777d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactPanel: {fileID: 0}
+  interactPanel: {fileID: 3146600261711898489, guid: 5650977414da14c42b4f562793efe8d3, type: 3}
   goBackButton: {fileID: 0}
   lockPos: 0
   SelectableCardList: []
@@ -316,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OwnerID: 
-  GameObjectID: 
+  GameObjectID: 0
   GameId: 
   prefabName: 
 --- !u!1 &135710375306721077

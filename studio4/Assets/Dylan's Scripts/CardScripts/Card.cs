@@ -26,7 +26,7 @@ public class Card : MonoBehaviour
     public TextMeshPro healthText;
     public TextMeshPro descriptionText;
 
-    [HideInInspector] public Vector3 originalPos;
+    public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
     [SerializeField] GameObject cardPrefab;
     NetManager netManager;
@@ -35,6 +35,9 @@ public class Card : MonoBehaviour
 
     public enum CreatureCardClass { Peasant, Elite };
     public CreatureCardClass cardClass;
+
+    public enum NameOfCard { Dodo, Rabbit, Hatter, Twins, Executioner, Guardsman, Regeneration, Corruption, Booster, Hypnosis, Recovery, Swap, Choice, Cat, Knight};
+    public NameOfCard nameCard;
 
     public bool isOpponentCard;
 

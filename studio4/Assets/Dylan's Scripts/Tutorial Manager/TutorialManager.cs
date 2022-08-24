@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -118,15 +118,9 @@ public class TutorialManager : MonoBehaviour
             if (slots.currentCard.type == CardType.Booster)
             {
                 placeboostertext.SetActive(true);
-
-                
-            
                  placeboostertext.SetActive(false);
                   GameMatchPanel.SetActive(false);
-                 discardButton.SetActive(true);
-             
-
-                
+                 discardButton.SetActive(true);                  
                // FindCard(swiftRecovery);
             }
         }
@@ -258,6 +252,10 @@ public class TutorialManager : MonoBehaviour
         else if (i == 27)
         {
             endTutorial.SetActive(true);
+        }
+        if (i == 8)
+        {
+            Debug.Log("Index hit");
         }
     }
 
