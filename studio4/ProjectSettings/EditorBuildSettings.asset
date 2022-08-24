@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FirstTimePlaying.unity
     guid: 54e30c40ae5d74940b7335b8faec01bd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/connectToLobby.unity
     guid: 7c7cb6e724c9d0e418ad6baf3832c4e1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TutorialScene.unity
     guid: 673ae49f7a75fbf45ac9b15a70084047
   - enabled: 0
@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level Designs/Level Design 2.unity
     guid: d96f5767b4039a1499e629641c3940fc
   m_configObjects: {}

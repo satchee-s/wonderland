@@ -53,6 +53,19 @@ public class NetManager : MonoBehaviour
     public PlayerSlotsManager slotManager;
     public int numberOfLocalCardsPlaced = 0;
     public int numberOfEnemyCardsPlaced = 0;
+    static NetManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -94,7 +107,6 @@ public class NetManager : MonoBehaviour
 
                 turnSystem = FindObjectOfType<PlayerTurnSystem>();
             });
-        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -190,8 +202,9 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Position:
                         Debug.Log("Position packet received");
                         PositionPacket PP = new PositionPacket();
-                        
                         PP.StartDeserialization(recievedBuffer);
+                        Debug.Log("position received: " + PP.Position);
+
                         getPosition(PP);
                         break;
 
