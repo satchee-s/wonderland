@@ -26,24 +26,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rokan\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\satch\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rokan\\wonderland\\Netcore\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\satch\\wonderland\\Netcore\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\Rokan\\wonderland\\Netcore\\Server\\Server.csproj",
-      "packagesPath": "C:\\Users\\Rokan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rokan\\wonderland\\Netcore\\Server\\obj\\",
+      "projectPath": "C:\\Users\\satch\\wonderland\\Netcore\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\satch\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\satch\\wonderland\\Netcore\\Server\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Rokan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\satch\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -57,8 +52,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Rokan\\wonderland\\Netcore\\core\\core.csproj": {
-              "projectPath": "C:\\Users\\Rokan\\wonderland\\Netcore\\core\\core.csproj"
+            "C:\\Users\\satch\\wonderland\\Netcore\\core\\core.csproj": {
+              "projectPath": "C:\\Users\\satch\\wonderland\\Netcore\\core\\core.csproj"
             }
           }
         }
@@ -78,8 +73,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -88,7 +82,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

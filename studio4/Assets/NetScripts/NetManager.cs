@@ -28,10 +28,6 @@ public class NetManager : MonoBehaviour
     [SerializeField] GameObject lookingForOpponent;
 
     [SerializeField] Button startButton;
-    [SerializeField] Button exitButton;
-    [SerializeField] TextMeshProUGUI setPlayerName;
-
-    SceneController sC;
     [HideInInspector] public Socket socket;
 
     public Player player;
@@ -39,13 +35,10 @@ public class NetManager : MonoBehaviour
 
     public NetworkComponent nc;
     Card card;
-    int slotId; //holder variables that temporarily hold the received slotId and cardId just so they card be passed to the constructor
-    int cardId;
-    GameManager gameManager;
+    
     //public PlayerManager enemyManager;
     public PlayerManager playerManager;
-    PlayerTurnSystem turnSystem;
-    [SerializeField] PlayerRole role;
+    public PlayerTurnSystem turnSystem;
 
     List<GameObject> playerObjs = new List<GameObject>();
     public TextMeshProUGUI[] playerName;
@@ -54,6 +47,7 @@ public class NetManager : MonoBehaviour
     public int numberOfLocalCardsPlaced = 0;
     public int numberOfEnemyCardsPlaced = 0;
     static NetManager instance;
+
     private void Awake()
     {
         if (instance == null)
@@ -69,44 +63,31 @@ public class NetManager : MonoBehaviour
 
     void Start()
     {
-        //if (connectButton)
-
-
-            connectButton.onClick.AddListener(() =>
+        connectButton.onClick.AddListener(() =>
+        {
+            try
             {
-                try
-                {
-                    player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
-                    socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                    socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
-                    TransitionPanel.SetActive(true);
-                    connectPanel.SetActive(false);
-                    startButton.gameObject.SetActive(false);
-
-
-                    socket.Blocking = false;
+                player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
+                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
+                TransitionPanel.SetActive(true);
+                connectPanel.SetActive(false);
+                startButton.gameObject.SetActive(false);
+                socket.Blocking = false;
 
                     //if one player joins, and lobby is empty look for another player UI should pop up and wait until another player Joins
-
-                    //Debug.Log(nc.GameObjectID );
-                    //Debug.Log(nc.prefabName);
-                    //Debug.Log(nc.GameId);
-                    //Debug.Log(nc.OwnerID);
 
                     InstantiateOverNetwork(nc.prefabName, Vector3.zero, Quaternion.identity);
                     //Thread.Sleep(2000);
                     Rig();
 
-                    if (ConnectedToServerEvent != null) ConnectedToServerEvent();
-
-                }
-                catch (SocketException e)
-                {
-                    print(e);
-                }
-
-                turnSystem = FindObjectOfType<PlayerTurnSystem>();
-            });
+                if (ConnectedToServerEvent != null) ConnectedToServerEvent();
+            }
+            catch (SocketException e)
+            {
+                print(e);
+            }
+        });
     }
 
     void Update()
@@ -126,9 +107,6 @@ public class NetManager : MonoBehaviour
                 switch (pb.Type)
                 {
                     case BasePacket.PacketType.Lobby:
-                        //Debug.Log("case 1");
-
-
                         LobbyPacket LP = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
                         LP.player = playerEnemy; // this works
 
@@ -174,7 +152,6 @@ public class NetManager : MonoBehaviour
                             Debug.Log("Received instantiate packet");
                             InstantiatePacket ip = new InstantiatePacket();
                             ip.StartDeserialization(recievedBuffer);
-
                             print(ip.player.ID);
                             print(ip.player.Name);
                             print(ip.PrefabName);
@@ -211,7 +188,6 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Rotation:
                         RotationPacket RotatP = new RotationPacket();
                         RotatP.StartDeserialization(recievedBuffer);
-
                         getRotation();
                         break;
 
@@ -221,8 +197,6 @@ public class NetManager : MonoBehaviour
                         //CardInformation();
                         LoadCardInformation(cp.cardID, cp.cardName, cp.cardHealth, cp.cardAttack, cp.sleep);
                         //playerManagers[1].playedCards.Add(card);
-
-
                         UpdateCardStats(cp.cardHealth, cp.sleep);
                         break;
 
@@ -235,7 +209,6 @@ public class NetManager : MonoBehaviour
 
                     case BasePacket.PacketType.RotationAndPosition:
                         RotationAndPositonPacket RPP = new RotationAndPositonPacket();
-
                         getPositionAndRotation();
                         break;
 
@@ -245,10 +218,8 @@ public class NetManager : MonoBehaviour
                         PlayerData(PD);
                         break;
 
-
                     case BasePacket.PacketType.StartGame:
                         StartGamePacket SG = new StartGamePacket(player);
-
                         startGame();
 
                         Debug.Log("startGame");
@@ -412,8 +383,6 @@ public class NetManager : MonoBehaviour
     {
         //gameManager = GetComponent<GameManager>();
         playerManager = GetComponent<PlayerManager>();
-
-
         socket.Send(new AcknowledgedPacket(player).StartSerialization());
     }
 
@@ -439,19 +408,16 @@ public class NetManager : MonoBehaviour
     {
         GameObject go = playerObjs[0];
         go.GetComponent<Transform>();
-
-
         socket.Send(new RotationAndPositonPacket(go.transform.position, go.transform.rotation, player).StartSerialization());
     }
 
     public void SendPacket(byte[] buffer)
-    {
+    {       
         socket.Send(buffer);
     }
 
     public void startGame()
     {
         SceneManager.LoadScene("Level Design 2");
-        //FindObjectOfType<ReferenceSheet>(connectButton);
     }
 }
