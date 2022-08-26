@@ -8,7 +8,7 @@ public class Slot : MonoBehaviour
     public Slot correspondingSlot;
 
     //PlayerManager playerManager;
-    [SerializeField] NetManager netManager;
+    NetManager netManager;
     [SerializeField] PlayerManager playerManager;
 
     public bool HasCard => currentCard != null;
@@ -24,6 +24,7 @@ public class Slot : MonoBehaviour
         CardMouseInteraction.onDragEvent += RemoveCardFromSlot;
         int id = card.GetComponent<NetworkComponent>().GameObjectID;
         netManager.SendPositionPacket(id, card.transform.position);
+        netManager.DealDamage(id, card.attack);
     }
 
     private void RemoveCardFromSlot(CardMouseInteraction draggedCard)
@@ -34,8 +35,6 @@ public class Slot : MonoBehaviour
         print("Remove");
         currentCard = null;
         CardMouseInteraction.onDragEvent -= RemoveCardFromSlot;
-        //int id = draggedCard.GetComponent<NetworkComponent>().GameObjectID;
-        //netManager.SendPositionPacket(id, draggedCard.transform.position);
     }
 
     private void Start()

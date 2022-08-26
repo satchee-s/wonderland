@@ -11,6 +11,11 @@ public class PlayerManager : MonoBehaviour
     public List<Card> playedCards = new List<Card>();
     public List<GameObject> playedHandCards = new List<GameObject>();
 
+    private void Start()
+    {
+        healthText.text = health.ToString();
+    }
+
     public void DealDamage(int damage)
     {
         health -= damage;
@@ -31,4 +36,11 @@ public class PlayerManager : MonoBehaviour
     public Role role;
     public bool IsPlayer1 => role == Role.Player1;
     public bool IsPlayer2 => role == Role.Player2;
+    public void DamageFromOpponent(int cardAttack)
+    {
+        health -= cardAttack;
+        healthText.text = health.ToString();
+        Debug.Log("New Health" + health);
+    }
+
 }

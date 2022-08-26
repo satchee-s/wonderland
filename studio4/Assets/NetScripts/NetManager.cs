@@ -221,6 +221,7 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.SlotPacket:
                         SlotPacket sP = new SlotPacket();
                         sP.StartDeserialization(recievedBuffer);
+                        playerManager.DamageFromOpponent(sP.cardId);
                         break;
                     default:
                         break;
@@ -344,5 +345,12 @@ public class NetManager : MonoBehaviour
         PositionPacket pp = new PositionPacket(position, cardId, player);
         socket.Send(pp.StartSerialization());
         Debug.Log("Position packet sent");
+    }
+
+    public void DealDamage(int cardHealth, int cardAttack)
+    {
+        SlotPacket sp = new SlotPacket(cardHealth, cardAttack, player);
+        socket.Send(sp.StartSerialization());
+        Debug.Log("damage sent");
     }
 }

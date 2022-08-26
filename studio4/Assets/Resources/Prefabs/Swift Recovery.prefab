@@ -247,7 +247,6 @@ MonoBehaviour:
   canBeSummoned: 0
   summoned: 0
   sleep: 0
-  playerManager: {fileID: 0}
   isHibernating: 0
   nameText: {fileID: 135710376888385366}
   attackText: {fileID: 135710376794405944}
@@ -256,7 +255,7 @@ MonoBehaviour:
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
   cardPrefab: {fileID: 135710375292243328}
-  type: 0
+  type: 1
   cardClass: 0
   nameCard: 10
   isOpponentCard: 0
