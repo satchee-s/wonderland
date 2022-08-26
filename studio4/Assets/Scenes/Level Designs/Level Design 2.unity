@@ -32166,6 +32166,7 @@ GameObject:
   - component: {fileID: 626864553}
   - component: {fileID: 626864552}
   - component: {fileID: 626864551}
+  - component: {fileID: 626864554}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -32188,7 +32189,7 @@ MonoBehaviour:
   health: 100
   healthText: {fileID: 0}
   playedCards: []
-  slotsManager: {fileID: 0}
+  playedHandCards: []
   role: 1
 --- !u!114 &626864552
 MonoBehaviour:
@@ -32220,6 +32221,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &626864554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626864550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d41353a69aed39469d026792181161d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlots:
+  - {fileID: 1262162152}
+  - {fileID: 702376219}
+  - {fileID: 1306764073}
+  - {fileID: 2135779504}
+  - {fileID: 1999122561}
+  - {fileID: 1833893748}
+  - {fileID: 212935246}
+  opponentManager: {fileID: 626864551}
 --- !u!1 &629256550
 GameObject:
   m_ObjectHideFlags: 0
@@ -59316,6 +59338,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6419
+      objectReference: {fileID: 0}
+    - target: {fileID: 245535884367033821, guid: ec61941eba4c6444683ded97cf6e7b91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.64
       objectReference: {fileID: 0}
@@ -60933,7 +60959,7 @@ MonoBehaviour:
   health: 100
   healthText: {fileID: 0}
   playedCards: []
-  slotsManager: {fileID: 0}
+  playedHandCards: []
   role: 0
 --- !u!4 &1200730456 stripped
 Transform:
@@ -81263,7 +81289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1660201407
 Transform:
   m_ObjectHideFlags: 0
@@ -91359,6 +91385,7 @@ MonoBehaviour:
   playerManager: {fileID: 1199200979}
   playerSlotsManager: {fileID: 1379496457}
   turnSystem: {fileID: 1202442491}
+  instantiateHandler: {fileID: 626864554}
 --- !u!4 &1883661753
 Transform:
   m_ObjectHideFlags: 0
@@ -100513,66 +100540,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062023630}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2062353553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2062353555}
-  - component: {fileID: 2062353554}
-  m_Layer: 0
-  m_Name: Networking
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2062353554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062353553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 222960ee4dc13344ba60d53a9c76d88a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectButton: {fileID: 0}
-  playerNameInputField: {fileID: 0}
-  connectPanel: {fileID: 0}
-  matchMakingPanel: {fileID: 0}
-  Player2Panel: {fileID: 0}
-  TransitionPanel: {fileID: 0}
-  opponentFound: {fileID: 0}
-  lookingForOpponent: {fileID: 0}
-  startButton: {fileID: 0}
-  nc: {fileID: 0}
-  playerManager: {fileID: 1199200979}
-  playerName:
-  - {fileID: 0}
-  - {fileID: 0}
-  slotManager: {fileID: 1379496457}
-  numberOfLocalCardsPlaced: 0
-  numberOfEnemyCardsPlaced: 0
---- !u!4 &2062353555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062353553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 277, y: 201.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2063784824
 PrefabInstance:
   m_ObjectHideFlags: 0

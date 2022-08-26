@@ -468,11 +468,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Class: Elite\r\n\nMagic Hat Cost: Four Magic Hats\r\nSacrifice Outcome:
-    Two Magic Hats\r\nHibernation Count When Played: One Turn\r\n\nEffect: When played,
-    the opponent must draw two creature cards or one creature card and one booster
-    from their corresponding decks to be discarded during their next turn. This creature
-    card\u2019s effect becomes inactive when discarded."
+  m_text: 'Class: Peasant
+
+
+    Magic Hat Cost: One Magic Hat
+
+    Sacrifice Outcome:
+    One Magic Hat
+
+    Hibernation Count When Played: Zero
+
+
+    Effect: None '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -499,8 +506,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.68
+  m_fontSizeBase: 0.68
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -672,7 +679,7 @@ GameObject:
   - component: {fileID: 889279685848340673}
   - component: {fileID: 889279685848340734}
   m_Layer: 0
-  m_Name: Mad Hatter
+  m_Name: White Rabbit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mad Hatter
+  m_text: White Rabbit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -996,7 +1003,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ee348d5bb742243409dabc4bf5b914fd, type: 2}
+  - {fileID: 2100000, guid: 2329dd9bcaeab06468b2c5e8e3c6b719, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1029,10 +1036,10 @@ GameObject:
   - component: {fileID: 889279686322959750}
   - component: {fileID: 889279686322959753}
   - component: {fileID: -4733878520334864671}
-  - component: {fileID: 4486294906879840376}
-  - component: {fileID: 2543256034217412131}
+  - component: {fileID: 9147841325522013256}
+  - component: {fileID: -8377582193903854008}
   m_Layer: 0
-  m_Name: Creature Card - Mad Hatter
+  m_Name: White Rabbit
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 1
-  cardName: Mad Hatter
+  cardName: White Rabbit
   attack: 5
   health: 7
   description: I Am Cheshire
@@ -1092,7 +1099,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 889279686322959751}
   type: 0
   cardClass: 0
-  nameCard: 2
+  nameCard: 1
   isOpponentCard: 0
 --- !u!65 &-4733878520334864671
 BoxCollider:
@@ -1107,7 +1114,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4486294906879840376
+--- !u!114 &9147841325522013256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1124,7 +1131,7 @@ MonoBehaviour:
   lockPos: 0
   SelectableCardList: []
   card: {fileID: 0}
---- !u!114 &2543256034217412131
+--- !u!114 &-8377582193903854008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1311,7 +1318,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1491,7 +1498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 6
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: -8630183812240547169}
   - component: {fileID: 1224195027582271058}
   m_Layer: 0
-  m_Name: Booster Card -  Creature Swap
+  m_Name: Creature Swap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
