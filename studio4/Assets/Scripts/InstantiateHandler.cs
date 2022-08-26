@@ -12,10 +12,7 @@ public class InstantiateHandler : MonoBehaviour
     {
         for (int i = 0; i < cardSlots.Length; i++)
         {
-            if (cardSlots[i] != null)
-            {
-                FindCardType(cardType, cardSlots[i].position, cardSlots[i].rotation);
-            }
+            FindCardType(cardType, cardSlots[i].position, cardSlots[i].rotation);
         }
     }
     void FindCardType(string cardType, Vector3 position, Quaternion rotation)
