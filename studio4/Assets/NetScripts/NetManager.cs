@@ -37,6 +37,7 @@ public class NetManager : MonoBehaviour
     Card card;
     
     public PlayerManager playerManager;
+    public PlayerManager enemyManager;
     public InstantiateHandler instantiateHandler;
     public PlayerTurnSystem turnSystem;
 
@@ -175,7 +176,6 @@ public class NetManager : MonoBehaviour
                         Debug.Log("Position packet received");
                         PositionPacket PP = new PositionPacket();
                         PP.StartDeserialization(recievedBuffer);
-
                         getPosition(PP);
                         break;
 
@@ -301,11 +301,8 @@ public class NetManager : MonoBehaviour
 
     private void getPosition(PositionPacket pp)
     {
-       
-        GameObject go = slotManager.currentCard.gameObject;
-        Debug.Log($"rotation packet applied to {go}");
-        //go.GetComponent<Transform>();
-        go.transform.position = pp.Position;
+        enemyManager.playedHandCards[pp.Id].transform.position = pp.Position;
+        Debug.Log($"{enemyManager.playedHandCards[pp.Id]} moved to {pp.Position}");
         //socket.Send(new PositionPacket(go.transform.position, player).StartSerialization());
     }
 
@@ -332,5 +329,20 @@ public class NetManager : MonoBehaviour
     public void startGame()
     {
         SceneManager.LoadScene("Level Design 2");
+    }
+
+    public void GameManagerInstantiation(Card.NameOfCard nameOfCard)
+    {
+        string enumToString = nameOfCard.ToString();
+        InstantiatePacket ip = new InstantiatePacket(enumToString, player);
+        socket.Send(ip.StartSerialization());
+        Debug.Log("Instantiation packet sent");
+    }
+
+    public void SendPositionPacket(int cardId, Vector3 position)
+    {
+        PositionPacket pp = new PositionPacket(position, cardId, player);
+        socket.Send(pp.StartSerialization());
+        Debug.Log("Position packet sent");
     }
 }

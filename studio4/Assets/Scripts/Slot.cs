@@ -8,7 +8,7 @@ public class Slot : MonoBehaviour
     public Slot correspondingSlot;
 
     //PlayerManager playerManager;
-    //[SerializeField] NetManager netManager;
+    [SerializeField] NetManager netManager;
     [SerializeField] PlayerManager playerManager;
 
     public bool HasCard => currentCard != null;
@@ -22,12 +22,8 @@ public class Slot : MonoBehaviour
         currentCard = card;
         card.originalPos = transform.position;
         CardMouseInteraction.onDragEvent += RemoveCardFromSlot;
-        //InstantiatePacket ip = new InstantiatePacket(card.name, card.transform.position, card.transform.rotation);
-        //netManager.SendPacket(ip.StartSerialization());
-        //Debug.Log("Instantiation packet sent");
-        //CardPacket cp = new CardPacket(card.cardId, card.name, card.health, card.attack, card.sleep);
-        //netManager.SendPacket(cp.StartSerialization());
-        //playerManager.playedCards.Add(card);
+        int id = card.GetComponent<NetworkComponent>().GameObjectID;
+        netManager.SendPositionPacket(id, card.transform.position);
     }
 
     private void RemoveCardFromSlot(CardMouseInteraction draggedCard)
@@ -35,11 +31,15 @@ public class Slot : MonoBehaviour
         if(currentCard.MouseInteraction != draggedCard) return;
 
         playerManager.playedCards.Remove(currentCard);
-        //playerManager.playedCards.Remove(currentCard);
         print("Remove");
-        //DestroyPacket dp = new DestroyPacket(currentCard.GetInstanceID());
-        //netManager.SendPacket(dp.StartSerialization());
         currentCard = null;
         CardMouseInteraction.onDragEvent -= RemoveCardFromSlot;
+        //int id = draggedCard.GetComponent<NetworkComponent>().GameObjectID;
+        //netManager.SendPositionPacket(id, draggedCard.transform.position);
+    }
+
+    private void Start()
+    {
+        netManager = FindObjectOfType<NetManager>();
     }
 }

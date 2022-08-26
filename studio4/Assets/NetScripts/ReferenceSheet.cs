@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ReferenceSheet : MonoBehaviour
 {
     public PlayerManager playerManager;
+    public PlayerManager enemyManager;
     public PlayerSlotsManager playerSlotsManager;
     public PlayerTurnSystem turnSystem;
     public InstantiateHandler instantiateHandler;
@@ -17,6 +18,7 @@ public class ReferenceSheet : MonoBehaviour
     {
         netManager = FindObjectOfType<NetManager>();
         netManager.playerManager = playerManager;
+        netManager.enemyManager = enemyManager;
         netManager.slotManager = playerSlotsManager;
         netManager.slotManager = playerSlotsManager;
         netManager.turnSystem = turnSystem;
