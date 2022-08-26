@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
     public int health;
     [SerializeField] TextMeshProUGUI healthText;
     public List<Card> playedCards = new List<Card>();
-    public PlayerSlotsManager slotsManager = new PlayerSlotsManager();
+    public List<GameObject> playedHandCards = new List<GameObject>();
 
     public void DealDamage(int damage)
     {

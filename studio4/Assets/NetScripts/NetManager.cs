@@ -28,10 +28,6 @@ public class NetManager : MonoBehaviour
     [SerializeField] GameObject lookingForOpponent;
 
     [SerializeField] Button startButton;
-    [SerializeField] Button exitButton;
-    [SerializeField] TextMeshProUGUI setPlayerName;
-
-    SceneController sC;
     [HideInInspector] public Socket socket;
 
     public Player player;
@@ -39,21 +35,18 @@ public class NetManager : MonoBehaviour
 
     public NetworkComponent nc;
     Card card;
-    int slotId; //holder variables that temporarily hold the received slotId and cardId just so they card be passed to the constructor
-    int cardId;
-    GameManager gameManager;
-    //public PlayerManager enemyManager;
+    
     public PlayerManager playerManager;
-    PlayerTurnSystem turnSystem;
-    [SerializeField] PlayerRole role;
+    public InstantiateHandler instantiateHandler;
+    public PlayerTurnSystem turnSystem;
 
     List<GameObject> playerObjs = new List<GameObject>();
     public TextMeshProUGUI[] playerName;
-    //public PlayerManager[] playerManagers = new PlayerManager[2];
     public PlayerSlotsManager slotManager;
     public int numberOfLocalCardsPlaced = 0;
     public int numberOfEnemyCardsPlaced = 0;
     static NetManager instance;
+
     private void Awake()
     {
         if (instance == null)
@@ -69,44 +62,31 @@ public class NetManager : MonoBehaviour
 
     void Start()
     {
-        //if (connectButton)
-
-
-            connectButton.onClick.AddListener(() =>
+        connectButton.onClick.AddListener(() =>
+        {
+            try
             {
-                try
-                {
-                    player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
-                    socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                    socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
-                    TransitionPanel.SetActive(true);
-                    connectPanel.SetActive(false);
-                    startButton.gameObject.SetActive(false);
+                player = new Player(Guid.NewGuid().ToString(), playerNameInputField.text);
+                socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
+                TransitionPanel.SetActive(true);
+                connectPanel.SetActive(false);
+                startButton.gameObject.SetActive(false);
+                socket.Blocking = false;
 
+                //if one player joins, and lobby is empty look for another player UI should pop up and wait until another player Joins
 
-                    socket.Blocking = false;
+                InstantiateOverNetwork(nc.prefabName, Vector3.zero, Quaternion.identity);
+                //Thread.Sleep(2000);
+                Rig();
 
-                    //if one player joins, and lobby is empty look for another player UI should pop up and wait until another player Joins
-
-                    //Debug.Log(nc.GameObjectID );
-                    //Debug.Log(nc.prefabName);
-                    //Debug.Log(nc.GameId);
-                    //Debug.Log(nc.OwnerID);
-
-                    InstantiateOverNetwork(nc.prefabName, Vector3.zero, Quaternion.identity);
-                    //Thread.Sleep(2000);
-                    Rig();
-
-                    if (ConnectedToServerEvent != null) ConnectedToServerEvent();
-
-                }
-                catch (SocketException e)
-                {
-                    print(e);
-                }
-
-                turnSystem = FindObjectOfType<PlayerTurnSystem>();
-            });
+                if (ConnectedToServerEvent != null) ConnectedToServerEvent();
+            }
+            catch (SocketException e)
+            {
+                print(e);
+            }
+        });
     }
 
     void Update()
@@ -126,9 +106,6 @@ public class NetManager : MonoBehaviour
                 switch (pb.Type)
                 {
                     case BasePacket.PacketType.Lobby:
-                        //Debug.Log("case 1");
-
-
                         LobbyPacket LP = (LobbyPacket)new LobbyPacket().StartDeserialization(recievedBuffer);
                         LP.player = playerEnemy; // this works
 
@@ -158,7 +135,6 @@ public class NetManager : MonoBehaviour
                             lookingForOpponent.SetActive(true);
                             //playerManagers[1].role = PlayerManager.Role.Player2;
                         }
-
                         break;
 
                     case BasePacket.PacketType.Message:
@@ -174,11 +150,8 @@ public class NetManager : MonoBehaviour
                             Debug.Log("Received instantiate packet");
                             InstantiatePacket ip = new InstantiatePacket();
                             ip.StartDeserialization(recievedBuffer);
-
-                            print(ip.player.ID);
-                            print(ip.player.Name);
-                            print(ip.PrefabName);
-                            InstantiateFromResources(ip.PrefabName, ip.Position, ip.Rotation);
+                            instantiateHandler.InstantiateOnEnemySide(ip.PrefabName);
+                            //InstantiateFromResources(ip.PrefabName, ip.Position, ip.Rotation);
                             break;
                         }
 
@@ -194,7 +167,6 @@ public class NetManager : MonoBehaviour
                             DestroyPacket Dp = new DestroyPacket();
                             Dp.StartDeserialization(recievedBuffer);
                             print(Dp.GameObjectId);
-
                             DestroyObject(Dp.GameObjectId);
                             break;
                         }
@@ -203,7 +175,6 @@ public class NetManager : MonoBehaviour
                         Debug.Log("Position packet received");
                         PositionPacket PP = new PositionPacket();
                         PP.StartDeserialization(recievedBuffer);
-                        Debug.Log("position received: " + PP.Position);
 
                         getPosition(PP);
                         break;
@@ -211,7 +182,6 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.Rotation:
                         RotationPacket RotatP = new RotationPacket();
                         RotatP.StartDeserialization(recievedBuffer);
-
                         getRotation();
                         break;
 
@@ -221,8 +191,6 @@ public class NetManager : MonoBehaviour
                         //CardInformation();
                         LoadCardInformation(cp.cardID, cp.cardName, cp.cardHealth, cp.cardAttack, cp.sleep);
                         //playerManagers[1].playedCards.Add(card);
-
-
                         UpdateCardStats(cp.cardHealth, cp.sleep);
                         break;
 
@@ -235,7 +203,6 @@ public class NetManager : MonoBehaviour
 
                     case BasePacket.PacketType.RotationAndPosition:
                         RotationAndPositonPacket RPP = new RotationAndPositonPacket();
-
                         getPositionAndRotation();
                         break;
 
@@ -245,10 +212,8 @@ public class NetManager : MonoBehaviour
                         PlayerData(PD);
                         break;
 
-
                     case BasePacket.PacketType.StartGame:
                         StartGamePacket SG = new StartGamePacket(player);
-
                         startGame();
 
                         Debug.Log("startGame");
@@ -256,67 +221,13 @@ public class NetManager : MonoBehaviour
                     case BasePacket.PacketType.SlotPacket:
                         SlotPacket sP = new SlotPacket();
                         sP.StartDeserialization(recievedBuffer);
-                        //INCREMENT THE ENEMY'S NUMBEROFENEMYCARDSPLACED
-                        //GOINTO PLAYERMANAGERS[ENEMYPLAYER].PLAYERSLOTSMANAGER.CARDSPLACED
-                        //JUST ADD A NEW CARD OBJECT LOCALLY TO THE DUMMY ENEMY PLAYERMANAGERS[ENEMYPLAYER].PLAYERSLOTSMANAGER.cARDSPLACED<>
-
-                        //NEW STUFF NEED TO DOUBLE CHECK
-                        /*numberOfEnemyCardsPlaced = numberOfEnemyCardsPlaced + 1;
-
-                        if (enemyManager.slotsManager.cardsPlaced[0])
-                        {
-                            enemyManager.slotsManager.cardsPlaced.Add(playerManager.slotsManager.cardsPlaced[0]);
-                        }*/
-
-                        //NEW STUFF NEED TO DOUBLE CHECK
                         break;
                     default:
                         break;
                 }
             }
-
-
-
-            //NEW STUFF NEED TO DOUBLE CHECK
-            //IF PLAYERMAMANGERS[LOCALPLAYER].PLAYERSLOTSMANAGER.CARDSPLACED != 0
-            //IF ALL OF THE ABOVE IS NOT EQUAL TO numberOfLocalCardsPlaced
-            //numberOfLocalCardsPlaced = THE NEW LENGTH/SIZE/COUNT OF THE CARDSpLACED
-
-            /*if (playerManager.slotsManager.cardsPlaced.Count != 0) //if there is card in localplayer slots
-            {
-                if (playerManager.slotsManager.cardsPlaced.Count != numberOfLocalCardsPlaced) //if card in localplayer slots != localcardsplaced
-                {
-                    numberOfLocalCardsPlaced = playerManager.slotsManager.cardsPlaced.Count; //# of localcard slots = card in local player slots
-                }
-                GetNewSlots(slotId, cardId);
-            }*/
-            //NEW STUFF NEED TO DOUBLE CHECK
-
-            //call a function that gets the newly added PLAYERMAMANGERS[LOCALPLAYER].PLAYERSLOTSMANAGER.CARDSPLACED<i>.cardID & [i] <-THIS IS THE SLOT ID
-            //AND A SENDS  THEM IN A PACKET CALLED SLOT PACKET
-
-            ///DO  NOT FORGET TO MAKE THE FUNCTUION THAT SEND THE PACKETS DOWNSTAIRS. YOU CALL IT IN THI IF STATEMENT HERE
         }
     }
-    //in the update, keep checking if cardsPlaced gets a new value
-
-
-    //NEW STUFF NEED TO DOUBLE CHECK
-    /*void GetNewSlots(int slotId, int cardId)
-    {
-        this.slotId = slotId;
-        this.cardId = cardId;
-
-        for (int i = 0; i < playerManager.playedCards.Count; i++)
-        {
-            //playerManagers[i].slotsManager.cardsPlaced[i].cardId = slotId;
-        }
-        socket.Send(new SlotPacket(slotId, cardId, player).StartSerialization());
-        Debug.Log("Sent slot packet");
-    }*/
-    //NEW STUFF NEED TO DOUBLE CHECK
-
-
     void UpdateCardStats(int health, bool sleep)
     {
         for (int i = 0; i < playerManager.playedCards.Count; i++)
@@ -331,15 +242,7 @@ public class NetManager : MonoBehaviour
 
     private void PlayerData(PlayerDataPacket PD)
     {
-        if (PD.player != player)
-        {
-            turnSystem.ChangeOpponentMana(PD.Mana);
-            if (playerManager.IsPlayer2)
-            {
-                this.playerManager.health = PD.Health;
-            }
-
-        }
+        
     }
 
     GameObject InstantiateOverNetwork(string prefabName, Vector3 position, Quaternion rotation)
@@ -367,20 +270,16 @@ public class NetManager : MonoBehaviour
     {
         GameObject go = playerObjs[0];
         go.GetComponent<Rigidbody>();
-
         Debug.Log(go);
         Debug.Log(go.GetComponent<Rigidbody>());
-
         Vector3 Velocity = go.GetComponent<Rigidbody>().velocity;
         Debug.Log(Velocity);
-
         socket.Send(new RigidbodyPacket(player, nc.GameId, Velocity).StartSerialization());
-        Debug.Log("send");
     }
 
     private void DestroyObject(int instanceID)
     {
-        NetworkComponent[] nc = FindObjectsOfType<NetworkComponent>();
+        /*NetworkComponent[] nc = FindObjectsOfType<NetworkComponent>();
         for (int i = 0; i < nc.Length; i++)
         {
             if (nc[i].GameObjectID == instanceID)
@@ -388,15 +287,7 @@ public class NetManager : MonoBehaviour
                 Destroy(nc[i].gameObject);
                 break;
             }
-
-        }
-    }
-
-    private Card CardInformation()
-    {
-        Card card = GetComponent<Card>();
-        socket.Send(new CardPacket(card.cardId, card.cardName, card.health, card.attack, card.sleep).StartSerialization());
-        return card;
+        }*/
     }
 
     void LoadCardInformation(int cardID, string cardName, int cardHealth, int cardAttack, bool sleep)
@@ -406,15 +297,6 @@ public class NetManager : MonoBehaviour
         card.health = cardHealth;
         card.attack = cardAttack;
         card.sleep = sleep;
-    }
-
-    private void AcknowledgedInformation()
-    {
-        //gameManager = GetComponent<GameManager>();
-        playerManager = GetComponent<PlayerManager>();
-
-
-        socket.Send(new AcknowledgedPacket(player).StartSerialization());
     }
 
     private void getPosition(PositionPacket pp)
@@ -439,19 +321,16 @@ public class NetManager : MonoBehaviour
     {
         GameObject go = playerObjs[0];
         go.GetComponent<Transform>();
-
-
         socket.Send(new RotationAndPositonPacket(go.transform.position, go.transform.rotation, player).StartSerialization());
     }
 
     public void SendPacket(byte[] buffer)
-    {
+    {       
         socket.Send(buffer);
     }
 
     public void startGame()
     {
         SceneManager.LoadScene("Level Design 2");
-        //FindObjectOfType<ReferenceSheet>(connectButton);
     }
 }

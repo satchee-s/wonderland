@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-
+using core;
 public class GameManager : MonoBehaviour
 {
     public List<Card> creatureDeck = new List<Card>();
@@ -19,23 +17,11 @@ public class GameManager : MonoBehaviour
     public PlayerSlotsManager player1Slots; //8 slots
     public PlayerSlotsManager player2Slots;//8 slots
     public bool HasDrawedCards = false;
-    private bool FirstStep = false;
-    private bool SecondStep = false;
-    private bool ThirdStep = false;
-
-    //public RaycastAnim rA;
-    CardMouseInteraction rA;
+    NetManager netManager;
     public void Start()
     {
-        FirstStep = false;
-        SecondStep = false;
-        ThirdStep = false;
-        HasDrawedCards = false;
-
+        netManager = FindObjectOfType<NetManager>();
         SetRandomCards();
-
-        //  FirstTurn();
-
     }
 
     void SetRandomCards()
@@ -48,6 +34,11 @@ public class GameManager : MonoBehaviour
                 handCards[i].tag = "Selectable";
                 boosterDeck.Remove(handCards[i]);
                 handCards[i].transform.position = cardSlots[i].transform.position;
+                string enumToString = handCards[i].nameCard.ToString();
+                InstantiatePacket ip = new InstantiatePacket(enumToString, netManager.player);
+                netManager.SendPacket(ip.StartSerialization());
+                Debug.Log("Instantiation packet sent");
+
             }
             else
             {
@@ -55,7 +46,15 @@ public class GameManager : MonoBehaviour
                 handCards[i].tag = "Selectable";
                 creatureDeck.Remove(handCards[i]);
                 handCards[i].transform.position = cardSlots[i].transform.position;
+                string enumToString = handCards[i].nameCard.ToString();
+                InstantiatePacket ip = new InstantiatePacket(enumToString, netManager.player);
+                netManager.SendPacket(ip.StartSerialization());
+                Debug.Log("Instantiation packet sent");
             }
+
+            //Card.NameOfCard card2 = (Card.NameOfCard)System.Enum.Parse(typeof(Card.NameOfCard), enumtostring);
+            //PositionPacket pp = new PositionPacket(handCards[i].transform.position, netManager.player);
+            //netManager.SendPacket(pp.StartSerialization());
         }
     }
 
@@ -168,12 +167,4 @@ public class GameManager : MonoBehaviour
 
         }
     }
-
-    /*public void GoBack()
-    {
-        GetComponent<RaycastAnim>().GoBack1();
-    }*/
-
-
-
 }

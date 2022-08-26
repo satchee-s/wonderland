@@ -27,7 +27,11 @@ namespace core
             Rotation = rotation;
         }
 
-       
+       public InstantiatePacket(string prefabName, Player player): base(PacketType.Instantiate, player)
+        {
+            PrefabName = prefabName;
+
+        }
 
         public override byte[] StartSerialization()
         {
@@ -36,14 +40,14 @@ namespace core
             //bw.Write(GameObjectId);
             bw.Write(PrefabName);
 
-            bw.Write(Position.x);
-            bw.Write(Position.y);
-            bw.Write(Position.z);
-
-            bw.Write(Rotation.x);
-            bw.Write(Rotation.y);
-            bw.Write(Rotation.z);
-            bw.Write(Rotation.w);
+            //bw.Write(Position.x);
+            //bw.Write(Position.y);
+            //bw.Write(Position.z);
+            //
+            //bw.Write(Rotation.x);
+            //bw.Write(Rotation.y);
+            //bw.Write(Rotation.z);
+            //bw.Write(Rotation.w);
 
             return msw.GetBuffer();
         }
@@ -54,10 +58,8 @@ namespace core
 
             //GameObjectId = br.ReadString();
             PrefabName = br.ReadString();
-
-            Position = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
-            Rotation = new Quaternion(br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
-
+            //Position = new Vector3(br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
+            //Rotation = new Quaternion(br.ReadSingle(), br.ReadSingle(), br.ReadSingle(), br.ReadSingle());
             return this;
         }
     }

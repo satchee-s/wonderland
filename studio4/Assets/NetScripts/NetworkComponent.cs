@@ -7,9 +7,4 @@ public class NetworkComponent : MonoBehaviour
     public int GameObjectID;
     public string GameId;
     public string prefabName;
-
-    private void Start()
-    {
-        GameObjectID = GetInstanceID();
-    }
 }
