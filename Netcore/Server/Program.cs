@@ -6,17 +6,6 @@ using System.Diagnostics;
 
 namespace Server
 {
- /*public  class Client
-    {
-        public Socket socket;
-        public Player player;
-
-        public Client(Socket socket, Player player)
-        {
-            this.socket = socket;
-            this.player = player;
-        }
-    }*/
     public class Program
     {
         static void Main(string[] args)

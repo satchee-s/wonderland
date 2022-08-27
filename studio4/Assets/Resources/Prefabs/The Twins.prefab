@@ -471,15 +471,15 @@ MonoBehaviour:
   m_text: 'Class: Peasant
 
 
-    Magic Hat Cost: One Magic Hat
+    Magic Hat Cost: Zero
 
-    Sacrifice Outcome:
-    One Magic Hat
+    Sacrifice Outcome: One
+    Magic Hat
 
     Hibernation Count When Played: Zero
 
 
-    Effect: None '
+    Effect: None'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 889279685848340673}
   - component: {fileID: 889279685848340734}
   m_Layer: 0
-  m_Name: White Rabbit
+  m_Name: The Twins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: White Rabbit
+  m_text: The Twins
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1003,7 +1003,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2329dd9bcaeab06468b2c5e8e3c6b719, type: 2}
+  - {fileID: 2100000, guid: a9e45858e14b14342a18df8dce38a9a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1036,10 +1036,10 @@ GameObject:
   - component: {fileID: 889279686322959750}
   - component: {fileID: 889279686322959753}
   - component: {fileID: -4733878520334864671}
-  - component: {fileID: 9147841325522013256}
-  - component: {fileID: -8377582193903854008}
+  - component: {fileID: 7972644245687400759}
+  - component: {fileID: 3183842790450137576}
   m_Layer: 0
-  m_Name: Creature Card - White Rabbit
+  m_Name: The Twins
   m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1052,7 +1052,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889279686322959751}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.14, y: -0.6757488, z: 1.018}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
@@ -1079,9 +1079,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 1
-  cardName: White Rabbit
-  attack: 5
-  health: 7
+  cardName: The Twins
+  attack: 3
+  health: 2
   description: I Am Cheshire
   hasBeenPlayed: 0
   cost: 0
@@ -1090,16 +1090,16 @@ MonoBehaviour:
   sleep: 0
   playerManager: {fileID: 0}
   isHibernating: 0
-  nameText: {fileID: 889279685848340734}
-  attackText: {fileID: 889279685379414737}
-  healthText: {fileID: 889279685543178775}
-  descriptionText: {fileID: 889279685639987085}
+  nameText: {fileID: 0}
+  attackText: {fileID: 0}
+  healthText: {fileID: 0}
+  descriptionText: {fileID: 0}
   originalPos: {x: 0, y: 0, z: 0}
   originalRotationValue: {x: 0, y: 0, z: 0, w: 0}
   cardPrefab: {fileID: 889279686322959751}
   type: 0
   cardClass: 0
-  nameCard: 1
+  nameCard: 3
   isOpponentCard: 0
 --- !u!65 &-4733878520334864671
 BoxCollider:
@@ -1114,7 +1114,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9147841325522013256
+--- !u!114 &7972644245687400759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   lockPos: 0
   SelectableCardList: []
   card: {fileID: 0}
---- !u!114 &-8377582193903854008
+--- !u!114 &3183842790450137576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

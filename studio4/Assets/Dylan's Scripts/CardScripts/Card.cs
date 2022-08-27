@@ -16,7 +16,7 @@ public class Card : MonoBehaviour
     public bool canBeSummoned;
     public bool summoned;
     public bool sleep;
-    public PlayerManager playerManager;
+    //public PlayerManager playerManager;
     public bool isHibernating;
     public static bool staticTarget;
     public static bool staticTargetEnemy;
@@ -29,7 +29,6 @@ public class Card : MonoBehaviour
     public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRotationValue;
     [SerializeField] GameObject cardPrefab;
-    NetManager netManager;
 
     public CardType type;
 
@@ -68,7 +67,7 @@ public class Card : MonoBehaviour
     {
         isOpponentCard = FindLastParent().GetComponent<PlayerManager>().IsPlayer2;
         mouseInteraction = GetComponent<CardMouseInteraction>();
-        netManager = FindObjectOfType<NetManager>();
+        //netManager = FindObjectOfType<NetManager>();
     }
 
     void Update()
@@ -83,7 +82,7 @@ public class Card : MonoBehaviour
 
     private void Start()
     {
-        playerManager = GetComponent<PlayerManager>();
+        //playerManager = GetComponent<PlayerManager>();
         originalRotationValue = transform.rotation;
         originalPos = transform.position;
 
@@ -112,7 +111,7 @@ public class Card : MonoBehaviour
             {
                 //DestroyPacket dp = new DestroyPacket(GetInstanceID());
                 //netManager.SendPacket(dp.StartSerialization());
-                playerManager.health -= Mathf.Abs(health);
+                //playerManager.health -= Mathf.Abs(health);
                 gameObject.SetActive(false);
             }
         }

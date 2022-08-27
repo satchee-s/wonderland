@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: -4021791347677196935}
   - component: {fileID: -2086032860357206573}
   m_Layer: 0
-  m_Name: Booster Card - Regeneration
+  m_Name: Regeneration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

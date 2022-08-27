@@ -14,7 +14,7 @@ public class PlayerSlotsManager : MonoBehaviour
     public List<Card> cardsPlaced = new List<Card>();// EACH SLOT HOLDS A CARD OBJECT, THIS MEANS THAT EACH INDEX IS A SLOT ID
     [HideInInspector] public Card currentCard;
     public PlayerTurnSystem ptsi;
-    NetManager netManager;
+    [HideInInspector] public NetManager netManager;
     private void OnEnable()
     {
         CardMouseInteraction.onDragEvent += GetCardBeingMoved;
@@ -47,11 +47,7 @@ public class PlayerSlotsManager : MonoBehaviour
                 if (closestSlot != null)
                     PlaceCard(closestSlot);
             }
-        }
-        /*else {
-            Debug.Log("Ïts not your turn bro." + ptsi.getTime() + "seconds left"); 
-        }*/
-       
+        }       
     }
     
     private void HandleCardRelease()
@@ -92,16 +88,6 @@ public class PlayerSlotsManager : MonoBehaviour
             cardsPlaced.Add(cardBeingMoved);
         }
         cardBeingMoved.transform.position = targetSlots.transform.position;
-        try
-        {
-            PositionPacket pp = new PositionPacket(cardBeingMoved.transform.position, netManager.player);
-            Debug.Log("position sent: " + pp.Position);
-            netManager.SendPacket(pp.StartSerialization());
-        }
-        catch(Exception ex)
-        {
-
-        }
         
         //Debug.Log("Sent position packet to unity");
     }

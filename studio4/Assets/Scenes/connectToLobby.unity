@@ -232,22 +232,22 @@ MonoBehaviour:
   connectButton: {fileID: 611373553}
   playerNameInputField: {fileID: 853394892}
   connectPanel: {fileID: 1899309472}
-  matchMakingPanel: {fileID: 975533660}
+  matchMakingPanel: {fileID: 0}
   Player2Panel: {fileID: 10026783}
   TransitionPanel: {fileID: 2143665594}
   opponentFound: {fileID: 448209585}
   lookingForOpponent: {fileID: 1213276912}
   startButton: {fileID: 1010789208}
-  exitButton: {fileID: 625527298}
-  setPlayerName: {fileID: 605480732}
   nc: {fileID: 1947815107}
-  role: {fileID: 0}
+  playerManager: {fileID: 0}
+  instantiateHandler: {fileID: 0}
+  turnSystem: {fileID: 0}
   playerName:
   - {fileID: 605480732}
   - {fileID: 268221356}
-  playerManagers:
-  - {fileID: 0}
-  - {fileID: 0}
+  slotManager: {fileID: 0}
+  numberOfLocalCardsPlaced: 0
+  numberOfEnemyCardsPlaced: 0
 --- !u!4 &210454067
 Transform:
   m_ObjectHideFlags: 0

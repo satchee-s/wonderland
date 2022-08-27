@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-
+using core;
 public class GameManager : MonoBehaviour
 {
     public List<Card> creatureDeck = new List<Card>();
@@ -19,23 +17,12 @@ public class GameManager : MonoBehaviour
     public PlayerSlotsManager player1Slots; //8 slots
     public PlayerSlotsManager player2Slots;//8 slots
     public bool HasDrawedCards = false;
-    private bool FirstStep = false;
-    private bool SecondStep = false;
-    private bool ThirdStep = false;
-
-    //public RaycastAnim rA;
-    CardMouseInteraction rA;
+    NetManager netManager;
     public void Start()
     {
-        FirstStep = false;
-        SecondStep = false;
-        ThirdStep = false;
-        HasDrawedCards = false;
-
+        netManager = FindObjectOfType<NetManager>();
         SetRandomCards();
-
-        //  FirstTurn();
-
+        StartCoroutine(SendCardData());
     }
 
     void SetRandomCards()
@@ -48,6 +35,7 @@ public class GameManager : MonoBehaviour
                 handCards[i].tag = "Selectable";
                 boosterDeck.Remove(handCards[i]);
                 handCards[i].transform.position = cardSlots[i].transform.position;
+                handCards[i].GetComponent<NetworkComponent>().GameObjectID = i;
             }
             else
             {
@@ -55,125 +43,22 @@ public class GameManager : MonoBehaviour
                 handCards[i].tag = "Selectable";
                 creatureDeck.Remove(handCards[i]);
                 handCards[i].transform.position = cardSlots[i].transform.position;
+                handCards[i].GetComponent<NetworkComponent>().GameObjectID = i;
             }
+
+            //Card.NameOfCard card2 = (Card.NameOfCard)System.Enum.Parse(typeof(Card.NameOfCard), enumtostring);
+            //PositionPacket pp = new PositionPacket(handCards[i].transform.position, netManager.player);
+            //netManager.SendPacket(pp.StartSerialization());
         }
     }
 
-    /* public void FirstTurn()
-     {
-         SetRandomCards();
-
-         ShuffleCard.SetActive(false);
-
-         for (int i = 0; i < availableCardSlots.Length; i++)
-         {
-             if (availableCardSlots[i] == true)
-             {
-                 handCards[i].transform.position = cardSlots[i].transform.position;
-                 handCards[i].originalPos = handCards[i].transform.position;
-                 availableCardSlots[i] = false;
-             }
-         }
-         HasDrawedCards = true;
-         OneboosterOneCreature.SetActive(false);
-         TwoCreature.SetActive(false);
-
-     } */
-
-    public void DrawOneFromBothDecks()
+    IEnumerator SendCardData()
     {
-        if (creatureDeck.Count >= 1 && boosterDeck.Count >= 1)
+        yield return new WaitForSeconds(4);
+        for (int i = 0; i < handCards.Count; i++)
         {
-            Card creatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
-            Card boosterCard = boosterDeck[Random.Range(0, boosterDeck.Count)];
-
-            for (int i = 0; i < availableCardSlots.Length; i++)
-            {
-                if (availableCardSlots[i] == true)
-                {
-                    creatureCard.gameObject.SetActive(true);
-                    boosterCard.gameObject.SetActive(true);
-
-                    creatureCard.gameObject.tag = "Selectable";
-                    boosterCard.gameObject.tag = "Selectable";
-
-                    creatureCard.transform.position = cardSlots[i].transform.position;
-                    creatureCard.originalPos = creatureCard.transform.position;
-
-                    boosterCard.transform.position = cardSlots[i + 1].transform.position;
-                    boosterCard.originalPos = boosterCard.transform.position;
-
-                    availableCardSlots[i] = false;
-
-                    creatureDeck.Remove(creatureCard);
-                    boosterDeck.Remove(boosterCard);
-
-                    HasDrawedCards = true;
-                    OneboosterOneCreature.SetActive(false);
-                    TwoCreature.SetActive(false);
-                    return;
-                }
-            }
+            netManager.GameManagerInstantiation(handCards[i].nameCard);
         }
+        yield return null;
     }
-
-    public void DrawTwoCreatureCards()
-    {
-        if (creatureDeck.Count >= 2)
-        {
-            Card firstCreatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
-            Card secondCreatureCard = creatureDeck[Random.Range(0, creatureDeck.Count)];
-
-            for (int i = 0; i < availableCardSlots.Length; i++)
-            {
-                if (availableCardSlots[i] == true)
-                {
-                    firstCreatureCard.gameObject.SetActive(true);
-                    secondCreatureCard.gameObject.SetActive(true);
-
-                    firstCreatureCard.gameObject.tag = "Selectable";
-                    secondCreatureCard.gameObject.tag = "Selectable";
-
-                    firstCreatureCard.transform.position = cardSlots[i].transform.position;
-                    firstCreatureCard.originalPos = firstCreatureCard.transform.position;
-
-                    secondCreatureCard.transform.position = cardSlots[i + 1].transform.position;
-                    secondCreatureCard.originalPos = secondCreatureCard.transform.position;
-
-                    availableCardSlots[i] = false;
-
-                    creatureDeck.Remove(firstCreatureCard);
-                    creatureDeck.Remove(secondCreatureCard);
-
-                    HasDrawedCards = true;
-                    TwoCreature.SetActive(false);
-                    OneboosterOneCreature.SetActive(false);
-                    return;
-                }
-            }
-        }
-    }
-
-    public void ShuffleDeck()
-    {
-        if (creatureDeck.Count > 1) //check if there are more than 1 card in the deck of cards
-        {
-            for (int i = 0; i < creatureDeck.Count; i++) //???
-            {
-                container[0] = creatureDeck[i];
-                int randomIndex = Random.Range(i, creatureDeck.Count);
-                creatureDeck[i] = creatureDeck[randomIndex];
-                creatureDeck[randomIndex] = container[0];
-            }
-
-        }
-    }
-
-    /*public void GoBack()
-    {
-        GetComponent<RaycastAnim>().GoBack1();
-    }*/
-
-
-
 }
