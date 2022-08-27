@@ -35,8 +35,11 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("connectToLobby");
     }
+    public void CardList()
+    {
+        SceneManager.LoadScene("Card List");
+    }
 
-    
     public void Lobby()
     {
         if(enterName != null)

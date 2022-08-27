@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Tutorial : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Tutorial : MonoBehaviour
     [SerializeField] Card.NameOfCard recovery;
     [SerializeField] GameObject gameMatchPanel;
     [SerializeField] GameObject turnText;
+    [SerializeField] TextMeshProUGUI opponentHealth;
+
 
     Card currentCard;
 
@@ -76,6 +79,10 @@ public class Tutorial : MonoBehaviour
                     }
                 }
             }
+        }
+        if(currentStep == 22)
+        {
+            opponentHealth.text = "38";
         }
         if (currentStep == 27) //sacrificetext
         {

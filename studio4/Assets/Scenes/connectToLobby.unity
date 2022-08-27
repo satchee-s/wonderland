@@ -232,7 +232,7 @@ MonoBehaviour:
   connectButton: {fileID: 611373553}
   playerNameInputField: {fileID: 853394892}
   connectPanel: {fileID: 1899309472}
-  matchMakingPanel: {fileID: 0}
+  matchMakingPanel: {fileID: 975533660}
   Player2Panel: {fileID: 10026783}
   TransitionPanel: {fileID: 2143665594}
   opponentFound: {fileID: 448209585}
@@ -240,6 +240,7 @@ MonoBehaviour:
   startButton: {fileID: 1010789208}
   nc: {fileID: 1947815107}
   playerManager: {fileID: 0}
+  enemyManager: {fileID: 0}
   instantiateHandler: {fileID: 0}
   turnSystem: {fileID: 0}
   playerName:

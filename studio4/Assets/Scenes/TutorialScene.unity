@@ -13328,6 +13328,7 @@ MonoBehaviour:
   recovery: 10
   gameMatchPanel: {fileID: 2142419773}
   turnText: {fileID: 1717790217}
+  opponentHealth: {fileID: 332247965}
   wrongSlot: {fileID: 1339146302}
   turnObject: {fileID: 686459531}
   manager: {fileID: 580501022}
@@ -50781,7 +50782,7 @@ MonoBehaviour:
   health: 100
   healthText: {fileID: 0}
   playedCards: []
-  slotsManager: {fileID: 0}
+  playedHandCards: []
   role: 0
 --- !u!1 &1201027725
 GameObject:
@@ -59014,6 +59015,7 @@ MonoBehaviour:
   cardsPlaced: []
   currentCard: {fileID: 0}
   ptsi: {fileID: 0}
+  netManager: {fileID: 0}
 --- !u!1 &1379804600 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 889279686322959751, guid: f1e0e02668aa34f45961a378dc6c5682, type: 3}
@@ -83628,7 +83630,7 @@ MonoBehaviour:
   health: 100
   healthText: {fileID: 0}
   playedCards: []
-  slotsManager: {fileID: 0}
+  playedHandCards: []
   role: 0
 --- !u!114 &1965042437
 MonoBehaviour:
